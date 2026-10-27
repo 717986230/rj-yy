@@ -7,6 +7,7 @@ import { icon } from '../components/icons';
 import { otter } from '../components/otter';
 import { SubtitleOverlay } from '../components/subtitles';
 import { toast } from '../components/toast';
+import { showDiagnostics } from '../components/diagnostics';
 import { showWelcome } from '../components/welcome';
 import { api } from '../services/api';
 import { VideoEngine, type PlayerStatus } from '../services/player';
@@ -22,7 +23,7 @@ const LANGS: Array<{ id: SecondaryLang; label: string }> = [
   { id: 'en', label: '中·英' },
 ];
 
-const FLIP_MS = 640;
+const TURN_MS = 310;
 const SHUFFLE_MS = 460;
 
 type Refs = {
@@ -65,6 +66,7 @@ type Refs = {
   draw: HTMLButtonElement;
   library: HTMLAnchorElement;
   help: HTMLButtonElement;
+  diag: HTMLButtonElement;
   logout: HTMLButtonElement;
 };
 
@@ -72,10 +74,13 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   const view = el(`
     <section class="screen gap-3">
       <header class="flex items-center justify-between">
-        <div class="flex items-center gap-2">
+        <button data-ref="diag" class="flex items-center gap-2 text-left" title="播放诊断">
           <span class="grid h-8 w-8 place-items-center rounded-xl bg-aqua text-aqua-ink">${icon('cards', 'h-[18px] w-[18px]')}</span>
-          <span class="font-display text-xl font-semibold tracking-wide">Vido</span>
-        </div>
+          <span class="grid leading-none">
+            <span class="font-display text-xl font-semibold tracking-wide">Vido</span>
+            <span class="mt-0.5 text-[9px] tabular-nums text-mute">${__APP_VERSION__.split(' · ')[0]} · 诊断</span>
+          </span>
+        </button>
         <nav class="flex items-center">
           <a data-ref="library" href="#/library" class="icon-btn" aria-label="片库" title="片库">${icon('library')}</a>
           <button data-ref="help" class="icon-btn" aria-label="玩法介绍" title="玩法介绍">${icon('help')}</button>
@@ -99,7 +104,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
 
             <div data-ref="front" class="card-face card-front flex flex-col">
               <div class="relative min-h-0 flex-1 bg-black">
-                <video data-ref="video" class="absolute inset-0 h-full w-full object-contain" playsinline></video>
+                <video data-ref="video" class="absolute inset-0 h-full w-full object-contain" playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" preload="auto"></video>
                 <div data-ref="tap" class="absolute inset-0" aria-hidden="true"></div>
                 <div data-ref="subs"></div>
                 <div data-ref="loading" class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-3" hidden><span class="spinner"></span><p data-ref="loadingNote" class="max-w-[85%] truncate rounded-full bg-black/50 px-3 py-1 text-[11px] text-mute"></p></div>
@@ -224,16 +229,15 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     if (v) r.titleSecond.textContent = v.title[app.get().secondLang];
   };
 
-  /**
-   * 翻牌结束后去掉 3D 变换：iOS Safari、微信等浏览器不会绘制处在 rotateY + backface-visibility
-   * 里的视频画面（只有全屏才看得到），所以正面朝上时让卡片回到普通平面布局。
-   */
-  const unsettle = () => {
-    if (!r.card.classList.contains('is-settled')) return;
-    r.card.style.transition = 'none';
-    r.card.classList.remove('is-settled');
+  /** 翻牌：转到侧面 → 换面 → 转回正面；结束后卡片没有任何 transform */
+  const turn = async (toFront: boolean) => {
+    r.card.classList.add('turn-out');
+    await wait(TURN_MS);
+    r.card.classList.toggle('is-front', toFront);
+    r.card.classList.replace('turn-out', 'turn-in');
     void r.card.offsetWidth;
-    r.card.style.transition = '';
+    r.card.classList.remove('turn-in');
+    await wait(TURN_MS);
   };
 
   /** 翻开一张卡：已翻开时先翻回背面，洗牌，再翻到正面并开始加载外链 */
@@ -247,11 +251,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       engine.unlock();
       showOverlay(null);
       r.sound.hidden = true;
-      if (r.card.classList.contains('is-front')) {
-        unsettle();
-        r.card.classList.remove('is-front');
-        await wait(FLIP_MS);
-      }
+      if (r.card.classList.contains('is-front')) await turn(false);
       r.wrap.classList.add('is-shuffling');
       await wait(SHUFFLE_MS);
       r.wrap.classList.remove('is-shuffling');
@@ -259,12 +259,9 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       if (!alive) return;
       engine.load(video, { autoplay: false });
       fillFront(video);
-      r.card.classList.add('is-front');
-      await wait(FLIP_MS * 0.6);
+      await turn(true);
       if (!alive) return;
       void engine.play();
-      await wait(FLIP_MS * 0.45);
-      if (alive && r.card.classList.contains('is-front')) r.card.classList.add('is-settled');
     } catch (err) {
       toast(errorMessage(err));
     } finally {
@@ -384,8 +381,61 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     app.subscribe(renderPrefs),
   );
 
-  r.back.onclick = () => void (app.get().mode === 'manual' ? draw() : next());
-  r.tap.onclick = () => engine.toggle();
+  // 左右滑动卡片：左滑下一部，右滑上一部。拖动时卡片跟手，松手后滑出再翻下一张。
+  let swipe: { id: number; x: number; y: number; dx: number; locked: boolean | null } | null = null;
+  let swiped = false;
+  r.wrap.style.touchAction = 'pan-y';
+  r.wrap.addEventListener('pointerdown', (e) => {
+    if (flipping || (e.target as HTMLElement).closest('button:not([data-ref="back"]), input')) return;
+    swipe = { id: e.pointerId, x: e.clientX, y: e.clientY, dx: 0, locked: null };
+  });
+  r.wrap.addEventListener('pointermove', (e) => {
+    if (!swipe || e.pointerId !== swipe.id) return;
+    const dx = e.clientX - swipe.x;
+    const dy = e.clientY - swipe.y;
+    if (swipe.locked === null && Math.hypot(dx, dy) > 10) swipe.locked = Math.abs(dx) > Math.abs(dy);
+    if (!swipe.locked) return;
+    swipe.dx = dx;
+    r.card.style.transition = 'none';
+    r.card.style.transform = `translateX(${dx}px) rotate(${dx / 30}deg)`;
+  });
+  const endSwipe = async (e: PointerEvent) => {
+    if (!swipe || e.pointerId !== swipe.id) return;
+    const { dx, locked } = swipe;
+    swipe = null;
+    if (!locked) return;
+    swiped = true;
+    setTimeout(() => (swiped = false), 50);
+    r.card.style.transition = 'transform 0.22s ease-out, opacity 0.22s ease-out';
+    if (Math.abs(dx) < 70 || e.type === 'pointercancel') {
+      r.card.style.transform = '';
+      setTimeout(() => (r.card.style.transition = ''), 230);
+      return;
+    }
+    const dir = dx < 0 ? -1 : 1;
+    r.card.style.transform = `translateX(${dir * 120}%) rotate(${dir * 12}deg)`;
+    r.card.style.opacity = '0';
+    await wait(220);
+    // 新卡从另一侧滑入，再按原流程翻开
+    r.card.style.transition = 'none';
+    r.card.style.transform = `translateX(${-dir * 60}%)`;
+    void r.card.offsetWidth;
+    r.card.style.transition = 'transform 0.22s ease-out, opacity 0.22s ease-out';
+    r.card.style.transform = '';
+    r.card.style.opacity = '';
+    setTimeout(() => (r.card.style.transition = ''), 230);
+    if (dir < 0) void (app.get().mode === 'manual' ? draw() : next());
+    else prev();
+  };
+  r.wrap.addEventListener('pointerup', (e) => void endSwipe(e));
+  r.wrap.addEventListener('pointercancel', (e) => void endSwipe(e));
+
+  r.back.onclick = () => {
+    if (!swiped) void (app.get().mode === 'manual' ? draw() : next());
+  };
+  r.tap.onclick = () => {
+    if (!swiped) engine.toggle();
+  };
   r.sound.onclick = () => {
     r.sound.hidden = true;
     engine.setMuted(false);
@@ -455,6 +505,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   };
 
   r.help.onclick = () => showWelcome({ onStart: () => void draw() });
+  r.diag.onclick = () => showDiagnostics(r.video);
   r.logout.onclick = async () => {
     await api.logout();
     app.set({ user: null });

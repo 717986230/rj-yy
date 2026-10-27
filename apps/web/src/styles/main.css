@@ -86,7 +86,8 @@
   padding-bottom: max(14px, env(safe-area-inset-bottom, 0px));
   padding-left: max(18px, env(safe-area-inset-left, 0px));
   padding-right: max(18px, env(safe-area-inset-right, 0px));
-  animation: screen-in 0.35s ease-out both;
+  /* backwards：动画结束后不保留 transform，避免祖先元素一直带着合成层影响视频绘制 */
+  animation: screen-in 0.35s ease-out backwards;
 }
 @keyframes screen-in {
   from {
@@ -155,7 +156,6 @@
   position: relative;
   width: min(100cqw, 72cqh);
   aspect-ratio: 5 / 7;
-  perspective: 1400px;
 }
 .card-wrap::before,
 .card-wrap::after {
@@ -172,50 +172,46 @@
   transform: rotate(3.5deg) translate(6px, 8px);
   opacity: 0.35;
 }
+/*
+ * 翻牌分两半：先转到 90°（侧面），换面，再从 -90° 转回 0°。
+ * 不用 preserve-3d / backface-visibility，静止时卡片完全没有 transform：
+ * iOS Safari、微信 / QQ 浏览器不绘制处在 3D 背面结构里的视频（只有全屏能看到画面）。
+ */
 .card {
   position: relative;
   z-index: 1;
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.62s cubic-bezier(0.3, 0.75, 0.2, 1);
+  transition: transform var(--turn, 0.31s) cubic-bezier(0.45, 0, 0.55, 1);
 }
-.card.is-front {
-  transform: rotateY(180deg);
+.card.turn-out {
+  transform: perspective(1400px) rotateY(90deg);
+}
+.card.turn-in {
+  transform: perspective(1400px) rotateY(-90deg);
+  transition: none;
 }
 .card-face {
   position: absolute;
   inset: 0;
   border-radius: 22px;
   overflow: hidden;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   box-shadow:
     0 0 0 1px rgb(var(--c-line) / 0.14),
     0 26px 50px -24px rgb(0 0 0 / 0.85);
 }
 .card-front {
-  transform: rotateY(180deg);
   background: #000;
+}
+.card:not(.is-front) .card-front,
+.card.is-front .card-back {
+  visibility: hidden;
 }
 .card-back {
   background:
     radial-gradient(70% 45% at 50% 42%, rgb(var(--c-aqua) / 0.22), transparent 70%),
     repeating-radial-gradient(circle at 50% 120%, transparent 0 14px, rgb(var(--c-aqua) / 0.05) 14px 15px),
     linear-gradient(160deg, #123236, #0b1a1d 70%);
-}
-/* 正面朝上且动画结束：去掉 3D，保证移动端浏览器在卡片里正常绘制视频 */
-.card.is-settled,
-.card.is-settled .card-front {
-  transform: none;
-  transition: none;
-}
-.card.is-settled .card-face {
-  backface-visibility: visible;
-  -webkit-backface-visibility: visible;
-}
-.card.is-settled .card-back {
-  visibility: hidden;
 }
 .card-wrap.is-shuffling {
   animation: shuffle 0.46s ease-in-out;
