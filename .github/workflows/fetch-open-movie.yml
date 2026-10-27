@@ -1,0 +1,65 @@
+name: Fetch open movie (Tears of Steel)
+
+# 下载 Blender 开放电影《Tears of Steel》（CC BY 3.0，© Blender Foundation | mango.blender.org）
+# 和官方中文 / 德语 / 英语字幕，压缩成手机友好的 H.264 + AAC，提交到 apps/web/public/media，
+# 让网站自己托管这部电影（任何能打开网站的网络都能播）。只需在内容更新时手动运行一次。
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/fetch-open-movie.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Download film and subtitles
+        run: |
+          set -euo pipefail
+          BASE=https://download.blender.org/demo/movies/ToS
+          mkdir -p /tmp/tos && cd /tmp/tos
+          curl -fsSL "$BASE/" -o index.html
+          curl -fsSL "$BASE/subtitles/" -o subs.html
+          echo "--- films"; grep -o 'href="[^"]*"' index.html | sed 's/href=//' | tr -d '"'
+          echo "--- subtitles"; grep -o 'href="[^"]*"' subs.html | sed 's/href=//' | tr -d '"'
+          FILM=$(grep -o 'href="[^"]*720p[^"]*\.\(mov\|mp4\|mkv\)"' index.html | head -1 | sed 's/href=//' | tr -d '"')
+          echo "film: $FILM"
+          curl -fL --retry 3 "$BASE/$FILM" -o source
+          for lang in CH de en; do
+            f=$(grep -o "href=\"[^\"]*TOS-$lang\.srt\"" subs.html | head -1 | sed 's/href=//' | tr -d '"')
+            echo "subtitle $lang: $f"; test -n "$f"
+            curl -fsSL "$BASE/subtitles/$f" -o "tos-$lang.srt"
+          done
+          ls -la
+      - name: Encode for phones
+        run: |
+          set -euo pipefail
+          cd /tmp/tos
+          # 960 宽、H.264 Main + yuv420p + AAC、moov 前置：iPhone / 安卓 / 微信都能直接播放，体积约 60MB
+          ffmpeg -v error -y -i source -vf "scale=960:-2,format=yuv420p" \
+            -c:v libx264 -profile:v main -preset slow -b:v 560k -maxrate 800k -bufsize 1600k \
+            -c:a aac -b:a 96k -ac 2 -ar 44100 -movflags +faststart tears-of-steel.mp4
+          ffprobe -v error -show_entries format=duration,size:stream=codec_name,profile,pix_fmt,width,height -of compact tears-of-steel.mp4
+          size=$(stat -c %s tears-of-steel.mp4)
+          test "$size" -lt 95000000
+      - name: Commit to the repo
+        run: |
+          set -euo pipefail
+          dest=apps/web/public/media
+          mkdir -p "$dest/subtitles"
+          cp /tmp/tos/tears-of-steel.mp4 "$dest/"
+          cp /tmp/tos/tos-CH.srt "$dest/subtitles/tears-of-steel.zh.srt"
+          cp /tmp/tos/tos-de.srt "$dest/subtitles/tears-of-steel.de.srt"
+          cp /tmp/tos/tos-en.srt "$dest/subtitles/tears-of-steel.en.srt"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$dest"
+          git diff --cached --quiet && { echo "nothing changed"; exit 0; }
+          git commit -m "Add Tears of Steel (CC BY 3.0, Blender Foundation) with official zh/de/en subtitles"
+          git push
