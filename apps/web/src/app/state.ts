@@ -11,6 +11,8 @@ export interface Prefs {
   subtitleOffset: number;
   volume: number;
   muted: boolean;
+  /** 用户隐藏的卡片（打不开或不想看的视频，内置的也可以隐藏） */
+  hidden: string[];
 }
 
 export interface AppState extends Prefs {
@@ -27,6 +29,7 @@ const DEFAULT_PREFS: Prefs = {
   subtitleOffset: 0,
   volume: 0.8,
   muted: false,
+  hidden: [],
 };
 
 const stored = storage.get<Partial<Prefs>>(PREFS_KEY, {});
@@ -43,8 +46,8 @@ export const app = new Store<AppState>({
 
 // 偏好设置变化时持久化
 app.subscribe((s) => {
-  const { mode, secondLang, subtitles, subtitleOffset, volume } = s;
-  storage.set(PREFS_KEY, { mode, secondLang, subtitles, subtitleOffset, volume });
+  const { mode, secondLang, subtitles, subtitleOffset, volume, hidden } = s;
+  storage.set(PREFS_KEY, { mode, secondLang, subtitles, subtitleOffset, volume, hidden });
 });
 
 const WELCOME_KEY = 'vido.welcomed';

@@ -109,11 +109,12 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
 
   const row = (v: VideoSummary, i: number) => {
     const mine = v.ownerId === userId;
+    const isHidden = hiddenIds().has(v.id);
     const thumb = v.poster
       ? `<img src="${esc(v.poster)}" alt="" loading="lazy" class="h-full w-full object-cover" onerror="this.remove()" />`
       : '';
     return `
-      <li class="flex items-center gap-3 rounded-2xl border border-line/10 bg-panel p-2.5">
+      <li class="flex items-center gap-3 rounded-2xl border border-line/10 bg-panel p-2.5 ${isHidden ? 'opacity-50' : ''}">
         <button data-play="${esc(v.id)}" class="flex min-w-0 flex-1 items-center gap-3 text-left">
           <span class="relative grid h-14 w-20 shrink-0 place-items-center overflow-hidden rounded-xl bg-raised text-aqua">
             ${icon('play', 'h-5 w-5 absolute')}${thumb}
@@ -135,6 +136,7 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
             </span>
           </span>
         </button>
+        <button data-hide="${esc(v.id)}" class="icon-btn shrink-0 !w-auto px-2 text-[11px] text-mute" aria-label="${isHidden ? '恢复' : '隐藏'}">${isHidden ? '恢复' : '隐藏'}</button>
         ${
           mine
             ? `<button data-del="${esc(v.id)}" class="icon-btn shrink-0 ${confirmId === v.id ? '!w-auto bg-coral/15 px-3 text-xs text-coral' : 'text-mute'}" aria-label="删除">${confirmId === v.id ? '确认删除' : icon('trash', 'h-4 w-4')}</button>`
@@ -144,19 +146,21 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
   };
 
   let items: VideoSummary[] = [];
+  const hiddenIds = () => new Set(app.get().hidden);
   const render = () => {
     // 按剧集分组：同一剧集的各集排在一起，组标题显示集数
     const order: string[] = [];
     const groups = new Map<string, Array<[VideoSummary, number]>>();
     items.forEach((v, i) => {
-      const key = v.series ?? '';
+      const key = hiddenIds().has(v.id) ? '\u0000已隐藏' : (v.series ?? '');
       if (!groups.has(key)) groups.set(key, []), order.push(key);
       groups.get(key)!.push([v, i]);
     });
     const header = (name: string, n: number) =>
-      `<li class="pt-2 text-xs font-bold text-aqua">${esc(name || '短片 / 单部视频')} <span class="font-normal text-mute">· ${n} 部</span></li>`;
+      `<li class="pt-2 text-xs font-bold text-aqua">${esc(name.replace('\u0000', '') || '短片 / 单部视频')} <span class="font-normal text-mute">· ${n} 部</span></li>`;
     // 剧集在前，单部视频在后
-    order.sort((a, b) => Number(!a) - Number(!b));
+    const rank = (k: string) => (k.startsWith('\u0000') ? 2 : k ? 0 : 1);
+    order.sort((a, b) => rank(a) - rank(b));
     r.list.innerHTML = items.length
       ? order
           .map((key) => {
@@ -182,6 +186,15 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
     if (playId) {
       app.set({ pendingVideoId: playId });
       navigate('/play');
+      return;
+    }
+    const hideId = target.closest<HTMLElement>('[data-hide]')?.dataset.hide;
+    if (hideId) {
+      const set = hiddenIds();
+      if (set.has(hideId)) set.delete(hideId);
+      else set.add(hideId);
+      app.set({ hidden: [...set] });
+      render();
       return;
     }
     const delId = target.closest<HTMLElement>('[data-del]')?.dataset.del;

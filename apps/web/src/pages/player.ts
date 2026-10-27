@@ -209,7 +209,8 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
 
   const loadLibrary = async () => {
     try {
-      summaries = await api.listVideos();
+      const hidden = new Set(app.get().hidden);
+      summaries = (await api.listVideos()).filter((v) => !hidden.has(v.id));
       playlist.setIds(summaries.map((s) => s.id));
       r.backCount.textContent = `片库 ${summaries.length} 部 · DW 德语课、德语动画`;
     } catch (err) {
@@ -258,7 +259,10 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     view.classList.toggle('is-embed', !!embed);
     r.bili.innerHTML = embed
       ? `<iframe src="${esc(embed)}" class="h-full w-full border-0" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen scrolling="no" referrerpolicy="strict-origin-when-cross-origin" title="哔哩哔哩播放器"></iframe>
-         <a href="${esc(page ?? '')}" target="_blank" rel="noopener" class="absolute left-2 top-2 rounded-full bg-black/60 px-2.5 py-1 text-[11px] text-fg">在 B 站打开</a>`
+         <div class="absolute left-2 top-2 flex gap-1.5 text-[11px]">
+           <a href="${esc(page ?? '')}" target="_blank" rel="noopener" class="rounded-full bg-black/60 px-2.5 py-1 text-fg">在 B 站打开</a>
+           <button data-hide class="rounded-full bg-black/60 px-2.5 py-1 text-cream">打不开？隐藏这张</button>
+         </div>`
       : '';
   };
 
@@ -564,6 +568,16 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   };
 
   r.help.onclick = () => showWelcome({ onStart: () => void draw() });
+  // 隐藏打不开的卡片（例如 B 站视频被删），从牌堆里拿掉并翻下一张
+  r.bili.addEventListener('click', async (e) => {
+    if (!(e.target as HTMLElement).closest('[data-hide]') || !current) return;
+    const { id, title } = current;
+    app.set({ hidden: [...new Set([...app.get().hidden, id])] });
+    toast(`已隐藏「${title.zh}」，可在片库里恢复`);
+    await loadLibrary();
+    void (app.get().mode === 'manual' ? draw() : next());
+  });
+
   r.diag.onclick = () =>
     showDiagnostics(r.video, {
       card: current ? `${current.title.zh}（${parseBilibili(current.src) ? 'B 站播放器' : '视频'}）` : '还没翻开',

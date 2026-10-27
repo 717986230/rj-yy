@@ -18,7 +18,7 @@ export function showWelcome({ onStart, startLabel = '开始抽卡' }: { onStart?
       <button data-ref="close" class="icon-btn absolute right-3 top-3 text-mute" aria-label="关闭">${icon('x')}</button>
       <p class="font-display text-sm font-semibold tracking-wide text-aqua">Hallo! Hello! 你好！</p>
       <h2 class="mt-1 text-[22px] font-bold" style="text-wrap:balance">我是小獭 Otti，欢迎来到 Vido</h2>
-      <p class="mt-2 text-sm leading-relaxed text-mute">这里的每一张卡都是<b class="text-fg">一整部视频</b>，视频来自外部网站的公开链接。翻开一张，就从头看到尾。</p>
+      <p class="mt-2 text-sm leading-relaxed text-mute">这里的每一张卡都是<b class="text-fg">一整部视频</b>，有站内短片，也有 B 站上带中德字幕的 DW 德语课和德语动画。翻开一张，就从头看到尾。</p>
       <ul class="mt-4 grid gap-2 text-left text-[13px]">
         <li class="flex items-center gap-3 rounded-2xl bg-white/[0.04] px-3 py-2.5">
           <span class="grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-aqua/15 text-aqua">${icon('cards', 'h-4 w-4')}</span>

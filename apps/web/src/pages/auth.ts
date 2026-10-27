@@ -80,7 +80,7 @@ export function registerPage(root: HTMLElement, { navigate }: RouteContext) {
       ${backBar('创建账号')}
       <div class="mt-4 flex items-center gap-3 rounded-3xl border border-line/10 bg-panel/70 p-3">
         ${otter({ cls: 'h-20 w-16 shrink-0' })}
-        <p class="text-sm leading-relaxed text-mute">注册后，你添加的外链视频和字幕会保存在自己的片库里。</p>
+        <p class="text-sm leading-relaxed text-mute">注册后，你添加的 B 站视频、外链视频和字幕会保存在自己的片库里。</p>
       </div>
       <form data-ref="form" class="mt-5 grid gap-3" novalidate>
         ${field({ id: 'reg-name', label: '昵称', iconName: 'user', placeholder: '昵称（可选）', autocomplete: 'nickname' })}
