@@ -54,9 +54,9 @@ describe('Playlist', () => {
 });
 
 describe('seed library', () => {
-  it('only references external http(s) video links with zh / de / en subtitles', () => {
+  it('only references https links or site-hosted media with zh / de / en subtitles', () => {
     for (const v of SEED_VIDEOS) {
-      expect(v.src).toMatch(/^https:\/\//);
+      expect(v.src).toMatch(/^(https:\/\/|media\/)/);
       for (const m of v.mirrors ?? []) expect(m).toMatch(/^https:\/\//);
       expect(v.subtitles.zh.length).toBe(v.subtitles.de.length);
       expect(v.subtitles.zh.length).toBe(v.subtitles.en.length);

@@ -12,6 +12,9 @@ export interface SourceFailure {
 /** 首帧到来之前最多等待多久，超时就换下一条备用链接 */
 const STALL_MS = 12_000;
 
+/** 0.2 秒的静音小视频，用于在用户点击的那一刻"解锁"有声播放（iOS Safari / 微信内置浏览器需要） */
+const SILENT_CLIP = 'data:video/mp4;base64,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cmVsbGlzPTEgOHg4ZGN0PTEgY3FtPTAgZGVhZHpvbmU9MjEsMTEgZmFzdF9wc2tpcD0xIGNocm9tYV9xcF9vZmZzZXQ9LTIgdGhyZWFkcz0xIGxvb2thaGVhZF90aHJlYWRzPTEgc2xpY2VkX3RocmVhZHM9MCBucj0wIGRlY2ltYXRlPTEgaW50ZXJsYWNlZD0wIGJsdXJheV9jb21wYXQ9MCBjb25zdHJhaW5lZF9pbnRyYT0wIGJmcmFtZXM9MyBiX3B5cmFtaWQ9MiBiX2FkYXB0PTEgYl9iaWFzPTAgZGlyZWN0PTEgd2VpZ2h0Yj0xIG9wZW5fZ29wPTAgd2VpZ2h0cD0yIGtleWludD0yNTAga2V5aW50X21pbj0xMCBzY2VuZWN1dD00MCBpbnRyYV9yZWZyZXNoPTAgcmNfbG9va2FoZWFkPTQwIHJjPWNyZiBtYnRyZWU9MSBjcmY9MjMuMCBxY29tcD0wLjYwIHFwbWluPTAgcXBtYXg9NjkgcXBzdGVwPTQgaXBfcmF0aW89MS40MCBhcT0xOjEuMDAAgAAAAA9liIQAO//+906/AptUwmEBGCAHARggBwEYIAcBGCAHARggBwAAAAhBmiFsQ3/+4AEYIAcBGCAHARggBwEYIAc=';
+
 const MEDIA_ERRORS: Record<number, string> = {
   1: '加载被中断',
   2: '网络错误，连接被拒绝或中断',
@@ -26,6 +29,8 @@ export interface PlayerEvents {
   time: (seconds: number, duration: number) => void;
   /** 浏览器拦截了有声自动播放，已改为静音播放 */
   autoplayMuted: () => void;
+  /** 浏览器连静音播放也拦截了，需要用户点一下 */
+  playBlocked: () => void;
   volume: (volume: number, muted: boolean) => void;
   /** 开始尝试某一条线路（主链接或备用链接） */
   source: (url: string, index: number, total: number) => void;
@@ -48,6 +53,7 @@ export class VideoEngine {
     status: new Set(),
     time: new Set(),
     autoplayMuted: new Set(),
+    playBlocked: new Set(),
     volume: new Set(),
     source: new Set(),
   };
@@ -60,6 +66,9 @@ export class VideoEngine {
   private failures: SourceFailure[] = [];
   private stallTimer = 0;
   private wantPlay = false;
+  private unlocked = false;
+  /** 当前的静音是否由自动播放拦截导致（而不是用户自己点的） */
+  autoMuted = false;
   private readonly detach: Array<() => void> = [];
 
   constructor(private readonly video: VideoWithFrameCallback) {
@@ -70,6 +79,9 @@ export class VideoEngine {
       this.detach.push(() => video.removeEventListener(type, fn));
     };
     bind('loadstart', () => this.current && this.setStatus('loading'));
+    bind('play', () => {
+      if (this.video.getAttribute('src') === SILENT_CLIP) this.video.pause();
+    });
     bind('waiting', () => this.setStatus('loading'));
     bind('playing', () => {
       this.setStatus('playing');
@@ -142,11 +154,20 @@ export class VideoEngine {
     try {
       await this.video.play();
     } catch (err) {
-      if ((err as DOMException)?.name === 'NotAllowedError' && !this.video.muted) {
+      if ((err as DOMException)?.name !== 'NotAllowedError') return;
+      if (!this.video.muted) {
+        this.autoMuted = true;
         this.video.muted = true;
         this.listeners.autoplayMuted.forEach((l) => l());
-        await this.video.play().catch(() => this.setStatus('paused'));
+        try {
+          await this.video.play();
+          return;
+        } catch {
+          /* 静音也不允许，交给用户点击 */
+        }
       }
+      this.setStatus('paused');
+      this.listeners.playBlocked.forEach((l) => l());
       // 其他错误（加载失败等）由 error 事件和换线逻辑处理
     }
   }
@@ -172,7 +193,21 @@ export class VideoEngine {
   }
 
   setMuted(muted: boolean): void {
+    this.autoMuted = false;
     this.video.muted = muted;
+  }
+
+  /**
+   * 必须在用户点击的同步调用栈里调用：用静音小视频播一下，让浏览器把这个 <video>
+   * 记为"用户允许播放"，之后翻牌动画结束再加载外链时就能直接有声播放。
+   */
+  unlock(): void {
+    if (this.unlocked || this.video.getAttribute('src')) return;
+    this.unlocked = true;
+    this.video.src = SILENT_CLIP;
+    this.video.play().catch(() => {
+      this.unlocked = false;
+    });
   }
 
   /** 从主链接开始重新尝试所有线路 */

@@ -29,17 +29,22 @@ const DEFAULT_PREFS: Prefs = {
   muted: false,
 };
 
+const stored = storage.get<Partial<Prefs>>(PREFS_KEY, {});
+
 export const app = new Store<AppState>({
   ...DEFAULT_PREFS,
-  ...storage.get<Partial<Prefs>>(PREFS_KEY, {}),
+  ...stored,
+  // 每次打开都从有声开始：静音可能是浏览器拦截自动播放时临时加上的，不应该被记住
+  muted: false,
+  volume: stored.volume ? stored.volume : DEFAULT_PREFS.volume,
   user: null,
   pendingVideoId: null,
 });
 
 // 偏好设置变化时持久化
 app.subscribe((s) => {
-  const { mode, secondLang, subtitles, subtitleOffset, volume, muted } = s;
-  storage.set(PREFS_KEY, { mode, secondLang, subtitles, subtitleOffset, volume, muted });
+  const { mode, secondLang, subtitles, subtitleOffset, volume } = s;
+  storage.set(PREFS_KEY, { mode, secondLang, subtitles, subtitleOffset, volume });
 });
 
 const WELCOME_KEY = 'vido.welcomed';

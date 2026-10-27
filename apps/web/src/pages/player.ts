@@ -38,6 +38,7 @@ type Refs = {
   loading: HTMLElement;
   loadingNote: HTMLElement;
   failed: HTMLElement;
+  sound: HTMLButtonElement;
   failList: HTMLElement;
   failNote: HTMLElement;
   ended: HTMLElement;
@@ -118,6 +119,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
                     <button data-action="draw" class="btn-primary h-9 px-4 text-sm">${icon('cards', 'h-4 w-4')}再抽一张</button>
                   </div>
                 </div>
+                <button data-ref="sound" class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 rounded-full bg-aqua px-5 py-3 text-sm font-bold text-ink shadow-lg" hidden>${icon('volume', 'h-5 w-5')}<span>点击开启声音</span></button>
                 <button data-ref="fullscreen" class="icon-btn absolute right-1.5 top-1.5 h-8 w-8 bg-black/40" aria-label="全屏">${icon('expand', 'h-4 w-4')}</button>
               </div>
               <div class="grid gap-1 bg-panel px-3.5 py-3">
@@ -199,7 +201,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     try {
       summaries = await api.listVideos();
       playlist.setIds(summaries.map((s) => s.id));
-      r.backCount.textContent = `片库 ${summaries.length} 部 · 全部来自外部链接`;
+      r.backCount.textContent = `片库 ${summaries.length} 部 · 站内 + 外链`;
     } catch (err) {
       r.backCount.textContent = errorMessage(err);
     }
@@ -229,7 +231,10 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     try {
       const pending = fetchVideo(id);
       engine.unload();
+      // 仍在点击的同步阶段：先解锁媒体播放，翻牌动画结束后才能有声播放（iOS 等）
+      engine.unlock();
       showOverlay(null);
+      r.sound.hidden = true;
       if (r.card.classList.contains('is-front')) {
         r.card.classList.remove('is-front');
         await wait(FLIP_MS);
@@ -252,8 +257,15 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     }
   };
 
-  const draw = () => present(playlist.draw());
-  const next = () => present(playlist.next());
+  // 第一张固定是站内托管的开场片：不依赖外链，任何网络下都能先看到画面、听到声音
+  let firstCard = true;
+  const opening = () => {
+    const first = firstCard && playlist.current === null ? summaries[0]?.id : undefined;
+    firstCard = false;
+    return first ? playlist.select(first) : null;
+  };
+  const draw = () => present(opening() ?? playlist.draw());
+  const next = () => present(opening() ?? playlist.next());
   const prev = () => {
     const id = playlist.prev();
     if (id) void present(id);
@@ -261,6 +273,11 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   };
 
   // ---------------- 状态 → 界面 ----------------
+
+  const showSoundButton = (label: string) => {
+    r.sound.querySelector('span')!.textContent = label;
+    r.sound.hidden = false;
+  };
 
   const showOverlay = (which: 'loading' | 'failed' | 'ended' | null) => {
     r.loading.hidden = which !== 'loading';
@@ -340,18 +357,25 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     engine.on('time', onTime),
     engine.on('volume', (volume, muted) => {
       renderVolume(volume, muted);
-      app.set({ volume, muted });
+      if (!muted) r.sound.hidden = true;
+      app.set({ volume });
     }),
     engine.on('source', (url, index, total) => {
       const host = url.replace(/^https?:\/\//, '').split('/')[0];
       r.loadingNote.textContent = index === 0 ? `正在连接 ${host}` : `主线路不通，正在尝试备用线路 ${index}/${total - 1} · ${host}`;
     }),
-    engine.on('autoplayMuted', () => toast('浏览器限制了有声自动播放，已静音播放，点音量按钮开启声音')),
+    engine.on('autoplayMuted', () => showSoundButton('点击开启声音')),
+    engine.on('playBlocked', () => showSoundButton('点击播放')),
     app.subscribe(renderPrefs),
   );
 
   r.back.onclick = () => void (app.get().mode === 'manual' ? draw() : next());
   r.tap.onclick = () => engine.toggle();
+  r.sound.onclick = () => {
+    r.sound.hidden = true;
+    engine.setMuted(false);
+    void engine.play();
+  };
   r.play.onclick = () => engine.toggle();
   r.prev.onclick = prev;
   r.next.onclick = () => void (app.get().mode === 'manual' ? draw() : next());
@@ -440,8 +464,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
 
   const s = app.get();
   r.video.volume = s.volume;
-  r.video.muted = s.muted;
-  renderVolume(s.volume, s.muted);
+  renderVolume(s.volume, false);
   renderPrefs();
 
   void loadLibrary().then(() => {

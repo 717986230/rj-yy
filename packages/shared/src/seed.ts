@@ -11,9 +11,62 @@ const GV = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample';
 const GV_HOST = 'commondatastorage.googleapis.com';
 const CREATED = '2026-10-27T00:00:00.000Z';
 
+/**
+ * 两段托管在 Vido 站点自己的短片（apps/web/public/media）：只要网站能打开，它们就能播放，
+ * 不受外部视频站点在当前网络下是否可达的影响。备用线路走 jsDelivr 加速的同一文件。
+ */
+const SITE_MEDIA = 'media';
+const JSDELIVR_MEDIA = 'https://cdn.jsdelivr.net/gh/717986230/rj-yy@main/apps/web/public/media';
+const SITE_SOURCE = 'Vido 站内';
+
 type Seed = Omit<Video, 'ownerId' | 'createdAt'>;
 
 const seeds: Seed[] = [
+  {
+    id: 'otti-intro',
+    title: { zh: '小獭 Otti 打招呼', de: 'Otti sagt Hallo', en: 'Otti Says Hello' },
+    src: `${SITE_MEDIA}/otti-intro.mp4`,
+    mirrors: [`${JSDELIVR_MEDIA}/otti-intro.mp4`],
+    duration: 16,
+    source: SITE_SOURCE,
+    tags: ['站内', '有声'],
+    subtitles: {
+      zh: [
+        { start: 0.6, end: 3.8, text: '你好！我是小獭 Otti。' },
+        { start: 4.3, end: 7.6, text: '每一张卡，都是一整部视频。' },
+        { start: 8.0, end: 11.5, text: '抽一张，从头看到尾。' },
+        { start: 12.2, end: 15.6, text: '中文在上，德语或英语在下。' },
+      ],
+      de: [
+        { start: 0.6, end: 3.8, text: 'Hallo! Ich bin Otti, der kleine Otter.' },
+        { start: 4.3, end: 7.6, text: 'Jede Karte ist ein ganzer Film.' },
+        { start: 8.0, end: 11.5, text: 'Zieh eine Karte und schau sie von Anfang bis Ende.' },
+        { start: 12.2, end: 15.6, text: 'Chinesisch oben, Deutsch oder Englisch unten.' },
+      ],
+      en: [
+        { start: 0.6, end: 3.8, text: "Hi! I'm Otti, the little otter." },
+        { start: 4.3, end: 7.6, text: 'Every card is a whole video.' },
+        { start: 8.0, end: 11.5, text: 'Draw one and watch it from start to end.' },
+        { start: 12.2, end: 15.6, text: 'Chinese on top, German or English below.' },
+      ],
+    },
+  },
+  {
+    id: 'bunny-wakeup',
+    title: { zh: '大雄兔起床', de: 'Big Buck Bunny wacht auf', en: 'Big Buck Bunny Wakes Up' },
+    src: `${SITE_MEDIA}/big-buck-bunny-wakeup.mp4`,
+    mirrors: [`${JSDELIVR_MEDIA}/big-buck-bunny-wakeup.mp4`],
+    duration: 5.3,
+    source: SITE_SOURCE,
+    tags: ['站内', '有声', 'Blender'],
+    subtitles: alignedTracks(
+      [
+        ['大兔子从洞里钻出来了。', 'Der große Hase kriecht aus seinem Bau.', 'The big rabbit crawls out of his burrow.'],
+        ['他伸了个大大的懒腰。', 'Er streckt sich ganz ausgiebig.', 'He has a really big stretch.'],
+      ],
+      { start: 0.3, length: 2.3, gap: 0.2 },
+    ),
+  },
   {
     id: 'xgplayer-demo',
     title: { zh: '西瓜播放器示例片', de: 'XGPlayer-Beispielvideo', en: 'XGPlayer Sample' },

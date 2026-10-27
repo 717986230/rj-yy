@@ -20,7 +20,7 @@ export type LocalizedTitle = Record<Lang, string>;
 export interface Video {
   id: string;
   title: LocalizedTitle;
-  /** 外部视频直链（mp4 / webm 等浏览器可直接播放的地址） */
+  /** 视频直链（mp4 / webm 等浏览器可直接播放的地址）；内置的站内短片使用相对路径 media/… */
   src: string;
   /** 备用外链：主链接打不开或卡住时按顺序自动切换，内容应与主链接相同 */
   mirrors?: string[];

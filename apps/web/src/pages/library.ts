@@ -34,7 +34,7 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
         <button data-ref="toggleAdd" class="btn-ghost ml-auto h-9 px-3">${icon('plus', 'h-4 w-4')}添加外链</button>
       </div>
       <div class="flex items-start gap-2">
-        <p class="flex-1 text-xs leading-relaxed text-mute">所有视频都从外部网站加载，能不能播取决于你当前的网络。点「检测」看看哪些能打开。</p>
+        <p class="flex-1 text-xs leading-relaxed text-mute">「Vido 站内」的视频和网站一起托管，任何网络都能播；其余来自外部网站，能不能播取决于你当前的网络，点「检测」看看哪些能打开。</p>
         <button data-ref="probe" class="btn-ghost h-8 shrink-0 px-3 text-xs">${icon('refresh', 'h-3.5 w-3.5')}检测外链</button>
       </div>
 
