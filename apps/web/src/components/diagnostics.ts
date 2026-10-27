@@ -5,7 +5,14 @@ const READY = ['0 无数据', '1 有元数据', '2 当前帧', '3 可继续', '4
 const NETWORK = ['0 空', '1 空闲', '2 下载中', '3 无来源'];
 const ERRORS = ['', '1 中止', '2 网络错误', '3 解码失败', '4 格式不支持 / 打不开'];
 
-function snapshot(video: HTMLVideoElement): [string, string][] {
+const short = (url: string) => (url.length > 90 ? `${url.slice(0, 60)}…（共 ${url.length} 字）` : url);
+
+interface Context {
+  card: string;
+  embed: string | null;
+}
+
+function snapshot(video: HTMLVideoElement, ctx: Context): [string, string][] {
   const rect = video.getBoundingClientRect();
   const quality = video.getVideoPlaybackQuality?.();
   const chain: string[] = [];
@@ -23,7 +30,9 @@ function snapshot(video: HTMLVideoElement): [string, string][] {
   return [
     ['版本', __APP_VERSION__],
     ['浏览器', navigator.userAgent],
-    ['视频地址', video.currentSrc || '（无）'],
+    ['当前卡片', ctx.card],
+    ...(ctx.embed ? ([['B 站播放器', short(ctx.embed)]] as [string, string][]) : []),
+    ['视频地址', video.currentSrc ? short(video.currentSrc) : '（无）'],
     ['加载状态', READY[video.readyState] ?? String(video.readyState)],
     ['网络状态', NETWORK[video.networkState] ?? String(video.networkState)],
     ['错误', video.error ? `${ERRORS[video.error.code] ?? video.error.code} ${video.error.message}` : '无'],
@@ -35,7 +44,7 @@ function snapshot(video: HTMLVideoElement): [string, string][] {
 }
 
 /** 黑屏诊断：实时显示视频元素的状态，方便用户截图反馈 */
-export function showDiagnostics(video: HTMLVideoElement): void {
+export function showDiagnostics(video: HTMLVideoElement, ctx: Context): void {
   const view = el(`
     <div class="grid w-[min(92vw,380px)] gap-3 rounded-3xl border border-line/10 bg-panel p-4 text-left">
       <div class="flex items-center justify-between">
@@ -47,7 +56,7 @@ export function showDiagnostics(video: HTMLVideoElement): void {
     </div>`);
   const rows = view.querySelector<HTMLElement>('[data-rows]')!;
   const render = () => {
-    rows.innerHTML = snapshot(video)
+    rows.innerHTML = snapshot(video, ctx)
       .map(([k, v]) => `<div class="grid grid-cols-[4.5em_minmax(0,1fr)] gap-2"><dt class="text-mute">${k}</dt><dd class="break-all text-fg">${esc(v)}</dd></div>`)
       .join('');
   };

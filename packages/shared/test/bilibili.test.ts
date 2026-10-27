@@ -21,7 +21,7 @@ describe('parseBilibili', () => {
     expect(bilibiliPageUrl({ bvid: 'BV19V411q7tM', page: 2 })).toBe('https://www.bilibili.com/video/BV19V411q7tM/?p=2');
     expect(bilibiliPageUrl({ aid: '801477868', page: 1 })).toBe('https://www.bilibili.com/video/av801477868/');
     expect(bilibiliEmbedUrl({ bvid: 'BV19V411q7tM', page: 2 })).toBe(
-      'https://player.bilibili.com/player.html?bvid=BV19V411q7tM&p=2&high_quality=1&danmaku=0&autoplay=1',
+      'https://player.bilibili.com/player.html?isOutside=true&bvid=BV19V411q7tM&p=2&high_quality=1&danmaku=0&autoplay=1',
     );
   });
 });

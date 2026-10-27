@@ -250,14 +250,15 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
    * B 站视频只能用官方嵌入播放器（跨域 iframe）：字幕是视频自带的，
    * 我们的字幕层、进度条和音量控制不起作用，所以切到 iframe 时把它们收起来。
    */
-  const showBilibili = (embed: string | null) => {
+  const showBilibili = (embed: string | null, page?: string) => {
     r.bili.hidden = !embed;
     r.tap.hidden = !!embed;
     r.subs.hidden = !!embed;
     r.video.hidden = !!embed;
     view.classList.toggle('is-embed', !!embed);
     r.bili.innerHTML = embed
-      ? `<iframe src="${esc(embed)}" class="h-full w-full border-0" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen scrolling="no" title="哔哩哔哩播放器"></iframe>`
+      ? `<iframe src="${esc(embed)}" class="h-full w-full border-0" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen scrolling="no" referrerpolicy="strict-origin-when-cross-origin" title="哔哩哔哩播放器"></iframe>
+         <a href="${esc(page ?? '')}" target="_blank" rel="noopener" class="absolute left-2 top-2 rounded-full bg-black/60 px-2.5 py-1 text-[11px] text-fg">在 B 站打开</a>`
       : '';
   };
 
@@ -287,7 +288,9 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       await turn(true);
       if (!alive) return;
       if (bili) {
-        showBilibili(bilibiliEmbedUrl(bili));
+        // 点击时为解锁声音放进去的静音短片不再需要，清掉，免得 <video> 里留着它
+        engine.unload();
+        showBilibili(bilibiliEmbedUrl(bili), video.src);
         if (!biliTipShown) {
           biliTipShown = true;
           toast('这是 B 站播放器：中德字幕在画面里，播放和音量请用播放器自己的按钮；看完左滑或点「下一部」', 5000);
@@ -561,7 +564,11 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   };
 
   r.help.onclick = () => showWelcome({ onStart: () => void draw() });
-  r.diag.onclick = () => showDiagnostics(r.video);
+  r.diag.onclick = () =>
+    showDiagnostics(r.video, {
+      card: current ? `${current.title.zh}（${parseBilibili(current.src) ? 'B 站播放器' : '视频'}）` : '还没翻开',
+      embed: r.bili.querySelector('iframe')?.src ?? null,
+    });
   r.logout.onclick = async () => {
     await api.logout();
     app.set({ user: null });

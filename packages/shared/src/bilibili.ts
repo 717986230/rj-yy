@@ -41,7 +41,10 @@ export function bilibiliPageUrl(ref: BilibiliRef): string {
 
 /** 官方嵌入播放器地址 */
 export function bilibiliEmbedUrl(ref: BilibiliRef, { autoplay = true } = {}): string {
-  const q = new URLSearchParams(ref.bvid ? { bvid: ref.bvid } : { aid: ref.aid! });
+  // isOutside=true：B 站官方分享的嵌入代码带这个参数，表示在 B 站以外的网站播放，缺了它外站常常只显示黑屏
+  const q = new URLSearchParams({ isOutside: 'true' });
+  if (ref.bvid) q.set('bvid', ref.bvid);
+  else q.set('aid', ref.aid!);
   q.set('p', String(ref.page));
   q.set('high_quality', '1');
   q.set('danmaku', '0');
