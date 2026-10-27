@@ -280,6 +280,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       const video = await pending;
       if (!alive) return;
       current = video;
+      kicks = 0;
       const bili = parseBilibili(video.src);
       if (!bili) engine.load(video, { autoplay: false });
       fillFront(video);
@@ -360,7 +361,29 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   };
 
   let seeking = false;
+  /**
+   * 画面看门狗：时间在走、却一直只解码了 1 帧（iOS WebKit 只出声不出画面的情况），
+   * 先让视频元素重新挂到渲染树上；还不行就从当前位置重新加载一次。
+   */
+  let kicks = 0;
+  const watchFrames = (t: number) => {
+    const q = r.video.getVideoPlaybackQuality?.();
+    if (!q || r.video.paused || !r.video.videoWidth || q.totalVideoFrames > 1) return;
+    if (kicks === 0 && t > 1.5) {
+      kicks = 1;
+      r.video.style.display = 'none';
+      void r.video.offsetHeight;
+      r.video.style.display = '';
+    } else if (kicks === 1 && t > 4) {
+      kicks = 2;
+      const at = t;
+      r.video.addEventListener('loadedmetadata', () => engine.seek(at), { once: true });
+      engine.reload();
+    }
+  };
+
   const onTime = (t: number, d: number) => {
+    watchFrames(t);
     const s = app.get();
     overlay.update(engine.item?.subtitles ?? null, t, { visible: s.subtitles, second: s.secondLang, offset: s.subtitleOffset });
     r.cur.textContent = formatTime(t);

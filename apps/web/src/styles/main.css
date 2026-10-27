@@ -208,7 +208,16 @@
 .card-front {
   background: #000;
 }
-.card:not(.is-front) .card-front,
+/*
+ * 正面（视频）永远可见，背面盖在上面：iOS 上的 WebKit 如果在视频加载时它处于 visibility:hidden，
+ * 之后只播声音、不再解码画面（时间在走、只有 1 帧）。所以只隐藏背面，从不隐藏正面。
+ */
+.card-front {
+  z-index: 1;
+}
+.card-back {
+  z-index: 2;
+}
 .card.is-front .card-back {
   visibility: hidden;
 }

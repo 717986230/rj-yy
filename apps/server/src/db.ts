@@ -85,6 +85,9 @@ function seedVideos(db: DB): void {
   db.transaction(() => {
     // 内置片库随代码更新：每次启动按最新内容覆盖内置条目（不影响用户添加的视频）
     SEED_VIDEOS.forEach((v, position) => insert.run({ ...toRow(v), position }));
+    // 已从内置片库移除的条目也从数据库删掉
+    const ids = SEED_VIDEOS.map((v) => v.id);
+    db.prepare(`DELETE FROM videos WHERE owner_id IS NULL AND id NOT IN (${ids.map(() => '?').join(',')})`).run(...ids);
   })();
 }
 
