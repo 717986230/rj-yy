@@ -204,6 +204,19 @@
     repeating-radial-gradient(circle at 50% 120%, transparent 0 14px, rgb(var(--c-aqua) / 0.05) 14px 15px),
     linear-gradient(160deg, #123236, #0b1a1d 70%);
 }
+/* 正面朝上且动画结束：去掉 3D，保证移动端浏览器在卡片里正常绘制视频 */
+.card.is-settled,
+.card.is-settled .card-front {
+  transform: none;
+  transition: none;
+}
+.card.is-settled .card-face {
+  backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+}
+.card.is-settled .card-back {
+  visibility: hidden;
+}
 .card-wrap.is-shuffling {
   animation: shuffle 0.46s ease-in-out;
 }

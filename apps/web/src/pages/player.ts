@@ -224,6 +224,18 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     if (v) r.titleSecond.textContent = v.title[app.get().secondLang];
   };
 
+  /**
+   * 翻牌结束后去掉 3D 变换：iOS Safari、微信等浏览器不会绘制处在 rotateY + backface-visibility
+   * 里的视频画面（只有全屏才看得到），所以正面朝上时让卡片回到普通平面布局。
+   */
+  const unsettle = () => {
+    if (!r.card.classList.contains('is-settled')) return;
+    r.card.style.transition = 'none';
+    r.card.classList.remove('is-settled');
+    void r.card.offsetWidth;
+    r.card.style.transition = '';
+  };
+
   /** 翻开一张卡：已翻开时先翻回背面，洗牌，再翻到正面并开始加载外链 */
   const present = async (id: string | null) => {
     if (!id || flipping) return;
@@ -236,6 +248,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       showOverlay(null);
       r.sound.hidden = true;
       if (r.card.classList.contains('is-front')) {
+        unsettle();
         r.card.classList.remove('is-front');
         await wait(FLIP_MS);
       }
@@ -250,6 +263,8 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       await wait(FLIP_MS * 0.6);
       if (!alive) return;
       void engine.play();
+      await wait(FLIP_MS * 0.45);
+      if (alive && r.card.classList.contains('is-front')) r.card.classList.add('is-settled');
     } catch (err) {
       toast(errorMessage(err));
     } finally {

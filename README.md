@@ -83,7 +83,7 @@ VITE_API_BASE=http://localhost:8787/api npm run dev
 
 ## 视频与字幕来源
 
-内置片库前两部是「Vido 站内」短片（`apps/web/public/media/`，同时经 jsDelivr 提供备用线路）：Otti 开场片（本项目自制，配逐句对齐的中 / 德 / 英字幕）和《Big Buck Bunny》片段（© Blender Foundation，CC BY 3.0）。第一次抽卡固定翻开 Otti 开场片。
+内置片库前两部是「Vido 站内」短片（`apps/web/public/media/`，同时经 jsDelivr 提供备用线路）：Otti 开场片（本项目自制）和《Big Buck Bunny》片段（© Blender Foundation，CC BY 3.0）。两部都配了德语旁白，用 Piper 离线语音合成的 Thorsten 德语声音（CC0）生成，字幕时间轴按旁白逐句对齐。第一次抽卡固定翻开 Otti 开场片。
 
 其余是第三方公开外链，排在前面的是中国大陆网络通常能直接访问的来源（字节跳动火山引擎 CDN 上的西瓜播放器示例视频、video.js CDN、w3school 中文站），后面是 W3C、Google 示例视频桶（含 Blender 开放电影）与 MDN 的素材，这些在部分网络下可能打不开。
 
