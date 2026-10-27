@@ -154,6 +154,11 @@
 }
 .card-wrap {
   position: relative;
+  /* 竖向滚动交给浏览器，横向滑动留给切换卡片；拖动时不选中文字 */
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
   width: min(100cqw, 72cqh);
   aspect-ratio: 5 / 7;
 }
@@ -231,6 +236,12 @@
   50% {
     opacity: 0.55;
   }
+}
+
+/* B 站播放器里时：进度、音量、字幕设置由 B 站播放器自己控制 */
+.is-embed :is([data-ref='seek'], [data-ref='cc'], [data-ref='langs'], [data-ref='tune'], [data-ref='mute'], [data-ref='volume']) {
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 /* ---------- 字幕 ---------- */
@@ -343,6 +354,8 @@ input[type='range'].range::-moz-range-thumb {
   z-index: 60;
   transform: translateX(-50%);
   max-width: calc(100% - 40px);
+  /* 提示只用来看，不挡住下面的卡片和按钮 */
+  pointer-events: none;
   animation: pop 0.25s ease-out both;
 }
 

@@ -20,8 +20,15 @@ export type LocalizedTitle = Record<Lang, string>;
 export interface Video {
   id: string;
   title: LocalizedTitle;
-  /** 视频直链（mp4 / webm 等浏览器可直接播放的地址）；内置的站内短片使用相对路径 media/… */
+  /**
+   * 视频直链（mp4 / webm 等浏览器可直接播放的地址）；内置的站内短片使用相对路径 media/…；
+   * 也可以是哔哩哔哩视频页地址（见 bilibili.ts），此时用 B 站官方播放器播放，字幕由视频自带。
+   */
   src: string;
+  /** 所属剧集 / 系列名，例如「Nicos Weg A1」，用于片库分组 */
+  series?: string;
+  /** 在剧集中的集数，从 1 开始 */
+  episode?: number;
   /** 备用外链：主链接打不开或卡住时按顺序自动切换，内容应与主链接相同 */
   mirrors?: string[];
   poster?: string;
@@ -75,6 +82,8 @@ export interface NewVideoInput {
   subtitlesDe?: string;
   subtitlesEn?: string;
   tags?: string[];
+  series?: string;
+  episode?: number;
 }
 
 export interface PasswordResetRequestResult {

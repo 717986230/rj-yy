@@ -1,4 +1,5 @@
-import { alignedTracks } from './subtitles';
+import { bilibiliPageUrl } from './bilibili';
+import { alignedTracks, emptyTracks } from './subtitles';
 import type { Video } from './types';
 
 /**
@@ -18,6 +19,37 @@ const CREATED = '2026-10-27T00:00:00.000Z';
 const SITE_MEDIA = 'media';
 const JSDELIVR_MEDIA = 'https://cdn.jsdelivr.net/gh/717986230/rj-yy@main/apps/web/public/media';
 const SITE_SOURCE = 'Vido 站内';
+
+/**
+ * 哔哩哔哩上带中德双语字幕的 DW 德语课与德语动画（用户上传，字幕压在画面里），
+ * 用 B 站官方嵌入播放器播放，Vido 不下载、不转存视频。编号来自 B 站公开页面。
+ */
+const bili = (
+  id: string,
+  bvid: string,
+  title: Seed['title'],
+  series: string,
+  tags: string[],
+): Seed => ({
+  id,
+  title,
+  src: bilibiliPageUrl(bvid.startsWith('av') ? { aid: bvid.slice(2), page: 1 } : { bvid, page: 1 }),
+  source: 'bilibili.com',
+  series,
+  episode: 1,
+  tags: ['B站', '中德字幕', ...tags],
+  subtitles: emptyTracks(),
+});
+
+const BILIBILI: Seed[] = [
+  bili('bili-nicos-weg-a1', 'BV19V411q7tM', { zh: '跟着 Nicos Weg 学德语 A1', de: 'Nicos Weg A1', en: "Nico's Way A1" }, 'Nicos Weg · DW 德语课', ['DW']),
+  bili('bili-nicos-weg-01', 'BV13u4y137e2', { zh: '尼克之路 第 1 集', de: 'Nicos Weg – Folge 1', en: "Nico's Way – Episode 1" }, 'Nicos Weg · DW 德语课', ['DW']),
+  bili('bili-nicos-weg-zhde', 'BV15Z4y1G76Q', { zh: 'Nicos Weg（中德字幕版）', de: 'Nicos Weg (chinesisch-deutsch)', en: "Nico's Way (Chinese-German)" }, 'Nicos Weg · DW 德语课', ['DW']),
+  bili('bili-bluey-de', 'BV1RT411z7xd', { zh: '布鲁伊（德语版）', de: 'Bluey auf Deutsch', en: 'Bluey in German' }, '德语动画', ['动画']),
+  bili('bili-peppa-wutz', 'av801477868', { zh: '小猪佩奇（德语版）', de: 'Peppa Wutz', en: 'Peppa Pig in German' }, '德语动画', ['动画']),
+  bili('bili-zoomania', 'BV1Zh411S7Tg', { zh: '疯狂动物城（德语版）', de: 'Zoomania', en: 'Zootopia in German' }, '德语电影', ['动画', '电影']),
+  bili('bili-kleiner-prinz', 'BV1W4411h7fW', { zh: '小王子 德语广播剧', de: 'Der kleine Prinz – Hörspiel', en: 'The Little Prince – Audio Drama' }, '德语广播剧', []),
+];
 
 type Seed = Omit<Video, 'ownerId' | 'createdAt'>;
 
@@ -51,6 +83,7 @@ const seeds: Seed[] = [
       ],
     },
   },
+  ...BILIBILI,
   {
     id: 'bunny-wakeup',
     title: { zh: '大雄兔起床', de: 'Big Buck Bunny wacht auf', en: 'Big Buck Bunny Wakes Up' },

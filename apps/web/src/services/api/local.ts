@@ -217,6 +217,8 @@ export class LocalApi implements ApiClient {
       ...(mirrors.length ? { mirrors } : {}),
       ...(input.poster ? { poster: input.poster.trim() } : {}),
       source,
+      ...(input.series?.trim() ? { series: input.series.trim() } : {}),
+      ...(input.episode ? { episode: input.episode } : {}),
       tags: input.tags?.length ? input.tags : ['我的'],
       subtitles,
       ownerId: user.id,

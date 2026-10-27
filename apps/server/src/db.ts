@@ -28,6 +28,8 @@ CREATE TABLE IF NOT EXISTS videos (
   subtitles_zh TEXT NOT NULL DEFAULT '[]',
   subtitles_de TEXT NOT NULL DEFAULT '[]',
   subtitles_en TEXT NOT NULL DEFAULT '[]',
+  series       TEXT,
+  episode      INTEGER,
   owner_id     TEXT REFERENCES users(id) ON DELETE CASCADE,
   created_at   TEXT NOT NULL
 );
@@ -58,6 +60,8 @@ function migrate(db: DB): void {
     title_en: "TEXT NOT NULL DEFAULT ''",
     mirrors: "TEXT NOT NULL DEFAULT '[]'",
     subtitles_en: "TEXT NOT NULL DEFAULT '[]'",
+    series: 'TEXT',
+    episode: 'INTEGER',
   };
   for (const [col, def] of Object.entries(added)) {
     if (!have.has(col)) db.exec(`ALTER TABLE videos ADD COLUMN ${col} ${def}`);
@@ -66,12 +70,20 @@ function migrate(db: DB): void {
 
 function seedVideos(db: DB): void {
   const insert = db.prepare(`
-    INSERT OR IGNORE INTO videos
-      (id, position, title_zh, title_de, title_en, src, mirrors, poster, duration, source, tags, subtitles_zh, subtitles_de, subtitles_en, owner_id, created_at)
+    INSERT INTO videos
+      (id, position, title_zh, title_de, title_en, src, mirrors, poster, duration, source, tags, subtitles_zh, subtitles_de, subtitles_en, series, episode, owner_id, created_at)
     VALUES
-      (@id, @position, @title_zh, @title_de, @title_en, @src, @mirrors, @poster, @duration, @source, @tags, @subtitles_zh, @subtitles_de, @subtitles_en, NULL, @created_at)
+      (@id, @position, @title_zh, @title_de, @title_en, @src, @mirrors, @poster, @duration, @source, @tags, @subtitles_zh, @subtitles_de, @subtitles_en, @series, @episode, NULL, @created_at)
+    ON CONFLICT(id) DO UPDATE SET
+      position = excluded.position, title_zh = excluded.title_zh, title_de = excluded.title_de, title_en = excluded.title_en,
+      src = excluded.src, mirrors = excluded.mirrors, poster = excluded.poster, duration = excluded.duration,
+      source = excluded.source, tags = excluded.tags, subtitles_zh = excluded.subtitles_zh,
+      subtitles_de = excluded.subtitles_de, subtitles_en = excluded.subtitles_en,
+      series = excluded.series, episode = excluded.episode
+    WHERE videos.owner_id IS NULL
   `);
   db.transaction(() => {
+    // 内置片库随代码更新：每次启动按最新内容覆盖内置条目（不影响用户添加的视频）
     SEED_VIDEOS.forEach((v, position) => insert.run({ ...toRow(v), position }));
   })();
 }
@@ -130,6 +142,8 @@ interface VideoRow {
   subtitles_zh: string;
   subtitles_de: string;
   subtitles_en: string;
+  series: string | null;
+  episode: number | null;
   owner_id: string | null;
   created_at: string;
 }
@@ -149,6 +163,8 @@ function toRow(v: Video): VideoRow {
     subtitles_zh: JSON.stringify(v.subtitles.zh),
     subtitles_de: JSON.stringify(v.subtitles.de),
     subtitles_en: JSON.stringify(v.subtitles.en),
+    series: v.series ?? null,
+    episode: v.episode ?? null,
     owner_id: v.ownerId,
     created_at: v.createdAt,
   };
@@ -168,6 +184,8 @@ function fromRow(r: VideoRow): Video {
     ...(r.poster ? { poster: r.poster } : {}),
     ...(r.duration != null ? { duration: r.duration } : {}),
     source: r.source,
+    ...(r.series ? { series: r.series } : {}),
+    ...(r.episode != null ? { episode: r.episode } : {}),
     tags: JSON.parse(r.tags),
     subtitles,
     ownerId: r.owner_id,
@@ -196,9 +214,9 @@ export const videos = {
     const { max } = db.prepare('SELECT COALESCE(MAX(position), -1) AS max FROM videos').get() as { max: number };
     db.prepare(`
       INSERT INTO videos
-        (id, position, title_zh, title_de, title_en, src, mirrors, poster, duration, source, tags, subtitles_zh, subtitles_de, subtitles_en, owner_id, created_at)
+        (id, position, title_zh, title_de, title_en, src, mirrors, poster, duration, source, tags, subtitles_zh, subtitles_de, subtitles_en, series, episode, owner_id, created_at)
       VALUES
-        (@id, @position, @title_zh, @title_de, @title_en, @src, @mirrors, @poster, @duration, @source, @tags, @subtitles_zh, @subtitles_de, @subtitles_en, @owner_id, @created_at)
+        (@id, @position, @title_zh, @title_de, @title_en, @src, @mirrors, @poster, @duration, @source, @tags, @subtitles_zh, @subtitles_de, @subtitles_en, @series, @episode, @owner_id, @created_at)
     `).run({ ...toRow(v), position: max + 1 });
   },
   remove: (db: DB, id: string) => db.prepare('DELETE FROM videos WHERE id = ?').run(id),

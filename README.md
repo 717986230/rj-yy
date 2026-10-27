@@ -85,6 +85,9 @@ VITE_API_BASE=http://localhost:8787/api npm run dev
 
 ## 视频与字幕来源
 
+**哔哩哔哩剧集（DW 德语课、德语动画）**：片库优先收录 B 站上标明「中德字幕」的视频，例如 DW 的 *Nicos Weg*、《布鲁伊》《小猪佩奇》德语版、《疯狂动物城》德语版、《小王子》德语广播剧。它们用 B 站官方嵌入播放器播放，Vido 不下载、不转存视频。中德字幕是视频画面自带的，所以这类卡片上 Vido 自己的字幕层、进度条和音量设置不起作用，要用 B 站播放器自己的控件。在片库里粘贴 B 站地址（`https://www.bilibili.com/video/BV…/?p=N`）就能添加，一个多 P 视频可以按集数范围一次加入多集，片库按剧集分组显示。b23.tv 短链接需要先在浏览器打开，再复制完整地址。
+
+
 内置片库前两部是「Vido 站内」短片（`apps/web/public/media/`，同时经 jsDelivr 提供备用线路）：Otti 开场片（本项目自制）和《Big Buck Bunny》片段（© Blender Foundation，CC BY 3.0）。两部都配了德语旁白，用 Piper 离线语音合成的 Thorsten 德语声音（CC0）生成，字幕时间轴按旁白逐句对齐。第一次抽卡固定翻开 Otti 开场片。
 
 其余是第三方公开外链，排在前面的是中国大陆网络通常能直接访问的来源（字节跳动火山引擎 CDN 上的西瓜播放器示例视频、video.js CDN、w3school 中文站），后面是 W3C、Google 示例视频桶（含 Blender 开放电影）与 MDN 的素材，这些在部分网络下可能打不开。

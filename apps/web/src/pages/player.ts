@@ -1,4 +1,4 @@
-import { Playlist, type PlayMode, type SecondaryLang, type Video, type VideoSummary } from '@vido/shared';
+import { bilibiliEmbedUrl, isBilibili, parseBilibili, Playlist, type PlayMode, type SecondaryLang, type Video, type VideoSummary } from '@vido/shared';
 import { el, esc, formatTime, on, refs, wait, type Cleanup } from '../app/dom';
 import type { RouteContext } from '../app/router';
 import { app } from '../app/state';
@@ -35,6 +35,7 @@ type Refs = {
   front: HTMLElement;
   video: HTMLVideoElement;
   tap: HTMLElement;
+  bili: HTMLElement;
   subs: HTMLElement;
   loading: HTMLElement;
   loadingNote: HTMLElement;
@@ -106,6 +107,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
               <div class="relative min-h-0 flex-1 bg-black">
                 <video data-ref="video" class="absolute inset-0 h-full w-full object-contain" playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" preload="auto"></video>
                 <div data-ref="tap" class="absolute inset-0" aria-hidden="true"></div>
+                <div data-ref="bili" class="absolute inset-0 bg-black" hidden></div>
                 <div data-ref="subs"></div>
                 <div data-ref="loading" class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-3" hidden><span class="spinner"></span><p data-ref="loadingNote" class="max-w-[85%] truncate rounded-full bg-black/50 px-3 py-1 text-[11px] text-mute"></p></div>
                 <div data-ref="failed" class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/80 p-6 text-center" hidden>
@@ -190,6 +192,9 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   let summaries: VideoSummary[] = [];
   const playlist = new Playlist([], app.get().mode);
   let flipping = false;
+  /** 当前翻开的视频（B 站视频不经过 VideoEngine） */
+  let current: Video | null = null;
+  let biliTipShown = false;
   let alive = true;
 
   // ---------------- 片库 ----------------
@@ -206,7 +211,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     try {
       summaries = await api.listVideos();
       playlist.setIds(summaries.map((s) => s.id));
-      r.backCount.textContent = `片库 ${summaries.length} 部 · 站内 + 外链`;
+      r.backCount.textContent = `片库 ${summaries.length} 部 · DW 德语课、德语动画`;
     } catch (err) {
       r.backCount.textContent = errorMessage(err);
     }
@@ -218,14 +223,15 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     const index = summaries.findIndex((s) => s.id === v.id);
     r.no.textContent = `No.${String(index + 1).padStart(2, '0')} / ${String(summaries.length).padStart(2, '0')}`;
     r.titleZh.textContent = v.title.zh;
-    r.source.innerHTML = `${icon('link', 'h-3 w-3')}${esc(v.source)}`;
+    const where = isBilibili(v.src) ? 'B站' : v.source;
+    r.source.innerHTML = `${icon('link', 'h-3 w-3')}${esc(v.episode ? `${where} · 第 ${v.episode} 集` : where)}`;
     r.dur.textContent = v.duration ? formatTime(v.duration) : '';
     renderTitleSecond();
     overlay.clear();
   };
 
   const renderTitleSecond = () => {
-    const v = engine.item;
+    const v = current;
     if (v) r.titleSecond.textContent = v.title[app.get().secondLang];
   };
 
@@ -240,6 +246,21 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     await wait(TURN_MS);
   };
 
+  /**
+   * B 站视频只能用官方嵌入播放器（跨域 iframe）：字幕是视频自带的，
+   * 我们的字幕层、进度条和音量控制不起作用，所以切到 iframe 时把它们收起来。
+   */
+  const showBilibili = (embed: string | null) => {
+    r.bili.hidden = !embed;
+    r.tap.hidden = !!embed;
+    r.subs.hidden = !!embed;
+    r.video.hidden = !!embed;
+    view.classList.toggle('is-embed', !!embed);
+    r.bili.innerHTML = embed
+      ? `<iframe src="${esc(embed)}" class="h-full w-full border-0" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen scrolling="no" title="哔哩哔哩播放器"></iframe>`
+      : '';
+  };
+
   /** 翻开一张卡：已翻开时先翻回背面，洗牌，再翻到正面并开始加载外链 */
   const present = async (id: string | null) => {
     if (!id || flipping) return;
@@ -247,6 +268,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     try {
       const pending = fetchVideo(id);
       engine.unload();
+      showBilibili(null);
       // 仍在点击的同步阶段：先解锁媒体播放，翻牌动画结束后才能有声播放（iOS 等）
       engine.unlock();
       showOverlay(null);
@@ -257,11 +279,19 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       r.wrap.classList.remove('is-shuffling');
       const video = await pending;
       if (!alive) return;
-      engine.load(video, { autoplay: false });
+      current = video;
+      const bili = parseBilibili(video.src);
+      if (!bili) engine.load(video, { autoplay: false });
       fillFront(video);
       await turn(true);
       if (!alive) return;
-      void engine.play();
+      if (bili) {
+        showBilibili(bilibiliEmbedUrl(bili));
+        if (!biliTipShown) {
+          biliTipShown = true;
+          toast('这是 B 站播放器：中德字幕在画面里，播放和音量请用播放器自己的按钮；看完左滑或点「下一部」', 5000);
+        }
+      } else void engine.play();
     } catch (err) {
       toast(errorMessage(err));
     } finally {
@@ -384,7 +414,6 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   // 左右滑动卡片：左滑下一部，右滑上一部。拖动时卡片跟手，松手后滑出再翻下一张。
   let swipe: { id: number; x: number; y: number; dx: number; locked: boolean | null } | null = null;
   let swiped = false;
-  r.wrap.style.touchAction = 'pan-y';
   r.wrap.addEventListener('pointerdown', (e) => {
     if (flipping || (e.target as HTMLElement).closest('button:not([data-ref="back"]), input')) return;
     swipe = { id: e.pointerId, x: e.clientX, y: e.clientY, dx: 0, locked: null };
@@ -393,7 +422,11 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     if (!swipe || e.pointerId !== swipe.id) return;
     const dx = e.clientX - swipe.x;
     const dy = e.clientY - swipe.y;
-    if (swipe.locked === null && Math.hypot(dx, dy) > 10) swipe.locked = Math.abs(dx) > Math.abs(dy);
+    if (swipe.locked === null && Math.hypot(dx, dy) > 10) {
+      swipe.locked = Math.abs(dx) > Math.abs(dy);
+      // 横向拖动归卡片：抓住指针，避免手指移出卡片或开始选中文字时手势被取消
+      if (swipe.locked) r.wrap.setPointerCapture(e.pointerId);
+    }
     if (!swipe.locked) return;
     swipe.dx = dx;
     r.card.style.transition = 'none';

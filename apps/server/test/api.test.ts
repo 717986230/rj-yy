@@ -63,9 +63,12 @@ describe('videos', () => {
     const list = await request(app).get('/api/videos').set('Authorization', `Bearer ${token}`);
     expect(list.body).toHaveLength(SEED_VIDEOS.length);
     expect(list.body[0]).not.toHaveProperty('subtitles');
-    const one = await request(app).get(`/api/videos/${list.body[1].id}`).set('Authorization', `Bearer ${token}`);
+    // B 站条目的字幕在视频画面里，不在片库数据里
+    const bili = list.body.find((v: { source: string }) => v.source === 'bilibili.com');
+    expect(bili).toMatchObject({ series: expect.any(String), episode: 1, hasSubtitles: false });
+    const one = await request(app).get(`/api/videos/${list.body[0].id}`).set('Authorization', `Bearer ${token}`);
     expect(one.body.subtitles.zh.length).toBeGreaterThan(0);
-    const vtt = await request(app).get(`/api/videos/${list.body[1].id}/subtitles/en.vtt`).set('Authorization', `Bearer ${token}`);
+    const vtt = await request(app).get(`/api/videos/${list.body[0].id}/subtitles/en.vtt`).set('Authorization', `Bearer ${token}`);
     expect(vtt.headers['content-type']).toContain('text/vtt');
     expect(vtt.text.startsWith('WEBVTT')).toBe(true);
   });
