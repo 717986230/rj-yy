@@ -1,0 +1,66 @@
+import { describe, expect, it } from 'vitest';
+import { Playlist, SEED_VIDEOS } from '../src';
+
+const ids = ['a', 'b', 'c', 'd'];
+const seq = (values: number[]) => {
+  let i = 0;
+  return () => values[i++ % values.length]!;
+};
+
+describe('Playlist', () => {
+  it('sequential mode loops through the library', () => {
+    const p = new Playlist(ids, 'sequential');
+    expect([p.next(), p.next(), p.next(), p.next(), p.next()]).toEqual(['a', 'b', 'c', 'd', 'a']);
+    expect(p.onEnded()).toEqual({ type: 'advance', id: 'b' });
+  });
+
+  it('shuffle mode plays every video once per round', () => {
+    const p = new Playlist(ids, 'shuffle', seq([0.9, 0.1, 0.5, 0.3, 0.7]));
+    const round = [p.next(), p.next(), p.next(), p.next()];
+    expect([...round].sort()).toEqual(ids);
+    const nextRoundFirst = p.next();
+    expect(nextRoundFirst).not.toBe(round[3]);
+  });
+
+  it('manual mode stops on end and draws a different card', () => {
+    const p = new Playlist(ids, 'manual', () => 0);
+    expect(p.draw()).toBe('a');
+    expect(p.draw()).toBe('b');
+    expect(p.onEnded()).toEqual({ type: 'stop' });
+  });
+
+  it('prev walks back through history and keeps forward branch trimmed', () => {
+    const p = new Playlist(ids, 'manual', () => 0.99);
+    p.draw();
+    p.draw();
+    const second = p.current;
+    p.draw();
+    expect(p.prev()).toBe(second);
+    p.select('a');
+    expect(p.prev()).toBe(second);
+  });
+
+  it('prev in sequential mode wraps to the previous library entry', () => {
+    const p = new Playlist(ids, 'sequential');
+    p.select('a');
+    expect(p.prev()).toBe('d');
+  });
+
+  it('handles an empty library', () => {
+    const p = new Playlist([], 'shuffle');
+    expect(p.next()).toBeNull();
+    expect(p.onEnded()).toEqual({ type: 'stop' });
+  });
+});
+
+describe('seed library', () => {
+  it('only references external http(s) video links with zh / de / en subtitles', () => {
+    for (const v of SEED_VIDEOS) {
+      expect(v.src).toMatch(/^https:\/\//);
+      expect(v.subtitles.zh.length).toBe(v.subtitles.de.length);
+      expect(v.subtitles.zh.length).toBe(v.subtitles.en.length);
+      if (v.duration) expect(v.subtitles.zh.at(-1)!.end).toBeLessThanOrEqual(v.duration);
+    }
+    expect(new Set(SEED_VIDEOS.map((v) => v.id)).size).toBe(SEED_VIDEOS.length);
+  });
+});

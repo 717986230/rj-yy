@@ -1,0 +1,24 @@
+{
+  "name": "vido",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Vido：抽卡式整片视频播放器，外链视频源，中德双语字幕",
+  "type": "module",
+  "workspaces": [
+    "packages/shared",
+    "apps/web",
+    "apps/server"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @vido/web",
+    "dev:server": "npm run dev -w @vido/server",
+    "build": "npm run build -w @vido/web",
+    "preview": "npm run preview -w @vido/web",
+    "test": "npm test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "check": "npm run typecheck && npm test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
