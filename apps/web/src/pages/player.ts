@@ -36,7 +36,10 @@ type Refs = {
   tap: HTMLElement;
   subs: HTMLElement;
   loading: HTMLElement;
+  loadingNote: HTMLElement;
   failed: HTMLElement;
+  failList: HTMLElement;
+  failNote: HTMLElement;
   ended: HTMLElement;
   fullscreen: HTMLButtonElement;
   no: HTMLElement;
@@ -98,10 +101,11 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
                 <video data-ref="video" class="absolute inset-0 h-full w-full object-contain" playsinline></video>
                 <div data-ref="tap" class="absolute inset-0" aria-hidden="true"></div>
                 <div data-ref="subs"></div>
-                <div data-ref="loading" class="pointer-events-none absolute inset-0 grid place-items-center" hidden><span class="spinner"></span></div>
+                <div data-ref="loading" class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-3" hidden><span class="spinner"></span><p data-ref="loadingNote" class="max-w-[85%] truncate rounded-full bg-black/50 px-3 py-1 text-[11px] text-mute"></p></div>
                 <div data-ref="failed" class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/80 p-6 text-center" hidden>
-                  <p class="text-sm font-bold">这个外链暂时打不开</p>
-                  <p class="text-xs text-mute">可能是对方网站限制了访问，或网络不稳定。</p>
+                  <p class="text-sm font-bold">这部视频的外链都打不开</p>
+                  <ul data-ref="failList" class="grid max-w-full gap-1 text-left text-[11px] leading-snug text-mute"></ul>
+                  <p data-ref="failNote" class="text-[11px] text-cream/80"></p>
                   <div class="flex gap-2">
                     <button data-action="retry" class="btn-ghost h-9 px-3">${icon('refresh', 'h-4 w-4')}重试</button>
                     <button data-action="skip" class="btn-ghost h-9 px-3">${icon('cards', 'h-4 w-4')}换一张</button>
@@ -275,6 +279,25 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       const action = playlist.onEnded();
       if (action.type === 'advance') void present(action.id);
     }
+    if (s === 'error') renderFailures();
+  };
+
+  /** 所有线路都失败：列出每条线路和原因；自动模式下几秒后换下一张 */
+  let skipTimer = 0;
+  const renderFailures = () => {
+    r.failList.innerHTML = engine.sourceFailures
+      .map((f, i) => `<li><b class="text-fg">${i === 0 ? '主线路' : `备用 ${i}`} · ${esc(f.host)}</b><br />${esc(f.reason)}</li>`)
+      .join('');
+    clearTimeout(skipTimer);
+    if (playlist.mode === 'manual') {
+      r.failNote.textContent = '可以重试，或换一张；也可以在片库里添加你能访问的视频链接。';
+      return;
+    }
+    r.failNote.textContent = '4 秒后自动播放下一张';
+    const failedItem = engine.item;
+    skipTimer = window.setTimeout(() => {
+      if (alive && engine.state === 'error' && engine.item === failedItem) void next();
+    }, 4000);
   };
 
   let seeking = false;
@@ -319,6 +342,10 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       renderVolume(volume, muted);
       app.set({ volume, muted });
     }),
+    engine.on('source', (url, index, total) => {
+      const host = url.replace(/^https?:\/\//, '').split('/')[0];
+      r.loadingNote.textContent = index === 0 ? `正在连接 ${host}` : `主线路不通，正在尝试备用线路 ${index}/${total - 1} · ${host}`;
+    }),
     engine.on('autoplayMuted', () => toast('浏览器限制了有声自动播放，已静音播放，点音量按钮开启声音')),
     app.subscribe(renderPrefs),
   );
@@ -331,8 +358,8 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   r.draw.onclick = () => void draw();
 
   r.failed.querySelector<HTMLButtonElement>('[data-action="retry"]')!.onclick = () => {
+    clearTimeout(skipTimer);
     engine.reload();
-    void engine.play();
   };
   r.failed.querySelector<HTMLButtonElement>('[data-action="skip"]')!.onclick = () => void draw();
   r.ended.querySelector<HTMLButtonElement>('[data-action="replay"]')!.onclick = () => {
@@ -427,6 +454,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
 
   return () => {
     alive = false;
+    clearTimeout(skipTimer);
     cleanups.forEach((c) => c());
     engine.destroy();
   };

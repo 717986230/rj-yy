@@ -201,6 +201,8 @@ export class LocalApi implements ApiClient {
     const user = this.requireUser();
     const source = externalSource(input.src);
     if (!source) throw new ApiError('BAD_REQUEST', '视频链接必须是 http(s) 外部链接');
+    const mirrors = (input.mirrors ?? []).map((m) => m.trim()).filter(Boolean);
+    if (mirrors.some((m) => !externalSource(m))) throw new ApiError('BAD_REQUEST', '备用链接必须是 http(s) 外部链接');
     if (input.poster && !externalSource(input.poster)) throw new ApiError('BAD_REQUEST', '封面链接必须是 http(s) 外部链接');
     if (!input.titleZh.trim()) throw new ApiError('BAD_REQUEST', '请填写中文标题');
     if (!input.titleDe.trim()) throw new ApiError('BAD_REQUEST', '请填写德语标题');
@@ -212,6 +214,7 @@ export class LocalApi implements ApiClient {
       id: crypto.randomUUID(),
       title: { zh: input.titleZh.trim(), de: input.titleDe.trim(), en: input.titleEn?.trim() || input.titleDe.trim() },
       src: input.src.trim(),
+      ...(mirrors.length ? { mirrors } : {}),
       ...(input.poster ? { poster: input.poster.trim() } : {}),
       source,
       tags: input.tags?.length ? input.tags : ['我的'],

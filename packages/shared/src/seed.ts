@@ -2,8 +2,10 @@ import { alignedTracks } from './subtitles';
 import type { Video } from './types';
 
 /**
- * 内置示例片库。视频全部是第三方站点的公开外链（Google 示例视频桶、MDN CC0 素材、
- * Blender 开放电影），应用不存放任何视频文件。字幕为演示用的中 / 德 / 英三语示例。
+ * 内置示例片库。视频全部是第三方站点的公开外链，应用不存放任何视频文件。
+ * 排在前面的是中国大陆网络通常能直接访问的来源（字节跳动火山引擎 CDN、w3school 中文站、
+ * W3C、video.js CDN），后面是 Google 示例视频桶与 MDN 的素材，在部分网络下可能打不开。
+ * 每条可带 mirrors 备用链接，播放器会自动切换。字幕为演示用的中 / 德 / 英三语示例句。
  */
 const GV = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample';
 const GV_HOST = 'commondatastorage.googleapis.com';
@@ -13,9 +15,107 @@ type Seed = Omit<Video, 'ownerId' | 'createdAt'>;
 
 const seeds: Seed[] = [
   {
+    id: 'xgplayer-demo',
+    title: { zh: '西瓜播放器示例片', de: 'XGPlayer-Beispielvideo', en: 'XGPlayer Sample' },
+    src: 'https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4',
+    mirrors: ['https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-360p.mp4'],
+    source: 'sf1-cdn-tos.huoshanstatic.com',
+    tags: ['国内线路'],
+    subtitles: alignedTracks(
+      [
+        ['准备好了吗？我们开始吧。', 'Bist du bereit? Dann fangen wir an.', "Ready? Let's begin."],
+        ['先看看周围有什么。', 'Schau dich erst einmal um.', "First, let's look around."],
+        ['这里的光线真好。', 'Das Licht hier ist wirklich schön.', 'The light here is really nice.'],
+        ['慢一点，别着急。', 'Langsam, keine Eile.', 'Slow down, no rush.'],
+        ['我们就在这儿停一下。', 'Lass uns hier kurz anhalten.', "Let's stop here for a moment."],
+      ],
+      { start: 1, length: 4, gap: 1 },
+    ),
+  },
+  {
+    id: 'oceans',
+    title: { zh: '海洋', de: 'Der Ozean', en: 'Oceans' },
+    src: 'https://vjs.zencdn.net/v/oceans.mp4',
+    source: 'vjs.zencdn.net',
+    tags: ['国内线路', '自然'],
+    subtitles: alignedTracks(
+      [
+        ['海浪一次又一次拍向岸边。', 'Die Wellen schlagen immer wieder ans Ufer.', 'The waves hit the shore again and again.'],
+        ['海水下面是另一个世界。', 'Unter dem Wasser liegt eine andere Welt.', 'Beneath the water lies another world.'],
+        ['鱼群在珊瑚之间穿行。', 'Fischschwärme ziehen zwischen den Korallen hindurch.', 'Schools of fish move between the corals.'],
+        ['阳光照进很深的地方。', 'Das Sonnenlicht reicht bis in die Tiefe.', 'Sunlight reaches deep down.'],
+        ['大海从来不会安静下来。', 'Das Meer wird nie ganz still.', 'The sea is never completely quiet.'],
+      ],
+      { start: 1.5, length: 5, gap: 2 },
+    ),
+  },
+  {
+    id: 'bear',
+    title: { zh: '河边的熊', de: 'Der Bär am Fluss', en: 'Bear by the River' },
+    src: 'https://www.w3school.com.cn/i/movie.mp4',
+    mirrors: ['https://www.w3schools.com/html/movie.mp4'],
+    source: 'www.w3school.com.cn',
+    tags: ['国内线路', '自然'],
+    subtitles: alignedTracks(
+      [
+        ['一只熊慢慢走过来。', 'Ein Bär kommt langsam näher.', 'A bear slowly walks closer.'],
+        ['它在找吃的东西。', 'Er sucht etwas zu fressen.', "It's looking for something to eat."],
+      ],
+      { start: 0.5, length: 4, gap: 0.8 },
+    ),
+  },
+  {
+    id: 'bunny-short',
+    title: { zh: '大雄兔片段', de: 'Big Buck Bunny – Ausschnitt', en: 'Big Buck Bunny Clip' },
+    src: 'https://www.w3school.com.cn/example/html5/mov_bbb.mp4',
+    mirrors: ['https://www.w3schools.com/html/mov_bbb.mp4'],
+    source: 'www.w3school.com.cn',
+    tags: ['国内线路', 'Blender'],
+    subtitles: alignedTracks(
+      [
+        ['一只大兔子从洞里走了出来。', 'Ein großer Hase kommt aus seinem Bau.', 'A big rabbit comes out of his burrow.'],
+        ['他伸了个懒腰，看看天空。', 'Er streckt sich und schaut in den Himmel.', 'He stretches and looks at the sky.'],
+      ],
+      { start: 0.5, length: 4, gap: 0.6 },
+    ),
+  },
+  {
+    id: 'bunny-trailer',
+    title: { zh: '大雄兔预告片', de: 'Big Buck Bunny – Trailer', en: 'Big Buck Bunny Trailer' },
+    src: 'https://media.w3.org/2010/05/bunny/trailer.mp4',
+    source: 'media.w3.org',
+    tags: ['Blender', '预告片'],
+    subtitles: alignedTracks(
+      [
+        ['森林里的早晨很安静。', 'Der Morgen im Wald ist ganz ruhig.', 'The morning in the forest is very quiet.'],
+        ['小鸟在树枝上醒来。', 'Ein kleiner Vogel wacht auf dem Ast auf.', 'A little bird wakes up on a branch.'],
+        ['可是，有人在树上看着他。', 'Aber jemand beobachtet ihn vom Baum aus.', 'But someone is watching him from the tree.'],
+        ['麻烦要来了。', 'Ärger ist im Anmarsch.', 'Trouble is on its way.'],
+      ],
+      { start: 1.5, length: 4.5, gap: 1.5 },
+    ),
+  },
+  {
+    id: 'sintel-trailer',
+    title: { zh: '辛特尔预告片', de: 'Sintel – Trailer', en: 'Sintel Trailer' },
+    src: 'https://media.w3.org/2010/05/sintel/trailer.mp4',
+    source: 'media.w3.org',
+    tags: ['Blender', '预告片'],
+    subtitles: alignedTracks(
+      [
+        ['雪下了整整三天。', 'Es schneit seit drei Tagen.', 'It has been snowing for three days.'],
+        ['我在找一条小龙。', 'Ich suche einen kleinen Drachen.', "I'm looking for a little dragon."],
+        ['你一个人走不了那么远。', 'Allein schaffst du so einen weiten Weg nicht.', "You can't go that far on your own."],
+        ['不管多远，我都会找到它。', 'Egal wie weit, ich werde ihn finden.', 'No matter how far, I will find him.'],
+      ],
+      { start: 1.5, length: 5, gap: 2 },
+    ),
+  },
+  {
     id: 'flower',
     title: { zh: '清晨花开', de: 'Die Blüte am Morgen', en: 'Morning Bloom' },
     src: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
+    mirrors: ['https://cdn.jsdelivr.net/gh/mdn/interactive-examples@main/live-examples/media/cc0-videos/flower.mp4'],
     duration: 5,
     source: 'interactive-examples.mdn.mozilla.net',
     tags: ['自然', 'CC0'],

@@ -20,8 +20,10 @@ export type LocalizedTitle = Record<Lang, string>;
 export interface Video {
   id: string;
   title: LocalizedTitle;
-  /** 外部视频直链（mp4 / webm / m3u8 等浏览器可播放的地址） */
+  /** 外部视频直链（mp4 / webm 等浏览器可直接播放的地址） */
   src: string;
+  /** 备用外链：主链接打不开或卡住时按顺序自动切换，内容应与主链接相同 */
+  mirrors?: string[];
   poster?: string;
   /** 秒，未知时省略 */
   duration?: number;
@@ -66,6 +68,7 @@ export interface NewVideoInput {
   titleDe: string;
   titleEn?: string;
   src: string;
+  mirrors?: string[];
   poster?: string;
   /** WebVTT 或 SRT 文本 */
   subtitlesZh?: string;

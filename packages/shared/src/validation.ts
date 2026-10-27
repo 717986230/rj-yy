@@ -27,3 +27,8 @@ export function externalSource(url: string): string | null {
 export function normalizeEmail(email: string): string {
   return email.trim().toLowerCase();
 }
+
+/** https 页面里加载 http 资源会被浏览器当作混合内容拦截 */
+export function isBlockedMixedContent(url: string, pageProtocol: string): boolean {
+  return pageProtocol === 'https:' && url.trim().toLowerCase().startsWith('http:');
+}

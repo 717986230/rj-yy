@@ -1,4 +1,4 @@
-import { externalSource, type NewVideoInput, type VideoSummary } from '@vido/shared';
+import { externalSource, isBlockedMixedContent, type NewVideoInput, type VideoSummary } from '@vido/shared';
 import { el, esc, formatTime, refs, type Cleanup } from '../app/dom';
 import type { RouteContext } from '../app/router';
 import { app } from '../app/state';
@@ -6,6 +6,7 @@ import { busy, errorMessage } from '../components/form';
 import { icon } from '../components/icons';
 import { toast } from '../components/toast';
 import { api } from '../services/api';
+import { probeSources, runLimited, type ProbeResult } from '../services/probe';
 
 const SAMPLE_ZH = `WEBVTT
 
@@ -32,12 +33,16 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
         <h1 class="text-lg font-bold">片库</h1>
         <button data-ref="toggleAdd" class="btn-ghost ml-auto h-9 px-3">${icon('plus', 'h-4 w-4')}添加外链</button>
       </div>
-      <p class="text-xs text-mute">所有视频都从外部网站加载，应用不保存视频文件。点一部直接翻开播放。</p>
+      <div class="flex items-start gap-2">
+        <p class="flex-1 text-xs leading-relaxed text-mute">所有视频都从外部网站加载，能不能播取决于你当前的网络。点「检测」看看哪些能打开。</p>
+        <button data-ref="probe" class="btn-ghost h-8 shrink-0 px-3 text-xs">${icon('refresh', 'h-3.5 w-3.5')}检测外链</button>
+      </div>
 
       <div class="scroll-area -mx-1 min-h-0 flex-1 px-1">
         <form data-ref="form" class="mb-4 grid gap-2.5 rounded-3xl border border-aqua/20 bg-aqua/[0.06] p-3.5" hidden novalidate>
           <p class="text-sm font-bold">添加一部外链视频</p>
           ${input('add-src', '视频直链 https://…/movie.mp4', 'url')}
+          <textarea id="add-mirrors" rows="2" placeholder="备用链接（可选，每行一条，主链接打不开时自动切换）" class="w-full resize-y rounded-2xl border border-line/15 bg-panel px-3.5 py-2 text-sm text-fg outline-none placeholder:text-mute/60 focus:border-aqua/60"></textarea>
           <div class="grid grid-cols-2 gap-2">
             ${input('add-title-zh', '中文标题')}
             ${input('add-title-de', 'Deutscher Titel')}
@@ -53,7 +58,7 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
           <button data-ref="submit" class="btn-primary w-full">保存到我的片库</button>
         </form>
 
-        <ul data-ref="list" class="grid gap-2.5 pb-2">
+        <ul data-ref="list" class="grid grid-cols-[minmax(0,1fr)] gap-2.5 pb-2">
           <li class="py-10 text-center text-sm text-mute">片库加载中…</li>
         </ul>
       </div>
@@ -61,6 +66,7 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
 
   const r = refs<{
     toggleAdd: HTMLButtonElement;
+    probe: HTMLButtonElement;
     form: HTMLFormElement;
     error: HTMLElement;
     submit: HTMLButtonElement;
@@ -70,6 +76,16 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
 
   const userId = app.get().user?.id;
   let confirmId: string | null = null;
+  const probes = new Map<string, ProbeResult | 'pending'>();
+
+  const probeChip = (id: string) => {
+    const p = probes.get(id);
+    if (!p) return '';
+    if (p === 'pending') return '<span class="chip">检测中…</span>';
+    return p.ok
+      ? `<span class="chip text-aqua" title="${esc(p.detail)}">可播放</span>`
+      : `<span class="chip text-coral" title="${esc(p.detail)}">打不开</span>`;
+  };
 
   const row = (v: VideoSummary, i: number) => {
     const mine = v.ownerId === userId;
@@ -93,6 +109,8 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
               ${v.duration ? `<span class="chip tabular-nums">${formatTime(v.duration)}</span>` : ''}
               ${v.hasSubtitles ? '<span class="chip text-aqua">双语字幕</span>' : ''}
               ${mine ? '<span class="chip text-cream">我的</span>' : ''}
+              ${v.mirrors?.length ? `<span class="chip">${v.mirrors.length + 1} 条线路</span>` : ''}
+              ${probeChip(v.id)}
             </span>
           </span>
         </button>
@@ -145,6 +163,20 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
     }
   };
 
+  r.probe.onclick = async () => {
+    if (!items.length) return;
+    r.probe.disabled = true;
+    items.forEach((v) => probes.set(v.id, 'pending'));
+    render();
+    await runLimited(items, 3, async (v) => {
+      probes.set(v.id, await probeSources([v.src, ...(v.mirrors ?? [])]));
+      render();
+    });
+    r.probe.disabled = false;
+    const ok = [...probes.values()].filter((p) => p !== 'pending' && p.ok).length;
+    toast(`检测完成：${ok} / ${items.length} 部在你的网络下可以播放`);
+  };
+
   r.toggleAdd.onclick = () => {
     r.form.hidden = !r.form.hidden;
     if (!r.form.hidden) view.querySelector<HTMLInputElement>('#add-src')!.focus();
@@ -162,8 +194,12 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
   r.form.onsubmit = async (e) => {
     e.preventDefault();
     const val = (id: string) => view.querySelector<HTMLInputElement | HTMLTextAreaElement>(`#${id}`)!.value.trim();
+    const mirrors = val('add-mirrors')
+      .split(/\s+/)
+      .filter(Boolean);
     const payload: NewVideoInput = {
       src: val('add-src'),
+      ...(mirrors.length ? { mirrors } : {}),
       titleZh: val('add-title-zh'),
       titleDe: val('add-title-de'),
       ...(val('add-title-en') ? { titleEn: val('add-title-en') } : {}),
@@ -172,9 +208,12 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
       subtitlesDe: val('add-sub-de'),
       subtitlesEn: val('add-sub-en'),
     };
-    r.error.textContent = !externalSource(payload.src)
+    const links = [payload.src, ...mirrors];
+    r.error.textContent = links.some((l) => !externalSource(l))
       ? '视频链接必须是 http(s) 开头的外部链接'
-      : !payload.titleZh || !payload.titleDe
+      : links.some((l) => isBlockedMixedContent(l, location.protocol))
+        ? '本站是 https，浏览器会拦截 http 视频，请换成 https 链接'
+        : !payload.titleZh || !payload.titleDe
         ? '请填写中文和德语标题'
         : '';
     if (r.error.textContent) return;

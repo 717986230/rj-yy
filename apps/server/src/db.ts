@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS videos (
   title_de     TEXT NOT NULL,
   title_en     TEXT NOT NULL DEFAULT '',
   src          TEXT NOT NULL,
+  mirrors      TEXT NOT NULL DEFAULT '[]',
   poster       TEXT,
   duration     REAL,
   source       TEXT NOT NULL,
@@ -45,16 +46,30 @@ export function openDatabase(file: string): DB {
   db.pragma('journal_mode = WAL');
   db.pragma('foreign_keys = ON');
   db.exec(SCHEMA);
+  migrate(db);
   seedVideos(db);
   return db;
+}
+
+/** 给旧版本创建的数据库补上新增的列 */
+function migrate(db: DB): void {
+  const have = new Set((db.prepare('PRAGMA table_info(videos)').all() as Array<{ name: string }>).map((c) => c.name));
+  const added: Record<string, string> = {
+    title_en: "TEXT NOT NULL DEFAULT ''",
+    mirrors: "TEXT NOT NULL DEFAULT '[]'",
+    subtitles_en: "TEXT NOT NULL DEFAULT '[]'",
+  };
+  for (const [col, def] of Object.entries(added)) {
+    if (!have.has(col)) db.exec(`ALTER TABLE videos ADD COLUMN ${col} ${def}`);
+  }
 }
 
 function seedVideos(db: DB): void {
   const insert = db.prepare(`
     INSERT OR IGNORE INTO videos
-      (id, position, title_zh, title_de, title_en, src, poster, duration, source, tags, subtitles_zh, subtitles_de, subtitles_en, owner_id, created_at)
+      (id, position, title_zh, title_de, title_en, src, mirrors, poster, duration, source, tags, subtitles_zh, subtitles_de, subtitles_en, owner_id, created_at)
     VALUES
-      (@id, @position, @title_zh, @title_de, @title_en, @src, @poster, @duration, @source, @tags, @subtitles_zh, @subtitles_de, @subtitles_en, NULL, @created_at)
+      (@id, @position, @title_zh, @title_de, @title_en, @src, @mirrors, @poster, @duration, @source, @tags, @subtitles_zh, @subtitles_de, @subtitles_en, NULL, @created_at)
   `);
   db.transaction(() => {
     SEED_VIDEOS.forEach((v, position) => insert.run({ ...toRow(v), position }));
@@ -107,6 +122,7 @@ interface VideoRow {
   title_de: string;
   title_en: string;
   src: string;
+  mirrors: string;
   poster: string | null;
   duration: number | null;
   source: string;
@@ -125,6 +141,7 @@ function toRow(v: Video): VideoRow {
     title_de: v.title.de,
     title_en: v.title.en,
     src: v.src,
+    mirrors: JSON.stringify(v.mirrors ?? []),
     poster: v.poster ?? null,
     duration: v.duration ?? null,
     source: v.source,
@@ -147,6 +164,7 @@ function fromRow(r: VideoRow): Video {
     id: r.id,
     title: { zh: r.title_zh, de: r.title_de, en: r.title_en || r.title_de },
     src: r.src,
+    ...(JSON.parse(r.mirrors).length ? { mirrors: JSON.parse(r.mirrors) as string[] } : {}),
     ...(r.poster ? { poster: r.poster } : {}),
     ...(r.duration != null ? { duration: r.duration } : {}),
     source: r.source,
@@ -178,9 +196,9 @@ export const videos = {
     const { max } = db.prepare('SELECT COALESCE(MAX(position), -1) AS max FROM videos').get() as { max: number };
     db.prepare(`
       INSERT INTO videos
-        (id, position, title_zh, title_de, title_en, src, poster, duration, source, tags, subtitles_zh, subtitles_de, subtitles_en, owner_id, created_at)
+        (id, position, title_zh, title_de, title_en, src, mirrors, poster, duration, source, tags, subtitles_zh, subtitles_de, subtitles_en, owner_id, created_at)
       VALUES
-        (@id, @position, @title_zh, @title_de, @title_en, @src, @poster, @duration, @source, @tags, @subtitles_zh, @subtitles_de, @subtitles_en, @owner_id, @created_at)
+        (@id, @position, @title_zh, @title_de, @title_en, @src, @mirrors, @poster, @duration, @source, @tags, @subtitles_zh, @subtitles_de, @subtitles_en, @owner_id, @created_at)
     `).run({ ...toRow(v), position: max + 1 });
   },
   remove: (db: DB, id: string) => db.prepare('DELETE FROM videos WHERE id = ?').run(id),

@@ -1,6 +1,23 @@
-import type { Video } from '@vido/shared';
+import { externalSource, isBlockedMixedContent, type Video } from '@vido/shared';
 
 export type PlayerStatus = 'idle' | 'loading' | 'playing' | 'paused' | 'ended' | 'error';
+
+/** 一条外链加载失败的记录，用于在界面上说明原因 */
+export interface SourceFailure {
+  url: string;
+  host: string;
+  reason: string;
+}
+
+/** 首帧到来之前最多等待多久，超时就换下一条备用链接 */
+const STALL_MS = 12_000;
+
+const MEDIA_ERRORS: Record<number, string> = {
+  1: '加载被中断',
+  2: '网络错误，连接被拒绝或中断',
+  3: '视频解码失败',
+  4: '链接打不开，或格式不受浏览器支持（可能被墙、防盗链或已失效）',
+};
 
 export interface PlayerEvents {
   /** 播放状态变化 */
@@ -10,6 +27,8 @@ export interface PlayerEvents {
   /** 浏览器拦截了有声自动播放，已改为静音播放 */
   autoplayMuted: () => void;
   volume: (volume: number, muted: boolean) => void;
+  /** 开始尝试某一条线路（主链接或备用链接） */
+  source: (url: string, index: number, total: number) => void;
 }
 
 type VideoWithFrameCallback = HTMLVideoElement & {
@@ -30,11 +49,17 @@ export class VideoEngine {
     time: new Set(),
     autoplayMuted: new Set(),
     volume: new Set(),
+    source: new Set(),
   };
   private status: PlayerStatus = 'idle';
   private frameHandle = 0;
   private rafHandle = 0;
   private current: Video | null = null;
+  private sources: string[] = [];
+  private sourceIndex = 0;
+  private failures: SourceFailure[] = [];
+  private stallTimer = 0;
+  private wantPlay = false;
   private readonly detach: Array<() => void> = [];
 
   constructor(private readonly video: VideoWithFrameCallback) {
@@ -61,9 +86,9 @@ export class VideoEngine {
     });
     bind('error', () => {
       if (!video.getAttribute('src')) return;
-      this.stopClock();
-      this.setStatus('error');
+      this.fail(MEDIA_ERRORS[video.error?.code ?? 0] ?? '未知错误');
     });
+    bind('loadeddata', () => clearTimeout(this.stallTimer));
     bind('loadedmetadata', () => this.emitTime());
     bind('seeked', () => this.emitTime());
     bind('timeupdate', () => {
@@ -94,21 +119,26 @@ export class VideoEngine {
     return this.status;
   }
 
-  /** 加载一条外链视频；autoplay 为 true 时立即播放 */
+  /** 当前所有线路都失败时的原因列表 */
+  get sourceFailures(): readonly SourceFailure[] {
+    return this.failures;
+  }
+
+  /** 加载一条外链视频：依次尝试主链接和备用链接；autoplay 为 true 时立即播放 */
   load(item: Video, { autoplay = true } = {}): void {
     this.stopClock();
     this.current = item;
+    this.sources = [item.src, ...(item.mirrors ?? [])];
+    this.failures = [];
+    this.wantPlay = autoplay;
     this.video.poster = item.poster ?? '';
-    this.video.src = item.src;
-    this.setStatus('loading');
-    this.video.load();
-    this.emitTime();
-    if (autoplay) void this.play();
+    this.trySource(0);
   }
 
   async play(): Promise<void> {
     if (!this.current) return;
-    if (this.status === 'error') this.reload();
+    this.wantPlay = true;
+    if (this.status === 'error') return this.reload();
     try {
       await this.video.play();
     } catch (err) {
@@ -116,9 +146,8 @@ export class VideoEngine {
         this.video.muted = true;
         this.listeners.autoplayMuted.forEach((l) => l());
         await this.video.play().catch(() => this.setStatus('paused'));
-      } else if ((err as DOMException)?.name !== 'AbortError') {
-        // 加载失败由 error 事件处理
       }
+      // 其他错误（加载失败等）由 error 事件和换线逻辑处理
     }
   }
 
@@ -146,24 +175,57 @@ export class VideoEngine {
     this.video.muted = muted;
   }
 
+  /** 从主链接开始重新尝试所有线路 */
   reload(): void {
     if (!this.current) return;
-    const t = this.video.currentTime;
-    this.video.src = this.current.src;
-    this.video.load();
-    if (t) this.video.currentTime = t;
+    this.failures = [];
+    this.wantPlay = true;
+    this.trySource(0);
   }
 
   /** 停止并清空当前视频（翻牌换片时调用） */
   unload(): void {
+    clearTimeout(this.stallTimer);
     this.stopClock();
     this.video.pause();
     this.video.removeAttribute('src');
     this.video.removeAttribute('poster');
     this.video.load();
     this.current = null;
+    this.sources = [];
     this.setStatus('idle');
     this.emitTime(0);
+  }
+
+  private trySource(index: number): void {
+    clearTimeout(this.stallTimer);
+    this.stopClock();
+    const url = this.sources[index];
+    if (url === undefined) {
+      this.video.removeAttribute('src');
+      this.setStatus('error');
+      return;
+    }
+    this.sourceIndex = index;
+    this.listeners.source.forEach((l) => l(url, index, this.sources.length));
+    if (typeof location !== 'undefined' && isBlockedMixedContent(url, location.protocol)) {
+      this.failures.push({ url, host: externalSource(url) ?? url, reason: '本站是 https，http 链接会被浏览器拦截' });
+      return this.trySource(index + 1);
+    }
+    this.setStatus('loading');
+    this.video.src = url;
+    this.video.load();
+    this.emitTime(0);
+    this.stallTimer = window.setTimeout(() => this.fail(`超过 ${STALL_MS / 1000} 秒没有加载出画面`), STALL_MS);
+    if (this.wantPlay) void this.play();
+  }
+
+  /** 当前线路失败：记录原因并换下一条 */
+  private fail(reason: string): void {
+    const url = this.sources[this.sourceIndex];
+    if (!url || this.video.getAttribute('src') !== url) return;
+    this.failures.push({ url, host: externalSource(url) ?? url, reason });
+    this.trySource(this.sourceIndex + 1);
   }
 
   destroy(): void {

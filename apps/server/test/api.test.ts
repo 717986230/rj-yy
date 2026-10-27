@@ -80,12 +80,13 @@ describe('videos', () => {
         titleZh: '我的片子',
         titleDe: 'Mein Film',
         src: 'https://example.com/movie.mp4',
+        mirrors: ['https://mirror.example.cn/movie.mp4'],
         subtitlesZh: 'WEBVTT\n\n00:00:01.000 --> 00:00:03.000\n你好',
         subtitlesDe: '1\n00:00:01,000 --> 00:00:03,000\nHallo',
         subtitlesEn: '00:00:01.000 --> 00:00:03.000\nHello',
       });
     expect(created.status).toBe(201);
-    expect(created.body).toMatchObject({ source: 'example.com', subtitles: { zh: [{ text: '你好' }], de: [{ text: 'Hallo' }], en: [{ text: 'Hello' }] } });
+    expect(created.body).toMatchObject({ source: 'example.com', mirrors: ['https://mirror.example.cn/movie.mp4'], subtitles: { zh: [{ text: '你好' }], de: [{ text: 'Hallo' }], en: [{ text: 'Hello' }] } });
     const id = created.body.id;
     expect((await request(app).get(`/api/videos/${id}`).set('Authorization', `Bearer ${b}`)).status).toBe(404);
     expect((await request(app).delete(`/api/videos/${SEED_VIDEOS[0]!.id}`).set('Authorization', `Bearer ${a}`)).status).toBe(403);
