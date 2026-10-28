@@ -1,0 +1,23 @@
+name: Discover Commons videos
+
+# 列出 Wikimedia Commons 上自由授权、有人声的视频分类（德语 / 英语），供扩充片库挑选
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/discover-commons.yml, scripts/discover_commons.py]
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/discover_commons.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: discover
+          path: discover.json
