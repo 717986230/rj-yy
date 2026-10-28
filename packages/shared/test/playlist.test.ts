@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { defaultSecondLang, isBilibili, Playlist, SEED_VIDEOS } from '../src';
+import { defaultSecondLang, isBilibili, parseGlossLine, Playlist, SEED_VIDEOS } from '../src';
+import { GLOSS } from '../src/data/gloss';
 
 const ids = ['a', 'b', 'c', 'd'];
 const seq = (values: number[]) => {
@@ -82,5 +83,24 @@ describe('default subtitle pair follows the spoken language', () => {
     expect(defaultSecondLang({ subtitles: { zh: cue, de: cue, en: [] } })).toBe('de');
     expect(defaultSecondLang({ subtitles: { zh: cue, de: [], en: cue } })).toBe('en');
     expect(defaultSecondLang({ subtitles: { zh: cue, de: cue, en: cue } })).toBeNull();
+  });
+});
+
+describe('word glosses', () => {
+  it('match their cues word for word', () => {
+    for (const [id, langs] of Object.entries(GLOSS)) {
+      const video = SEED_VIDEOS.find((v) => v.id === id);
+      expect(video, `gloss file for unknown video ${id}`).toBeDefined();
+      for (const lang of ['de', 'en'] as const) {
+        const lines = langs[lang];
+        if (!lines) continue;
+        const cues = video!.subtitles[lang];
+        expect(lines.length, `${id}.${lang} line count`).toBe(cues.length);
+        cues.forEach((cue, i) => {
+          const words = parseGlossLine(lines[i]!).words!.map(([w]) => w).join(' ');
+          expect(words, `${id}.${lang} line ${i + 1}`).toBe(cue.text.replace(/\s+/g, ' ').trim());
+        });
+      }
+    }
   });
 });

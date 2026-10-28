@@ -20,6 +20,10 @@ export interface Prefs {
    * 其他设备用原生视频层；canvas / native = 用户在诊断页里手动指定
    */
   videoPaint: 'auto' | 'canvas' | 'native';
+  /** 字幕里显示逐词词义和谐音 */
+  glosses: boolean;
+  /** 明暗主题 */
+  theme: 'dark' | 'light';
   /** 语速（播放速度），1 为原速 */
   playbackRate: number;
 }
@@ -42,6 +46,8 @@ const DEFAULT_PREFS: Prefs = {
   bilibiliInDeck: false,
   videoPaint: 'auto',
   playbackRate: 1,
+  theme: 'dark',
+  glosses: true,
 };
 
 const stored = storage.get<Partial<Prefs>>(PREFS_KEY, {});
@@ -56,10 +62,17 @@ export const app = new Store<AppState>({
   pendingVideoId: null,
 });
 
+function applyTheme(theme: Prefs['theme']): void {
+  if (typeof document === 'undefined') return;
+  document.documentElement.dataset.theme = theme;
+}
+applyTheme(app.get().theme);
+
 // 偏好设置变化时持久化
 app.subscribe((s) => {
-  const { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck, videoPaint, playbackRate } = s;
-  storage.set(PREFS_KEY, { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck, videoPaint, playbackRate });
+  const { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck, videoPaint, playbackRate, theme, glosses } = s;
+  storage.set(PREFS_KEY, { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck, videoPaint, playbackRate, theme, glosses });
+  applyTheme(theme);
 });
 
 const WELCOME_KEY = 'vido.welcomed';

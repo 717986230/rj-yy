@@ -116,3 +116,23 @@ export function defaultSecondLang(v: { audioLang?: SecondaryLang; subtitles?: Su
   if (en && !de) return 'en';
   return null;
 }
+
+/** 解析一行逐词词义：「词|词义 词|词义 … ## 谐音」 */
+export function parseGlossLine(line: string): Pick<Cue, 'words' | 'reading'> {
+  const [body = '', reading] = line.split(' ## ');
+  const words = body
+    .trim()
+    .split(' ')
+    .filter(Boolean)
+    .map((token): [string, string] => {
+      const bar = token.indexOf('|');
+      return bar < 0 ? [token, ''] : [token.slice(0, bar), token.slice(bar + 1)];
+    });
+  return { words, ...(reading?.trim() ? { reading: reading.trim() } : {}) };
+}
+
+/** 给一条字幕轨道按序号挂上逐词词义和谐音 */
+export function withGloss(cues: readonly Cue[], lines: readonly string[] | undefined): Cue[] {
+  if (!lines) return [...cues];
+  return cues.map((cue, i) => (lines[i] ? { ...cue, ...parseGlossLine(lines[i]!) } : cue));
+}

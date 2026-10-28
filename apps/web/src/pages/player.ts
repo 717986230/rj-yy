@@ -1,4 +1,4 @@
-import { bilibiliEmbedUrl, defaultSecondLang, isBilibili, parseBilibili, Playlist, type PlayMode, type SecondaryLang, type Video, type VideoSummary } from '@vido/shared';
+import { bilibiliEmbedUrl, isBilibili, parseBilibili, Playlist, type PlayMode, type SecondaryLang, type Video, type VideoSummary } from '@vido/shared';
 import { el, esc, formatTime, on, refs, wait, type Cleanup } from '../app/dom';
 import type { RouteContext } from '../app/router';
 import { app } from '../app/state';
@@ -8,6 +8,7 @@ import { otter } from '../components/otter';
 import { SubtitleOverlay } from '../components/subtitles';
 import { toast } from '../components/toast';
 import { showDiagnostics } from '../components/diagnostics';
+import { bindLibraryThemeSwitch, libraryThemeSwitch } from '../components/topbar';
 import { showWelcome } from '../components/welcome';
 import { api } from '../services/api';
 import { VideoEngine, type PlayerStatus } from '../services/player';
@@ -61,10 +62,11 @@ type Refs = {
   seek: HTMLInputElement;
   modes: HTMLElement;
   cc: HTMLButtonElement;
-  langs: HTMLElement;
+  topbar: HTMLElement;
   tune: HTMLButtonElement;
   tunePanel: HTMLElement;
   rate: HTMLButtonElement;
+  gloss: HTMLButtonElement;
   offset: HTMLElement;
   mute: HTMLButtonElement;
   volume: HTMLInputElement;
@@ -85,14 +87,15 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
         <button data-ref="diag" class="flex items-center gap-2 text-left" title="播放诊断">
           <span class="grid h-8 w-8 place-items-center rounded-xl bg-aqua text-aqua-ink">${icon('cards', 'h-[18px] w-[18px]')}</span>
           <span class="grid leading-none">
-            <span class="font-display text-xl font-semibold tracking-wide">Vido</span>
-            <span class="mt-0.5 text-[9px] tabular-nums text-mute">${__APP_VERSION__.split(' · ')[0]} · 诊断</span>
+            <span class="font-display text-lg font-semibold tracking-wide">Vido</span>
+            <span class="mt-0.5 whitespace-nowrap text-[9px] tabular-nums text-mute">${__APP_VERSION__.split(' · ')[0]}</span>
           </span>
         </button>
-        <nav class="flex items-center">
-          <a data-ref="library" href="#/library" class="icon-btn" aria-label="片库" title="片库">${icon('library')}</a>
-          <button data-ref="help" class="icon-btn" aria-label="玩法介绍" title="玩法介绍">${icon('help')}</button>
-          <button data-ref="logout" class="icon-btn" aria-label="退出登录" title="退出登录">${icon('logout')}</button>
+        <nav data-ref="topbar" class="flex items-center gap-0.5">
+          ${libraryThemeSwitch()}
+          <a data-ref="library" href="#/library" class="icon-btn !h-8 !w-8" aria-label="片库" title="片库">${icon('library', 'h-[18px] w-[18px]')}</a>
+          <button data-ref="help" class="icon-btn !h-8 !w-8" aria-label="玩法介绍" title="玩法介绍">${icon('help', 'h-[18px] w-[18px]')}</button>
+          <button data-ref="logout" class="icon-btn !h-8 !w-8" aria-label="退出登录" title="退出登录">${icon('logout', 'h-[18px] w-[18px]')}</button>
         </nav>
       </header>
 
@@ -112,7 +115,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
 
             <div data-ref="front" class="card-face card-front flex flex-col">
               <div class="relative min-h-0 flex-1 rounded-t-[22px] bg-black">
-                <video data-ref="video" class="absolute inset-0 h-full w-full rounded-t-[22px] object-contain" playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" preload="auto"></video>
+                <video data-ref="video" class="absolute inset-0 h-full w-full rounded-t-[22px] object-contain object-top" playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" preload="auto"></video>
                 <canvas data-ref="mirror" class="pointer-events-none absolute inset-0 h-full w-full rounded-t-[22px]" hidden></canvas>
                 <div data-ref="tap" class="absolute inset-0" aria-hidden="true"></div>
                 <div data-ref="bili" class="absolute inset-0 bg-black" hidden></div>
@@ -121,7 +124,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
                 <div data-ref="failed" class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/80 p-6 text-center" hidden>
                   <p class="text-sm font-bold">这部视频的外链都打不开</p>
                   <ul data-ref="failList" class="grid max-w-full gap-1 text-left text-[11px] leading-snug text-mute"></ul>
-                  <p data-ref="failNote" class="text-[11px] text-cream/80"></p>
+                  <p data-ref="failNote" class="text-[11px] text-[#f6e9d4]/80"></p>
                   <div class="flex gap-2">
                     <button data-action="retry" class="btn-ghost h-9 px-3">${icon('refresh', 'h-4 w-4')}重试</button>
                     <button data-action="skip" class="btn-ghost h-9 px-3">${icon('cards', 'h-4 w-4')}换一张</button>
@@ -162,9 +165,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
 
         <div class="relative flex items-center gap-1">
           <button data-ref="cc" class="icon-btn" aria-pressed="true" aria-label="字幕开关" title="字幕开关">${icon('cc')}</button>
-          <div data-ref="langs" class="seg grid-cols-2 !p-0.5" role="group" aria-label="字幕语言">
-            ${LANGS.map((l) => `<button data-lang="${l.id}" class="!h-7 px-2.5 !text-xs" aria-pressed="false">${l.label}</button>`).join('')}
-          </div>
+          <button data-ref="gloss" class="icon-btn !w-auto px-2 text-xs font-bold" aria-pressed="true" title="显示 / 隐藏逐词词义和谐音">词义</button>
           <button data-ref="tune" class="icon-btn" aria-label="字幕时间微调" title="字幕时间微调" aria-expanded="false">${icon('sliders')}</button>
           <button data-ref="rate" class="icon-btn !w-auto min-w-[2.75rem] px-1.5 text-xs font-bold tabular-nums" aria-label="语速" title="语速：点一下换一档">1×</button>
           <div class="ml-auto flex items-center">
@@ -195,7 +196,11 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   root.append(view);
 
   const engine = new VideoEngine(r.video);
-  const overlay = new SubtitleOverlay(r.subs);
+  const overlay = new SubtitleOverlay(r.subs, (cue) => {
+    // 点喇叭：从这一句开头重听
+    engine.seek(Math.max(0, cue.start - app.get().subtitleOffset));
+    void engine.play();
+  });
   const cleanups: Cleanup[] = [];
   const cache = new Map<string, Video>();
   let summaries: VideoSummary[] = [];
@@ -219,13 +224,19 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   const loadLibrary = async () => {
     try {
       const hidden = new Set(app.get().hidden);
-      const { bilibiliInDeck } = app.get();
-      // 牌堆只放确定能播的：内置的 B 站卡片默认不进（可在片库里打开），隐藏的卡片不进；自己添加的照常进
-      summaries = (await api.listVideos()).filter((v) => !hidden.has(v.id) && (bilibiliInDeck || v.ownerId !== null || !isBilibili(v.src)));
+      const { bilibiliInDeck, secondLang } = app.get();
+      // 中德 / 中英是两个片库：只放这种原声的视频（没标原声的自己添加的视频两边都放）。
+      // 牌堆只放确定能播的：内置的 B 站卡片默认不进（可在片库里打开），隐藏的卡片不进
+      summaries = (await api.listVideos()).filter(
+        (v) =>
+          !hidden.has(v.id) &&
+          (!v.audioLang || v.audioLang === secondLang) &&
+          (bilibiliInDeck || v.ownerId !== null || !isBilibili(v.src)),
+      );
       playlist.setIds(summaries.map((s) => s.id));
       // 预先取好每张卡的视频信息，点击抽卡时就能在手势里直接开始加载
       summaries.forEach((s) => void fetchVideo(s.id).catch(() => undefined));
-      r.backCount.textContent = `片库 ${summaries.length} 部 · 电影、动画、德语科普`;
+      r.backCount.textContent = `${secondLang === 'de' ? '中德' : '中英'}片库 · ${summaries.length} 部`;
     } catch (err) {
       r.backCount.textContent = errorMessage(err);
     }
@@ -275,7 +286,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       ? `<iframe src="${esc(embed)}" class="h-full w-full border-0" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen scrolling="no" referrerpolicy="strict-origin-when-cross-origin" title="哔哩哔哩播放器"></iframe>
          <div class="absolute left-2 top-2 flex gap-1.5 text-[11px]">
            <a href="${esc(page ?? '')}" target="_blank" rel="noopener" class="rounded-full bg-black/60 px-2.5 py-1 text-fg">在 B 站打开</a>
-           <button data-hide class="rounded-full bg-black/60 px-2.5 py-1 text-cream">打不开？隐藏这张</button>
+           <button data-hide class="rounded-full bg-black/60 px-2.5 py-1 text-[#f6e9d4]">打不开？隐藏这张</button>
          </div>`
       : '';
   };
@@ -308,9 +319,6 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       lastFrameCheck = { time: -1, frames: -1 };
       const bili = parseBilibili(video.src);
       if (!bili && !preloaded) engine.load(video, { autoplay: false });
-      // 第二字幕跟随原声：德语片默认中·德，英语片默认中·英（看的时候仍可手动切换）
-      const second = defaultSecondLang(video);
-      if (second && second !== app.get().secondLang) app.set({ secondLang: second });
       fillFront(video);
       await turn(true);
       if (!alive) return;
@@ -332,11 +340,29 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   // 第一张固定是站内托管的开场片：不依赖外链，任何网络下都能先看到画面、听到声音
   let firstCard = true;
   const opening = () => {
-    const first = firstCard && playlist.current === null ? summaries[0]?.id : undefined;
+    const fresh = playlist.current === null || !summaries.some((v) => v.id === playlist.current);
+    const first = firstCard && fresh ? summaries[0]?.id : undefined;
     firstCard = false;
     return first ? playlist.select(first) : null;
   };
   const draw = () => present(opening() ?? playlist.draw());
+
+  /** 右上角切换中德 / 中英片库：收起当前卡片，换成另一个片库的牌堆 */
+  let shownLib = app.get().secondLang;
+  const switchLibrary = async () => {
+    const lib = app.get().secondLang;
+    if (lib === shownLib) return;
+    shownLib = lib;
+    engine.unload();
+    showBilibili(null);
+    stopMirror();
+    showOverlay(null);
+    current = null;
+    if (r.card.classList.contains('is-front')) await turn(false);
+    firstCard = true;
+    await loadLibrary();
+    toast(lib === 'de' ? '中德片库：德语原声，中德字幕' : '中英片库：英语原声，中英字幕');
+  };
   const next = () => present(opening() ?? playlist.next());
   const prev = () => {
     const id = playlist.prev();
@@ -426,7 +452,8 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       const dh = v.videoHeight * scale;
       g.fillStyle = '#000';
       g.fillRect(0, 0, w, h);
-      g.drawImage(v, (w - dw) / 2, (h - dh) / 2, dw, dh);
+      // 和 <video> 的 object-position: top 一致：画面贴顶，下面留给字幕
+      g.drawImage(v, (w - dw) / 2, 0, dw, dh);
     };
     mirrorRaf = requestAnimationFrame(paint);
   };
@@ -460,7 +487,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
 
   const onTime = (t: number, d: number) => {
     const s = app.get();
-    overlay.update(engine.item?.subtitles ?? null, t, { visible: s.subtitles, second: s.secondLang, offset: s.subtitleOffset });
+    overlay.update(engine.item?.subtitles ?? null, t, { visible: s.subtitles, second: s.secondLang, offset: s.subtitleOffset, glosses: s.glosses });
     r.cur.textContent = formatTime(t);
     r.total.textContent = d ? formatTime(d) : '--:--';
     if (!seeking) {
@@ -473,11 +500,11 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   const renderPrefs = () => {
     const s = app.get();
     r.modes.querySelectorAll<HTMLButtonElement>('[data-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.mode === s.mode)));
-    r.langs.querySelectorAll<HTMLButtonElement>('[data-lang]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === s.secondLang)));
     r.cc.setAttribute('aria-pressed', String(s.subtitles));
     r.offset.textContent = `${s.subtitleOffset > 0 ? '+' : ''}${s.subtitleOffset.toFixed(1)}s`;
     engine.setRate(s.playbackRate);
     r.rate.textContent = formatRate(s.playbackRate);
+    r.gloss.setAttribute('aria-pressed', String(s.glosses));
     r.rate.setAttribute('aria-pressed', String(s.playbackRate !== 1));
     r.backHint.textContent = s.mode === 'manual' ? '点我抽一张' : '点我开始播放';
     r.draw.innerHTML = `${icon('cards')}${s.mode === 'manual' ? '抽一张卡' : '换一张'}`;
@@ -518,6 +545,8 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     engine.on('autoplayMuted', () => showSoundButton('点击开启声音')),
     engine.on('playBlocked', () => showSoundButton('点击播放')),
     app.subscribe(renderPrefs),
+    app.subscribe(() => void switchLibrary()),
+    bindLibraryThemeSwitch(r.topbar),
   );
 
   // 左右滑动卡片：左滑下一部，右滑上一部。拖动时卡片跟手，松手后滑出再翻下一张。
@@ -606,11 +635,8 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     app.set({ mode });
     toast(MODES.find((m) => m.id === mode)!.hint);
   };
-  r.langs.onclick = (e) => {
-    const lang = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-lang]')?.dataset.lang as SecondaryLang | undefined;
-    if (lang) app.set({ secondLang: lang });
-  };
   r.cc.onclick = () => app.set({ subtitles: !app.get().subtitles });
+  r.gloss.onclick = () => app.set({ glosses: !app.get().glosses });
   r.rate.onclick = () => {
     const i = RATES.indexOf(app.get().playbackRate);
     const playbackRate = RATES[(i + 1) % RATES.length]!;

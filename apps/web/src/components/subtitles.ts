@@ -1,43 +1,72 @@
-import { bilingualAt, type SecondaryLang, type SubtitleTracks } from '@vido/shared';
+import { cueAt, type Cue, type SecondaryLang, type SubtitleTracks } from '@vido/shared';
+import { esc } from '../app/dom';
+import { icon } from './icons';
+
+export interface SubtitleOptions {
+  visible: boolean;
+  second: SecondaryLang;
+  offset: number;
+  /** 显示逐词词义和谐音 */
+  glosses: boolean;
+}
 
 /**
- * 双语字幕层：中文在上，第二语言（德语 / 英语）在下。
- * 每次播放器报告时间就调用 update；只有文字变化时才改 DOM，避免每帧重排。
+ * 学习字幕（参照「点句即听」的排法）：
+ *   🔈 外语原句，每个词下面标中文词义
+ *      整句中文翻译
+ *      中文谐音读法（德语）
+ * 每次播放器报告时间就调用 update；只有换句时才改 DOM。点喇叭重听这一句。
  */
 export class SubtitleOverlay {
-  private zhEl: HTMLParagraphElement;
-  private secondEl: HTMLParagraphElement;
-  private lastZh: string | null = null;
-  private lastSecond: string | null = null;
+  private key: string | null = null;
+  private cue: Cue | null = null;
 
-  constructor(private readonly root: HTMLElement) {
+  constructor(
+    private readonly root: HTMLElement,
+    private readonly onReplay: (cue: Cue) => void,
+  ) {
     root.classList.add('subs');
     root.setAttribute('aria-live', 'off');
-    this.zhEl = document.createElement('p');
-    this.zhEl.className = 'sub-zh';
-    this.zhEl.lang = 'zh-CN';
-    this.secondEl = document.createElement('p');
-    this.secondEl.className = 'sub-second';
-    root.replaceChildren(this.zhEl, this.secondEl);
+    root.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).closest('[data-replay]') && this.cue) this.onReplay(this.cue);
+    });
   }
 
-  update(tracks: SubtitleTracks | null, time: number, opts: { visible: boolean; second: SecondaryLang; offset: number }) {
-    const line =
-      tracks && opts.visible ? bilingualAt(tracks, time + opts.offset, opts.second) : { zh: null, second: null };
-    if (line.zh !== this.lastZh) {
-      this.zhEl.textContent = line.zh ?? '';
-      this.lastZh = line.zh;
+  update(tracks: SubtitleTracks | null, time: number, opts: SubtitleOptions) {
+    const t = time + opts.offset;
+    const second = tracks && opts.visible ? cueAt(tracks[opts.second], t) : null;
+    const zh = tracks && opts.visible ? cueAt(tracks.zh, t) : null;
+    const key = `${second?.start ?? ''}|${second?.text ?? ''}|${zh?.text ?? ''}|${opts.glosses}|${opts.second}`;
+    if (key === this.key) return;
+    this.key = key;
+    this.cue = second ?? zh;
+    if (!second && !zh) {
+      this.root.replaceChildren();
+      return;
     }
-    if (line.second !== this.lastSecond) {
-      this.secondEl.textContent = line.second ?? '';
-      this.secondEl.lang = opts.second;
-      this.lastSecond = line.second;
-    }
+    const words = second?.words?.length ? second.words : second?.text.split(/\s+/).filter(Boolean).map((w) => [w, ''] as [string, string]);
+    const glossed = opts.glosses && words?.some(([, g]) => g);
+    const line = words
+      ?.map(([w, g]) =>
+        glossed
+          ? `<span class="sub-w"><span class="sub-w-t">${esc(w)}</span><span class="sub-w-g">${esc(g) || '&nbsp;'}</span></span>`
+          : `<span class="sub-w"><span class="sub-w-t">${esc(w)}</span></span>`,
+      )
+      .join('');
+    this.root.innerHTML = `
+      <div class="sub-block">
+        <button data-replay class="sub-replay" aria-label="重听这一句" title="重听这一句">${icon('speaker', 'h-4 w-4')}</button>
+        <div class="min-w-0 flex-1">
+          ${line ? `<p class="sub-second" lang="${opts.second}">${line}</p>` : ''}
+          ${zh ? `<p class="sub-zh" lang="zh-CN">${esc(zh.text)}</p>` : ''}
+          ${opts.glosses && second?.reading ? `<p class="sub-reading" lang="zh-CN">${esc(second.reading)}</p>` : ''}
+        </div>
+      </div>`;
   }
 
   clear() {
-    this.zhEl.textContent = '';
-    this.secondEl.textContent = '';
-    this.lastZh = this.lastSecond = null;
+    this.root.replaceChildren();
+    this.key = null;
+    this.cue = null;
   }
 }

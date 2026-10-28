@@ -11,6 +11,7 @@ import {
 import { el, esc, formatTime, refs, type Cleanup } from '../app/dom';
 import type { RouteContext } from '../app/router';
 import { app } from '../app/state';
+import { bindLibraryThemeSwitch, libraryThemeSwitch } from '../components/topbar';
 import { busy, errorMessage } from '../components/form';
 import { icon } from '../components/icons';
 import { toast } from '../components/toast';
@@ -40,7 +41,8 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
       <div class="flex items-center gap-1">
         <a href="#/play" class="icon-btn -ml-2" aria-label="返回播放">${icon('back')}</a>
         <h1 class="text-lg font-bold">片库</h1>
-        <button data-ref="toggleAdd" class="btn-ghost ml-auto h-9 px-3">${icon('plus', 'h-4 w-4')}添加视频</button>
+        <div data-ref="topbar" class="ml-auto">${libraryThemeSwitch()}</div>
+        <button data-ref="toggleAdd" class="btn-ghost h-9 px-2.5" aria-label="添加视频" title="添加视频">${icon('plus', 'h-4 w-4')}添加</button>
       </div>
       <div class="flex items-start gap-2">
         <p class="flex-1 text-xs leading-relaxed text-mute">站内影片随网站托管，任何网络都能播。B 站卡片是实验功能：用 B 站播放器，可能因视频被删或地区限制打不开，默认不进抽卡牌堆，可以在这里点开播放。</p>
@@ -88,6 +90,7 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
     toggleAdd: HTMLButtonElement;
     probe: HTMLButtonElement;
     biliDeck: HTMLButtonElement;
+    topbar: HTMLElement;
     form: HTMLFormElement;
     biliFields: HTMLElement;
     error: HTMLElement;
@@ -153,7 +156,10 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
     // 按剧集分组：同一剧集的各集排在一起，组标题显示集数
     const order: string[] = [];
     const groups = new Map<string, Array<[VideoSummary, number]>>();
+    const lib = app.get().secondLang;
     items.forEach((v, i) => {
+      // 中德 / 中英两个片库分开显示；没标原声的自己添加的视频两边都显示
+      if (v.audioLang && v.audioLang !== lib) return;
       const key = hiddenIds().has(v.id) ? '\u0000已隐藏' : (v.series ?? '');
       if (!groups.has(key)) groups.set(key, []), order.push(key);
       groups.get(key)!.push([v, i]);
@@ -163,7 +169,7 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
     // 剧集在前，单部视频在后
     const rank = (k: string) => (k.startsWith('\u0000') ? 2 : k ? 0 : 1);
     order.sort((a, b) => rank(a) - rank(b));
-    r.list.innerHTML = items.length
+    r.list.innerHTML = order.length
       ? order
           .map((key) => {
             const list = groups.get(key)!.sort(([a], [b]) => (a.episode ?? 0) - (b.episode ?? 0));
@@ -354,5 +360,15 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
   };
 
   void load();
-  return () => undefined;
+  let lastLib = app.get().secondLang;
+  const offLib = app.subscribe((st) => {
+    if (st.secondLang === lastLib) return;
+    lastLib = st.secondLang;
+    render();
+  });
+  const offTopbar = bindLibraryThemeSwitch(r.topbar);
+  return () => {
+    offLib();
+    offTopbar();
+  };
 }

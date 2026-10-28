@@ -9,6 +9,10 @@ export interface Cue {
   /** 秒 */
   end: number;
   text: string;
+  /** 逐词词义（德语 / 英语字幕用）：[原词（含标点）, 中文词义]，词义为空表示不标 */
+  words?: Array<[word: string, gloss: string]>;
+  /** 中文谐音读法（德语字幕用） */
+  reading?: string;
 }
 
 /** 每种语言一条独立的字幕轨，按播放时间分别取当前句 */

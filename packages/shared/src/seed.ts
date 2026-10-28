@@ -1,8 +1,9 @@
 import { bilibiliPageUrl } from './bilibili';
 import { BIG_BUCK_BUNNY_SUBTITLES } from './data/big-buck-bunny';
+import { GLOSS } from './data/gloss';
 import { TEARS_OF_STEEL_SUBTITLES } from './data/tears-of-steel';
 import { TERRA_X_CLIPS } from './data/terra-x';
-import { emptyTracks } from './subtitles';
+import { emptyTracks, withGloss } from './subtitles';
 import type { Video } from './types';
 
 /**
@@ -38,6 +39,7 @@ const bili = (
   source: 'bilibili.com',
   series,
   episode: 1,
+  audioLang: 'de',
   tags: ['B站', '中德字幕', ...tags],
   subtitles: emptyTracks(),
 });
@@ -131,4 +133,11 @@ const seeds: Seed[] = [
   ...BILIBILI,
 ];
 
-export const SEED_VIDEOS: readonly Video[] = seeds.map((s) => ({ ...s, ownerId: null, createdAt: CREATED }));
+/** 挂上逐词词义和谐音（content/gloss，见 scripts/build_gloss.py） */
+const glossed = (s: Seed): Seed => {
+  const g = GLOSS[s.id];
+  if (!g) return s;
+  return { ...s, subtitles: { ...s.subtitles, de: withGloss(s.subtitles.de, g.de), en: withGloss(s.subtitles.en, g.en) } };
+};
+
+export const SEED_VIDEOS: readonly Video[] = seeds.map((s) => ({ ...glossed(s), ownerId: null, createdAt: CREATED }));
