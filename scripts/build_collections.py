@@ -15,6 +15,7 @@ Usage: python3 scripts/build_collections.py
 """
 
 import glob
+import html
 import json
 import os
 import re
@@ -31,7 +32,7 @@ META = {
 
 def parse_srt(path):
     cues = []
-    text = open(path, encoding="utf-8").read().replace("\r", "").strip()
+    text = html.unescape(open(path, encoding="utf-8").read()).replace("\r", "").strip()
     for block in re.split(r"\n\s*\n", text):
         lines = block.split("\n")
         idx = next((i for i, l in enumerate(lines) if "-->" in l), None)
@@ -40,8 +41,15 @@ def parse_srt(path):
         a, b = [t.strip().split(" ")[0] for t in lines[idx].split("-->")]
         sec = lambda t: (lambda h, m, s: int(h) * 3600 + int(m) * 60 + float(s.replace(",", ".")))(*t.split(":"))
         body = re.sub(r"<[^>]+>", "", " ".join(lines[idx + 1:]))
+        if "â" in body:  # UTF-8 被当成 Latin-1 读过一次的字幕（isnât → isn’t）
+            try:
+                body = body.encode("latin-1").decode("utf-8")
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                pass
+        # 去掉音效说明（[music]、♪），只剩音效的句子整条不要
+        body = re.sub(r"\[[^\]]*\]|♪", " ", body)
         body = re.sub(r"\s+", " ", body).strip()
-        if body:
+        if body and not re.fullmatch(r"(?i)(music|tone|beeping|applause|laughter|silence)\.?", body):
             cues.append((round(sec(a), 2), round(sec(b), 2), body))
     return cues
 
@@ -87,8 +95,8 @@ def main():
             json.dump(tracks, open(f"{SUBS}/{vid}.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
             cards.append({
                 "id": vid,
-                "title": {"zh": zh_title, lang: m["title"], **({"en": en_title} if lang != "en" else {}),
-                          **({"de": m["title"]} if lang == "en" else {})},
+                # 英语片用译文文件第一行的英文标题（Commons 文件名常带 YouTube 编号等杂质）
+                "title": {"zh": zh_title, "de": m["title"] if lang == "de" else en_title, "en": en_title},
                 "src": f"https://cdn.jsdelivr.net/gh/{REPO}@{m['shard']}/{m['path']}",
                 "mirrors": [f"https://cdn.statically.io/gh/{REPO}/{m['shard']}/{m['path']}"],
                 "duration": m["duration"],

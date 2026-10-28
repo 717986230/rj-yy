@@ -1,0 +1,29 @@
+name: Check media URLs
+
+# 在 GitHub 服务器上检查媒体地址能否访问（状态码、类型、大小、是否支持断点续传），结果存到 reports 分支的 urls.txt
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: 空格分隔的地址；留空则检查内置合集的每个视频
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check
+        run: |
+          URLS="${{ inputs.urls }}"
+          if [ -z "$URLS" ]; then
+            URLS=$(grep -oE '"https://[^"]+\.mp4"' packages/shared/src/data/collections.ts | tr -d '"')
+          fi
+          for u in $URLS; do
+            line=$(curl -s -o /dev/null -r 0-1023 -w '%{http_code} %{content_type} %{size_download}' --max-time 60 "$u")
+            echo "$line $u"
+          done | tee urls.txt
+      - run: bash scripts/save_report.sh urls.txt
