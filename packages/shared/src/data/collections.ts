@@ -550,6 +550,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-die-himmelsscheibe-von-nebra-cc-by-4-0.json"
  },
  {
+  "id": "terra-x-die-katastrophe-von-fukushima",
+  "title": {
+   "zh": "福岛核灾难",
+   "de": "Die Katastrophe von Fukushima",
+   "en": "The Fukushima disaster"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-katastrophe-von-fukushima.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-katastrophe-von-fukushima.mp4"
+  ],
+  "duration": 112.0,
+  "source": "ZDF/TerraX · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-katastrophe-von-fukushima.json"
+ },
+ {
   "id": "terra-x-die-lebensraume-der-lowen",
   "title": {
    "zh": "狮子的栖息地",
@@ -1115,6 +1136,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-geschichte-der-hauptstadt-berlin-cc-by-sa-4-0.json"
+ },
+ {
+  "id": "terra-x-geschichte-der-klimakonferenz",
+  "title": {
+   "zh": "气候大会的历史",
+   "de": "Geschichte der Klimakonferenz",
+   "en": "History of the climate conference"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/geschichte-der-klimakonferenz.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/geschichte-der-klimakonferenz.mp4"
+  ],
+  "duration": 91.7,
+  "source": "ZDF/logo · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-geschichte-der-klimakonferenz.json"
  },
  {
   "id": "terra-x-gesundheitsrisiko-einsamkeit",
