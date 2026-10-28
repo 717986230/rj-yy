@@ -256,6 +256,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-der-nordliche-polarkreis.json"
  },
  {
+  "id": "terra-x-die-anasazi-hochkultur-im-chaco",
+  "title": {
+   "zh": "阿纳萨齐人：查科峡谷的高度文明",
+   "de": "Die Anasazi - Hochkultur im Chaco",
+   "en": "The Anasazi, a high culture in Chaco Canyon"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/die-anasazi-hochkultur-im-chaco.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/die-anasazi-hochkultur-im-chaco.mp4"
+  ],
+  "duration": 104.0,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-anasazi-hochkultur-im-chaco.json"
+ },
+ {
   "id": "terra-x-die-anden-als-klimascheide",
   "title": {
    "zh": "安第斯山脉：气候分界线",
@@ -1136,6 +1157,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-hunde-im-antiken-rom.json"
+ },
+ {
+  "id": "terra-x-impfreihenfolge-bei-corona",
+  "title": {
+   "zh": "新冠疫苗的接种顺序",
+   "de": "Impfreihenfolge bei Corona",
+   "en": "Corona vaccination order"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/impfreihenfolge-bei-corona.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/impfreihenfolge-bei-corona.mp4"
+  ],
+  "duration": 87.0,
+  "source": "ZDF/logo · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-impfreihenfolge-bei-corona.json"
  },
  {
   "id": "terra-x-infraschall-wie-elefanten-kommunizieren",
