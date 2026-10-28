@@ -466,6 +466,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-die-erfindung-der-batterie.json"
  },
  {
+  "id": "terra-x-die-ermordung-der-juden-im-nationalsozialismus",
+  "title": {
+   "zh": "纳粹时期对犹太人的屠杀",
+   "de": "Die Ermordung der Juden im Nationalsozialismus",
+   "en": "The murder of the Jews under National Socialism"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-ermordung-der-juden-im-nationalsozialismus.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-ermordung-der-juden-im-nationalsozialismus.mp4"
+  ],
+  "duration": 230.1,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-ermordung-der-juden-im-nationalsozialismus.json"
+ },
+ {
   "id": "terra-x-die-flucht-der-juden-vor-den-nationalsozialisten",
   "title": {
    "zh": "犹太人逃离纳粹",
