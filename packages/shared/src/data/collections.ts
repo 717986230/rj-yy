@@ -12,7 +12,7 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   },
   "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/2017-hurricanes-and-aerosols-simulation.mp4",
   "mirrors": [
-   "https://cdn.statically.io/gh/717986230/rj-yy/media-01/nasa/2017-hurricanes-and-aerosols-simulation.mp4"
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/2017-hurricanes-and-aerosols-simulation.mp4"
   ],
   "duration": 132.1,
   "source": "NASA Goddard · Public domain",
@@ -34,7 +34,7 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   },
   "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/a-drier-future-sets-the-stage-for-more-wildfires-q6flcub.mp4",
   "mirrors": [
-   "https://cdn.statically.io/gh/717986230/rj-yy/media-01/nasa/a-drier-future-sets-the-stage-for-more-wildfires-q6flcub.mp4"
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/a-drier-future-sets-the-stage-for-more-wildfires-q6flcub.mp4"
   ],
   "duration": 131.8,
   "source": "NASA Goddard · Public domain",
@@ -56,7 +56,7 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   },
   "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/a-tour-of-nasas-solar-eclipse-map-for-2023-and-2024.mp4",
   "mirrors": [
-   "https://cdn.statically.io/gh/717986230/rj-yy/media-01/nasa/a-tour-of-nasas-solar-eclipse-map-for-2023-and-2024.mp4"
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/a-tour-of-nasas-solar-eclipse-map-for-2023-and-2024.mp4"
   ],
   "duration": 109.1,
   "source": "NASA Goddard · Public domain",
@@ -78,7 +78,7 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   },
   "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/get-ready-for-the-2017-solar-eclipse.mp4",
   "mirrors": [
-   "https://cdn.statically.io/gh/717986230/rj-yy/media-01/nasa/get-ready-for-the-2017-solar-eclipse.mp4"
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/get-ready-for-the-2017-solar-eclipse.mp4"
   ],
   "duration": 99.6,
   "source": "NASA Goddard · Public domain",
@@ -100,7 +100,7 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   },
   "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/how-to-safely-watch-a-solar-eclipse.mp4",
   "mirrors": [
-   "https://cdn.statically.io/gh/717986230/rj-yy/media-01/nasa/how-to-safely-watch-a-solar-eclipse.mp4"
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/how-to-safely-watch-a-solar-eclipse.mp4"
   ],
   "duration": 79.5,
   "source": "NASA Goddard · Public domain",
@@ -122,7 +122,7 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   },
   "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/nasa/nasa-catches-hurricanes-jose-and-maria.mp4",
   "mirrors": [
-   "https://cdn.statically.io/gh/717986230/rj-yy/media-02/nasa/nasa-catches-hurricanes-jose-and-maria.mp4"
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/nasa/nasa-catches-hurricanes-jose-and-maria.mp4"
   ],
   "duration": 57.7,
   "source": "NASA Goddard · Public domain",

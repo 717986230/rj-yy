@@ -98,7 +98,7 @@ def main():
                 # 英语片用译文文件第一行的英文标题（Commons 文件名常带 YouTube 编号等杂质）
                 "title": {"zh": zh_title, "de": m["title"] if lang == "de" else en_title, "en": en_title},
                 "src": f"https://cdn.jsdelivr.net/gh/{REPO}@{m['shard']}/{m['path']}",
-                "mirrors": [f"https://cdn.statically.io/gh/{REPO}/{m['shard']}/{m['path']}"],
+                "mirrors": [f"https://fastly.jsdelivr.net/gh/{REPO}@{m['shard']}/{m['path']}"],
                 "duration": m["duration"],
                 "source": credit(m["artist"], m["license"]),
                 "series": meta["series"],
