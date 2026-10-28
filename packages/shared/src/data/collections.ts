@@ -361,6 +361,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-die-entstehung-des-grundgesetzes.json"
  },
  {
+  "id": "terra-x-die-entstehung-des-lebens",
+  "title": {
+   "zh": "生命的起源",
+   "de": "Die Entstehung des Lebens",
+   "en": "The origin of life"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-entstehung-des-lebens.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-entstehung-des-lebens.mp4"
+  ],
+  "duration": 114.1,
+  "source": "ZDF/TerraX · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-entstehung-des-lebens.json"
+ },
+ {
   "id": "terra-x-die-erfindung-der-batterie",
   "title": {
    "zh": "电池的发明",
@@ -464,6 +485,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-die-germanen-aus-der-sicht-von-tacitus-und-caesar.json"
+ },
+ {
+  "id": "terra-x-die-gotteshauser-der-religionen",
+  "title": {
+   "zh": "各宗教的礼拜场所",
+   "de": "Die Gotteshäuser der Religionen",
+   "en": "Houses of worship in different religions"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-gotteshauser-der-religionen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-gotteshauser-der-religionen.mp4"
+  ],
+  "duration": 115.2,
+  "source": "ZDF/Sonntags · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-gotteshauser-der-religionen.json"
  },
  {
   "id": "terra-x-die-grundung-bagdads-im-8-jahrhundert-cc-by-sa-4-0",
@@ -1178,6 +1220,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-geschichte-der-klimakonferenz.json"
+ },
+ {
+  "id": "terra-x-geschichte-des-berliner-reichstagsgebaudes",
+  "title": {
+   "zh": "柏林国会大厦的历史",
+   "de": "Geschichte des Berliner Reichstagsgebäudes",
+   "en": "History of the Reichstag building in Berlin"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/geschichte-des-berliner-reichstagsgebaudes.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/geschichte-des-berliner-reichstagsgebaudes.mp4"
+  ],
+  "duration": 114.6,
+  "source": "ZDF/Friedrich Scherer · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-geschichte-des-berliner-reichstagsgebaudes.json"
  },
  {
   "id": "terra-x-gesundheitsrisiko-einsamkeit",
