@@ -382,6 +382,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-die-himmelsscheibe-von-nebra-cc-by-4-0.json"
  },
  {
+  "id": "terra-x-die-temperamenten-lehre",
+  "title": {
+   "zh": "气质学说",
+   "de": "Die Temperamenten Lehre",
+   "en": "The theory of temperaments"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-temperamenten-lehre.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-temperamenten-lehre.mp4"
+  ],
+  "duration": 49.5,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-temperamenten-lehre.json"
+ },
+ {
   "id": "terra-x-die-temperaturkurve-der-erde-zdf-terra-x-720p-hd-50fps",
   "title": {
    "zh": "地球的温度曲线",
@@ -422,6 +443,48 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-die-ersten-zahlungsmittel-cc-by-4-0.json"
+ },
+ {
+  "id": "terra-x-dinosaurierspuren-in-deutschland",
+  "title": {
+   "zh": "德国的恐龙足迹",
+   "de": "Dinosaurierspuren in Deutschland",
+   "en": "Dinosaur traces in Germany"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/dinosaurierspuren-in-deutschland.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/dinosaurierspuren-in-deutschland.mp4"
+  ],
+  "duration": 57.3,
+  "source": "ZDF/TerraX · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-dinosaurierspuren-in-deutschland.json"
+ },
+ {
+  "id": "terra-x-drei-wichtige-hormone-fur-den-stoffwechsel-terra-x",
+  "title": {
+   "zh": "影响代谢的三种重要激素",
+   "de": "Drei wichtige Hormone für den Stoffwechsel Terra X",
+   "en": "Three key hormones for metabolism"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/drei-wichtige-hormone-fur-den-stoffwechsel-terra-x.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/drei-wichtige-hormone-fur-den-stoffwechsel-terra-x.mp4"
+  ],
+  "duration": 69.8,
+  "source": "3sat/nano · CC BY-SA 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-drei-wichtige-hormone-fur-den-stoffwechsel-terra-x.json"
  },
  {
   "id": "terra-x-einfluss-von-fetten-und-proteinen-auf-den-blutzuckerspie",
@@ -466,6 +529,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-einzigartige-lebensbedingungen-auf-der-erde.json"
  },
  {
+  "id": "terra-x-entstehungsphase-einer-entzundung",
+  "title": {
+   "zh": "炎症的形成期",
+   "de": "Entstehungsphase einer Entzündung",
+   "en": "How inflammation begins"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/entstehungsphase-einer-entzundung.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/entstehungsphase-einer-entzundung.mp4"
+  ],
+  "duration": 60.2,
+  "source": "3sat/nano · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-entstehungsphase-einer-entzundung.json"
+ },
+ {
   "id": "terra-x-esel-als-bodenmanager",
   "title": {
    "zh": "驴子是土地管家",
@@ -506,6 +590,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-evolution-der-hand.json"
+ },
+ {
+  "id": "terra-x-feinstaubbelastung-und-die-folgen",
+  "title": {
+   "zh": "细颗粒物污染及其后果",
+   "de": "Feinstaubbelastung und die Folgen",
+   "en": "Fine dust pollution and its consequences"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/feinstaubbelastung-und-die-folgen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/feinstaubbelastung-und-die-folgen.mp4"
+  ],
+  "duration": 59.7,
+  "source": "3sat/nano · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-feinstaubbelastung-und-die-folgen.json"
  },
  {
   "id": "terra-x-frankfurter-paulskirche",
