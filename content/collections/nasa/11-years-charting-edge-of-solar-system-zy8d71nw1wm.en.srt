@@ -1,0 +1,257 @@
+1
+00:00:00,000 --> 00:00:04,750
+There are a few ways to think about the edge of the solar system.
+
+2
+00:00:04,750 --> 00:00:07,420
+One is with the extent of the solar wind.
+
+3
+00:00:07,420 --> 00:00:12,380
+This is the constant flow of charged particles gushing out of the Sun
+
+4
+00:00:12,380 --> 00:00:14,020
+at a million miles per hour
+
+5
+00:00:14,020 --> 00:00:16,050
+and bathing the planets.
+
+6
+00:00:16,050 --> 00:00:19,610
+The wind forms a giant, protective bubble around our solar system
+
+7
+00:00:19,610 --> 00:00:22,270
+known as the heliosphere.
+
+8
+00:00:22,270 --> 00:00:27,330
+This huge region surfs through the Milky Way, shielding us from interstellar radiation
+
+9
+00:00:27,330 --> 00:00:32,030
+and creating an environment that helps life on Earth to flourish.
+
+10
+00:00:32,030 --> 00:00:34,260
+But its borders aren’t fixed.
+
+11
+00:00:34,260 --> 00:00:38,080
+Around 11 billion miles from Earth, far past the planets,
+
+12
+00:00:38,080 --> 00:00:40,690
+solar wind pushes against interstellar space.
+
+13
+00:00:40,690 --> 00:00:44,790
+Scientists have been monitoring this boundary over the past decade
+
+14
+00:00:44,790 --> 00:00:50,650
+and they’re seeing it change with the Sun’s activity.
+
+15
+00:00:50,650 --> 00:00:54,260
+Roughly every 11 years, the Sun’s magnetic field ramps up.
+
+16
+00:00:54,260 --> 00:00:58,230
+This is known as the solar cycle and at the peak,
+
+17
+00:00:58,230 --> 00:01:03,300
+the Sun’s magnetic poles flip — north becomes south and vice versa. 
+
+18
+00:01:03,300 --> 00:01:08,190
+This cycle causes the Sun’s activity to sway from calm to turbulent
+
+19
+00:01:08,190 --> 00:01:10,710
+with an abundance of flares and eruptions,
+
+20
+00:01:10,710 --> 00:01:12,790
+which in turn affects the solar wind.
+
+21
+00:01:12,790 --> 00:01:16,960
+Changes from the Sun can make the solar wind gust hard.
+
+22
+00:01:16,960 --> 00:01:20,710
+When it does, the heliosphere expands like a balloon.
+
+23
+00:01:20,710 --> 00:01:26,780
+Over the past solar cycle, scientists mapped what that looked like.
+
+24
+00:01:26,780 --> 00:01:31,440
+To understand these maps, you need to know how we observe the edge of the solar system.
+
+25
+00:01:31,440 --> 00:01:36,490
+Scientists use NASA’s Interstellar Boundary Explorer, or IBEX.
+
+26
+00:01:36,490 --> 00:01:39,900
+About the size of a bus tire and in orbit around Earth,
+
+27
+00:01:39,900 --> 00:01:44,200
+IBEX maps the heliosphere with a process similar to sonar.
+
+28
+00:01:44,200 --> 00:01:47,590
+But instead of using sound to detect objects,
+
+29
+00:01:47,590 --> 00:01:50,720
+it uses the echo of solar wind variations.
+
+30
+00:01:50,720 --> 00:01:53,800
+For example, starting in 2014,
+
+31
+00:01:53,800 --> 00:01:57,480
+there was a huge and prolonged increase in solar wind pressure.
+
+32
+00:01:57,480 --> 00:02:04,400
+NASA spacecraft near Earth detected solar wind gusting 50% harder than previous years.
+
+33
+00:02:04,400 --> 00:02:09,340
+After traveling outward for a year, solar wind hit the edge of the heliosphere
+
+34
+00:02:09,340 --> 00:02:12,930
+— first the termination shock and then it entered the heliosheath
+
+35
+00:02:12,930 --> 00:02:15,510
+that’s encased by the heliopause.
+
+36
+00:02:15,510 --> 00:02:18,990
+Solar wind particles spent another year or so in this region.    
+
+37
+00:02:18,990 --> 00:02:22,690
+Some collided with interstellar gases in the heliosheath
+
+38
+00:02:22,690 --> 00:02:26,630
+and turned into energetic neutral atoms, or ENAs.                                               
+
+39
+00:02:26,630 --> 00:02:29,080
+ENAs travel in all directions,
+
+40
+00:02:29,080 --> 00:02:31,370
+some even back toward Earth.
+
+41
+00:02:31,370 --> 00:02:37,220
+And between 2017 and 2019, a few of the returning ENAs reached IBEX,
+
+42
+00:02:37,220 --> 00:02:43,310
+an echo of where the boundary is and what it looks like.
+
+43
+00:02:43,310 --> 00:02:47,460
+If you cut into the heliosphere and laid it out onto a flat surface,
+
+44
+00:02:47,460 --> 00:02:49,340
+this is what you would see.
+
+45
+00:02:49,340 --> 00:02:52,610
+This is the nose and this is the tail.
+
+46
+00:02:52,610 --> 00:02:55,470
+The nose shows high ENA fluxes,
+
+47
+00:02:55,470 --> 00:02:59,730
+which indicate a strong gust of wind and the heliosphere ballooning.
+
+48
+00:02:59,730 --> 00:03:01,830
+From tracking this expansion,
+
+49
+00:03:01,830 --> 00:03:05,590
+scientists found that the nose and tail were not symmetrical.
+
+50
+00:03:05,590 --> 00:03:07,370
+If we compare the maps,
+
+51
+00:03:07,370 --> 00:03:13,060
+ENAs from that big 2014 solar wind increase have returned from the nose,
+
+52
+00:03:13,060 --> 00:03:15,420
+but they haven’t returned from the tail yet
+
+53
+00:03:15,420 --> 00:03:20,080
+suggesting that the tail is much farther away from the Sun than the nose. 
+
+54
+00:03:20,080 --> 00:03:26,610
+This indicates that the heliosphere looks more like a comet rather than a round bubble.
+
+55
+00:03:26,610 --> 00:03:32,010
+Having a full solar cycle of observations of the heliosphere opens doors to understanding
+
+56
+00:03:32,010 --> 00:03:35,600
+the only environment we so far know can support life.
+
+57
+00:03:35,600 --> 00:03:37,760
+And there have been a few surprises.
+
+58
+00:03:37,760 --> 00:03:40,440
+Beyond the heliosphere, near the nose,
+
+59
+00:03:40,440 --> 00:03:46,170
+there was one region that took two years longer to respond to the 2014 increase  of solar wind.
+
+60
+00:03:46,170 --> 00:03:49,930
+Scientists think these ENAs bounced out of the heliopause
+
+61
+00:03:49,930 --> 00:03:53,600
+and into interstellar space before heading back toward Earth.
+
+62
+00:03:53,600 --> 00:03:58,540
+These are signs that we’re still learning about the quirks of our solar system.
+
+63
+00:03:58,540 --> 00:03:59,930
+But one thing’s for sure,
+
+64
+00:03:59,930 --> 00:04:05,530
+these characteristics could tell us about the key ingredients for life around a star.
+65
+00:04:05,530 --&gt; 00:00:NaN,000

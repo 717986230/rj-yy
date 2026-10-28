@@ -1,0 +1,311 @@
+1
+00:00:01,004 --> 00:00:04,252
+(Intro music)
+
+2
+00:00:04,309 --> 00:00:08,542
+NASA ASTROPHYSICS
+
+3
+00:00:09,471 --> 00:00:10,940
+(Rhythmic cosmic music)
+
+4
+00:00:10,986 --> 00:00:15,569
+Narrator: Eta Carinae is the most
+massive star within 10,000 light-years.
+
+5
+00:00:16,485 --> 00:00:19,531
+In the mid-nineteenth century,
+a tremendous eruption
+
+6
+00:00:19,575 --> 00:00:23,449
+hurled enough gas into space
+to make at least 10 copies of the sun,
+
+7
+00:00:23,495 --> 00:00:26,531
+creating an expanding nebula
+still visible today.
+
+8
+00:00:26,748 --> 00:00:30,275
+New results from NASA satellites,
+ground-based telescopes,
+
+9
+00:00:30,291 --> 00:00:33,181
+and theoretical models
+are providing astronomers
+
+10
+00:00:33,202 --> 00:00:35,768
+with an improved
+understanding of the system.
+
+11
+00:00:35,825 --> 00:00:38,931
+At the nebula's heart lie two giant stars.
+
+12
+00:00:39,199 --> 00:00:42,192
+The smaller of the two
+is 30 times the mass of the sun
+
+13
+00:00:42,233 --> 00:00:44,089
+and a million times brighter.
+
+14
+00:00:44,251 --> 00:00:48,976
+The primary weighs 90 suns and shines
+5 times brighter than its companion.
+
+15
+00:00:49,242 --> 00:00:53,284
+Both stars produce powerful outflows
+called stellar winds,
+
+16
+00:00:53,302 --> 00:00:55,075
+but the primary's is so dense
+
+17
+00:00:55,087 --> 00:00:58,253
+it prevents astronomers
+from directly observing the star.
+
+18
+00:00:59,060 --> 00:01:02,275
+The secondary's orbit is among
+the most eccentric known.
+
+19
+00:01:02,488 --> 00:01:04,145
+Every five and a half years,
+
+20
+00:01:04,176 --> 00:01:07,790
+when the two stars swing
+toward closest approach, or periastron,
+
+21
+00:01:07,819 --> 00:01:10,938
+the come about as close
+to each other as Mars is from the sun.
+
+22
+00:01:12,029 --> 00:01:16,226
+Eta Carinae's most recent periastron
+occurred in August 2014,
+
+23
+00:01:16,272 --> 00:01:19,051
+and many of NASA's space-based telescopes,
+
+24
+00:01:19,090 --> 00:01:22,029
+as well as ground-based
+observatories, looked on.
+
+25
+00:01:22,812 --> 00:01:24,446
+Where the stellar winds collide,
+
+26
+00:01:24,491 --> 00:01:27,024
+temperatures reach
+hundreds of millions degrees -
+
+27
+00:01:27,069 --> 00:01:29,203
+hot enough to emit X-rays.
+
+28
+00:01:29,437 --> 00:01:32,544
+But the X-ray emission
+shuts down near periastron,
+
+29
+00:01:32,557 --> 00:01:36,699
+when the smaller star is swallowed up
+by the dense wind of its larger companion.
+
+30
+00:01:37,802 --> 00:01:41,021
+The X-rays gradually recover
+after periastron,
+
+31
+00:01:41,036 --> 00:01:43,449
+but they do so
+a bit differently each time,
+
+32
+00:01:43,506 --> 00:01:46,534
+suggesting structural changes
+in the dueling winds.
+
+33
+00:01:47,078 --> 00:01:51,894
+Recent observations have helped theorists
+refine computer models of this interaction.
+
+34
+00:01:52,218 --> 00:01:56,735
+Here, darker colors indicate
+lower gas densities around the stars,
+
+35
+00:01:56,778 --> 00:01:59,860
+while the stars themselves
+appear as black circles.
+
+36
+00:02:00,010 --> 00:02:03,166
+When the stars are far apart,
+the winds collide head-on,
+
+37
+00:02:03,209 --> 00:02:07,014
+creating a huge cavity surrounded
+by 50-million-degree gas.
+
+38
+00:02:07,204 --> 00:02:11,080
+But near periastron, the secondary
+whips around the larger star,
+
+39
+00:02:11,126 --> 00:02:13,664
+carving a tunnel
+though the primary's dense wind.
+
+40
+00:02:13,932 --> 00:02:18,976
+The secondary star's rapid motion changes
+the collision zone from head... to tail.
+
+41
+00:02:19,673 --> 00:02:23,471
+The smaller star's faster wind flows out
+along the cavity it created
+
+42
+00:02:23,518 --> 00:02:26,762
+and then crashes into
+the outward-moving wind of its companion.
+
+43
+00:02:27,815 --> 00:02:30,782
+From out perspective on Earth,
+the X-rays fade,
+
+44
+00:02:30,801 --> 00:02:33,135
+then recover, as the stars move apart.
+
+45
+00:02:33,818 --> 00:02:36,545
+New 3D models of these simulations reveal
+
+46
+00:02:36,562 --> 00:02:40,968
+the formation of finger-like protrusions
+along the cavity near periastron,
+
+47
+00:02:40,999 --> 00:02:43,098
+features never before identified.
+
+48
+00:02:43,481 --> 00:02:48,214
+Theorists now investigating the phenomenon
+suggest they may arise from instabilities
+
+49
+00:02:48,246 --> 00:02:51,335
+developing in gas
+as it flows along the cavity wall.
+
+50
+00:02:52,213 --> 00:02:54,680
+Astronomers also keep an eye
+on Eta Carinae
+
+51
+00:02:54,707 --> 00:02:56,566
+with the Hubble Space Telescope.
+
+52
+00:02:57,529 --> 00:03:00,190
+These images show a structure
+resembling a crab,
+
+53
+00:03:00,219 --> 00:03:04,299
+formed by gas excited
+by the secondary star's intense UV light.
+
+54
+00:03:05,038 --> 00:03:07,240
+This light dims near periastron,
+
+55
+00:03:07,270 --> 00:03:10,744
+when the secondary passes through
+the thickest part of the primary's wind.
+
+56
+00:03:10,772 --> 00:03:14,063
+The gas relaxes, settling into
+a lower-energy state.
+
+57
+00:03:15,006 --> 00:03:18,470
+As a result, the crab appears
+in a different spectral line
+
+58
+00:03:18,516 --> 00:03:21,686
+until the stars move apart
+and the UV light is restored.
+
+59
+00:03:23,051 --> 00:03:27,413
+Eta Carinae is one of the closest
+and most massive colliding-wind binaries,
+
+60
+00:03:27,480 --> 00:03:29,505
+and serves as a natural laboratory
+
+61
+00:03:29,535 --> 00:03:32,107
+for studying these rare
+and important objects.
+
+62
+00:03:32,901 --> 00:03:35,534
+While its past eruptions
+remain unexplained,
+
+63
+00:03:35,586 --> 00:03:38,498
+astronomers think they have
+a handle on its current state--
+
+64
+00:03:38,527 --> 00:03:43,002
+a claim to be tested
+at the next periastron in February 2020.
+
+65
+00:03:43,277 --> 00:03:45,746
+(Music fades)
+
+66
+00:03:47,742 --> 00:03:51,563
+(Beeping)

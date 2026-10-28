@@ -1,0 +1,27 @@
+1
+00:00:00,130 --> 00:00:04,300
+The Global Precipitation (GPM) mission observed Hurricanes Jose and Maria,
+
+2
+00:00:04,320 --> 00:00:08,500
+providing data to better understand and forecast intense storms.
+
+3
+00:00:08,520 --> 00:00:12,680
+As Maria developed, the rain pattern became circular and symmetric.
+
+4
+00:00:21,080 --> 00:00:25,260
+On September 18, Maria began to rapidly intensify.
+
+5
+00:00:25,280 --> 00:00:29,440
+During intensification, GPM was able to see beneath the clouds, revealing tall storms in the eyewall.
+
+6
+00:00:42,040 --> 00:00:46,210
+At the time GPM caught Hurricane Jose, the storm structure changed as it interacted with an upper level trough of low pressure.
+
+7
+00:00:46,230 --> 00:00:50,380
+This caused the air to sink and dry, inhibiting the thunderstorms that fuel the hurricane.

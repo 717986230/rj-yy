@@ -1,0 +1,242 @@
+1
+00:00:02,441 --> 00:00:04,989
+This is your telescope.
+
+2
+00:00:05,282 --> 00:00:07,360
+An engineering marvel.
+
+3
+00:00:07,513 --> 00:00:09,916
+An exploration powerhouse.
+
+4
+00:00:10,259 --> 00:00:12,547
+Use it to look back in time
+
+5
+00:00:12,588 --> 00:00:16,825
+and explore the first galaxies
+that formed after the Big Bang;
+
+6
+00:00:17,782 --> 00:00:21,556
+to peer into atmospheres of planets
+orbiting the stars.
+
+7
+00:00:21,837 --> 00:00:27,313
+It’s your eye-piece to the uncharted,
+unknown and unimagined.
+
+8
+00:00:31,502 --> 00:00:35,015
+This is the largest, most complex
+
+9
+00:00:35,057 --> 00:00:38,833
+and challenging space telescope
+ever constructed.
+
+10
+00:00:38,888 --> 00:00:41,498
+It will change our understanding
+of the universe
+
+11
+00:00:41,540 --> 00:00:43,493
+and our place in it.
+
+12
+00:00:43,733 --> 00:00:46,297
+The James Webb Space Telescope.
+
+13
+00:00:55,183 --> 00:00:59,230
+Equipped with the largest primary mirror
+ever to be flown in space;
+
+14
+00:00:59,277 --> 00:01:02,541
+at 6.5 meters, it’s more than 6 times
+
+15
+00:01:02,581 --> 00:01:06,545
+the size of the Hubble Space
+Telescope primary mirror.
+
+16
+00:01:08,580 --> 00:01:12,265
+Webb’s four, cutting-edge, 
+infrared instruments and cameras
+
+17
+00:01:12,311 --> 00:01:15,528
+operate at super cold temperatures;
+
+18
+00:01:15,926 --> 00:01:18,927
+temperatures colder
+than the surface of Pluto.
+
+19
+00:01:21,786 --> 00:01:26,759
+Getting this cold is done with the help
+of the largest sunshield ever flown;
+
+20
+00:01:26,791 --> 00:01:29,879
+a 5-layer, tennis court-size sunshield
+
+21
+00:01:29,926 --> 00:01:33,554
+that blocks heat from the Sun,
+Earth and Moon.
+
+22
+00:01:38,719 --> 00:01:40,610
+Webb will be the first telescope
+
+23
+00:01:40,656 --> 00:01:44,477
+to detect light from the most distant
+galaxies in the Universe.
+
+24
+00:01:45,142 --> 00:01:49,704
+These first galaxies formed
+about 13.5 billion years ago,
+
+25
+00:01:49,735 --> 00:01:53,545
+only 300 or so million years
+after the Big Bang.
+
+26
+00:01:54,249 --> 00:01:56,695
+Webb carries advanced technologies
+
+27
+00:01:56,741 --> 00:02:01,040
+to tackle some of the most fundamental
+questions about the Universe.
+
+28
+00:02:01,308 --> 00:02:04,055
+How did the first galaxies
+form and evolve?
+
+29
+00:02:04,207 --> 00:02:07,204
+Are there chemical signatures
+of the building-blocks of life
+
+30
+00:02:07,244 --> 00:02:08,791
+on other worlds?
+
+31
+00:02:09,094 --> 00:02:11,178
+Is our solar system unique?
+
+32
+00:02:15,586 --> 00:02:20,766
+Launching such a large telescope into space
+is an incredible engineering challenge.
+
+33
+00:02:21,240 --> 00:02:26,203
+Fully deployed, Webb is too large
+to fit inside any rocket fairing.
+
+34
+00:02:26,232 --> 00:02:30,866
+Engineers designed it to be folded,
+like origami, to squeeze inside
+
+35
+00:02:30,921 --> 00:02:35,955
+the European Space Agency’s
+5-meter diameter Ariane 5 rocket fairing.
+
+36
+00:02:39,281 --> 00:02:43,558
+After launch, controllers on the ground
+deploy Webb remotely.
+
+37
+00:02:44,200 --> 00:02:47,143
+Deployment is an intricate ballet.
+
+38
+00:02:47,495 --> 00:02:51,547
+For nearly 3-weeks,
+controllers carefully unfold Webb.
+
+39
+00:02:51,765 --> 00:02:55,990
+After this delicate dance, Webb’s
+golden mirrors are precisely aligned
+
+40
+00:02:56,030 --> 00:02:59,591
+using motors behind
+each hexagonal mirror segment,
+
+41
+00:02:59,643 --> 00:03:03,679
+adjusting them to form
+one, perfect mirror.
+
+42
+00:03:04,174 --> 00:03:08,514
+Once the instruments are cooled,
+the exploration will begin.
+
+43
+00:03:09,400 --> 00:03:13,252
+Webb is a technological challenge
+like no other.
+
+44
+00:03:13,282 --> 00:03:15,769
+Born of the efforts of thousands of people
+
+45
+00:03:15,791 --> 00:03:18,832
+across the United States,
+Canada and Europe.
+
+46
+00:03:19,709 --> 00:03:23,556
+The James Webb Space Telescope
+is your telescope.
+
+47
+00:03:23,628 --> 00:03:25,469
+Use it to explore.
+
+48
+00:03:25,502 --> 00:03:27,281
+To challenge theories.
+
+49
+00:03:27,311 --> 00:03:29,487
+To see sights yet unseen.
+
+50
+00:03:29,688 --> 00:03:35,447
+It’s yours to unfold the beauty
+and mystery in the Universe, and…
+
+51
+00:03:35,501 --> 00:03:37,255
+our place in it.
+
+52
+00:03:38,631 --> 00:03:41,352
+[Explore Solar System &amp; Beyond]
+
+53
+00:03:41,931 --> 00:03:43,553
+[NASA]

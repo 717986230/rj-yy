@@ -1,0 +1,44 @@
+1
+00:00:00,000 --> 00:00:03,220
+The US Corn Belt just received a glowing report.
+
+2
+00:00:03,240 --> 00:00:03,780
+3
+00:00:03,800 --&gt; 00:00:09,050
+A new study helps confirm that the Midwest is one of the most productive regions on Earth.
+
+3
+00:00:09,070 --> 00:00:09,580
+5
+00:00:09,600 --&gt; 00:00:14,630
+The findings are based on a new way of estimating plant productivity from space.
+
+4
+00:00:14,650 --> 00:00:15,060
+7
+00:00:15,080 --&gt; 00:00:21,950
+The method uses chlorophyll fluorescence data, which is a measurement of the amount of light a plant emits during photsynthesis.
+
+5
+00:00:21,970 --> 00:00:22,360
+9
+00:00:22,380 --&gt; 00:00:28,870
+The light appears as a faint glow that's invisible to the naked eye, but can be detected by satellites.
+
+6
+00:00:28,890 --> 00:00:29,260
+11
+00:00:29,280 --&gt; 00:00:38,870
+In 2013, a team of researchers led by NASA scientists demonstrated that plant fluorescence could be accurately mapped using satellite data.
+
+7
+00:00:38,890 --> 00:00:39,300
+13
+00:00:39,320 --&gt; 00:00:46,580
+Now, the measurements are being applied for the first time to assess the productivity of croplands around the world.
+
+8
+00:00:46,600 --> 00:00:51,980
+15
+00:00:52,000 --&gt; 00:00:52,470
