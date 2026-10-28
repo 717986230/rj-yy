@@ -36,7 +36,7 @@ Am 14. Juli 1789 reicht es den Bauern und Bürgern.
 
 10
 00:00:30,820 --> 00:00:33,820
-Sie stürmen in Paris die Bastille, das Staatsgefändnis
+Sie stürmen in Paris die Bastille, das Staatsgefängnis
 
 11
 00:00:33,820 --> 00:00:35,820
@@ -52,7 +52,7 @@ Der König wird abgesetzt und es wird eine Verfassung erarbeitet,
 
 14
 00:00:42,820 --> 00:00:45,820
-die ausdrücklich Menschen und Bürgerrechte enthält.
+die ausdrücklich Menschen- und Bürgerrechte enthält.
 
 15
 00:00:45,820 --> 00:00:48,820
@@ -84,7 +84,7 @@ Das Volk wählt Napoleon zunächst zum Konsul.
 
 22
 00:01:06,820 --> 00:01:09,820
-1804 gibt er mit dem sogenannten Quotsivil
+1804 gibt er mit dem sogenannten Code civil
 
 23
 00:01:09,820 --> 00:01:12,820
@@ -96,7 +96,7 @@ und lässt sich per Volksabstimmung sogar zum Kaiser wählen.
 
 25
 00:01:16,820 --> 00:01:19,820
-Napoleon will noch mehr, aber es gelingt ihn nicht.
+Napoleon will noch mehr, aber es gelingt ihm nicht.
 
 26
 00:01:19,820 --> 00:01:23,820
@@ -108,7 +108,7 @@ wird verbannt, kommt noch einmal zurück
 
 28
 00:01:25,820 --> 00:01:29,820
-und wird schließlich nach der Schlacht von Bartalo endgültig verbannt.
+und wird schließlich nach der Schlacht von Waterloo endgültig verbannt.
 
 29
 00:01:29,820 --> 00:01:34,820
@@ -116,4 +116,4 @@ Die französische Revolution und Napoleon haben Auswirkungen bis heute.
 
 30
 00:01:34,820 --> 00:01:39,820
-Der Quotsivil ist ein Grundbaustein von Demokratien, weltweit.
+Der Code civil ist ein Grundbaustein von Demokratien, weltweit.

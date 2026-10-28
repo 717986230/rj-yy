@@ -2985,6 +2985,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/planet-wissen-die-berliner-mauer-planet-wissen.json"
  },
  {
+  "id": "planet-wissen-die-franzosische-revolution-und-napoleon-planet-wissen",
+  "title": {
+   "zh": "法国大革命与拿破仑",
+   "de": "Die Französische Revolution und Napoleon",
+   "en": "The French Revolution and Napoleon"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/die-franzosische-revolution-und-napoleon-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/die-franzosische-revolution-und-napoleon-planet-wissen.mp4"
+  ],
+  "duration": 100.0,
+  "source": "Felicitas Graßl/Saba Bussmann · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-die-franzosische-revolution-und-napoleon-planet-wissen.json"
+ },
+ {
   "id": "planet-wissen-die-hanse-planet-wissen",
   "title": {
    "zh": "汉萨同盟",
@@ -3004,6 +3025,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "知识"
   ],
   "subtitlesUrl": "subs/planet-wissen-die-hanse-planet-wissen.json"
+ },
+ {
+  "id": "planet-wissen-die-industrielle-revolution-planet-wissen",
+  "title": {
+   "zh": "工业革命",
+   "de": "Die Industrielle Revolution",
+   "en": "The Industrial Revolution"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/die-industrielle-revolution-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/die-industrielle-revolution-planet-wissen.mp4"
+  ],
+  "duration": 100.0,
+  "source": "Christian Brandt/Claudio Como · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-die-industrielle-revolution-planet-wissen.json"
  },
  {
   "id": "planet-wissen-die-maya-planet-wissen",

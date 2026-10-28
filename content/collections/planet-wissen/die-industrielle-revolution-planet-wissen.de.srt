@@ -32,7 +32,7 @@ die von Dampfmaschinen angetrieben werden.
 
 9
 00:00:27,180 --> 00:00:30,180
-Die verabschiedene Eisenbahnen treiben den Fortschritt weiter voran.
+Die neuen Eisenbahnen treiben den Fortschritt weiter voran.
 
 10
 00:00:30,180 --> 00:00:33,180
@@ -88,7 +88,7 @@ Und der Wohnraum ist knapp.
 
 23
 00:01:07,180 --> 00:01:10,180
-ganze Familien leben in nur einem Zimmer.
+Ganze Familien leben in nur einem Zimmer.
 
 24
 00:01:10,180 --> 00:01:13,180
@@ -112,7 +112,7 @@ in viele kleine Reiche zersplittert.
 
 29
 00:01:24,180 --> 00:01:26,180
-Hohe Zölle sind die Normen.
+Hohe Zölle sind die Norm.
 
 30
 00:01:26,180 --> 00:01:30,180
