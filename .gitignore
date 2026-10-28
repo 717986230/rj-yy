@@ -6,3 +6,4 @@ coverage/
 .env.local
 apps/server/data/
 .DS_Store
+__pycache__/
