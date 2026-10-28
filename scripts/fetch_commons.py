@@ -36,6 +36,8 @@ COLLECTIONS = {
     "terra-x": {"categories": ["Category:Videos by Terra X"], "lang": "de", "min": 40, "max": 300,
                 "strip": r"\s*\((ZDF, )?Terra X(, ZDF)?\)|\s*\(?CC[ -]BY[^)]*\)?", "artist": "ZDF/Terra X",
                 "skip_manifests": ["content/terra-x/manifest.json"]},
+    "nasa": {"categories": ["Category:Videos from the NASA Goddard YouTube channel"], "lang": "en", "min": 45, "max": 300,
+             "strip": r"\s+(?=\S*\d)[A-Za-z0-9_-]{11}$|\s*\(SVS\d+[^)]*\)", "artist": "NASA Goddard"},
 }
 
 

@@ -25,6 +25,7 @@ OUT = "packages/shared/src/data/collections.ts"
 # 合集在卡片上的显示：系列名、标签、语言
 META = {
     "terra-x": {"series": "Terra X · 德语科普", "tags": ["德语原声", "科普"], "lang": "de"},
+    "nasa": {"series": "NASA · 英语科普", "tags": ["英语原声", "科普", "公有领域"], "lang": "en"},
 }
 
 

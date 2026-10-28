@@ -1,4 +1,4 @@
-import { bilibiliEmbedUrl, hasSubtitles, isBilibili, parseBilibili, Playlist, type PlayMode, type SecondaryLang, type Video, type VideoSummary } from '@vido/shared';
+import { bilibiliEmbedUrl, hasSubtitles, isBilibili, SEED_VIDEOS, parseBilibili, Playlist, type PlayMode, type SecondaryLang, type Video, type VideoSummary } from '@vido/shared';
 import { el, esc, formatTime, on, refs, wait, type Cleanup } from '../app/dom';
 import type { RouteContext } from '../app/router';
 import { app } from '../app/state';
@@ -224,8 +224,9 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   /** 片库大的合集把字幕放在单独的 JSON 里，打开这张卡时才去取 */
   const subtitleLoads = new Map<string, Promise<void>>();
   const loadSubtitles = (v: Video) => {
-    if (!v.subtitlesUrl || hasSubtitles(v.subtitles) || subtitleLoads.has(v.id)) return;
-    const url = v.subtitlesUrl;
+    // 后端模式的数据库里没有 subtitlesUrl，按 id 从内置片库里找
+    const url = v.subtitlesUrl ?? SEED_VIDEOS.find((s) => s.id === v.id)?.subtitlesUrl;
+    if (!url || hasSubtitles(v.subtitles) || subtitleLoads.has(v.id)) return;
     const job = fetch(url)
       .then((res) => (res.ok ? (res.json() as Promise<Video['subtitles']>) : Promise.reject(new Error(String(res.status)))))
       .then((tracks) => void (v.subtitles = tracks))
