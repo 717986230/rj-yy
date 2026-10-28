@@ -62,7 +62,8 @@ jobs:
           if ! npx wrangler secret list --format json | jq -e '.[] | select(.name == "JWT_SECRET")' > /dev/null; then
             openssl rand -base64 48 | npx wrangler secret put JWT_SECRET
           fi
-          url=$(grep -oE 'https://[a-zA-Z0-9.-]+\.workers\.dev' deploy.log | head -1)
+          # 只取 wrangler 打印的部署地址（行首缩进）；绑定列表里的 UUOO_API 也是 workers.dev 地址，不能误取
+          url=$(grep -E '^[[:space:]]+https://[a-zA-Z0-9.-]+\.workers\.dev[[:space:]]*$' deploy.log | grep -oE 'https://[a-zA-Z0-9.-]+\.workers\.dev' | head -1)
           echo "url=$url" >> "$GITHUB_OUTPUT"
           curl -fsS --retry 5 --retry-delay 3 --retry-all-errors "$url/api/health"
 
