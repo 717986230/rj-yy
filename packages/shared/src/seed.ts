@@ -1,12 +1,13 @@
 import { bilibiliPageUrl } from './bilibili';
+import { BIG_BUCK_BUNNY_SUBTITLES } from './data/big-buck-bunny';
 import { TEARS_OF_STEEL_SUBTITLES } from './data/tears-of-steel';
-import { alignedTracks, emptyTracks } from './subtitles';
+import { emptyTracks } from './subtitles';
 import type { Video } from './types';
 
 /**
- * 内置片库：先是两段随网站托管、任何网络都能播的站内短片（带德语旁白和对齐的中德英字幕），
- * 然后是 B 站上标明中德字幕的 DW 德语课与德语动画。不再内置字幕与画面不对应的外链样片；
- * 用户可以在片库里添加自己的外链或 B 站视频。
+ * 内置片库：先是随网站托管、任何网络都能播的整部影片（Otti 开场片、《钢铁之泪》、《大雄兔》完整版，
+ * 都有中德英字幕），然后是 B 站上标明中德字幕的 DW 德语课与德语动画（实验，默认不进抽卡牌堆）。
+ * 每张卡都是一整部视频，不放截取的片段。用户可以在片库里添加自己的外链或 B 站视频。
  */
 const CREATED = '2026-10-27T00:00:00.000Z';
 
@@ -60,6 +61,7 @@ const seeds: Seed[] = [
     mirrors: [`${JSDELIVR_MEDIA}/otti-intro-de.mp4`],
     duration: 16,
     source: SITE_SOURCE,
+    audioLang: 'de',
     tags: ['站内', '德语配音'],
     subtitles: {
       zh: [
@@ -91,24 +93,22 @@ const seeds: Seed[] = [
     duration: 734,
     source: SITE_SOURCE,
     series: '开放电影 · Blender',
-    tags: ['站内', '电影', '官方中德字幕', 'CC BY'],
+    audioLang: 'en',
+    tags: ['站内', '电影', '英语原声', '官方中德英字幕', 'CC BY'],
     subtitles: TEARS_OF_STEEL_SUBTITLES,
   },
   {
-    id: 'bunny-wakeup',
-    title: { zh: '大雄兔起床', de: 'Big Buck Bunny wacht auf', en: 'Big Buck Bunny Wakes Up' },
-    src: `${SITE_MEDIA}/bunny-wakeup-de.mp4`,
-    mirrors: [`${JSDELIVR_MEDIA}/bunny-wakeup-de.mp4`],
-    duration: 5.3,
+    // Blender 开放电影完整版（CC BY 3.0 © Blender Foundation | peach.blender.org），约 10 分钟，没有对白；
+    // Vido 加了简单德语旁白并配中德英字幕。约 48MB，只由网站自己提供。
+    id: 'big-buck-bunny',
+    title: { zh: '大雄兔', de: 'Big Buck Bunny', en: 'Big Buck Bunny' },
+    src: `${SITE_MEDIA}/big-buck-bunny-de.mp4`,
+    duration: 596,
     source: SITE_SOURCE,
-    tags: ['站内', '德语配音', 'Blender'],
-    subtitles: alignedTracks(
-      [
-        ['大兔子从洞里钻出来了。', 'Der große Hase kriecht aus seinem Bau.', 'The big rabbit crawls out of his burrow.'],
-        ['他伸了个大大的懒腰。', 'Er streckt sich ganz ausgiebig.', 'He has a really big stretch.'],
-      ],
-      { start: 0.3, length: 2.3, gap: 0.2 },
-    ),
+    series: '开放电影 · Blender',
+    audioLang: 'de',
+    tags: ['站内', '动画', '德语旁白', 'CC BY'],
+    subtitles: BIG_BUCK_BUNNY_SUBTITLES,
   },
   ...BILIBILI,
 ];

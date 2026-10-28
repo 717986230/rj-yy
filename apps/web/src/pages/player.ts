@@ -1,4 +1,4 @@
-import { bilibiliEmbedUrl, isBilibili, parseBilibili, Playlist, type PlayMode, type SecondaryLang, type Video, type VideoSummary } from '@vido/shared';
+import { bilibiliEmbedUrl, defaultSecondLang, isBilibili, parseBilibili, Playlist, type PlayMode, type SecondaryLang, type Video, type VideoSummary } from '@vido/shared';
 import { el, esc, formatTime, on, refs, wait, type Cleanup } from '../app/dom';
 import type { RouteContext } from '../app/router';
 import { app } from '../app/state';
@@ -302,6 +302,9 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       lastFrameCheck = { time: -1, frames: -1 };
       const bili = parseBilibili(video.src);
       if (!bili && !preloaded) engine.load(video, { autoplay: false });
+      // 第二字幕跟随原声：德语片默认中·德，英语片默认中·英（看的时候仍可手动切换）
+      const second = defaultSecondLang(video);
+      if (second && second !== app.get().secondLang) app.set({ secondLang: second });
       fillFront(video);
       await turn(true);
       if (!alive) return;

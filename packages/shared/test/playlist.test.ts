@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { isBilibili, Playlist, SEED_VIDEOS } from '../src';
+import { defaultSecondLang, isBilibili, Playlist, SEED_VIDEOS } from '../src';
 
 const ids = ['a', 'b', 'c', 'd'];
 const seq = (values: number[]) => {
@@ -67,5 +67,20 @@ describe('seed library', () => {
       }
     }
     expect(new Set(SEED_VIDEOS.map((v) => v.id)).size).toBe(SEED_VIDEOS.length);
+  });
+});
+
+describe('default subtitle pair follows the spoken language', () => {
+  const byId = (id: string) => SEED_VIDEOS.find((v) => v.id === id)!;
+  it('uses 中·德 for German audio and 中·英 for English audio', () => {
+    expect(defaultSecondLang(byId('otti-intro'))).toBe('de');
+    expect(defaultSecondLang(byId('big-buck-bunny'))).toBe('de');
+    expect(defaultSecondLang(byId('tears-of-steel'))).toBe('en');
+  });
+  it('falls back to the only foreign track, or keeps the current choice', () => {
+    const cue = [{ start: 0, end: 1, text: 'x' }];
+    expect(defaultSecondLang({ subtitles: { zh: cue, de: cue, en: [] } })).toBe('de');
+    expect(defaultSecondLang({ subtitles: { zh: cue, de: [], en: cue } })).toBe('en');
+    expect(defaultSecondLang({ subtitles: { zh: cue, de: cue, en: cue } })).toBeNull();
   });
 });

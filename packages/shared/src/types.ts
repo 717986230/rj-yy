@@ -29,6 +29,8 @@ export interface Video {
   series?: string;
   /** 在剧集中的集数，从 1 开始 */
   episode?: number;
+  /** 原声语言：德语原声默认显示中·德字幕，英语原声默认中·英 */
+  audioLang?: SecondaryLang;
   /** 备用外链：主链接打不开或卡住时按顺序自动切换，内容应与主链接相同 */
   mirrors?: string[];
   poster?: string;
@@ -84,6 +86,7 @@ export interface NewVideoInput {
   tags?: string[];
   series?: string;
   episode?: number;
+  audioLang?: SecondaryLang;
 }
 
 export interface PasswordResetRequestResult {

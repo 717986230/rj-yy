@@ -219,6 +219,7 @@ export class LocalApi implements ApiClient {
       source,
       ...(input.series?.trim() ? { series: input.series.trim() } : {}),
       ...(input.episode ? { episode: input.episode } : {}),
+      ...(input.audioLang ? { audioLang: input.audioLang } : {}),
       tags: input.tags?.length ? input.tags : ['我的'],
       subtitles,
       ownerId: user.id,

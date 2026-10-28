@@ -88,9 +88,11 @@ VITE_API_BASE=http://localhost:8787/api npm run dev
 **哔哩哔哩剧集（DW 德语课、德语动画）**：片库优先收录 B 站上标明「中德字幕」的视频，例如 DW 的 *Nicos Weg*、《布鲁伊》《小猪佩奇》德语版、《疯狂动物城》德语版、《小王子》德语广播剧。它们用 B 站官方嵌入播放器播放，Vido 不下载、不转存视频。中德字幕是视频画面自带的，所以这类卡片上 Vido 自己的字幕层、进度条和音量设置不起作用，要用 B 站播放器自己的控件。在片库里粘贴 B 站地址（`https://www.bilibili.com/video/BV…/?p=N`）就能添加，一个多 P 视频可以按集数范围一次加入多集，片库按剧集分组显示。b23.tv 短链接需要先在浏览器打开，再复制完整地址。
 
 
-内置片库前两部是「Vido 站内」短片（`apps/web/public/media/`，同时经 jsDelivr 提供备用线路）：Otti 开场片（本项目自制）和《Big Buck Bunny》片段（© Blender Foundation，CC BY 3.0）。两部都配了德语旁白，用 Piper 离线语音合成的 Thorsten 德语声音（CC0）生成，字幕时间轴按旁白逐句对齐。第一次抽卡固定翻开 Otti 开场片。
+内置片库都是「Vido 站内」托管的整部视频（`apps/web/public/media/`），每张卡都是一整部，不放截取的片段：Otti 开场片（本项目自制）、《Tears of Steel / 钢铁之泪》和《Big Buck Bunny / 大雄兔》完整版（约 10 分钟，© Blender Foundation，CC BY 3.0，由 `.github/workflows/fetch-big-buck-bunny.yml` 下载转码）。Otti 和大雄兔配了德语旁白，用 Piper 离线语音合成的 Thorsten 德语声音（CC0）生成，字幕时间轴按旁白逐句对齐。第一次抽卡固定翻开 Otti 开场片。
 
-第二张是 Blender 开放电影《Tears of Steel / 钢铁之泪》（12 分钟，© Blender Foundation | mango.blender.org，CC BY 3.0），英语对白，配官方中文 / 德语 / 英语字幕。影片和字幕由 `.github/workflows/fetch-open-movie.yml` 在 GitHub 服务器上下载并压缩成手机友好的 H.264（约 60MB），只由网站自己提供。
+第二字幕语言默认跟随原声（视频的 `audioLang`）：德语原声 / 旁白显示中·德，英语原声（如《钢铁之泪》）显示中·英，看的时候仍可手动切换。
+
+《钢铁之泪》（12 分钟，© Blender Foundation | mango.blender.org，CC BY 3.0）是英语对白，配官方中文 / 德语 / 英语字幕。影片和字幕由 `.github/workflows/fetch-open-movie.yml` 在 GitHub 服务器上下载并压缩成手机友好的 H.264（约 60MB），只由网站自己提供。
 
 其余内置卡片是上面说的 B 站视频，属于实验功能：默认不进抽卡牌堆（可在片库点播，或用片库顶部的「B 站卡：不进牌堆 / 在牌堆」开关加入）。B 站上的用户上传可能被删除或有地区限制；打不开的卡片可以在播放页点「打不开？隐藏这张」，或在片库里隐藏 / 恢复。内置片库不再包含字幕与画面不对应的外链样片。
 

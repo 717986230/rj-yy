@@ -41,6 +41,7 @@ const NewVideoBody = z.object({
   tags: z.array(z.string().trim().max(20)).max(8).optional(),
   series: z.string().trim().max(60).optional(),
   episode: z.number().int().min(1).max(9999).optional(),
+  audioLang: z.enum(['de', 'en']).optional(),
 });
 
 export function videosRouter(db: DB, config: Config): Router {
@@ -80,6 +81,7 @@ export function videosRouter(db: DB, config: Config): Router {
       source: externalSource(body.src)!,
       ...(body.series ? { series: body.series } : {}),
       ...(body.episode ? { episode: body.episode } : {}),
+      ...(body.audioLang ? { audioLang: body.audioLang } : {}),
       tags: body.tags ?? ['我的'],
       subtitles: { zh: body.subtitlesZh, de: body.subtitlesDe, en: body.subtitlesEn },
       ownerId: req.userId!,

@@ -103,3 +103,16 @@ export function alignedTracks(
   });
   return tracks;
 }
+
+/**
+ * 一部视频默认显示的第二字幕语言：跟随原声（德语原声 → 中·德，英语原声 → 中·英）；
+ * 没标原声时，只有一种外语字幕就用那一种；判断不了返回 null（保持用户当前的选择）。
+ */
+export function defaultSecondLang(v: { audioLang?: SecondaryLang; subtitles?: SubtitleTracks }): SecondaryLang | null {
+  if (v.audioLang) return v.audioLang;
+  const de = v.subtitles?.de.length ?? 0;
+  const en = v.subtitles?.en.length ?? 0;
+  if (de && !en) return 'de';
+  if (en && !de) return 'en';
+  return null;
+}

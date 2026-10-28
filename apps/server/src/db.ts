@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS videos (
   subtitles_en TEXT NOT NULL DEFAULT '[]',
   series       TEXT,
   episode      INTEGER,
+  audio_lang   TEXT,
   owner_id     TEXT REFERENCES users(id) ON DELETE CASCADE,
   created_at   TEXT NOT NULL
 );
@@ -62,6 +63,7 @@ function migrate(db: DB): void {
     subtitles_en: "TEXT NOT NULL DEFAULT '[]'",
     series: 'TEXT',
     episode: 'INTEGER',
+    audio_lang: 'TEXT',
   };
   for (const [col, def] of Object.entries(added)) {
     if (!have.has(col)) db.exec(`ALTER TABLE videos ADD COLUMN ${col} ${def}`);
@@ -71,15 +73,15 @@ function migrate(db: DB): void {
 function seedVideos(db: DB): void {
   const insert = db.prepare(`
     INSERT INTO videos
-      (id, position, title_zh, title_de, title_en, src, mirrors, poster, duration, source, tags, subtitles_zh, subtitles_de, subtitles_en, series, episode, owner_id, created_at)
+      (id, position, title_zh, title_de, title_en, src, mirrors, poster, duration, source, tags, subtitles_zh, subtitles_de, subtitles_en, series, episode, audio_lang, owner_id, created_at)
     VALUES
-      (@id, @position, @title_zh, @title_de, @title_en, @src, @mirrors, @poster, @duration, @source, @tags, @subtitles_zh, @subtitles_de, @subtitles_en, @series, @episode, NULL, @created_at)
+      (@id, @position, @title_zh, @title_de, @title_en, @src, @mirrors, @poster, @duration, @source, @tags, @subtitles_zh, @subtitles_de, @subtitles_en, @series, @episode, @audio_lang, NULL, @created_at)
     ON CONFLICT(id) DO UPDATE SET
       position = excluded.position, title_zh = excluded.title_zh, title_de = excluded.title_de, title_en = excluded.title_en,
       src = excluded.src, mirrors = excluded.mirrors, poster = excluded.poster, duration = excluded.duration,
       source = excluded.source, tags = excluded.tags, subtitles_zh = excluded.subtitles_zh,
       subtitles_de = excluded.subtitles_de, subtitles_en = excluded.subtitles_en,
-      series = excluded.series, episode = excluded.episode
+      series = excluded.series, episode = excluded.episode, audio_lang = excluded.audio_lang
     WHERE videos.owner_id IS NULL
   `);
   db.transaction(() => {
@@ -147,6 +149,7 @@ interface VideoRow {
   subtitles_en: string;
   series: string | null;
   episode: number | null;
+  audio_lang: string | null;
   owner_id: string | null;
   created_at: string;
 }
@@ -168,6 +171,7 @@ function toRow(v: Video): VideoRow {
     subtitles_en: JSON.stringify(v.subtitles.en),
     series: v.series ?? null,
     episode: v.episode ?? null,
+    audio_lang: v.audioLang ?? null,
     owner_id: v.ownerId,
     created_at: v.createdAt,
   };
@@ -189,6 +193,7 @@ function fromRow(r: VideoRow): Video {
     source: r.source,
     ...(r.series ? { series: r.series } : {}),
     ...(r.episode != null ? { episode: r.episode } : {}),
+    ...(r.audio_lang === 'de' || r.audio_lang === 'en' ? { audioLang: r.audio_lang } : {}),
     tags: JSON.parse(r.tags),
     subtitles,
     ownerId: r.owner_id,
@@ -217,9 +222,9 @@ export const videos = {
     const { max } = db.prepare('SELECT COALESCE(MAX(position), -1) AS max FROM videos').get() as { max: number };
     db.prepare(`
       INSERT INTO videos
-        (id, position, title_zh, title_de, title_en, src, mirrors, poster, duration, source, tags, subtitles_zh, subtitles_de, subtitles_en, series, episode, owner_id, created_at)
+        (id, position, title_zh, title_de, title_en, src, mirrors, poster, duration, source, tags, subtitles_zh, subtitles_de, subtitles_en, series, episode, audio_lang, owner_id, created_at)
       VALUES
-        (@id, @position, @title_zh, @title_de, @title_en, @src, @mirrors, @poster, @duration, @source, @tags, @subtitles_zh, @subtitles_de, @subtitles_en, @series, @episode, @owner_id, @created_at)
+        (@id, @position, @title_zh, @title_de, @title_en, @src, @mirrors, @poster, @duration, @source, @tags, @subtitles_zh, @subtitles_de, @subtitles_en, @series, @episode, @audio_lang, @owner_id, @created_at)
     `).run({ ...toRow(v), position: max + 1 });
   },
   remove: (db: DB, id: string) => db.prepare('DELETE FROM videos WHERE id = ?').run(id),
