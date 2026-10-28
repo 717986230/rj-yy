@@ -1,4 +1,5 @@
 import type { SecondaryLang } from '@vido/shared';
+import { HANDBOOK, HANDBOOK_HOME } from '../app/site';
 import { app } from '../app/state';
 import { icon } from './icons';
 
@@ -9,6 +10,7 @@ import { icon } from './icons';
 export function libraryThemeSwitch(): string {
   return `
     <div class="flex items-center gap-1">
+      ${HANDBOOK ? `<a href="${HANDBOOK_HOME}" class="icon-btn !h-8 !w-8 text-base" aria-label="回德语学习手册" title="回德语学习手册">📖</a>` : ''}
       <div class="seg grid-cols-2 !p-0.5" role="group" aria-label="片库语言">
         <button data-lib="de" class="!h-7 gap-0.5 whitespace-nowrap px-1.5 !text-xs" aria-pressed="false" title="中德片库：德语原声，中德字幕">🇩🇪<span>中德</span></button>
         <button data-lib="en" class="!h-7 gap-0.5 whitespace-nowrap px-1.5 !text-xs" aria-pressed="false" title="中英片库：英语原声，中英字幕">🇬🇧<span>中英</span></button>

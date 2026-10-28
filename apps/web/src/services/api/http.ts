@@ -11,6 +11,7 @@ import {
   type Video,
   type VideoSummary,
 } from '@vido/shared';
+import { HANDBOOK, HANDBOOK_API } from '../../app/site';
 import { tokenStore } from './token';
 
 /** 连接 apps/server 的实现，接口路径与服务端路由一一对应 */
@@ -50,10 +51,35 @@ export class HttpApi implements ApiClient {
     return this.withSession(this.request<Session>('POST', '/auth/register', input));
   }
   login(input: Credentials) {
+    if (HANDBOOK) return this.handbookLogin(input);
     return this.withSession(this.request<Session>('POST', '/auth/login', input));
   }
+  /** 德语学习手册的账号：用户名 + 密码，令牌和手册共用 */
+  private async handbookLogin({ email: username, password }: Credentials): Promise<Session> {
+    let data: { token?: string; err?: string; user?: { username: string; nickname?: string } } = {};
+    try {
+      const res = await fetch(`${HANDBOOK_API}/api/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password }),
+      });
+      data = await res.json().catch(() => ({}));
+    } catch {
+      throw new ApiError('NETWORK', '连不上服务器，请检查网络后重试');
+    }
+    if (!data.token) throw new ApiError('UNAUTHORIZED', data.err ?? '用户名或密码错误');
+    tokenStore.set(data.token, data.user);
+    const user = await this.me();
+    if (!user) throw new ApiError('UNAUTHORIZED', '登录失败，请稍后再试');
+    return { token: data.token, user };
+  }
   async logout() {
+    const token = tokenStore.get();
     tokenStore.clear();
+    // 手册账号：同时让手册那边的会话失效（失败也无妨，本地已经退出）
+    if (HANDBOOK && token) {
+      void fetch(`${HANDBOOK_API}/api/logout`, { method: 'POST', headers: { Authorization: `Bearer ${token}` } }).catch(() => {});
+    }
   }
   async me(): Promise<User | null> {
     if (!tokenStore.get()) return null;

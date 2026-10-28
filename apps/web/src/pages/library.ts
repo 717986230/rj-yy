@@ -17,6 +17,7 @@ import { icon } from '../components/icons';
 import { toast } from '../components/toast';
 import { api } from '../services/api';
 import { probeSources, runLimited, type ProbeResult } from '../services/probe';
+import { mediaUrl } from '../app/site';
 
 const SAMPLE_ZH = `WEBVTT
 
@@ -116,7 +117,7 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
     const mine = v.ownerId === userId;
     const isHidden = hiddenIds().has(v.id);
     const thumb = v.poster
-      ? `<img src="${esc(v.poster)}" alt="" loading="lazy" class="h-full w-full object-cover" onerror="this.remove()" />`
+      ? `<img src="${esc(mediaUrl(v.poster))}" alt="" loading="lazy" class="h-full w-full object-cover" onerror="this.remove()" />`
       : '';
     return `
       <li class="flex items-center gap-3 rounded-2xl border border-line/10 bg-panel p-2.5 ${isHidden ? 'opacity-50' : ''}">
@@ -230,7 +231,7 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
     await runLimited(items, 3, async (v) => {
       // B 站视频在跨域播放器里，没法用 <video> 试探
       if (isBilibili(v.src)) return void probes.delete(v.id), render();
-      probes.set(v.id, await probeSources([v.src, ...(v.mirrors ?? [])]));
+      probes.set(v.id, await probeSources([v.src, ...(v.mirrors ?? [])].map(mediaUrl)));
       render();
     });
     r.probe.disabled = false;

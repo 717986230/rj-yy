@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { SEED_VIDEOS } from '@vido/shared';
 import app from '../src/index';
 import type { Env } from '../src/env';
@@ -131,5 +131,28 @@ describe('cors', () => {
     expect(ok.headers.get('access-control-allow-origin')).toBe('https://717986230.github.io');
     const bad = await app.request('/api/videos', { method: 'OPTIONS', headers: { Origin: 'https://evil.example', 'Access-Control-Request-Method': 'GET' } }, env);
     expect(bad.headers.get('access-control-allow-origin')).toBeNull();
+  });
+});
+
+describe('德语学习手册的账号（www.uuoo.site/vido/）', () => {
+  afterEach(() => vi.unstubAllGlobals());
+
+  it('accepts a handbook session token and keeps a per-user library', async () => {
+    env.UUOO_API = 'https://uuoo.test';
+    const fetchMock = vi.fn(async (url: string, init?: RequestInit) => {
+      const auth = new Headers(init?.headers).get('authorization');
+      if (url === 'https://uuoo.test/api/me' && auth === 'Bearer hb-token') {
+        return Response.json({ user: { username: 'xl', nickname: '小龙' } });
+      }
+      return Response.json({ err: '未登录' }, { status: 401 });
+    });
+    vi.stubGlobal('fetch', fetchMock);
+
+    const me = await call('GET', '/auth/me', { token: 'hb-token' });
+    expect(me.status).toBe(200);
+    expect(me.body).toMatchObject({ id: 'uuoo:xl', name: '小龙' });
+    expect((await call('GET', '/auth/me', { token: 'other-token' })).status).toBe(401);
+    // 影子账号没有密码，不能用 Vido 的邮箱登录
+    expect((await call('POST', '/auth/login', { body: { email: 'uuoo:xl', password: 'x' } })).status).toBe(400);
   });
 });

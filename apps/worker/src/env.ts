@@ -6,6 +6,8 @@ export interface Env {
   CORS_ORIGIN?: string;
   /** 设为 "1" 时找回密码接口直接返回重置令牌（仅本地开发 / 测试用，线上没有邮件服务时也不要开） */
   EXPOSE_RESET_TOKEN?: string;
+  /** 德语学习手册的账号后端；配置后，手册的登录令牌也能用来访问 Vido */
+  UUOO_API?: string;
 }
 
 export interface Vars {
