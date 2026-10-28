@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       collection:
-        description: 合集名（见 scripts/fetch_commons.py 的 COLLECTIONS）
+        description: 合集名，可以空格分隔多个（见 scripts/fetch_commons.py 的 COLLECTIONS）
         default: terra-x
       count:
         description: 本次新增几部
@@ -41,8 +41,12 @@ jobs:
             git worktree add -b "$last" "media-shards/$last" "origin/$last"
           fi
       - name: Fetch
-        run: python scripts/fetch_commons.py "${{ inputs.collection }}" "${{ inputs.count }}"
+        run: |
+          for c in ${{ inputs.collection }}; do
+            python scripts/fetch_commons.py "$c" "${{ inputs.count }}" || echo "::warning::$c stopped early"
+          done
       - name: Push media shards
+        if: ${{ !cancelled() }}
         run: |
           set -euo pipefail
           for d in media-shards/media-*; do
@@ -54,6 +58,7 @@ jobs:
             git -C "$d" push origin "HEAD:refs/heads/$b"
           done
       - name: Commit subtitles and manifest
+        if: ${{ !cancelled() }}
         run: |
           set -euo pipefail
           git add content/collections

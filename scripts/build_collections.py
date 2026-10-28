@@ -27,6 +27,9 @@ OUT = "packages/shared/src/data/collections.ts"
 META = {
     "terra-x": {"series": "Terra X · 德语科普", "tags": ["德语原声", "科普"], "lang": "de"},
     "nasa": {"series": "NASA · 英语科普", "tags": ["英语原声", "科普", "公有领域"], "lang": "en"},
+    "tagesschau": {"series": "tagesschau · 德语新闻", "tags": ["德语原声", "新闻"], "lang": "de"},
+    "srf": {"series": "SRF Wissen · 德语科普", "tags": ["德语原声", "科普"], "lang": "de"},
+    "planet-wissen": {"series": "Planet Wissen · 德语知识", "tags": ["德语原声", "知识"], "lang": "de"},
 }
 
 
@@ -47,7 +50,7 @@ def parse_srt(path):
             except (UnicodeEncodeError, UnicodeDecodeError):
                 pass
         # 去掉音效说明（[music]、♪），只剩音效的句子整条不要
-        body = re.sub(r"\[[^\]]*\]|♪", " ", body)
+        body = re.sub(r"\[[^\]]*\]|♪|(?i:\([^)]*\b(music|beep\w*|tone|sound|applause|laughter|silence|noise)\b[^)]*\))", " ", body)
         body = re.sub(r"\s+", " ", body).strip()
         if body and not re.fullmatch(r"(?i)(music|tone|beeping|applause|laughter|silence)\.?", body):
             cues.append((round(sec(a), 2), round(sec(b), 2), body))

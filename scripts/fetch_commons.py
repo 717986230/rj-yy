@@ -41,6 +41,12 @@ COLLECTIONS = {
                 "skip_manifests": ["content/terra-x/manifest.json"]},
     "nasa": {"categories": ["Category:Videos from the NASA Goddard YouTube channel"], "lang": "en", "min": 45, "max": 300,
              "strip": r"\s+(?=\S*\d)[A-Za-z0-9_-]{11}$|\s*\(SVS\d+[^)]*\)", "artist": "NASA Goddard"},
+    "tagesschau": {"categories": ["Category:Videos by Tagesschau (ARD)"], "lang": "de", "min": 25, "max": 300,
+                   "strip": r"\s*\((ARD|Tagesschau)[^)]*\)|\s+von Tagesschau$|\s*[–-]\s*kurzerklärt.*$", "artist": "ARD/tagesschau"},
+    "srf": {"categories": ["Category:Videos by SRF Wissen in German"], "lang": "de", "min": 25, "max": 300,
+            "strip": r"^SRF Wissen\s*-\s*", "artist": "SRF Wissen"},
+    "planet-wissen": {"categories": ["Category:Planet Wissen"], "lang": "de", "min": 25, "max": 300,
+                      "strip": r"\s*-\s*Planet Wissen$", "artist": "WDR/Planet Wissen"},
 }
 
 

@@ -356,6 +356,28 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/nasa-nasa-measuring-mars-ancient-ocean-wh8khnclzwm.json"
  },
  {
+  "id": "nasa-nasa-missions-take-an-unparalleled-look-into-superstar-e",
+  "title": {
+   "zh": "多台望远镜联手观测超级恒星海山二",
+   "de": "Missions Take an Unparalleled Look into Superstar Eta Carinae",
+   "en": "Missions Take an Unparalleled Look into Superstar Eta Carinae"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/nasa/nasa-missions-take-an-unparalleled-look-into-superstar-e.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/nasa/nasa-missions-take-an-unparalleled-look-into-superstar-e.mp4"
+  ],
+  "duration": 240.2,
+  "source": "NASA Goddard · Public domain",
+  "series": "NASA · 英语科普",
+  "audioLang": "en",
+  "tags": [
+   "英语原声",
+   "科普",
+   "公有领域"
+  ],
+  "subtitlesUrl": "subs/nasa-nasa-missions-take-an-unparalleled-look-into-superstar-e.json"
+ },
+ {
   "id": "nasa-nasa-propylene-on-titan",
   "title": {
    "zh": "土卫六上的丙烯",
