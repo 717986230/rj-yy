@@ -36,14 +36,22 @@ META = {
 def parse_srt(path):
     cues = []
     text = html.unescape(open(path, encoding="utf-8").read()).replace("\r", "").strip()
-    for block in re.split(r"\n\s*\n", text):
-        lines = block.split("\n")
-        idx = next((i for i, l in enumerate(lines) if "-->" in l), None)
-        if idx is None:
-            continue
-        a, b = [t.strip().split(" ")[0] for t in lines[idx].split("-->")]
+    # 按时间轴行切分（有的字幕缺空行，序号和下一条的时间轴挤在上一条后面）
+    blocks, cur = [], None
+    for line in text.split("\n"):
+        if "-->" in line:
+            if cur and cur[1] and cur[1][-1].strip().isdigit():
+                cur[1].pop()
+            cur = (line, [])
+            blocks.append(cur)
+        elif cur is not None:
+            cur[1].append(line)
+    for timing, lines in blocks:
+        while lines and (not lines[-1].strip() or lines[-1].strip().isdigit()):
+            lines.pop()
+        a, b = [t.strip().split(" ")[0] for t in timing.split("-->")]
         sec = lambda t: (lambda h, m, s: int(h) * 3600 + int(m) * 60 + float(s.replace(",", ".")))(*t.split(":"))
-        body = re.sub(r"<[^>]+>", "", " ".join(lines[idx + 1:]))
+        body = re.sub(r"<[^>]+>", "", " ".join(lines))
         if "â" in body:  # UTF-8 被当成 Latin-1 读过一次的字幕（isnât → isn’t）
             try:
                 body = body.encode("latin-1").decode("utf-8")

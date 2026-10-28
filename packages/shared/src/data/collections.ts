@@ -1975,5 +1975,152 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "公有领域"
   ],
   "subtitlesUrl": "subs/nasa-nasa-catches-hurricanes-jose-and-maria.json"
+ },
+ {
+  "id": "srf-srf-wissen-der-unterschied-zwischen-inter-und-transgesch",
+  "title": {
+   "zh": "间性与跨性别的区别",
+   "de": "Der Unterschied zwischen Inter- und Transgeschlechtlichkeit",
+   "en": "Intersex vs. transgender"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-der-unterschied-zwischen-inter-und-transgesch.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-der-unterschied-zwischen-inter-und-transgesch.mp4"
+  ],
+  "duration": 40.4,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-der-unterschied-zwischen-inter-und-transgesch.json"
+ },
+ {
+  "id": "srf-srf-wissen-wie-entsteht-ein-bandscheibenvorfall",
+  "title": {
+   "zh": "椎间盘突出是怎么回事？",
+   "de": "Wie entsteht ein Bandscheibenvorfall?",
+   "en": "How does a slipped disc happen?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-entsteht-ein-bandscheibenvorfall.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-entsteht-ein-bandscheibenvorfall.mp4"
+  ],
+  "duration": 51.4,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-entsteht-ein-bandscheibenvorfall.json"
+ },
+ {
+  "id": "srf-srf-wissen-wie-entsteht-eine-demenz",
+  "title": {
+   "zh": "痴呆是怎么产生的？",
+   "de": "Wie entsteht eine Demenz?",
+   "en": "How does dementia develop?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-entsteht-eine-demenz.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-entsteht-eine-demenz.mp4"
+  ],
+  "duration": 44.7,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-entsteht-eine-demenz.json"
+ },
+ {
+  "id": "srf-srf-wissen-wie-funktioniert-der-menschliche-tag-nacht-rh",
+  "title": {
+   "zh": "人体的昼夜节律",
+   "de": "Wie funktioniert der menschliche Tag-Nacht-Rhythmus?",
+   "en": "How the human day-night rhythm works"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-der-menschliche-tag-nacht-rh.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-der-menschliche-tag-nacht-rh.mp4"
+  ],
+  "duration": 37.2,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-funktioniert-der-menschliche-tag-nacht-rh.json"
+ },
+ {
+  "id": "srf-srf-wissen-wie-funktioniert-die-spermaproduktion",
+  "title": {
+   "zh": "精子是怎么产生的？",
+   "de": "Wie funktioniert die Spermaproduktion?",
+   "en": "How is sperm produced?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-die-spermaproduktion.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-die-spermaproduktion.mp4"
+  ],
+  "duration": 49.2,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-funktioniert-die-spermaproduktion.json"
+ },
+ {
+  "id": "srf-srf-wissen-wie-funktioniert-die-wasserversorgung-in-der",
+  "title": {
+   "zh": "瑞士的供水是怎么运作的？",
+   "de": "Wie funktioniert die Wasserversorgung in der Schweiz?",
+   "en": "How does Switzerland's water supply work?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-die-wasserversorgung-in-der.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-die-wasserversorgung-in-der.mp4"
+  ],
+  "duration": 49.7,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-funktioniert-die-wasserversorgung-in-der.json"
+ },
+ {
+  "id": "srf-srf-wissen-wie-orientieren-sich-tauben",
+  "title": {
+   "zh": "鸽子怎么认路？",
+   "de": "Wie orientieren sich Tauben?",
+   "en": "How do pigeons find their way?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-orientieren-sich-tauben.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-orientieren-sich-tauben.mp4"
+  ],
+  "duration": 36.2,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-orientieren-sich-tauben.json"
  }
 ];
