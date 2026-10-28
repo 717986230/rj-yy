@@ -256,6 +256,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-der-lowe-ein-symboltier.json"
  },
  {
+  "id": "terra-x-der-planet-mars",
+  "title": {
+   "zh": "火星",
+   "de": "Der Planet Mars",
+   "en": "The planet Mars"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/der-planet-mars.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/der-planet-mars.mp4"
+  ],
+  "duration": 176.1,
+  "source": "ZDF/nano · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-der-planet-mars.json"
+ },
+ {
   "id": "terra-x-der-nordliche-polarkreis",
   "title": {
    "zh": "北极圈",
@@ -674,6 +695,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-die-russelnasen-der-saiga-antilopen.json"
+ },
+ {
+  "id": "terra-x-die-schichten-der-erdatmosphare",
+  "title": {
+   "zh": "地球大气层的分层",
+   "de": "Die Schichten der Erdatmosphäre",
+   "en": "The layers of Earth's atmosphere"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-schichten-der-erdatmosphare.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-schichten-der-erdatmosphare.mp4"
+  ],
+  "duration": 191.9,
+  "source": "ZDF/TerraX · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-schichten-der-erdatmosphare.json"
  },
  {
   "id": "terra-x-die-sinne-des-wolfs",
