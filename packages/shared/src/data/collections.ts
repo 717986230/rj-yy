@@ -70,6 +70,28 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/nasa-a-tour-of-nasas-solar-eclipse-map-for-2023-and-2024.json"
  },
  {
+  "id": "nasa-an-introduction-to-the-james-webb-space-telescope-missio",
+  "title": {
+   "zh": "詹姆斯·韦布空间望远镜任务简介",
+   "de": "An Introduction to the James Webb Space Telescope Mission",
+   "en": "An Introduction to the James Webb Space Telescope Mission"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/an-introduction-to-the-james-webb-space-telescope-missio.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/an-introduction-to-the-james-webb-space-telescope-missio.mp4"
+  ],
+  "duration": 223.7,
+  "source": "NASA Goddard · Public domain",
+  "series": "NASA · 英语科普",
+  "audioLang": "en",
+  "tags": [
+   "英语原声",
+   "科普",
+   "公有领域"
+  ],
+  "subtitlesUrl": "subs/nasa-an-introduction-to-the-james-webb-space-telescope-missio.json"
+ },
+ {
   "id": "nasa-get-ready-for-the-2017-solar-eclipse",
   "title": {
    "zh": "迎接 2017 年日全食",
@@ -112,6 +134,116 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "公有领域"
   ],
   "subtitlesUrl": "subs/nasa-how-to-safely-watch-a-solar-eclipse.json"
+ },
+ {
+  "id": "nasa-hubbles-servicing-mission-4-celebrates-its-ten-year-anni",
+  "title": {
+   "zh": "哈勃第四次维修任务十周年",
+   "de": "Hubble's Servicing Mission 4 Celebrates Its Ten-Year Anniversary",
+   "en": "Hubble's Servicing Mission 4 Celebrates Its Ten-Year Anniversary"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/hubbles-servicing-mission-4-celebrates-its-ten-year-anni.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/hubbles-servicing-mission-4-celebrates-its-ten-year-anni.mp4"
+  ],
+  "duration": 154.4,
+  "source": "NASA Goddard · Public domain",
+  "series": "NASA · 英语科普",
+  "audioLang": "en",
+  "tags": [
+   "英语原声",
+   "科普",
+   "公有领域"
+  ],
+  "subtitlesUrl": "subs/nasa-hubbles-servicing-mission-4-celebrates-its-ten-year-anni.json"
+ },
+ {
+  "id": "nasa-ipcc-projections-of-temperature-and-precipitation-in-the",
+  "title": {
+   "zh": "联合国气候专门委员会对 21 世纪气温与降水的预测",
+   "de": "IPCC Projections of Temperature and Precipitation in the 21st Century",
+   "en": "IPCC Projections of Temperature and Precipitation in the 21st Century"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/ipcc-projections-of-temperature-and-precipitation-in-the.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/ipcc-projections-of-temperature-and-precipitation-in-the.mp4"
+  ],
+  "duration": 233.0,
+  "source": "NASA Goddard · Public domain",
+  "series": "NASA · 英语科普",
+  "audioLang": "en",
+  "tags": [
+   "英语原声",
+   "科普",
+   "公有领域"
+  ],
+  "subtitlesUrl": "subs/nasa-ipcc-projections-of-temperature-and-precipitation-in-the.json"
+ },
+ {
+  "id": "nasa-intense-string-of-hurricanes-seen-from-space",
+  "title": {
+   "zh": "从太空看一连串的强飓风",
+   "de": "Intense String of Hurricanes Seen From Space",
+   "en": "Intense String of Hurricanes Seen From Space"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/intense-string-of-hurricanes-seen-from-space.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/intense-string-of-hurricanes-seen-from-space.mp4"
+  ],
+  "duration": 153.9,
+  "source": "NASA Goddard · Public domain",
+  "series": "NASA · 英语科普",
+  "audioLang": "en",
+  "tags": [
+   "英语原声",
+   "科普",
+   "公有领域"
+  ],
+  "subtitlesUrl": "subs/nasa-intense-string-of-hurricanes-seen-from-space.json"
+ },
+ {
+  "id": "nasa-nasa-dynamic-earth-ujbi9ba8hqs",
+  "title": {
+   "zh": "动态的地球",
+   "de": "Dynamic Earth",
+   "en": "Dynamic Earth"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/nasa/nasa-dynamic-earth-ujbi9ba8hqs.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/nasa/nasa-dynamic-earth-ujbi9ba8hqs.mp4"
+  ],
+  "duration": 266.5,
+  "source": "NASA Goddard · Public domain",
+  "series": "NASA · 英语科普",
+  "audioLang": "en",
+  "tags": [
+   "英语原声",
+   "科普",
+   "公有领域"
+  ],
+  "subtitlesUrl": "subs/nasa-nasa-dynamic-earth-ujbi9ba8hqs.json"
+ },
+ {
+  "id": "nasa-nasa-human-fingerprint-on-global-air-quality",
+  "title": {
+   "zh": "人类在全球空气质量上留下的指纹",
+   "de": "Human Fingerprint on Global Air Quality",
+   "en": "Human Fingerprint on Global Air Quality"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/nasa/nasa-human-fingerprint-on-global-air-quality.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/nasa/nasa-human-fingerprint-on-global-air-quality.mp4"
+  ],
+  "duration": 102.7,
+  "source": "NASA Goddard · Public domain",
+  "series": "NASA · 英语科普",
+  "audioLang": "en",
+  "tags": [
+   "英语原声",
+   "科普",
+   "公有领域"
+  ],
+  "subtitlesUrl": "subs/nasa-nasa-human-fingerprint-on-global-air-quality.json"
  },
  {
   "id": "nasa-nasa-catches-hurricanes-jose-and-maria",
