@@ -1,0 +1,40 @@
+1
+00:00:03,573 --> 00:00:06,936
+Es ist ein alter Traum
+vieler Science-Fiction-Fans,
+
+2
+00:00:06,996 --> 00:00:09,762
+ein Fahrstuhl zu einer Weltraumstation.
+
+3
+00:00:10,204 --> 00:00:14,239
+Von hier aus sollen dann Reisen
+in die Tiefe des Alls möglich sein.
+
+4
+00:00:15,790 --> 00:00:21,054
+Die Basisstation dient zur Verankerung
+eines extrem festen Seiles.
+
+5
+00:00:21,529 --> 00:00:26,142
+Wie auf einer Schiene
+soll der Aufzug in die Höhe gleiten.
+
+6
+00:00:29,501 --> 00:00:32,163
+Doch leider gibt es
+bis heute kein Material,
+
+7
+00:00:32,220 --> 00:00:35,355
+das stark genug für ein solches Seil wäre.
+
+8
+00:00:36,778 --> 00:00:38,774
+Der Fahrstuhl ins All
+
+9
+00:00:38,803 --> 00:00:41,539
+bleibt also erst einmal ein Traum.

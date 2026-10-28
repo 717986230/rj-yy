@@ -1,0 +1,77 @@
+1
+00:00:00,715 --> 00:00:03,557
+Alle Viren verändern sich mit der Zeit.
+
+2
+00:00:03,603 --> 00:00:08,230
+Wenn ein Virus eine Wirtszelle kapert,
+lässt es sein Erbgut vervielfältigen.
+
+3
+00:00:08,276 --> 00:00:11,306
+In diesem Prozess schleichen sich
+immer wieder Fehler ein,
+
+4
+00:00:11,336 --> 00:00:14,336
+neue Varianten
+mit kleinen Änderungen entstehen.
+
+5
+00:00:14,443 --> 00:00:16,511
+Meist bleiben sie ohne Wirkung.
+
+6
+00:00:16,541 --> 00:00:22,496
+Doch die englische Variante von Sars-Cov-2
+weist gleich 17 solcher Mutationen auf –
+
+7
+00:00:22,534 --> 00:00:24,283
+ungewöhnlich viele.
+
+8
+00:00:24,347 --> 00:00:26,889
+Einige davon betreffen das Spikeprotein,
+
+9
+00:00:26,921 --> 00:00:29,996
+mit dem sich das Virus Zugang
+zu den Zellen verschafft.
+
+10
+00:00:32,234 --> 00:00:35,468
+Die neue Mutante kann noch
+leichter an die Zellen andocken,
+
+11
+00:00:35,489 --> 00:00:37,568
+sie ist deshalb ansteckender.
+
+12
+00:00:40,096 --> 00:00:43,825
+Das hat auch Auswirkungen
+auf eine mögliche Herdenimmunität.
+
+13
+00:00:43,946 --> 00:00:46,388
+Statt wie bisher von einer Herdenimmunität
+
+14
+00:00:46,430 --> 00:00:49,244
+bei gut 60 Prozent
+Immunisierten auszugehen,
+
+15
+00:00:49,269 --> 00:00:51,829
+müssen die Epidemiologen neu rechnen:
+
+16
+00:00:53,866 --> 00:00:58,825
+Wenn jeder Infizierte fünf Menschen
+ansteckt, ist der Reproduktionswert 5 –
+
+17
+00:00:58,871 --> 00:01:02,831
+und die Herdenimmunität
+erst bei 80 Prozent erreicht.

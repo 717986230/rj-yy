@@ -1,0 +1,130 @@
+1
+00:00:01,517 --> 00:00:07,282
+Um eine Immunität gegen Viren aufzubauen,
+gibt es verschiedene Impfstoffvarianten.
+
+2
+00:00:07,765 --> 00:00:11,235
+Bei der Impfung mit einem Totimpfstoff
+mit Virusproteinen
+
+3
+00:00:11,252 --> 00:00:15,536
+werden dem Patienten
+inaktive Bestandteile des Virus injiziert.
+
+4
+00:00:15,787 --> 00:00:19,889
+Ausgangsmaterial ist beispielsweise
+das Sars-CoV-2 Virus selbst.
+
+5
+00:00:21,467 --> 00:00:24,283
+Dieses wird vorab zerstört
+oder zerkleinert
+
+6
+00:00:24,314 --> 00:00:26,768
+und dann als Impfstoff vorbereitet.
+
+7
+00:00:27,236 --> 00:00:32,226
+Der Patient bekommt also zerstörte
+und damit ungefährliche Viren injiziert.
+
+8
+00:00:32,506 --> 00:00:35,496
+Trotzdem erkennt der Körper
+darin einen Eindringling
+
+9
+00:00:35,541 --> 00:00:37,300
+und bildet Antikörper aus.
+
+10
+00:00:41,767 --> 00:00:44,723
+Beim Vektorimpfstoff werden aktive,
+
+11
+00:00:44,762 --> 00:00:49,514
+aber harmlose Viren als Transportmittel
+benutzt – sogenannte Vektoren.
+
+12
+00:00:49,549 --> 00:00:51,998
+Im Labor verändern Forscher diese Viren,
+
+13
+00:00:52,027 --> 00:00:57,447
+indem sie Gene für Oberflächenproteine
+von beispielsweise Sars-CoV-2 einfügen.
+
+14
+00:00:58,269 --> 00:01:01,699
+Diese neuen Viren sehen also
+nach Sars-CoV-2 Viren aus -
+
+15
+00:01:01,733 --> 00:01:03,869
+im Inneren sind sie aber harmlos.
+
+16
+00:01:04,200 --> 00:01:07,890
+Diese harmlosen Viren werden jetzt gezielt
+in die Zellen transportiert
+
+17
+00:01:07,910 --> 00:01:10,581
+und lösen eine Immunreaktion aus.
+
+18
+00:01:10,745 --> 00:01:15,164
+Unsere Immunabwehr erkennt
+die Oberflächenproteine von Sars-CoV-2
+
+19
+00:01:15,212 --> 00:01:17,543
+und bildet entsprechende Antikörper.
+
+20
+00:01:18,619 --> 00:01:22,483
+Bei der Impfung mit einem genbasierten
+Impfstoff mit mRNA
+
+21
+00:01:22,483 --> 00:01:26,347
+lässt man den Körper
+selbst Sars-CoV-2 Proteine produzieren.
+
+22
+00:01:27,239 --> 00:01:30,772
+Dafür spritzt man ihm die Bauanleitung,
+also die mRNA.
+
+23
+00:01:30,862 --> 00:01:34,036
+So können unsere Körperzellen
+dann Oberflächenproteine
+
+24
+00:01:34,051 --> 00:01:36,290
+wie von SARS-CoV-2 produzieren.
+
+25
+00:01:36,452 --> 00:01:39,210
+Diese Proteine sind
+für den Menschen ungefährlich,
+
+26
+00:01:39,253 --> 00:01:42,484
+werden vom Immunsystem
+aber als Eindringlinge erkannt.
+
+27
+00:01:42,842 --> 00:01:45,783
+Der Körper reagiert
+mit der Bildung von Antikörpern
+
+28
+00:01:45,827 --> 00:01:48,339
+und bildet so eine Immunität.

@@ -1,0 +1,126 @@
+1
+00:00:03,000 --> 00:00:08,860
+Wie stellt man auf befriedigende Weise 
+die Erdkugel auf einer flächigen Weltkarte dar?
+
+2
+00:00:09,078 --> 00:00:12,055
+Ein ungelöstes Rätsel im 16. Jahrhundert,
+
+3
+00:00:12,097 --> 00:00:16,000
+das auch den Kartografen
+Gerhard Mercator beschäftigte.
+
+4
+00:00:17,276 --> 00:00:19,688
+In dieser Zeit wurden Karten und Globen
+
+5
+00:00:19,735 --> 00:00:24,472
+zu begehrten Repräsentationsobjekten
+eines kaufkräftigen Bürgertums.
+
+6
+00:00:24,712 --> 00:00:29,130
+Die große Nachfrage bescherte
+Gerhard Mercator Ansehen und Reichtum.
+
+7
+00:00:29,500 --> 00:00:36,239
+Seit 1552 lebte der Flame in Duisburg
+und widmete sich ganz seiner Leidenschaft,
+
+8
+00:00:36,300 --> 00:00:39,807
+möglichst exakte Karten
+und Globen herzustellen.
+
+9
+00:00:40,000 --> 00:00:44,765
+Dann erlangte Gerhard Mercator 
+durch einen genialen Einfall Weltruhm:
+
+10
+00:00:44,804 --> 00:00:47,727
+Unzählige Berechnungen
+und Versuche waren nötig,
+
+11
+00:00:47,771 --> 00:00:50,524
+ehe er den Grundgedanken
+seiner Projektion
+
+12
+00:00:50,553 --> 00:00:52,537
+tatsächlich umsetzen konnte.
+
+13
+00:00:53,500 --> 00:00:58,030
+Er legte Papier wie einen Zylinder 
+um den Globus
+
+14
+00:00:59,716 --> 00:01:02,918
+der Zylinder berührt die Erde am Äquator
+
+15
+00:01:03,798 --> 00:01:07,159
+vom gedachten Projektionszentrum
+in der Erdmitte
+
+16
+00:01:07,181 --> 00:01:11,000
+werden alle Punkte von der Kugel
+auf den Zylinder übertragen.
+
+17
+00:01:12,713 --> 00:01:17,699
+Nach dem Abrollen ergibt sich 
+eine winkeltreue Karte der Erdoberfläche,
+
+18
+00:01:17,730 --> 00:01:22,000
+denn Längen und Breitengrade
+stehen im rechten Winkel zueinander.
+
+19
+00:01:22,500 --> 00:01:25,795
+Größenverhältnisse werden 
+jedoch verzerrt dargestellt.
+
+20
+00:01:26,000 --> 00:01:29,243
+Grönland scheint fast so groß wie Afrika.
+
+21
+00:01:30,596 --> 00:01:33,954
+1569 präsentierte Gerhard Mercator
+
+22
+00:01:33,984 --> 00:01:37,324
+seine Weltkarte 
+zum ersten Mal der Öffentlichkeit.
+
+23
+00:01:37,500 --> 00:01:41,477
+Die 1,34 m x 2,12 Meter große Karte
+
+24
+00:01:41,506 --> 00:01:45,208
+bekam den Titelzusatz
+„zum seemännischen Gebrauch”.
+
+25
+00:01:45,500 --> 00:01:48,759
+Später wurde sie
+in 20 Einzelblätter aufgeteilt
+
+26
+00:01:48,791 --> 00:01:50,912
+und in einem Buch veröffentlicht,
+
+27
+00:01:50,942 --> 00:01:54,757
+von den Kapitänen der Welt
+sehnlichst erwartet.

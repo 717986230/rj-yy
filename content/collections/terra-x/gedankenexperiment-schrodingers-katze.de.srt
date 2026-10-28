@@ -1,0 +1,163 @@
+1
+00:00:03,014 --> 00:00:04,766
+[Wer oder was ist Schrödinge Katze?]
+
+2
+00:00:04,796 --> 00:00:07,532
+Um welche Katze handelt es sich hier?
+
+3
+00:00:07,563 --> 00:00:11,507
+Der Österreicher Erwin Schrödinger
+war einer der Vorreiter der Quantenphysik.
+
+4
+00:00:11,539 --> 00:00:15,960
+Am bekanntesten ist er für ein Experiment,
+das er zum Glück nie durchgeführt hat:
+
+5
+00:00:15,996 --> 00:00:17,126
+Schrödingers Katze.
+
+6
+00:00:17,149 --> 00:00:19,756
+[Wie funktioniert das Experiment?]
+Das funktioniert so:
+
+7
+00:00:19,787 --> 00:00:23,970
+Man nehme eine Katze und sperre sie
+in einen versiegelten Behälter.
+
+8
+00:00:24,002 --> 00:00:28,542
+Mit einem Gerät, das die Katze
+zu einer Wahrscheinlichkeit von 50 Prozent
+
+9
+00:00:28,578 --> 00:00:30,822
+innerhalb der nächsten Stunde tötet.
+
+10
+00:00:31,512 --> 00:00:33,584
+Überlebt die Katze oder nicht?
+
+11
+00:00:34,491 --> 00:00:37,899
+Der Quantentheorie zufolge,
+so Schrödinger: beides.
+
+12
+00:00:38,139 --> 00:00:40,104
+Solange wir nicht nachschauen.
+
+13
+00:00:40,151 --> 00:00:44,193
+Denn in einem quantenmechanischen
+System kann man nichts messen,
+
+14
+00:00:44,220 --> 00:00:46,907
+ohne das Ergebnis dadurch zu beeinflussen.
+
+15
+00:00:47,213 --> 00:00:49,451
+Erst durch den Prozess der Beobachtung
+
+16
+00:00:49,481 --> 00:00:53,035
+wird sich die Realität
+in einer bestimmten Richtung zeigen.
+
+17
+00:00:54,269 --> 00:00:57,790
+Bevor wir die Kiste also wieder aufmachen,
+bleibt die Katze sowohl lebendig
+
+18
+00:00:57,810 --> 00:00:59,324
+als auch tot.
+
+19
+00:00:59,339 --> 00:01:00,579
+[Das klingt absurd, oder?]
+
+20
+00:01:00,625 --> 00:01:02,209
+Klingt absurd, ja.
+
+21
+00:01:02,548 --> 00:01:04,952
+Genau das war Schrödingers Absicht.
+
+22
+00:01:04,980 --> 00:01:07,906
+Durch dieses Gedankenexperiment
+wollte er die Mängel
+
+23
+00:01:07,952 --> 00:01:12,310
+der damals noch in Kinderschuhen
+steckenden Quantenphysik aufzeigen.
+
+24
+00:01:12,518 --> 00:01:13,724
+[Welche Mängel?]
+
+25
+00:01:13,740 --> 00:01:17,183
+Das Manko der Quantenmechanik,
+wenn man so will, ist,
+
+26
+00:01:17,204 --> 00:01:20,785
+dass sie sich in einer Welt
+kleinster Teilchen abspielt –
+
+27
+00:01:20,812 --> 00:01:23,066
+jenseits unserer Erfahrungswelt
+
+28
+00:01:23,082 --> 00:01:26,500
+und sich nicht auf die klassische
+Mechanik übertragen lässt.
+
+29
+00:01:26,547 --> 00:01:30,753
+In der Quantenwelt können Elektronen
+tatsächlich miteinander verschränkt sein
+
+30
+00:01:30,784 --> 00:01:35,295
+und simultan an verschiedenen Orten oder
+in verschiedenen Zuständen existieren.
+
+31
+00:01:36,569 --> 00:01:41,100
+Nicht aber in unserer “normalgroßen” Welt
+der Alltags-Erfahrungen.
+
+32
+00:01:41,424 --> 00:01:45,516
+Dennoch wurde Schrödingers Beispiel
+in der Popkultur missverstanden
+
+33
+00:01:45,534 --> 00:01:49,779
+und gilt mittlerweile als “Beweis”
+für ein Multiversum,
+
+34
+00:01:49,794 --> 00:01:54,482
+in dem sich zu jedem Zeitpunkt
+die Realität in unzählige Möglichkeiten,
+
+35
+00:01:54,513 --> 00:01:56,726
+sprich Universen, abspaltet.
+
+36
+00:01:56,739 --> 00:01:59,511
+Ganz und gar nicht im Sinne des Erfinders!

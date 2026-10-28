@@ -1,0 +1,47 @@
+1
+00:00:03,480 --> 00:00:06,948
+Der natürliche Wasserkreislauf
+wird von der Sonne angetrieben:
+
+2
+00:00:06,994 --> 00:00:10,030
+Ihre Wärmestrahlung lässt Wasser
+aus Ozeanen, Seen
+
+3
+00:00:10,088 --> 00:00:12,413
+und Flüssen zu Wasserdampf verdunsten.
+
+4
+00:00:13,009 --> 00:00:16,438
+Dieser kondensiert in [...]
+
+5
+00:00:16,480 --> 00:00:19,285
+[...]
+
+6
+00:00:19,956 --> 00:00:23,734
+Das Wasser gelangt in Seen,
+Flüsse und ins Grundwasser
+
+7
+00:00:23,776 --> 00:00:26,556
+und fließt am Ende ins Meer zurück.
+
+8
+00:00:26,749 --> 00:00:28,943
+Wasser [...]
+
+9
+00:00:29,035 --> 00:00:34,051
+[...] Salzwasser
+[...] Erde [...] 97 % aus,
+
+10
+00:00:34,093 --> 00:00:35,819
+Süsswasser nur 3 %.
+
+11
+00:00:35,848 --> 00:00:39,496
+Und da […]

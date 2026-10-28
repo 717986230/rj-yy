@@ -1,0 +1,43 @@
+1
+00:00:01,275 --> 00:00:08,988
+Das Magnetfeld der Erde kann man sich so vorstellen, als gäbe es im Inneren der Erde einen riesigen Stabmagneten.
+
+2
+00:00:09,008 --> 00:00:11,091
+Weil er zwei Pole hat, heisst er Dipol.
+
+3
+00:00:12,233 --> 00:00:16,338
+Um so einen Magneten bilden sich sogenannte Feldlinien.
+
+4
+00:00:16,358 --> 00:00:24,466
+Der beispielhafte Stabmagnet liegt nicht genau auf der Rotationsachse der Erde, sondern ist um circa zehn Prozent dazu geneigt.
+
+5
+00:00:25,487 --> 00:00:30,315
+Deshalb liegen magnetischer Nord- und Südpol nicht genau an den geografischen Polen.
+
+6
+00:00:32,655 --> 00:00:38,920
+Jeder Ort auf der Welt lässt sich durch die Richtung und Stärke des Magnetfelds beschreiben.
+
+7
+00:00:38,960 --> 00:00:44,203
+Entscheidend ist dabei der Winkel zwischen magnetisch Nord und geografisch Nord.
+
+8
+00:00:44,223 --> 00:00:46,305
+Man nennt ihn Deklination.
+
+9
+00:00:49,373 --> 00:00:55,958
+Zusätzlich wird der Winkel benötigt, indem die magnetischen Feldlinien auf die Erdoberfläche treffen.
+
+10
+00:00:55,998 --> 00:00:59,240
+Dieser heisst Inklination.
+
+11
+00:00:59,260 --> 00:01:02,803
+Dazu kommt dann noch die Stärke des Magnetfelds am jeweiligen Ort.

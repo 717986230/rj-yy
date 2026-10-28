@@ -1,0 +1,225 @@
+1
+00:00:00,000 --> 00:00:02,000
+[sanfte Streicheruntermalung]
+
+2
+00:00:02,250 --> 00:00:08,750
+Mitte des 19. Jahrhunderts war die Natur der Elemente
+eine noch weitgehend unbekannte Welt.
+
+3
+00:00:09,000 --> 00:00:14,000
+Ob sie sich wohl in ein verborgenes System,
+eine Art Ordnung fügen ließ?
+
+4
+00:00:14,500 --> 00:00:22,250
+Eigentlich wollte der russische Chemiker Дмитрий Менделеев
+1869 ein Lehrbuch für seine Studenten schreiben
+
+5
+00:00:22,500 --> 00:00:24,750
+blieb aber an dieser Fragen hängen.
+
+6
+00:00:26,250 --> 00:00:29,750
+Um Ordnung in seine Gedanken zu bringen
+benutzte er Karten.
+
+7
+00:00:30,250 --> 00:00:32,500
+Eine für jedes Element.
+
+8
+00:00:34,250 --> 00:00:39,000
+Менделеев kannte den Streit,
+der gerade in der Fachwelt ausgetragen wurde,
+
+9
+00:00:39,250 --> 00:00:44,180
+und die Argumente, nach welchen Kriterien
+man die Elemente ordnen müsse.
+
+10
+00:00:44,500 --> 00:00:49,500
+Die Einen meinten, nach dem Atomgewicht,
+also in einer Reihe hintereinander.
+
+11
+00:00:57,250 --> 00:01:00,750
+Andere sagten, nach spezifischen Eigenschaften.
+
+12
+00:01:01,250 --> 00:01:05,250
+Ob sie etwa fest, flüssig oder gasförmig seien.
+
+13
+00:01:05,500 --> 00:01:08,250
+Doch Менделеев war nicht überzeugt.
+
+14
+00:01:08,750 --> 00:01:11,500
+Er glaubte, die entscheidende Idee zu haben
+
+15
+00:01:11,750 --> 00:01:16,250
+und kurz vor dem Durchbruch zu stehen,
+der zur Lösung des Rätsels führt.
+
+16
+00:01:16,500 --> 00:01:18,500
+Er arbeitete wie besessen.
+
+17
+00:01:18,750 --> 00:01:23,750
+Schon den dritten Tag in Folge brütete er
+ohne Unterbrechung über seinen Gedanken.
+
+18
+00:01:24,000 --> 00:01:27,250
+Eigentlich wollte er jetzt
+auf dem Weg zu einem Kongreß sein,
+
+19
+00:01:27,500 --> 00:01:31,000
+im Zug sitzen, und sich die Zeit
+mit Patiencekarten vertreiben.
+
+20
+00:01:32,250 --> 00:01:36,500
+Im Traum – so erzählte er später –
+erkannte er die Ordnung der Elemente
+
+21
+00:01:36,750 --> 00:01:41,000
+wie die Bilder von Patiencen,
+sortiert in Reihen und Gruppen.
+
+22
+00:01:48,500 --> 00:01:50,000
+Менделеев verließ sich
+
+23
+00:01:50,250 --> 00:01:52,250
+– unbeeindruckt von anderen Auffassungen –
+
+24
+00:01:52,500 --> 00:01:58,000
+auf seinen Verstand, und auf seine Fähigkeit,
+neue Thesen zu prüfen und zu verwerfen
+
+25
+00:01:58,250 --> 00:02:00,750
+bis das Bild schließlich stimmte.
+
+26
+00:02:05,500 --> 00:02:09,750
+Doch beim Versuch, die bekannten Elemente
+nach seiner Ordnung zu sortieren,
+
+27
+00:02:10,000 --> 00:02:13,020
+stieß Менделеев auf ein Problem:
+Es blieben Lücken.
+
+28
+00:02:13,750 --> 00:02:16,750
+Anstatt sich verunsichern zu lassen
+war er überzeugt,
+
+29
+00:02:17,000 --> 00:02:20,660
+daß es noch unbekannte Elemente geben müsse,
+welche die Lücken füllen,
+
+30
+00:02:21,000 --> 00:02:25,250
+und er beschrieb genau, welche Eigenschaften
+diese Elemente haben müßten.
+
+31
+00:02:28,500 --> 00:02:31,000
+So fehlte – zum Beispiel – das Element,
+
+32
+00:02:31,250 --> 00:02:35,000
+welches in der Ordnung nach dem
+schon bekannten Aluminium steht:
+
+33
+00:02:35,250 --> 00:02:39,750
+es müßte ein glänzendes Metall sein
+mit ganz bestimmten Eigenschaften,
+
+34
+00:02:40,000 --> 00:02:43,750
+zum Beispiel einem Schmelzpunkt von etwa 29 Grad.
+
+35
+00:02:44,000 --> 00:02:46,000
+[29,76 °C = 85,568 °F = 300,91 K]
+[6 g / 1 cm³ ≈ 0.035 oz. / 0.061 in³]
+
+36
+00:02:46,250 --> 00:02:50,500
+So ergab sich der erste Entwurf
+des Periodensystems.
+
+37
+00:02:50,750 --> 00:02:55,000
+Менделеев hatte im richtigen Moment
+seiner Intuition vertraut.
+
+38
+00:02:55,500 --> 00:02:59,500
+Schon zwei Wochen später
+veröffentlichte er seine Theorie.
+
+39
+00:03:02,750 --> 00:03:05,250
+Ein Großteil der Wissenschaftsgemeinde
+
+40
+00:03:05,500 --> 00:03:09,750
+reagierte allerdings mit Ablehnung
+auf das scheinbar lückenhafte System.
+
+41
+00:03:10,500 --> 00:03:12,000
+Doch mit Gallium
+
+42
+00:03:12,250 --> 00:03:16,750
+wurde keine sechs Jahre später
+in Frankreich ein neues Element entdeckt,
+
+43
+00:03:17,000 --> 00:03:20,250
+das genau in die Lücke nach Aluminium paßte
+
+44
+00:03:20,750 --> 00:03:24,250
+und auch genau
+die vorhergesagten Eigenschaften hatte,
+
+45
+00:03:24,500 --> 00:03:28,500
+zum Beispiel, daß es
+bei Körpertemperatur flüssig wurde.
+
+46
+00:03:31,000 --> 00:03:35,000
+Ein Triumph für den unabhängigen Geist Менделеев.
+
+47
+00:03:35,250 --> 00:03:37,000
+Mit leichten Anpassungen
+
+48
+00:03:37,250 --> 00:03:40,750
+ist die damals gefundene
+Ordnung der Elemente im Periodensystem
+
+49
+00:03:41,000 --> 00:03:42,500
+bis heute gültig.

@@ -1,0 +1,366 @@
+1
+00:00:04,704 --> 00:00:08,537
+Ich glaube jeder Einzelne muss momentan
+jetzt den Ernst der Lage erkennen
+
+2
+00:00:08,564 --> 00:00:10,131
+und muss wissen,
+
+3
+00:00:10,162 --> 00:00:13,743
+dass wir jetzt durch unser Verhalten
+noch einen Unterschied machen können.
+
+4
+00:00:13,856 --> 00:00:16,768
+Und dieses Verhalten,
+das wir annehmen müssen, das bedeutet:
+
+5
+00:00:16,800 --> 00:00:19,155
+Wie müssen weniger soziale Kontakte haben,
+
+6
+00:00:19,201 --> 00:00:21,578
+und wir müssen uns möglichst
+in dem Umfeld bewegen,
+
+7
+00:00:21,615 --> 00:00:23,316
+was wir sowieso schon kennen.
+
+8
+00:00:30,872 --> 00:00:33,704
+Wir in Marburg machen mit vielen anderen
+
+9
+00:00:33,737 --> 00:00:35,748
+akademischen Gruppen in Deutschland
+
+10
+00:00:35,767 --> 00:00:38,386
+innerhalb des deutschen Zentrums
+für Infektionsforschung
+
+11
+00:00:38,416 --> 00:00:41,485
+einen Impfstoff gegen
+das neue SARS-Corona-Virus.
+
+12
+00:00:41,755 --> 00:00:45,249
+Das ist auf der Basis
+von einem attenuierten Virus.
+
+13
+00:00:45,467 --> 00:00:47,520
+Dieses Virus macht
+den Menschen nicht krank,
+
+14
+00:00:47,530 --> 00:00:51,492
+aber er kann sich ganz limitiert
+in den menschlichen Zellen vermehren,
+
+15
+00:00:51,524 --> 00:00:55,769
+beziehungsweise produziert dann
+in diesen Zellen das Oberflächenprotein
+
+16
+00:00:55,801 --> 00:00:57,756
+von dem neuen SARS-Corona-Virus.
+
+17
+00:00:57,793 --> 00:01:01,708
+Und wir wissen, dass Antikörper
+und eine zelluläre Immunantwort
+
+18
+00:01:01,743 --> 00:01:05,376
+gegen dieses Oberflächenprotein
+ganz wichtig sind für den Schutz
+
+19
+00:01:05,406 --> 00:01:07,899
+vor einer Infektion
+mit dem neuen Corona Virus.
+
+20
+00:01:14,015 --> 00:01:17,726
+In der Vergangenheit ist es so gewesen,
+dass Impfstoffe etwa 15 Jahre brauchen,
+
+21
+00:01:17,756 --> 00:01:19,663
+bis sie dann schließlich zugelassen sind
+
+22
+00:01:19,693 --> 00:01:22,259
+und bis die dann in großen Mengen
+zur Verfügung stehen.
+
+23
+00:01:22,276 --> 00:01:25,556
+Wenn wir jetzt von einem Jahr reden,
+ist das schon gigantisch schnell.
+
+24
+00:01:25,561 --> 00:01:28,260
+Und möglicherweise ist es so,
+dass die Zulassungsbehörden
+
+25
+00:01:28,265 --> 00:01:31,185
+auch diese Impfstoffe natürlich
+besonders bevorzugt behandeln
+
+26
+00:01:31,205 --> 00:01:33,721
+und dieser Zulassungsprozess
+dann noch schneller geht
+
+27
+00:01:33,752 --> 00:01:36,748
+als wir das jetzt uns erhoffen,
+aber ich glaube, es ist schwer,
+
+28
+00:01:36,771 --> 00:01:40,235
+das im Moment zu versprechen
+und damit wir dann Hoffnungen wecken,
+
+29
+00:01:40,272 --> 00:01:42,747
+die dann schließlich nicht
+eingehalten werden können.
+
+30
+00:01:48,261 --> 00:01:50,966
+Ich nehme an, dass die vorher
+in Tieren getestet werden,
+
+31
+00:01:50,995 --> 00:01:55,352
+hinsichtlich ihrer Immunogenität,
+und ob das gefährlich ist oder nicht:
+
+32
+00:01:55,491 --> 00:01:57,834
+Das macht man genau
+mit diesen klinischen Studien.
+
+33
+00:01:57,865 --> 00:02:01,739
+Also da gewinnt man dann Aussagen darüber,
+
+34
+00:02:01,779 --> 00:02:05,674
+ob diese Plattformen eben gut verträglich
+sind oder weniger gut verträglich sind.
+
+35
+00:02:05,715 --> 00:02:09,308
+Und wenn sie weniger gut verträglich sind,
+werden sie nicht weiter verfolgt.
+
+36
+00:02:18,003 --> 00:02:20,478
+Das Problem, was wir momentan sehen, ist,
+
+37
+00:02:20,509 --> 00:02:23,737
+dass das Virus beim Menschen
+mit Vorerkrankungen
+
+38
+00:02:23,757 --> 00:02:26,156
+eben schwere Verläufe nimmt,
+
+39
+00:02:26,187 --> 00:02:28,797
+also die Krankheit nimmt
+einen schweren Verlauf.
+
+40
+00:02:28,884 --> 00:02:30,800
+Und das ist momentan das größte Problem.
+
+41
+00:02:30,830 --> 00:02:32,775
+Also wenn wir davon sprechen,
+
+42
+00:02:32,804 --> 00:02:35,768
+dass die Todesfallrate
+bei vielleicht 3 Prozent liegt,
+
+43
+00:02:35,789 --> 00:02:37,769
+dann sind das Menschen,
+
+44
+00:02:37,785 --> 00:02:41,724
+die meisten davon sind Menschen,
+die eine Vorerkrankung haben,
+
+45
+00:02:41,779 --> 00:02:44,833
+also zum Beispiel
+Bluthochdruck oder Diabetes.
+
+46
+00:02:45,203 --> 00:02:49,805
+Und da ist die Todesfallrate
+dann tatsächlich ziemlich hoch.
+
+47
+00:02:49,948 --> 00:02:52,751
+Und wenn man das dann umrechnet
+auf die Anzahl der Menschen,
+
+48
+00:02:52,773 --> 00:02:55,252
+die möglicherweise insgesamt
+infiziert werden,
+
+49
+00:02:55,281 --> 00:02:58,264
+dann ist das einfach
+ne relativ große Zahl,
+
+50
+00:02:58,282 --> 00:02:59,768
+und das muss man verhindern.
+
+51
+00:03:05,234 --> 00:03:08,987
+Die Grippe und das neue Corona-Virus,
+die lösen sehr ähnliche Erkrankungen aus,
+
+52
+00:03:09,027 --> 00:03:11,763
+und die können auch
+beide lebensbedrohlich sein.
+
+53
+00:03:11,914 --> 00:03:16,503
+Und deswegen kann man jetzt
+diese beiden Krankheiten
+
+54
+00:03:16,530 --> 00:03:20,208
+allein von der klinischen Symptomatik
+her kaum unterscheiden.
+
+55
+00:03:20,254 --> 00:03:24,502
+Es gibt da kleine Unterschiede,
+aber die sind normalerweise nicht wirklich
+
+56
+00:03:24,541 --> 00:03:26,772
+klinisch definitiv zu entscheiden.
+
+57
+00:03:26,799 --> 00:03:29,249
+Dazu braucht man eine Laboruntersuchung.
+
+58
+00:03:35,784 --> 00:03:40,761
+Ob man von … wenn man von dem Virus
+befallen war und gesundet ist,
+
+59
+00:03:40,787 --> 00:03:43,224
+ob man dann wieder erkranken kann,
+
+60
+00:03:43,282 --> 00:03:48,512
+das war eine sehr heiß diskutierte
+Frage in der letzten Zeit.
+
+61
+00:03:48,541 --> 00:03:52,198
+Es gibt jetzt inzwischen Studien,
+die wurden an Affen durchgeführt,
+
+62
+00:03:52,254 --> 00:03:54,742
+die zeigen und deuten also sehr stark an,
+
+63
+00:03:54,757 --> 00:03:58,449
+dass eine Reinfektion 
+mit diesem SARS-Corona-Virus,
+
+64
+00:03:58,497 --> 00:04:00,789
+nachdem man die Erkrankung
+durchgemacht hat,
+
+65
+00:04:00,829 --> 00:04:02,461
+wahrscheinlich nicht stattfindet.
+
+66
+00:04:08,723 --> 00:04:10,504
+Diese Viren, von denen wir reden,
+
+67
+00:04:10,536 --> 00:04:13,023
+die haben alle
+eine bestimmte Mutationsrate.
+
+68
+00:04:13,085 --> 00:04:15,571
+Also das gehört zu den Viren quasi dazu.
+
+69
+00:04:15,618 --> 00:04:18,289
+Und das ist auch
+bei dem neuen Corona-Virus so.
+
+70
+00:04:18,308 --> 00:04:21,602
+Das mutiert ebenfalls, aber es gibt
+keinerlei Hinweise im Moment,
+
+71
+00:04:21,622 --> 00:04:23,586
+dass diese Mutation dazu geführt haben,
+
+72
+00:04:23,609 --> 00:04:26,961
+dass eine höhere Gefährlichkeit
+dieser Viren entstanden sind.
+
+73
+00:04:32,783 --> 00:04:34,453
+Jetzt im Moment ist es so,
+
+74
+00:04:34,478 --> 00:04:36,759
+dass wirklich alle sehr
+eng zusammenarbeiten
+
+75
+00:04:36,788 --> 00:04:39,284
+und dass die Politik
+permanent auch nachfragt:
+
+76
+00:04:39,317 --> 00:04:43,249
+„Was sollen wir tun, was können wir tun,
+um die Forschung zu unterstützen?“
+
+77
+00:04:43,294 --> 00:04:45,671
+Und das ist natürlich
+für uns Forscher wunderbar.
+
+78
+00:04:46,050 --> 00:04:49,016
+Wir müssen jetzt einfach das machen,
+was wir immer machen.

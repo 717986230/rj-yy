@@ -1,0 +1,244 @@
+1
+00:00:02,823 --> 00:00:04,453
+[Was macht den Mars so attraktiv?]
+
+2
+00:00:04,463 --> 00:00:06,486
+Der Mars ist für uns Menschen
+so attraktiv,
+
+3
+00:00:06,503 --> 00:00:08,929
+weil er unser nächster Nachbar-Planet ist.
+
+4
+00:00:08,959 --> 00:00:12,536
+Er entstand nur wenig früher als die Erde
+(Bildebene: 4,6 Milliarden Jahre),
+
+5
+00:00:12,566 --> 00:00:16,756
+so kann er uns viel über die Entwicklung
+der Erde und des Sonnensystems verraten.
+
+6
+00:00:16,774 --> 00:00:19,229
+Und er ist der erdähnlichste Planet
+im Sonnensystem.
+
+7
+00:00:19,254 --> 00:00:20,817
+[Was macht den Mars erdähnlich?]
+
+8
+00:00:20,847 --> 00:00:23,767
+Wie die Erde hat auch
+der Mars eine Atmosphäre.
+
+9
+00:00:23,794 --> 00:00:28,130
+Sie ist zwar recht dünn
+und besteht zu etwa 95 % aus CO2.
+
+10
+00:00:28,191 --> 00:00:32,175
+Dennoch bietet sie Schutz
+vor kosmischer und Sonnenstrahlung.
+
+11
+00:00:35,838 --> 00:00:37,579
+Auch Wasser gibt es dort –
+
+12
+00:00:37,621 --> 00:00:41,114
+auf der Oberfläche allerdings
+nur als Eis und Gas.
+
+13
+00:00:41,385 --> 00:00:43,164
+Flüssiges Wasser gibt es nicht.
+
+14
+00:00:43,186 --> 00:00:44,997
+[Warum gibt es kein flüssiges Wasser?]
+
+15
+00:00:45,017 --> 00:00:47,947
+Der Mars ist nämlich nur gut halb
+so groß wie die Erde.
+
+16
+00:00:48,074 --> 00:00:50,492
+Je geringer die Masse
+eines Himmelskörpers,
+
+17
+00:00:50,521 --> 00:00:53,272
+desto schwächer ist die Anziehungskraft.
+
+18
+00:00:53,301 --> 00:00:57,247
+Sie ist auf dem Mars
+nur rund 1/3 so stark wie auf der Erde.
+
+19
+00:00:57,279 --> 00:01:01,781
+Je schwächer die Anziehungskraft,
+desto kleiner ist der Atmosphärendruck.
+
+20
+00:01:01,958 --> 00:01:05,972
+Bei geringem Druck überspringt Wasser
+einen Aggregatzustand,
+
+21
+00:01:06,004 --> 00:01:08,461
+wird also von Eis direkt zu Dampf.
+
+22
+00:01:08,479 --> 00:01:10,028
+[Gibt es Wetter auf dem Mars? ]
+
+23
+00:01:10,075 --> 00:01:11,776
+Natürlich gibt es Wetter:
+
+24
+00:01:11,815 --> 00:01:13,718
+Die Temperaturen schwanken am Äquator
+
+25
+00:01:13,748 --> 00:01:18,649
+zwischen zwanzig Grad plus am Tag
+und bis zu -80 Grad nachts.
+
+26
+00:01:18,715 --> 00:01:20,772
+Außerdem fegen Staubstürme
+
+27
+00:01:20,816 --> 00:01:24,595
+mit bis zu 400 km/h
+über den Himmelskörper.
+
+28
+00:01:24,656 --> 00:01:28,961
+Da die Rotationsachse des Roten Planeten
+fast im gleichen Winkel
+
+29
+00:01:28,992 --> 00:01:32,778
+wie die der Erde geneigt ist,
+hat der Mars sogar Jahreszeiten.
+
+30
+00:01:32,810 --> 00:01:35,968
+Je nachdem, welche Seite
+der Sonne zugewandt ist.
+
+31
+00:01:36,026 --> 00:01:39,757
+Allerdings dauert eine Jahreszeit
+doppelt so lang wie bei uns.
+
+32
+00:01:41,368 --> 00:01:43,175
+[Warum heißt der Mars „roter Planet“?]
+
+33
+00:01:43,215 --> 00:01:47,496
+„Roter Planet“ heißt er,
+weil der Boden viel Eisenoxid enthält.
+
+34
+00:01:47,522 --> 00:01:50,271
+Und das ist -
+wie normaler Rost - rotbraun.
+
+35
+00:01:50,290 --> 00:01:52,038
+Daher der Spitzname.
+
+36
+00:01:52,290 --> 00:01:55,765
+Aus Eisen besteht
+auch der flüssige Planetenkern.
+
+37
+00:01:55,786 --> 00:01:59,907
+Das flüssige Innere hat sich immer wieder
+seinen Weg an die Oberfläche gebahnt.
+
+38
+00:01:59,936 --> 00:02:02,852
+Vulkanausbrüche und Meteoriteneinschläge
+
+39
+00:02:02,881 --> 00:02:07,411
+haben so das heutige kraterzerfurchte
+Aussehen des Mars geformt.
+
+40
+00:02:07,454 --> 00:02:11,492
+Der Mars hat den größten Vulkan
+des gesamten Sonnensystems:
+
+41
+00:02:11,539 --> 00:02:12,903
+Olympus Mons.
+
+42
+00:02:13,111 --> 00:02:16,783
+Von der Fläche würde die Bundesrepublik 
+komplett hineinpassen.
+
+43
+00:02:16,812 --> 00:02:19,813
+Und er ist dreimal so hoch
+wie der Mount Everest.
+
+44
+00:02:21,500 --> 00:02:23,224
+[Gibt es Leben auf dem Mars?]
+
+45
+00:02:23,247 --> 00:02:26,239
+Marsmenschen, wie man sie sich
+früher vorgestellt hat,
+
+46
+00:02:26,270 --> 00:02:27,791
+sucht man vergeblich.
+
+47
+00:02:27,823 --> 00:02:30,004
+Solches Leben gibt es nicht auf dem Mars.
+
+48
+00:02:30,062 --> 00:02:35,008
+Auch das berühmte “Marsgesicht” hat sich
+als Steinformation herausgestellt,
+
+49
+00:02:35,028 --> 00:02:38,759
+als man es mit höher auflösenden
+Kameras fotografiert hat.
+
+50
+00:02:38,990 --> 00:02:44,049
+Auf molekularer Ebene wäre Leben möglich –
+wurde aber noch nicht nachgewiesen.
+
+51
+00:02:44,429 --> 00:02:48,148
+Doch es wird in einigen Jahren
+echtes Leben auf dem Mars geben.
+
+52
+00:02:48,372 --> 00:02:49,476
+Menschliches!
+
+53
+00:02:49,507 --> 00:02:55,495
+Denn die NASA plant bereits für 2035
+eine bemannte dreijährige Marsmission.

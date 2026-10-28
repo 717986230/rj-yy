@@ -1,0 +1,65 @@
+1
+00:00:00,474 --> 00:00:05,463
+1780 beobachtete der Arzt
+und Naturforscher Luigi Galvani,
+
+2
+00:00:05,481 --> 00:00:09,496
+wie die Muskeln in einem frisch sezierten
+Froschschenkel im Zusammenhang
+
+3
+00:00:09,518 --> 00:00:12,031
+mit Elektrizität zu zucken begannen.
+
+4
+00:00:12,251 --> 00:00:15,522
+Er vermutete das Zucken wird
+von dem Froschkörper verursacht,
+
+5
+00:00:15,565 --> 00:00:18,497
+der eine Art elektrisches
+Fluidum enthielte
+
+6
+00:00:18,543 --> 00:00:21,903
+und schloss daraus
+auf eine tierische Elektrizität.
+
+7
+00:00:22,274 --> 00:00:25,273
+Der Physiker Alessandro Volta,
+zweifelte daran.
+
+8
+00:00:25,344 --> 00:00:27,268
+Er führte elektrische Experimente
+
+9
+00:00:27,298 --> 00:00:30,297
+mit verschiedenen Metallen
+durch und stellte fest:
+
+10
+00:00:30,317 --> 00:00:33,426
+die Metalle, mit denen Galvani
+die Froschschenkel berührte,
+
+11
+00:00:33,456 --> 00:00:35,343
+erzeugen die Elektrizität.
+
+12
+00:00:35,475 --> 00:00:38,976
+Indem Volta Kupferscheiben,
+in Säure getauchten Karton
+
+13
+00:00:39,008 --> 00:00:43,917
+und Zinkscheiben übereinanderschichtete,
+erfand er die sogenannte „Volta-Säule“,
+
+14
+00:00:43,929 --> 00:00:45,816
+die erste Batterie der Welt.

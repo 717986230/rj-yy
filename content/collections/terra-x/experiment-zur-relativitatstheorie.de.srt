@@ -1,0 +1,104 @@
+1
+00:00:00,404 --> 00:00:04,240
+Einstein sagt: Zeit ist untrennbar
+mit dem Raum verbunden.
+
+2
+00:00:04,413 --> 00:00:07,727
+Gemeinsam bilden sie
+die vierdimensionale Raumzeit.
+
+3
+00:00:07,746 --> 00:00:09,243
+Und Zeit ist relativ:
+
+4
+00:00:09,262 --> 00:00:12,326
+Bewegt sich ein Objekt
+mit hoher Geschwindigkeit in Relation
+
+5
+00:00:12,352 --> 00:00:17,450
+zu einem ruhenden Beobachter, läuft
+die Zeit im bewegten Objekt langsamer.
+
+6
+00:00:17,481 --> 00:00:21,726
+Die sogenannte Zeitdilatation ist zwar
+auf der Erde verschwindend gering,
+
+7
+00:00:21,748 --> 00:00:24,273
+doch mit Atomuhren deutlich messbar.
+
+8
+00:00:24,331 --> 00:00:26,004
+Noch stärker wäre der Effekt,
+
+9
+00:00:26,035 --> 00:00:29,885
+wenn sich ein Raumschiff mit annähernder
+Lichtgeschwindigkeit bewegen könnte.
+
+10
+00:00:29,918 --> 00:00:33,312
+Dann stünde die Zeit
+im Raumschiff beinahe still.
+
+11
+00:00:33,330 --> 00:00:36,990
+Säße ein Astronaut darin,
+der einen Zwilling auf der Erde hätte,
+
+12
+00:00:37,001 --> 00:00:41,099
+wäre der Raumfahrer nach seiner Rückkehr
+biologisch jünger als sein Bruder.
+
+13
+00:00:41,232 --> 00:00:46,283
+Er wäre quasi in die Zukunft gereist –
+aber eben nur in die seines Zwillings.
+
+14
+00:00:46,295 --> 00:00:50,280
+Was für uns nach Science-Fiction klingt,
+ist mathematisch durchaus möglich.
+
+15
+00:00:50,580 --> 00:00:55,404
+Eine Grundlage dafür bietet
+Einsteins allgemeine Relativitätstheorie:
+
+16
+00:00:55,619 --> 00:00:58,567
+Der Einfluss der Gravitation auf die Zeit.
+
+17
+00:00:58,576 --> 00:01:03,775
+In der Nähe großer Massen dehnt sie sich –
+und die Raumzeit wird gekrümmt.
+
+18
+00:01:03,873 --> 00:01:06,982
+Je mehr Masse, desto stärker die Krümmung.
+
+19
+00:01:07,465 --> 00:01:11,747
+Aber ist sie auch so stark krümmbar,
+dass sich eine Art Tunnel bilden kann
+
+20
+00:01:11,789 --> 00:01:14,772
+von einem Ort in der Raumzeit
+zu einem anderen?
+
+21
+00:01:15,027 --> 00:01:20,263
+Die Gleichungen der Relativitätstheorie
+lassen die Existenz solcher Wurmlöcher zu.
+
+22
+00:01:20,524 --> 00:01:23,566
+Damit wären Zeitreisen
+theoretisch denkbar.

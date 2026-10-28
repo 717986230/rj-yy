@@ -1,0 +1,243 @@
+1
+00:00:01,505 --> 00:00:05,098
+Als Atmosphäre wird
+die Lufthülle der Erde bezeichnet.
+
+2
+00:00:05,131 --> 00:00:08,731
+Die Wortteile Atmos und Sphäre
+kommen aus dem Griechischen,
+
+3
+00:00:08,763 --> 00:00:12,524
+wörtlich übersetzt heißt
+Atmosphäre „Dampfkugel".
+
+4
+00:00:12,788 --> 00:00:15,235
+Die Atmosphäre ist nicht überall gleich.
+
+5
+00:00:15,251 --> 00:00:19,483
+In unterschiedlichen Höhen variiert sie
+in Druck und Temperatur.
+
+6
+00:00:20,038 --> 00:00:24,520
+Daher teilt man die Atmosphäre der Höhe
+nach in fünf Hauptschichten ein.
+
+7
+00:00:24,766 --> 00:00:28,562
+Die unterste erdnächste Schicht
+ist die Troposphäre.
+
+8
+00:00:28,823 --> 00:00:32,567
+Sie reicht je nach Breitengrad
+bis in eine durchschnittliche Höhe
+
+9
+00:00:32,587 --> 00:00:34,307
+von circa zehn Kilometer.
+
+10
+00:00:34,347 --> 00:00:38,269
+Die obere Grenze der Troposphäre
+heißt Tropopause.
+
+11
+00:00:38,512 --> 00:00:41,749
+Flugzeuge sind meistens
+in dieser Höhe unterwegs.
+
+12
+00:00:41,779 --> 00:00:44,002
+Die Tropopause ist manchmal zu sehen,
+
+13
+00:00:44,033 --> 00:00:48,050
+wenn große aufgetürmte Wolken nach oben
+wie abgeschnitten aussehen.
+
+14
+00:00:48,084 --> 00:00:51,509
+Das liegt daran, dass sich die Luft
+über die Tropopause hinweg
+
+15
+00:00:51,549 --> 00:00:54,133
+nur schwer vertikal bewegen kann.
+
+16
+00:00:54,162 --> 00:00:57,286
+Verantwortlich dafür
+ist die Temperaturveränderung.
+
+17
+00:00:57,317 --> 00:00:59,457
+Unten in der Troposphäre ist es milder,
+
+18
+00:00:59,475 --> 00:01:01,994
+denn die Erde wird
+durch die Sonnenstrahlung erwärmt
+
+19
+00:01:02,026 --> 00:01:04,736
+und gibt die Wärme an
+die Umgebungsluft ab –
+
+20
+00:01:04,777 --> 00:01:08,718
+oben hingegen bleibt es kalt:
+bis zu minus 80 Grad Celsius.
+
+21
+00:01:09,046 --> 00:01:11,801
+Über der Troposphäre
+liegt die Stratosphäre.
+
+22
+00:01:11,845 --> 00:01:15,035
+Sie reicht bis in eine Höhe
+von circa 50 Kilometer.
+
+23
+00:01:15,096 --> 00:01:18,488
+Die Obergrenze der Stratosphäre
+heißt Stratopause.
+
+24
+00:01:18,689 --> 00:01:22,765
+In der Stratosphäre wird es
+mit steigender Höhe wieder wärmer.
+
+25
+00:01:23,201 --> 00:01:25,249
+Das kommt durch die Ozonschicht,
+
+26
+00:01:25,321 --> 00:01:28,255
+die die für uns gefährliche
+UV-Strahlung abfängt
+
+27
+00:01:28,312 --> 00:01:30,800
+und ihre Energie in Wärme umwandelt.
+
+28
+00:01:30,970 --> 00:01:36,074
+Dadurch kann sich die Luft in dieser Höhe 
+wieder auf bis zu 0 Grad Celsius erwärmen.
+
+29
+00:01:36,824 --> 00:01:39,268
+In der darüber liegenden Mesosphäre
+
+30
+00:01:39,297 --> 00:01:43,183
+sinken die Temperaturen
+auf minus 100 Grad Celsius.
+
+31
+00:01:43,459 --> 00:01:46,424
+Diese Schicht hat
+eine Schutzfunktion für die Erde,
+
+32
+00:01:46,496 --> 00:01:50,022
+denn in ihr verglühen
+herabfallende Meteoriten.
+
+33
+00:01:51,837 --> 00:01:54,722
+Die Thermosphäre
+erstreckt sich in der Höhe
+
+34
+00:01:54,751 --> 00:01:59,652
+von 85 bis etwa 500 Kilometer
+oberhalb der Erdoberfläche.
+
+35
+00:01:59,866 --> 00:02:04,059
+Hier umkreist die Internationale
+Raumstation (ISS) die Erde.
+
+36
+00:02:04,254 --> 00:02:08,781
+Ihren Namen hat die Thermosphäre
+aufgrund der extremen Temperaturen
+
+37
+00:02:08,810 --> 00:02:13,150
+von bis zu 1700 Grad Celsius
+an ihrer Obergrenze.
+
+38
+00:02:13,259 --> 00:02:15,412
+Für Astronaut:innen kein Problem,
+
+39
+00:02:15,431 --> 00:02:19,193
+denn der geringe Luftdruck führt dazu,
+dass kaum Wärme übertragen wird.
+
+40
+00:02:19,230 --> 00:02:21,824
+Schützen müssen sie sich
+dagegen vor der Strahlung.
+
+41
+00:02:21,853 --> 00:02:23,439
+Diese ist so intensiv,
+
+42
+00:02:23,496 --> 00:02:27,273
+dass sie dort Teilchen ionisiert
+und dadurch Polarlichter entstehen.
+
+43
+00:02:27,516 --> 00:02:31,480
+Die äußerste Schicht der Erdatmosphäre
+ist die Exosphäre.
+
+44
+00:02:31,500 --> 00:02:35,700
+Sie beginnt oberhalb der Thermosphäre
+und geht fließend über in den Weltraum.
+
+45
+00:02:35,744 --> 00:02:38,971
+Sie hat deshalb
+keine klar definierte Obergrenze.
+
+46
+00:02:39,050 --> 00:02:41,297
+Die Erdanziehung ist hier so gering,
+
+47
+00:02:41,335 --> 00:02:44,197
+dass die Luftteilchen
+in den Weltraum entkommen können,
+
+48
+00:02:44,228 --> 00:02:47,334
+daher ist die Luft hier
+nur noch extrem dünn.
+
+49
+00:02:48,847 --> 00:02:52,473
+Die Einteilung der Atmosphäre
+in Schichten beruht also darauf,
+
+50
+00:02:52,512 --> 00:02:56,458
+wie sich die Temperatur
+und der Druck mit der Höhe verändern.
+
+51
+00:02:56,498 --> 00:03:01,487
+Die großen Temperatur [?änderungen]
+zeigen die Grenzen der fünf Schichten an.

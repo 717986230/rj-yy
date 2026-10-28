@@ -1,0 +1,54 @@
+1
+00:00:01,771 --> 00:00:05,305
+Das menschliche Herz wiegt rund 350 Gramm.
+
+2
+00:00:05,338 --> 00:00:10,513
+Es schlägt etwa 70 Mal pro Minute
+und besteht größtenteils aus Muskelgewebe.
+
+3
+00:00:10,779 --> 00:00:14,388
+Zwischen den beiden Herzhälften
+verläuft die Herzscheidewand.
+
+4
+00:00:14,446 --> 00:00:19,826
+Sie trennt das Herz in zwei Hälften
+mit je einem Vorhof und einer Hauptkammer.
+
+5
+00:00:20,735 --> 00:00:23,753
+Der Blutfluss wird durch
+vier Herzklappen geregelt.
+
+6
+00:00:23,947 --> 00:00:26,448
+Diese funktionieren wie Rückschlagventile
+
+7
+00:00:26,507 --> 00:00:29,523
+und sorgen dafür, dass das Blut
+in die richtige Richtung
+
+8
+00:00:29,554 --> 00:00:31,310
+und nicht zurück fließt.
+
+9
+00:00:31,351 --> 00:00:33,246
+So strömt das sauerstoffarme Blut
+
+10
+00:00:33,275 --> 00:00:36,542
+aus der rechten Herzkammer –
+hier in Blau – in die Lunge.
+
+11
+00:00:36,750 --> 00:00:40,973
+Und das sauerstoffreiche Blut
+wird aus der linken Kammer – hier in Rot –
+
+12
+00:00:41,004 --> 00:00:43,502
+in den Körperkreislauf gepumpt.
