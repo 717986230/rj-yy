@@ -1,6 +1,7 @@
 import { bilibiliPageUrl } from './bilibili';
 import { BIG_BUCK_BUNNY_SUBTITLES } from './data/big-buck-bunny';
 import { TEARS_OF_STEEL_SUBTITLES } from './data/tears-of-steel';
+import { TERRA_X_CLIPS } from './data/terra-x';
 import { emptyTracks } from './subtitles';
 import type { Video } from './types';
 
@@ -52,6 +53,22 @@ const BILIBILI: Seed[] = [
 ];
 
 type Seed = Omit<Video, 'ownerId' | 'createdAt'>;
+
+/**
+ * ZDF Terra X / 3sat 的德语科普短片（Wikimedia Commons，CC BY / CC BY-SA，署名见 source），
+ * 德语原声 + 官方德语字幕，中文和英文是翻译。由 .github/workflows/fetch-terra-x.yml 拉取并托管在站内。
+ */
+const TERRA_X: Seed[] = TERRA_X_CLIPS.map((c) => ({
+  id: c.id,
+  title: c.title,
+  src: `${SITE_MEDIA}/${c.file}`,
+  duration: c.duration,
+  source: c.credit,
+  series: 'Terra X · 德语科普',
+  audioLang: 'de',
+  tags: ['站内', '德语原声', '科普'],
+  subtitles: c.subtitles,
+}));
 
 const seeds: Seed[] = [
   {
@@ -110,6 +127,7 @@ const seeds: Seed[] = [
     tags: ['站内', '动画', '德语旁白', 'CC BY'],
     subtitles: BIG_BUCK_BUNNY_SUBTITLES,
   },
+  ...TERRA_X,
   ...BILIBILI,
 ];
 

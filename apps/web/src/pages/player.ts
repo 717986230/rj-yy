@@ -132,7 +132,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
                 <button data-ref="sound" class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 rounded-full bg-aqua px-5 py-3 text-sm font-bold text-ink shadow-lg" hidden>${icon('volume', 'h-5 w-5')}<span>点击开启声音</span></button>
                 <button data-ref="fullscreen" class="icon-btn absolute right-1.5 top-1.5 h-8 w-8 bg-black/40" aria-label="全屏">${icon('expand', 'h-4 w-4')}</button>
               </div>
-              <div class="grid gap-1 rounded-b-[22px] bg-panel px-3.5 py-3">
+              <div class="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-1 overflow-hidden rounded-b-[22px] bg-panel px-3.5 py-3">
                 <div class="flex items-center justify-between gap-2">
                   <span data-ref="no" class="font-display text-[11px] font-semibold tracking-widest text-aqua"></span>
                   <span data-ref="dur" class="text-[11px] tabular-nums text-mute"></span>
@@ -219,7 +219,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       playlist.setIds(summaries.map((s) => s.id));
       // 预先取好每张卡的视频信息，点击抽卡时就能在手势里直接开始加载
       summaries.forEach((s) => void fetchVideo(s.id).catch(() => undefined));
-      r.backCount.textContent = `片库 ${summaries.length} 部 · DW 德语课、德语动画`;
+      r.backCount.textContent = `片库 ${summaries.length} 部 · 电影、动画、德语科普`;
     } catch (err) {
       r.backCount.textContent = errorMessage(err);
     }
