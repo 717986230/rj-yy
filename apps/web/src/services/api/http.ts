@@ -1,5 +1,6 @@
 import {
   ApiError,
+  SEED_VIDEOS,
   type ApiClient,
   type Credentials,
   type NewVideoInput,
@@ -72,7 +73,10 @@ export class HttpApi implements ApiClient {
   listVideos() {
     return this.request<VideoSummary[]>('GET', '/videos');
   }
-  getVideo(id: string) {
+  async getVideo(id: string) {
+    // 内置片库本来就打包在前端里，不用每张卡都问一次服务器（播放页会预取全部卡片）
+    const seed = SEED_VIDEOS.find((v) => v.id === id);
+    if (seed) return seed;
     return this.request<Video>('GET', `/videos/${encodeURIComponent(id)}`);
   }
   addVideo(input: NewVideoInput) {

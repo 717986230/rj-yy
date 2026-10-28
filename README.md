@@ -37,7 +37,8 @@
 │   │       ├── services/    # api（本地 / HTTP 两种实现）、player（视频引擎）
 │   │       ├── components/  # 吉祥物、欢迎弹窗、字幕层、表单、图标、弹层
 │   │       └── pages/       # 登录 / 注册 / 找回密码、播放页、片库
-│   └── server/              # 后端：Express + SQLite + JWT，可选部署
+│   ├── worker/              # 线上后端：Cloudflare Workers + D1（接口与 server 相同）
+│   └── server/              # 后端的 Node 版：Express + SQLite + JWT，本地开发或自建服务器用
 ├── packages/shared/         # 前后端共用：类型、API 契约、字幕解析、播放队列、示例片库
 ├── docs/ARCHITECTURE.md     # 架构说明
 └── .github/workflows/       # CI 与 Pages 自动部署
@@ -66,7 +67,9 @@ npm run dev:server                             # http://localhost:8787/api
 VITE_API_BASE=http://localhost:8787/api npm run dev
 ```
 
-线上部署：把 `apps/server` 用附带的 `Dockerfile` 部署到任意支持 Node 的平台（Render、Railway、Fly.io、自有服务器等），然后在仓库 **Settings → Secrets and variables → Actions → Variables** 新建 `VITE_API_BASE`（例如 `https://api.example.com/api`），再次推送即可让 Pages 上的前端改用后端。
+线上部署（Cloudflare，推荐）：在仓库 **Settings → Secrets and variables → Actions → Secrets** 里添加 `CLOUDFLARE_API_TOKEN`（Cloudflare 后台 → My Profile → API Tokens → 用「Edit Cloudflare Workers」模板创建，再加一条 Account · D1 · Edit 权限）和 `CLOUDFLARE_ACCOUNT_ID`。之后每次推送 main，`deploy-pages.yml` 会自动创建 D1 数据库、执行迁移、部署 `apps/worker` 到 `https://vido-api.<你的子域>.workers.dev`，并让 Pages 上的前端连上它；后端连不上时前端自动退回本地模式。本地调试 Worker：`npm run dev:worker`（先在 `apps/worker/.dev.vars` 写一行 `JWT_SECRET=任意字符串`，并执行 `npx wrangler d1 migrations apply vido --local`）。
+
+也可以把 `apps/server` 用附带的 `Dockerfile` 部署到任意支持 Node 的平台（Render、Railway、Fly.io、自有服务器等），然后在仓库 **Settings → Secrets and variables → Actions → Variables** 新建 `VITE_API_BASE`（例如 `https://api.example.com/api`），再次推送即可让 Pages 上的前端改用后端。
 
 ## 后端接口
 
