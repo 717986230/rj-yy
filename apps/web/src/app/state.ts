@@ -15,6 +15,11 @@ export interface Prefs {
   hidden: string[];
   /** B 站卡片是否进入抽卡牌堆（实验：B 站上的用户上传可能失效或有地区限制，默认不进） */
   bilibiliInDeck: boolean;
+  /**
+   * 画面绘制方式：auto = iPhone / iPad 上用 canvas 逐帧绘制（那里卡片内的视频图层常常只出声不出画面），
+   * 其他设备用原生视频层；canvas / native = 用户在诊断页里手动指定
+   */
+  videoPaint: 'auto' | 'canvas' | 'native';
 }
 
 export interface AppState extends Prefs {
@@ -33,6 +38,7 @@ const DEFAULT_PREFS: Prefs = {
   muted: false,
   hidden: [],
   bilibiliInDeck: false,
+  videoPaint: 'auto',
 };
 
 const stored = storage.get<Partial<Prefs>>(PREFS_KEY, {});
@@ -49,8 +55,8 @@ export const app = new Store<AppState>({
 
 // 偏好设置变化时持久化
 app.subscribe((s) => {
-  const { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck } = s;
-  storage.set(PREFS_KEY, { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck });
+  const { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck, videoPaint } = s;
+  storage.set(PREFS_KEY, { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck, videoPaint });
 });
 
 const WELCOME_KEY = 'vido.welcomed';

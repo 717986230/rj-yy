@@ -34,6 +34,8 @@ type Refs = {
   backCount: HTMLElement;
   front: HTMLElement;
   video: HTMLVideoElement;
+  mirror: HTMLCanvasElement;
+  deck: HTMLElement;
   tap: HTMLElement;
   bili: HTMLElement;
   subs: HTMLElement;
@@ -93,7 +95,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
         ${MODES.map((m) => `<button data-mode="${m.id}" aria-pressed="false">${icon(m.icon, 'h-4 w-4')}${m.label}</button>`).join('')}
       </div>
 
-      <div class="deck">
+      <div data-ref="deck" class="deck">
         <div data-ref="wrap" class="card-wrap">
           <div data-ref="card" class="card">
             <button data-ref="back" class="card-face card-back flex flex-col items-center justify-center gap-2 text-center" aria-label="抽一张卡">
@@ -104,8 +106,9 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
             </button>
 
             <div data-ref="front" class="card-face card-front flex flex-col">
-              <div class="relative min-h-0 flex-1 bg-black">
-                <video data-ref="video" class="absolute inset-0 h-full w-full object-contain" playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" preload="auto"></video>
+              <div class="relative min-h-0 flex-1 rounded-t-[22px] bg-black">
+                <video data-ref="video" class="absolute inset-0 h-full w-full rounded-t-[22px] object-contain" playsinline webkit-playsinline x5-playsinline x5-video-player-type="h5-page" preload="auto"></video>
+                <canvas data-ref="mirror" class="pointer-events-none absolute inset-0 h-full w-full rounded-t-[22px]" hidden></canvas>
                 <div data-ref="tap" class="absolute inset-0" aria-hidden="true"></div>
                 <div data-ref="bili" class="absolute inset-0 bg-black" hidden></div>
                 <div data-ref="subs"></div>
@@ -129,7 +132,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
                 <button data-ref="sound" class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 rounded-full bg-aqua px-5 py-3 text-sm font-bold text-ink shadow-lg" hidden>${icon('volume', 'h-5 w-5')}<span>点击开启声音</span></button>
                 <button data-ref="fullscreen" class="icon-btn absolute right-1.5 top-1.5 h-8 w-8 bg-black/40" aria-label="全屏">${icon('expand', 'h-4 w-4')}</button>
               </div>
-              <div class="grid gap-1 bg-panel px-3.5 py-3">
+              <div class="grid gap-1 rounded-b-[22px] bg-panel px-3.5 py-3">
                 <div class="flex items-center justify-between gap-2">
                   <span data-ref="no" class="font-display text-[11px] font-semibold tracking-widest text-aqua"></span>
                   <span data-ref="dur" class="text-[11px] tabular-nums text-mute"></span>
@@ -214,6 +217,8 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       // 牌堆只放确定能播的：内置的 B 站卡片默认不进（可在片库里打开），隐藏的卡片不进；自己添加的照常进
       summaries = (await api.listVideos()).filter((v) => !hidden.has(v.id) && (bilibiliInDeck || v.ownerId !== null || !isBilibili(v.src)));
       playlist.setIds(summaries.map((s) => s.id));
+      // 预先取好每张卡的视频信息，点击抽卡时就能在手势里直接开始加载
+      summaries.forEach((s) => void fetchVideo(s.id).catch(() => undefined));
       r.backCount.textContent = `片库 ${summaries.length} 部 · DW 德语课、德语动画`;
     } catch (err) {
       r.backCount.textContent = errorMessage(err);
@@ -274,11 +279,16 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     if (!id || flipping) return;
     flipping = true;
     try {
+      const early = cache.get(id);
       const pending = fetchVideo(id);
       engine.unload();
       showBilibili(null);
-      // 仍在点击的同步阶段：先解锁媒体播放，翻牌动画结束后才能有声播放（iOS 等）
-      engine.unlock();
+      stopMirror();
+      // 仍在点击的同步阶段：直接把这张卡的视频交给 <video> 开始加载，iOS 只认用户手势里发起的加载，
+      // 翻牌动画结束后才能有声播放；还没取到视频信息时至少在手势里 load() 一次
+      const preloaded = !!early && !parseBilibili(early.src);
+      if (preloaded) engine.load(early, { autoplay: false });
+      else engine.unlock();
       showOverlay(null);
       r.sound.hidden = true;
       if (r.card.classList.contains('is-front')) await turn(false);
@@ -289,13 +299,13 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       if (!alive) return;
       current = video;
       kicks = 0;
+      lastFrameCheck = { time: -1, frames: -1 };
       const bili = parseBilibili(video.src);
-      if (!bili) engine.load(video, { autoplay: false });
+      if (!bili && !preloaded) engine.load(video, { autoplay: false });
       fillFront(video);
       await turn(true);
       if (!alive) return;
       if (bili) {
-        // 点击时为解锁声音放进去的静音短片不再需要，清掉，免得 <video> 里留着它
         engine.unload();
         showBilibili(bilibiliEmbedUrl(bili), video.src);
         if (!biliTipShown) {
@@ -345,6 +355,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     r.play.disabled = s === 'idle';
     r.seek.disabled = s === 'idle';
     showOverlay(s === 'loading' ? 'loading' : s === 'error' ? 'failed' : s === 'ended' && playlist.mode === 'manual' ? 'ended' : null);
+    if (s === 'playing' && wantsCanvas()) startMirror();
     if (s === 'ended') {
       const action = playlist.onEnded();
       if (action.type === 'advance') void present(action.id);
@@ -372,28 +383,73 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
 
   let seeking = false;
   /**
-   * 画面看门狗：时间在走、却一直只解码了 1 帧（iOS WebKit 只出声不出画面的情况），
-   * 先让视频元素重新挂到渲染树上；还不行就从当前位置重新加载一次。
+   * canvas 兜底：iOS WebKit 有时卡片里的视频只出声音、不出画面（全屏才有画面）。
+   * 这时把视频逐帧画到盖在上面的 canvas 上显示，不再依赖浏览器的视频图层。
    */
-  let kicks = 0;
-  const watchFrames = (t: number) => {
-    const q = r.video.getVideoPlaybackQuality?.();
-    if (!q || r.video.paused || !r.video.videoWidth || q.totalVideoFrames > 1) return;
-    if (kicks === 0 && t > 1.5) {
-      kicks = 1;
-      r.video.style.display = 'none';
-      void r.video.offsetHeight;
-      r.video.style.display = '';
-    } else if (kicks === 1 && t > 4) {
-      kicks = 2;
-      const at = t;
-      r.video.addEventListener('loadedmetadata', () => engine.seek(at), { once: true });
-      engine.reload();
-    }
+  let mirrorRaf = 0;
+  const appleTouch = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const paintMode = () => app.get().videoPaint;
+  const wantsCanvas = () => paintMode() === 'canvas' || (paintMode() === 'auto' && appleTouch);
+  const stopMirror = () => {
+    cancelAnimationFrame(mirrorRaf);
+    mirrorRaf = 0;
+    r.mirror.hidden = true;
+  };
+  const startMirror = () => {
+    if (mirrorRaf) return;
+    const g = r.mirror.getContext('2d');
+    if (!g) return;
+    r.mirror.hidden = false;
+    const paint = () => {
+      mirrorRaf = requestAnimationFrame(paint);
+      const v = r.video;
+      if (!v.videoWidth) return;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const w = Math.round(r.mirror.clientWidth * dpr);
+      const h = Math.round(r.mirror.clientHeight * dpr);
+      if (!w || !h) return;
+      if (r.mirror.width !== w || r.mirror.height !== h) {
+        r.mirror.width = w;
+        r.mirror.height = h;
+      }
+      const scale = Math.min(w / v.videoWidth, h / v.videoHeight);
+      const dw = v.videoWidth * scale;
+      const dh = v.videoHeight * scale;
+      g.fillStyle = '#000';
+      g.fillRect(0, 0, w, h);
+      g.drawImage(v, (w - dw) / 2, (h - dh) / 2, dw, dh);
+    };
+    mirrorRaf = requestAnimationFrame(paint);
   };
 
+  /**
+   * 画面看门狗：时间在走、却一直只解码了 1 帧（iOS WebKit 只出声不出画面的情况），
+   * 先让视频元素重新挂到渲染树上；还不行就改用 canvas 绘制画面。
+   * 用定时器而不是视频帧回调，因为画面卡住时帧回调本身也可能不触发。
+   */
+  let kicks = 0;
+  let lastFrameCheck = { time: -1, frames: -1 };
+  const watchFrames = () => {
+    const v = r.video;
+    const q = v.getVideoPlaybackQuality?.();
+    if (!q || v.paused || !v.videoWidth || mirrorRaf || paintMode() === 'native') return;
+    const t = v.currentTime;
+    const stuck = q.totalVideoFrames <= 1 || (q.totalVideoFrames === lastFrameCheck.frames && t > lastFrameCheck.time + 0.6);
+    lastFrameCheck = { time: t, frames: q.totalVideoFrames };
+    if (!stuck || t < 1) return;
+    if (kicks === 0) {
+      kicks = 1;
+      v.style.display = 'none';
+      void v.offsetHeight;
+      v.style.display = '';
+    } else if (kicks === 1) {
+      kicks = 2;
+      startMirror();
+    }
+  };
+  const frameTimer = window.setInterval(watchFrames, 700);
+
   const onTime = (t: number, d: number) => {
-    watchFrames(t);
     const s = app.get();
     overlay.update(engine.item?.subtitles ?? null, t, { visible: s.subtitles, second: s.secondLang, offset: s.subtitleOffset });
     r.cur.textContent = formatTime(t);
@@ -424,6 +480,14 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     r.mute.innerHTML = icon(muted || volume === 0 ? 'mute' : 'volume');
     r.mute.setAttribute('aria-label', muted ? '取消静音' : '静音');
   };
+
+  // 卡片尺寸：在牌桌里放得下的最大 5:7 卡片（不用 CSS 容器查询，它会给视频的祖先加上 contain）
+  const deckSize = new ResizeObserver(([entry]) => {
+    if (!entry) return;
+    const { width, height } = entry.contentRect;
+    r.wrap.style.width = `${Math.floor(Math.min(width, height * (5 / 7)))}px`;
+  });
+  deckSize.observe(r.deck);
 
   // ---------------- 事件 ----------------
 
@@ -585,6 +649,13 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     showDiagnostics(r.video, {
       card: current ? `${current.title.zh}（${parseBilibili(current.src) ? 'B 站播放器' : '视频'}）` : '还没翻开',
       embed: r.bili.querySelector('iframe')?.src ?? null,
+      paint: paintMode(),
+      setPaint: (videoPaint) => {
+        app.set({ videoPaint });
+        kicks = 0;
+        if (wantsCanvas() && engine.item) startMirror();
+        else stopMirror();
+      },
     });
   r.logout.onclick = async () => {
     await api.logout();
@@ -623,6 +694,9 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
 
   return () => {
     alive = false;
+    clearInterval(frameTimer);
+    stopMirror();
+    deckSize.disconnect();
     clearTimeout(skipTimer);
     cleanups.forEach((c) => c());
     engine.destroy();

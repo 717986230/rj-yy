@@ -25,10 +25,11 @@ jobs:
           mkdir -p /tmp/bbb && cd /tmp/bbb
           curl -fsSL "$BASE/" -o index.html
           grep -o 'href="[^"]*"' index.html | sed 's/href=//' | tr -d '"'
-          FILM=$(grep -o 'href="big_buck_bunny_720p_h264\.mov"' index.html | head -1 | sed 's/href=//' | tr -d '"')
-          test -n "$FILM" || FILM=$(grep -o 'href="[^"]*720p[^"]*\.\(mov\|mp4\|m4v\)"' index.html | head -1 | sed 's/href=//' | tr -d '"')
+          FILM=big_buck_bunny_720p_h264.mov.zip
           echo "film: $FILM"
-          curl -fL --retry 3 "$BASE/$FILM" -o source
+          curl -fL --retry 3 "$BASE/$FILM" -o film.zip
+          unzip -o film.zip
+          mv "$(find . -name "*.mov" -size +10M | head -1)" source
           ls -la
       - name: Encode for phones
         run: |

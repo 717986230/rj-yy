@@ -74,6 +74,7 @@
     aspect-ratio: auto;
     border-radius: 0;
     box-shadow: none;
+    overflow: visible;
   }
 }
 
@@ -145,7 +146,6 @@
 
 /* ---------- 卡牌翻转 ---------- */
 .deck {
-  container-type: size;
   position: relative;
   flex: 1;
   min-height: 0;
@@ -159,7 +159,8 @@
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
-  width: min(100cqw, 72cqh);
+  /* 宽度由 player.ts 按牌桌大小设置 */
+  width: min(100%, 72vw);
   aspect-ratio: 5 / 7;
 }
 .card-wrap::before,
@@ -207,6 +208,8 @@
 }
 .card-front {
   background: #000;
+  /* 正面不裁剪：iOS 上 overflow:hidden + 圆角的祖先会让视频只出声不出画面，圆角改由视频区和信息栏自己画 */
+  overflow: visible;
 }
 /*
  * 正面（视频）永远可见，背面盖在上面：iOS 上的 WebKit 如果在视频加载时它处于 visibility:hidden，
