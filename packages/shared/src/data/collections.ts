@@ -2458,5 +2458,26 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/srf-srf-wissen-wie-wirken-lsd-und-psilocybin-im-gehirn.json"
+ },
+ {
+  "id": "planet-wissen-kathe-kollwitz-planet-wissen",
+  "title": {
+   "zh": "凯绥·珂勒惠支",
+   "de": "Käthe Kollwitz",
+   "en": "Käthe Kollwitz"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/planet-wissen/kathe-kollwitz-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/planet-wissen/kathe-kollwitz-planet-wissen.mp4"
+  ],
+  "duration": 120.0,
+  "source": "Anja von Kampen/VisionX · CC BY 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-kathe-kollwitz-planet-wissen.json"
  }
 ];
