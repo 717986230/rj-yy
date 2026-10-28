@@ -24,11 +24,16 @@ export class SubtitleOverlay {
   constructor(
     private readonly root: HTMLElement,
     private readonly onReplay: (cue: Cue) => void,
+    /** 点英语字幕里的词（查词义） */
+    private readonly onWord?: (word: string) => void,
   ) {
     root.classList.add('subs');
     root.setAttribute('aria-live', 'off');
     root.addEventListener('click', (e) => {
-      if ((e.target as HTMLElement).closest('[data-replay]') && this.cue) this.onReplay(this.cue);
+      const target = e.target as HTMLElement;
+      const word = target.closest<HTMLElement>('[data-word]');
+      if (word) this.onWord?.(word.textContent ?? '');
+      else if (target.closest('[data-replay]') && this.cue) this.onReplay(this.cue);
     });
   }
 
@@ -46,11 +51,13 @@ export class SubtitleOverlay {
     }
     const words = second?.words?.length ? second.words : second?.text.split(/\s+/).filter(Boolean).map((w) => [w, ''] as [string, string]);
     const glossed = opts.glosses && words?.some(([, g]) => g);
+    const tappable = opts.second === 'en' && !!this.onWord;
+    const wordSpan = (w: string) => `<span class="sub-w-t"${tappable ? ' data-word' : ''}>${esc(w)}</span>`;
     const line = words
       ?.map(([w, g]) =>
         glossed
-          ? `<span class="sub-w"><span class="sub-w-t">${esc(w)}</span><span class="sub-w-g">${esc(g) || '&nbsp;'}</span></span>`
-          : `<span class="sub-w"><span class="sub-w-t">${esc(w)}</span></span>`,
+          ? `<span class="sub-w">${wordSpan(w)}<span class="sub-w-g">${esc(g) || '&nbsp;'}</span></span>`
+          : `<span class="sub-w">${wordSpan(w)}</span>`,
       )
       .join('');
     this.root.innerHTML = `

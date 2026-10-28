@@ -6,6 +6,7 @@ import { errorMessage } from '../components/form';
 import { icon } from '../components/icons';
 import { otter } from '../components/otter';
 import { SubtitleOverlay } from '../components/subtitles';
+import { WordCard } from '../components/wordcard';
 import { toast } from '../components/toast';
 import { showDiagnostics } from '../components/diagnostics';
 import { bindLibraryThemeSwitch, libraryThemeSwitch } from '../components/topbar';
@@ -196,11 +197,23 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   root.append(view);
 
   const engine = new VideoEngine(r.video);
-  const overlay = new SubtitleOverlay(r.subs, (cue) => {
-    // 点喇叭：从这一句开头重听
-    engine.seek(Math.max(0, cue.start - app.get().subtitleOffset));
-    void engine.play();
+  // 查词时先暂停，关掉词卡再接着播（原本就停着的不自动播）
+  let resumeAfterWord = false;
+  const wordCard = new WordCard(r.subs.parentElement!, (open) => {
+    if (open) {
+      resumeAfterWord = !engine.paused;
+      engine.pause();
+    } else if (resumeAfterWord) void engine.play();
   });
+  const overlay = new SubtitleOverlay(
+    r.subs,
+    (cue) => {
+      // 点喇叭：从这一句开头重听
+      engine.seek(Math.max(0, cue.start - app.get().subtitleOffset));
+      void engine.play();
+    },
+    (word) => void wordCard.show(word),
+  );
   const cleanups: Cleanup[] = [];
   const cache = new Map<string, Video>();
   let summaries: VideoSummary[] = [];
@@ -267,6 +280,8 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     r.dur.textContent = v.duration ? formatTime(v.duration) : '';
     renderTitleSecond();
     overlay.clear();
+    resumeAfterWord = false;
+    wordCard.close();
   };
 
   const renderTitleSecond = () => {
@@ -619,7 +634,9 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     if (!swiped) void (app.get().mode === 'manual' ? draw() : next());
   };
   r.tap.onclick = () => {
-    if (!swiped) engine.toggle();
+    if (swiped) return;
+    if (wordCard.open) wordCard.close();
+    else engine.toggle();
   };
   r.sound.onclick = () => {
     r.sound.hidden = true;

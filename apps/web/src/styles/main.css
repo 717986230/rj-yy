@@ -347,6 +347,97 @@
   line-height: 1.35;
   color: rgb(255 255 255 / 0.62);
 }
+/* 英语字幕的词可以点：查词义（词卡浮在视频上方，不挡字幕） */
+.subs [data-word] {
+  pointer-events: auto;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.subs [data-word]:active {
+  background: rgb(169 233 228 / 0.25);
+}
+.wordcard {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  z-index: 5;
+  max-height: calc(100% - 16px);
+  overflow-y: auto;
+  padding: 10px 36px 10px 12px;
+  border-radius: 14px;
+  background: rgb(14 22 28 / 0.94);
+  border: 1px solid rgb(169 233 228 / 0.25);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.wordcard p {
+  margin: 0;
+}
+.wordcard-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin-bottom: 4px !important;
+}
+.wordcard-head b {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+}
+.wordcard-ipa {
+  color: rgb(255 255 255 / 0.7);
+}
+.wordcard-cefr {
+  padding: 0 6px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0e161c;
+  background: #a9e9e4;
+}
+.wordcard-sense i {
+  color: #a9e9e4;
+  font-style: normal;
+  margin-right: 2px;
+}
+.wordcard-ex {
+  margin-top: 6px !important;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+.wordcard-ex-zh {
+  color: #f6e9d4;
+}
+.wordcard-note,
+.wordcard-credit {
+  color: rgb(255 255 255 / 0.55);
+  font-size: 11px;
+}
+.wordcard-credit {
+  margin-top: 6px !important;
+}
+.wordcard-say {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-radius: 999px;
+  color: #a9e9e4;
+  background: rgb(255 255 255 / 0.08);
+}
+.wordcard-x {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 36px;
+  height: 36px;
+  font-size: 22px;
+  line-height: 1;
+  color: rgb(255 255 255 / 0.7);
+}
 .card-front:fullscreen {
   --sub-zh: 26px;
   --sub-second: 30px;

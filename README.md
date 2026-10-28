@@ -95,6 +95,8 @@ VITE_API_BASE=http://localhost:8787/api npm run dev
 
 **德语科普短片（ZDF Terra X / 3sat）**：16 部 1–2 分钟的德语原声科普短片，来自 Wikimedia Commons 上 ZDF 以 CC BY 4.0 / CC BY-SA 4.0 开放的 Terra X 系列，卡片上标注署名和许可。`.github/workflows/fetch-terra-x.yml` 在 GitHub 服务器上调用 Commons API 挑选、下载并转码（`scripts/fetch_terra_x.py`），德语字幕取自 Commons，中文和英文翻译在 `content/terra-x/translations.json`，再由 `scripts/build_terra_x.py` 生成 `packages/shared/src/data/terra-x.ts`。想要更多短片：在 Actions 里手动运行该工作流并把数量调大，然后给新增的字幕补上翻译。
 
+**英语字幕点词查义**：中英模式下点字幕里的英语单词，视频暂停，浮出词卡（音标、CEFR 分级、中文词义、例句，可朗读），关掉词卡接着播。词库 `apps/web/public/dict/en.json` 取自 [Word Atlas](https://github.com/designfuchen/word-atlas) 数据集（CC BY 4.0，署名 Word Atlas contributors，只保留内置英语字幕出现过的词并缩减字段），第一次点词时才下载（约 95KB gzip）。新增英语字幕后重新生成：`git clone --depth 1 https://github.com/designfuchen/word-atlas.git /tmp/word-atlas && python3 scripts/build_en_dict.py /tmp/word-atlas/data/word-atlas.json`。
+
 第二字幕语言默认跟随原声（视频的 `audioLang`）：德语原声 / 旁白显示中·德，英语原声（如《钢铁之泪》）显示中·英，看的时候仍可手动切换。
 
 《钢铁之泪》（12 分钟，© Blender Foundation | mango.blender.org，CC BY 3.0）是英语对白，配官方中文 / 德语 / 英语字幕。影片和字幕由 `.github/workflows/fetch-open-movie.yml` 在 GitHub 服务器上下载并压缩成手机友好的 H.264（约 60MB），只由网站自己提供。
