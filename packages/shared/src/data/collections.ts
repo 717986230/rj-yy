@@ -2878,5 +2878,68 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "知识"
   ],
   "subtitlesUrl": "subs/planet-wissen-kathe-kollwitz-planet-wissen.json"
+ },
+ {
+  "id": "planet-wissen-claude-monet-planet-wissen",
+  "title": {
+   "zh": "克劳德·莫奈",
+   "de": "Claude Monet",
+   "en": "Claude Monet"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/planet-wissen/claude-monet-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/planet-wissen/claude-monet-planet-wissen.mp4"
+  ],
+  "duration": 120.0,
+  "source": "Anja von Kampen/VisionX · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-claude-monet-planet-wissen.json"
+ },
+ {
+  "id": "planet-wissen-der-kalte-krieg-planet-wissen",
+  "title": {
+   "zh": "冷战",
+   "de": "Der Kalte Krieg",
+   "en": "The Cold War"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/planet-wissen/der-kalte-krieg-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/planet-wissen/der-kalte-krieg-planet-wissen.mp4"
+  ],
+  "duration": 100.0,
+  "source": "Christian Brandt/Claudio Como · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-der-kalte-krieg-planet-wissen.json"
+ },
+ {
+  "id": "planet-wissen-die-berliner-mauer-planet-wissen",
+  "title": {
+   "zh": "柏林墙",
+   "de": "Die Berliner Mauer",
+   "en": "The Berlin Wall"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/die-berliner-mauer-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/die-berliner-mauer-planet-wissen.mp4"
+  ],
+  "duration": 101.1,
+  "source": "Robert Schotter/Claudio Como · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-die-berliner-mauer-planet-wissen.json"
  }
 ];
