@@ -382,6 +382,48 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-die-himmelsscheibe-von-nebra-cc-by-4-0.json"
  },
  {
+  "id": "terra-x-die-lebensraume-der-lowen",
+  "title": {
+   "zh": "狮子的栖息地",
+   "de": "Die Lebensräume der Löwen",
+   "en": "Where lions live"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-lebensraume-der-lowen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-lebensraume-der-lowen.mp4"
+  ],
+  "duration": 70.1,
+  "source": "ZDF/Tango Film · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-lebensraume-der-lowen.json"
+ },
+ {
+  "id": "terra-x-die-sinne-des-wolfs",
+  "title": {
+   "zh": "狼的感官",
+   "de": "Die Sinne des Wolfs",
+   "en": "The senses of the wolf"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-sinne-des-wolfs.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-sinne-des-wolfs.mp4"
+  ],
+  "duration": 63.4,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-sinne-des-wolfs.json"
+ },
+ {
   "id": "terra-x-die-temperamenten-lehre",
   "title": {
    "zh": "气质学说",
@@ -424,6 +466,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-die-temperaturkurve-der-erde-zdf-terra-x-720p-hd-50fps.json"
  },
  {
+  "id": "terra-x-die-britische-corona-mutante-und-ihre-auswirkungen",
+  "title": {
+   "zh": "英国新冠变异株及其影响",
+   "de": "Die britische Corona-Mutante und ihre Auswirkungen",
+   "en": "The British coronavirus variant and its effects"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-britische-corona-mutante-und-ihre-auswirkungen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-britische-corona-mutante-und-ihre-auswirkungen.mp4"
+  ],
+  "duration": 66.6,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-britische-corona-mutante-und-ihre-auswirkungen.json"
+ },
+ {
   "id": "terra-x-die-ersten-zahlungsmittel-cc-by-4-0",
   "title": {
    "zh": "最早的货币",
@@ -443,6 +506,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-die-ersten-zahlungsmittel-cc-by-4-0.json"
+ },
+ {
+  "id": "terra-x-die-klimatische-funktion-des-regenwaldes",
+  "title": {
+   "zh": "雨林的气候功能",
+   "de": "Die klimatische Funktion des Regenwaldes",
+   "en": "The climate role of the rainforest"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-klimatische-funktion-des-regenwaldes.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-klimatische-funktion-des-regenwaldes.mp4"
+  ],
+  "duration": 61.0,
+  "source": "ZDF/TerraXPress · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-klimatische-funktion-des-regenwaldes.json"
  },
  {
   "id": "terra-x-dinosaurierspuren-in-deutschland",
@@ -611,6 +695,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-feinstaubbelastung-und-die-folgen.json"
+ },
+ {
+  "id": "terra-x-felsen-als-wasserspeicher-fur-pflanzen",
+  "title": {
+   "zh": "岩石是植物的储水库",
+   "de": "Felsen als Wasserspeicher für Pflanzen",
+   "en": "Rocks as water reservoirs for plants"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/felsen-als-wasserspeicher-fur-pflanzen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/felsen-als-wasserspeicher-fur-pflanzen.mp4"
+  ],
+  "duration": 92.0,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-felsen-als-wasserspeicher-fur-pflanzen.json"
  },
  {
   "id": "terra-x-frankfurter-paulskirche",
