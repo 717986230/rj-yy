@@ -11,6 +11,8 @@ Usage: python scripts/discover_commons.py
 import json
 import sys
 import re
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -27,8 +29,14 @@ FREE = re.compile(r"^(CC BY(-SA)? [0-9.]+|CC0|Public domain|PD)", re.I)
 
 def get(params):
     req = urllib.request.Request(API + "?" + urllib.parse.urlencode(params), headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=120) as r:
-        return json.loads(r.read().decode())
+    for attempt in range(6):
+        try:
+            with urllib.request.urlopen(req, timeout=120) as r:
+                return json.loads(r.read().decode())
+        except urllib.error.HTTPError as e:
+            if e.code not in (429, 502, 503, 504) or attempt == 5:
+                raise
+            time.sleep(int(e.headers.get("Retry-After") or 0) or 10 * 2 ** attempt)
 
 
 def search_categories(term):

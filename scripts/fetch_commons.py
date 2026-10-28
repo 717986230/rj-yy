@@ -18,9 +18,12 @@ Usage: python scripts/fetch_commons.py <collection> <how many new videos>
 import json
 import os
 import re
+import shutil
 import subprocess
+import time
 import sys
 import unicodedata
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -45,9 +48,16 @@ def get(url, params=None, binary=False):
     if params:
         url += "?" + urllib.parse.urlencode(params)
     req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=300) as r:
-        data = r.read()
-    return data if binary else data.decode("utf-8")
+    for attempt in range(6):
+        try:
+            with urllib.request.urlopen(req, timeout=300) as r:
+                data = r.read()
+            return data if binary else data.decode("utf-8")
+        except urllib.error.HTTPError as e:
+            # Commons 限流（429）或网关超时时退避重试
+            if e.code not in (429, 502, 503, 504) or attempt == 5:
+                raise
+            time.sleep(int(e.headers.get("Retry-After") or 0) or 10 * 2 ** attempt)
 
 
 def category_files(category):
@@ -225,7 +235,7 @@ def main():
                 os.remove(src)
         shard, path = shard_dir(os.path.getsize(tmp))
         os.makedirs(os.path.join(path, name), exist_ok=True)
-        os.replace(tmp, os.path.join(path, name, f"{slug}.mp4"))
+        shutil.move(tmp, os.path.join(path, name, f"{slug}.mp4"))
         with open(os.path.join(text_dir, f"{slug}.{cfg['lang']}.srt"), "w") as f:
             f.write(srt)
         meta = info.get("extmetadata", {})
