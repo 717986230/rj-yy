@@ -6,7 +6,7 @@ import { otter } from './otter';
 
 /**
  * 首次打开 App 自动弹出的欢迎卡：小獭 Otti 打招呼，介绍抽卡看片的玩法。
- * onStart 由当前页面决定（未登录时去登录，已登录时直接抽第一张卡）。
+ * onStart 由当前页面决定（直接去抽第一张卡）。
  */
 export function showWelcome({ onStart, startLabel = '开始抽卡' }: { onStart?: () => void; startLabel?: string } = {}) {
   const card = el(`
