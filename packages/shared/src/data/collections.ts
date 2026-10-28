@@ -487,6 +487,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-die-germanen-aus-der-sicht-von-tacitus-und-caesar.json"
  },
  {
+  "id": "terra-x-die-geschichte-des-impfens",
+  "title": {
+   "zh": "疫苗接种的历史",
+   "de": "Die Geschichte des Impfens",
+   "en": "The history of vaccination"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-geschichte-des-impfens.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-geschichte-des-impfens.mp4"
+  ],
+  "duration": 135.6,
+  "source": "3sat/nano · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-geschichte-des-impfens.json"
+ },
+ {
   "id": "terra-x-die-gotteshauser-der-religionen",
   "title": {
    "zh": "各宗教的礼拜场所",
@@ -1388,6 +1409,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-herdenimmunitat.json"
+ },
+ {
+  "id": "terra-x-hochfeste-der-religionen",
+  "title": {
+   "zh": "各宗教的重大节日",
+   "de": "Hochfeste der Religionen",
+   "en": "High holidays of the religions"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/hochfeste-der-religionen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/hochfeste-der-religionen.mp4"
+  ],
+  "duration": 128.0,
+  "source": "ZDF/Sonntags · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-hochfeste-der-religionen.json"
  },
  {
   "id": "terra-x-hunde-im-antiken-rom",
