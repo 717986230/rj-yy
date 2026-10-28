@@ -202,6 +202,72 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/nasa-intense-string-of-hurricanes-seen-from-space.json"
  },
  {
+  "id": "nasa-massive-crater-discovered-under-greenland-ice-vtr3vdglfr",
+  "title": {
+   "zh": "格陵兰冰下发现巨大陨石坑",
+   "de": "Massive Crater Discovered Under Greenland Ice",
+   "en": "Massive Crater Discovered Under Greenland Ice"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/massive-crater-discovered-under-greenland-ice-vtr3vdglfr.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/massive-crater-discovered-under-greenland-ice-vtr3vdglfr.mp4"
+  ],
+  "duration": 269.6,
+  "source": "NASA Goddard · Public domain",
+  "series": "NASA · 英语科普",
+  "audioLang": "en",
+  "tags": [
+   "英语原声",
+   "科普",
+   "公有领域"
+  ],
+  "subtitlesUrl": "subs/nasa-massive-crater-discovered-under-greenland-ice-vtr3vdglfr.json"
+ },
+ {
+  "id": "nasa-nasa-colliding-neutron-stars-create-black-hole-and-gamma",
+  "title": {
+   "zh": "中子星相撞，生成黑洞和伽马射线暴",
+   "de": "Colliding Neutron Stars Create Black Hole and Gamma-ray Burst",
+   "en": "Colliding Neutron Stars Create Black Hole and Gamma-ray Burst"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/nasa-colliding-neutron-stars-create-black-hole-and-gamma.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/nasa-colliding-neutron-stars-create-black-hole-and-gamma.mp4"
+  ],
+  "duration": 207.0,
+  "source": "NASA Goddard · Public domain",
+  "series": "NASA · 英语科普",
+  "audioLang": "en",
+  "tags": [
+   "英语原声",
+   "科普",
+   "公有领域"
+  ],
+  "subtitlesUrl": "subs/nasa-nasa-colliding-neutron-stars-create-black-hole-and-gamma.json"
+ },
+ {
+  "id": "nasa-nasa-dna-building-blocks-can-be-made-in-space-1g7akvz3hc",
+  "title": {
+   "zh": "DNA 的组成单元可以在太空中形成",
+   "de": "DNA Building Blocks Can Be Made in Space",
+   "en": "DNA Building Blocks Can Be Made in Space"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/nasa-dna-building-blocks-can-be-made-in-space-1g7akvz3hc.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/nasa-dna-building-blocks-can-be-made-in-space-1g7akvz3hc.mp4"
+  ],
+  "duration": 169.4,
+  "source": "NASA Goddard · Public domain",
+  "series": "NASA · 英语科普",
+  "audioLang": "en",
+  "tags": [
+   "英语原声",
+   "科普",
+   "公有领域"
+  ],
+  "subtitlesUrl": "subs/nasa-nasa-dna-building-blocks-can-be-made-in-space-1g7akvz3hc.json"
+ },
+ {
   "id": "nasa-nasa-dynamic-earth-ujbi9ba8hqs",
   "title": {
    "zh": "动态的地球",
