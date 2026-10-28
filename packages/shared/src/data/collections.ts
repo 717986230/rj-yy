@@ -1998,6 +1998,90 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/srf-srf-wissen-der-unterschied-zwischen-inter-und-transgesch.json"
  },
  {
+  "id": "srf-srf-wissen-so-beeinflusst-zucker-die-fettverbrennung",
+  "title": {
+   "zh": "糖如何影响脂肪燃烧",
+   "de": "So beeinflusst Zucker die Fettverbrennung",
+   "en": "How sugar affects fat burning"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-so-beeinflusst-zucker-die-fettverbrennung.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-so-beeinflusst-zucker-die-fettverbrennung.mp4"
+  ],
+  "duration": 60.8,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-so-beeinflusst-zucker-die-fettverbrennung.json"
+ },
+ {
+  "id": "srf-srf-wissen-warum-rutscht-brienz-ab",
+  "title": {
+   "zh": "布里恩茨为什么在下滑？",
+   "de": "Warum rutscht Brienz ab?",
+   "en": "Why is Brienz sliding?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-warum-rutscht-brienz-ab.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-warum-rutscht-brienz-ab.mp4"
+  ],
+  "duration": 66.5,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-warum-rutscht-brienz-ab.json"
+ },
+ {
+  "id": "srf-srf-wissen-wie-entstehen-menstruationsschmerzen",
+  "title": {
+   "zh": "痛经是怎么来的？",
+   "de": "Wie entstehen Menstruationsschmerzen?",
+   "en": "Where does period pain come from?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-entstehen-menstruationsschmerzen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-entstehen-menstruationsschmerzen.mp4"
+  ],
+  "duration": 45.1,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-entstehen-menstruationsschmerzen.json"
+ },
+ {
+  "id": "srf-srf-wissen-wie-entsteht-die-menschliche-stimme",
+  "title": {
+   "zh": "人的声音是怎么产生的？",
+   "de": "Wie entsteht die menschliche Stimme?",
+   "en": "How is the human voice made?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-entsteht-die-menschliche-stimme.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-entsteht-die-menschliche-stimme.mp4"
+  ],
+  "duration": 58.4,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-entsteht-die-menschliche-stimme.json"
+ },
+ {
   "id": "srf-srf-wissen-wie-entsteht-ein-bandscheibenvorfall",
   "title": {
    "zh": "椎间盘突出是怎么回事？",
@@ -2038,6 +2122,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/srf-srf-wissen-wie-entsteht-eine-demenz.json"
+ },
+ {
+  "id": "srf-srf-wissen-wie-funktioniert-der-menschliche-gleichgewich",
+  "title": {
+   "zh": "人的平衡感是怎么运作的？",
+   "de": "Wie funktioniert der menschliche Gleichgewichtssinn?",
+   "en": "How does our sense of balance work?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-der-menschliche-gleichgewich.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-der-menschliche-gleichgewich.mp4"
+  ],
+  "duration": 65.2,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-funktioniert-der-menschliche-gleichgewich.json"
  },
  {
   "id": "srf-srf-wissen-wie-funktioniert-der-menschliche-tag-nacht-rh",
@@ -2122,5 +2227,26 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/srf-srf-wissen-wie-orientieren-sich-tauben.json"
+ },
+ {
+  "id": "srf-srf-wissen-wie-wirken-lsd-und-psilocybin-im-gehirn",
+  "title": {
+   "zh": "LSD 和裸盖菇素如何作用于大脑？",
+   "de": "Wie wirken LSD und Psilocybin im Gehirn?",
+   "en": "How do LSD and psilocybin act on the brain?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-wirken-lsd-und-psilocybin-im-gehirn.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-wirken-lsd-und-psilocybin-im-gehirn.mp4"
+  ],
+  "duration": 59.9,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-wirken-lsd-und-psilocybin-im-gehirn.json"
  }
 ];
