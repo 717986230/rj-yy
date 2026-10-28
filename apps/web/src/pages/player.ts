@@ -108,10 +108,10 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
         <div data-ref="wrap" class="card-wrap">
           <div data-ref="card" class="card">
             <button data-ref="back" class="card-face card-back flex flex-col items-center justify-center gap-2 text-center" aria-label="抽一张卡">
-              <span class="font-display text-[11px] font-semibold uppercase tracking-[0.35em] text-aqua/80">Vido · Karte</span>
+              <span class="font-display text-[11px] font-semibold uppercase tracking-[0.35em] text-[#e8b65a]">Vido · Karte</span>
               ${otter({ cls: 'h-[46%] w-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.45)]' })}
-              <span data-ref="backHint" class="hint mt-1 text-base font-bold text-fg">点我抽一张</span>
-              <span data-ref="backCount" class="text-xs text-mute">片库加载中…</span>
+              <span data-ref="backHint" class="hint mt-1 font-serif text-lg font-semibold text-[#f2ebdd]">点我抽一张</span>
+              <span data-ref="backCount" class="text-xs text-[#f2ebdd]/70">片库加载中…</span>
             </button>
 
             <div data-ref="front" class="card-face card-front flex flex-col">
