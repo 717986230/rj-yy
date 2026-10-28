@@ -312,6 +312,50 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/nasa-nasa-human-fingerprint-on-global-air-quality.json"
  },
  {
+  "id": "nasa-nasa-measuring-mars-ancient-ocean-wh8khnclzwm",
+  "title": {
+   "zh": "测量火星远古的海洋",
+   "de": "Measuring Mars' Ancient Ocean",
+   "en": "Measuring Mars' Ancient Ocean"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/nasa/nasa-measuring-mars-ancient-ocean-wh8khnclzwm.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/nasa/nasa-measuring-mars-ancient-ocean-wh8khnclzwm.mp4"
+  ],
+  "duration": 237.0,
+  "source": "NASA Goddard · Public domain",
+  "series": "NASA · 英语科普",
+  "audioLang": "en",
+  "tags": [
+   "英语原声",
+   "科普",
+   "公有领域"
+  ],
+  "subtitlesUrl": "subs/nasa-nasa-measuring-mars-ancient-ocean-wh8khnclzwm.json"
+ },
+ {
+  "id": "nasa-nasa-propylene-on-titan",
+  "title": {
+   "zh": "土卫六上的丙烯",
+   "de": "Propylene on Titan",
+   "en": "Propylene on Titan"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/nasa/nasa-propylene-on-titan.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/nasa/nasa-propylene-on-titan.mp4"
+  ],
+  "duration": 237.3,
+  "source": "NASA Goddard · Public domain",
+  "series": "NASA · 英语科普",
+  "audioLang": "en",
+  "tags": [
+   "英语原声",
+   "科普",
+   "公有领域"
+  ],
+  "subtitlesUrl": "subs/nasa-nasa-propylene-on-titan.json"
+ },
+ {
   "id": "nasa-nasa-catches-hurricanes-jose-and-maria",
   "title": {
    "zh": "NASA 捕捉到飓风何塞和玛丽亚",
