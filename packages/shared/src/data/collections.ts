@@ -2922,6 +2922,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/planet-wissen-das-mittelalter-planet-wissen.json"
  },
  {
+  "id": "planet-wissen-der-golfstrom-planet-wissen",
+  "title": {
+   "zh": "墨西哥湾流",
+   "de": "Der Golfstrom",
+   "en": "The Gulf Stream"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/planet-wissen/der-golfstrom-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/planet-wissen/der-golfstrom-planet-wissen.mp4"
+  ],
+  "duration": 100.8,
+  "source": "Felicitas Graßl/Sebastian Reeh · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-der-golfstrom-planet-wissen.json"
+ },
+ {
   "id": "planet-wissen-der-kalte-krieg-planet-wissen",
   "title": {
    "zh": "冷战",
@@ -2962,6 +2983,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "知识"
   ],
   "subtitlesUrl": "subs/planet-wissen-die-berliner-mauer-planet-wissen.json"
+ },
+ {
+  "id": "planet-wissen-die-hanse-planet-wissen",
+  "title": {
+   "zh": "汉萨同盟",
+   "de": "Die Hanse",
+   "en": "The Hanseatic League"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/die-hanse-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/die-hanse-planet-wissen.mp4"
+  ],
+  "duration": 99.9,
+  "source": "Lukas Prommer/Claudio Como · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-die-hanse-planet-wissen.json"
  },
  {
   "id": "planet-wissen-die-maya-planet-wissen",
@@ -3025,6 +3067,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "知识"
   ],
   "subtitlesUrl": "subs/planet-wissen-die-uno-planet-wissen.json"
+ },
+ {
+  "id": "planet-wissen-erdol-planet-wissen",
+  "title": {
+   "zh": "石油",
+   "de": "Erdöl",
+   "en": "Petroleum"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/erdol-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/erdol-planet-wissen.mp4"
+  ],
+  "duration": 100.0,
+  "source": "Lukas Prommer/Claudio Como · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-erdol-planet-wissen.json"
  },
  {
   "id": "planet-wissen-vincent-van-gogh-planet-wissen",

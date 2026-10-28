@@ -1,10 +1,10 @@
 1
 00:00:01,170 --> 00:00:05,170
-Ohne den Golfstrom sehe das Klima in Europa ganz anders aus.
+Ohne den Golfstrom sähe das Klima in Europa ganz anders aus.
 
 2
 00:00:05,170 --> 00:00:08,170
-Kargelandschaften statt blumiger Wesen.
+Kargelandschaften statt blumiger Wiesen.
 
 3
 00:00:08,170 --> 00:00:13,170
@@ -12,7 +12,7 @@ Der Meeresstrom liefert tagtäglich gigantische Mengen an Wärmeenergie.
 
 4
 00:00:13,170 --> 00:00:18,770
-Ein konstant winder Wind, der südöstliche Passatwind,
+Ein konstant wehender Wind, der südöstliche Passatwind,
 
 5
 00:00:18,770 --> 00:00:21,770
