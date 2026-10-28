@@ -1138,6 +1138,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-freizeit-im-antiken-rom-cc-by-4-0.json"
  },
  {
+  "id": "terra-x-gedankenexperiment-schrodingers-katze",
+  "title": {
+   "zh": "思想实验：薛定谔的猫",
+   "de": "Gedankenexperiment Schrödingers Katze",
+   "en": "Thought experiment: Schrödinger's cat"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/gedankenexperiment-schrodingers-katze.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/gedankenexperiment-schrodingers-katze.mp4"
+  ],
+  "duration": 124.0,
+  "source": "ZDF/nano · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-gedankenexperiment-schrodingers-katze.json"
+ },
+ {
   "id": "terra-x-gefahr-durch-chronische-entzundungskrankheiten",
   "title": {
    "zh": "慢性炎症的危害",
@@ -1346,6 +1367,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-herausforderung-wasserversorgung-aus-karstgrundwasser.json"
+ },
+ {
+  "id": "terra-x-herdenimmunitat",
+  "title": {
+   "zh": "群体免疫",
+   "de": "Herdenimmunität",
+   "en": "Herd immunity"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/herdenimmunitat.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/herdenimmunitat.mp4"
+  ],
+  "duration": 118.3,
+  "source": "3sat/nano · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-herdenimmunitat.json"
  },
  {
   "id": "terra-x-hunde-im-antiken-rom",
