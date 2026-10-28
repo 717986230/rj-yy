@@ -256,6 +256,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-der-lowe-ein-symboltier.json"
  },
  {
+  "id": "terra-x-der-menstruationszyklus",
+  "title": {
+   "zh": "月经周期",
+   "de": "Der Menstruationszyklus",
+   "en": "The menstrual cycle"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/der-menstruationszyklus.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/der-menstruationszyklus.mp4"
+  ],
+  "duration": 153.2,
+  "source": "ZDF/TerraX · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-der-menstruationszyklus.json"
+ },
+ {
   "id": "terra-x-der-planet-mars",
   "title": {
    "zh": "火星",
@@ -275,6 +296,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-der-planet-mars.json"
+ },
+ {
+  "id": "terra-x-der-umgang-mit-dem-tod-in-den-religionen",
+  "title": {
+   "zh": "各宗教如何对待死亡",
+   "de": "Der Umgang mit dem Tod in den Religionen",
+   "en": "How religions deal with death"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/der-umgang-mit-dem-tod-in-den-religionen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/der-umgang-mit-dem-tod-in-den-religionen.mp4"
+  ],
+  "duration": 152.9,
+  "source": "ZDF/Sonntags · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-der-umgang-mit-dem-tod-in-den-religionen.json"
  },
  {
   "id": "terra-x-der-nordliche-polarkreis",
