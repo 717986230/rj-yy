@@ -136,6 +136,28 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/nasa-how-to-safely-watch-a-solar-eclipse.json"
  },
  {
+  "id": "nasa-hubble-observes-atmospheres-of-trappist-1-exoplanets-in",
+  "title": {
+   "zh": "哈勃观测宜居带里的 TRAPPIST-1 系外行星的大气",
+   "de": "Hubble Observes Atmospheres of TRAPPIST-1 Exoplanets in the Habitable Zone",
+   "en": "Hubble Observes Atmospheres of TRAPPIST-1 Exoplanets in the Habitable Zone"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/hubble-observes-atmospheres-of-trappist-1-exoplanets-in.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/hubble-observes-atmospheres-of-trappist-1-exoplanets-in.mp4"
+  ],
+  "duration": 218.2,
+  "source": "NASA Goddard · Public domain",
+  "series": "NASA · 英语科普",
+  "audioLang": "en",
+  "tags": [
+   "英语原声",
+   "科普",
+   "公有领域"
+  ],
+  "subtitlesUrl": "subs/nasa-hubble-observes-atmospheres-of-trappist-1-exoplanets-in.json"
+ },
+ {
   "id": "nasa-hubbles-servicing-mission-4-celebrates-its-ten-year-anni",
   "title": {
    "zh": "哈勃第四次维修任务十周年",
