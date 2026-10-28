@@ -1,6 +1,6 @@
 1
 00:00:01,140 --> 00:00:06,140
-Der Begriff LÖS leitet sich wahrscheinlich vom mundartlichen Ausdruck LÖSCH ab,
+Der Begriff Löss leitet sich wahrscheinlich vom mundartlichen Ausdruck Lösch ab,
 
 2
 00:00:06,140 --> 00:00:09,140
@@ -8,11 +8,11 @@ was so viel wie lockerer Boden bedeutet. Kein Wunder.
 
 3
 00:00:09,140 --> 00:00:14,140
-LÖS ist ein staubfeines Material und entsprechend locker ist ein LÖS-Boden.
+Löss ist ein staubfeines Material und entsprechend locker ist ein Lössboden.
 
 4
 00:00:14,140 --> 00:00:17,140
-LÖS stammt aus der letzten Eiszeit.
+Löss stammt aus der letzten Eiszeit.
 
 5
 00:00:17,140 --> 00:00:21,140
@@ -24,19 +24,19 @@ Durch ihr enormes Gewicht zerkleinern sie große Gesteinsmassen in feines Gestei
 
 7
 00:00:26,140 --> 00:00:31,140
-LÖS. Das Land um die Gletscher ist kahl. Pflanzen wachsen kaum.
+Löss. Das Land um die Gletscher ist kahl. Pflanzen wachsen kaum.
 
 8
 00:00:31,140 --> 00:00:35,140
-Der feine Lösstaub ist Wind und Wetter ungeschützt ausgesetzt.
+Der feine Lössstaub ist Wind und Wetter ungeschützt ausgesetzt.
 
 9
 00:00:35,140 --> 00:00:40,140
-Westwinde können so den Lös über teilweise mehrere hundert Kilometer verwehen.
+Westwinde können so den Löss über teilweise mehrere hundert Kilometer verwehen.
 
 10
 00:00:40,140 --> 00:00:44,140
-In den Mittelgebirgen Deutschlands lagert sich der Lös schließlich ab.
+In den Mittelgebirgen Deutschlands lagert sich der Löss schließlich ab.
 
 11
 00:00:44,140 --> 00:00:46,140
@@ -48,15 +48,15 @@ Sie halten das feine Material fest wie ein Staubfänger.
 
 13
 00:00:50,140 --> 00:00:52,140
-Lösböden sind sehr fruchtbar.
+Lössböden sind sehr fruchtbar.
 
 14
 00:00:52,140 --> 00:00:55,140
-Die kleinen Löskörner speichern Wasser und Nährstoffe ausgezeichnet.
+Die kleinen Lösskörner speichern Wasser und Nährstoffe ausgezeichnet.
 
 15
 00:00:55,140 --> 00:00:59,140
-Gemüse in Lösböden ist dadurch nicht so anfällig für Trockenperioden.
+Gemüse in Lössböden ist dadurch nicht so anfällig für Trockenperioden.
 
 16
 00:00:59,140 --> 00:01:01,140
@@ -64,7 +64,7 @@ Perfekt für die Landwirtschaft.
 
 17
 00:01:01,140 --> 00:01:04,140
-So viele Vorteile der Lösboden hat, so sensibel ist er.
+So viele Vorteile der Lössboden hat, so sensibel ist er.
 
 18
 00:01:04,140 --> 00:01:07,140
@@ -72,7 +72,7 @@ Er ist besonders stark durch Erosion gefährdet.
 
 19
 00:01:07,140 --> 00:01:11,140
-Das heißt, der Lösboden kann einfach durch Regen oder Wind verlagert
+Das heißt, der Lössboden kann einfach durch Regen oder Wind verlagert
 
 20
 00:01:11,140 --> 00:01:13,140
@@ -80,7 +80,7 @@ und zerstört werden.
 
 21
 00:01:13,140 --> 00:01:16,140
-Wichtig ist, dass der Lösboden locker ist.
+Wichtig ist, dass der Lössboden locker ist.
 
 22
 00:01:16,140 --> 00:01:19,140
@@ -96,7 +96,7 @@ Wenn die Maschinen über den Boden fahren, pressen sie ihn zusammen.
 
 25
 00:01:25,140 --> 00:01:28,140
-Wasser und Lufttransport werden behindert.
+Wasser- und Lufttransport werden behindert.
 
 26
 00:01:28,140 --> 00:01:31,140
@@ -104,12 +104,12 @@ Die Folge? Ernten fallen schlechter aus.
 
 27
 00:01:31,140 --> 00:01:34,140
-Zum Schutz wird deshalb eine Decke aus Pflanzen gesägt.
+Zum Schutz wird deshalb eine Decke aus Pflanzen gesät.
 
 28
 00:01:34,140 --> 00:01:37,140
-Sie schützt dem Boden vor schweren Maschinen
+Sie schützt den Boden vor schweren Maschinen
 
 29
 00:01:37,140 --> 00:01:40,140
-und verhindert, dass der Lös wieder weggeweht wird.
+und verhindert, dass der Löss wieder weggeweht wird.

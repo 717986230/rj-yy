@@ -20,7 +20,7 @@ die ihre Interessen zum Beispiel im Bundestag vertreten.
 
 6
 00:00:20,000 --> 00:00:24,000
-In Deutschland gibt es Parteien für die politische Wählensbildung,
+In Deutschland gibt es Parteien für die politische Willensbildung,
 
 7
 00:00:24,000 --> 00:00:28,000
@@ -56,7 +56,7 @@ Damit eine Partei in den Bundestag einziehen darf, braucht sie mindestens fünf 
 
 15
 00:00:56,000 --> 00:01:01,000
-Alle, die es bei der Wahl in dem Bundestag geschafft haben, heißen Abgeordnete.
+Alle, die es bei der Wahl in den Bundestag geschafft haben, heißen Abgeordnete.
 
 16
 00:01:01,000 --> 00:01:07,000
@@ -72,16 +72,16 @@ und eine Koalition bilden.
 
 19
 00:01:14,000 --> 00:01:18,000
-Alle Abgeordneten wählen den oder die Bundeskanzler in.
+Alle Abgeordneten wählen den Bundeskanzler oder die Bundeskanzlerin.
 
 20
 00:01:18,000 --> 00:01:23,000
-Kandidieren kann jede oder jeder volljährige deutsche Staatsbürger in.
+Kandidieren kann jede volljährige deutsche Staatsbürgerin oder jeder volljährige Staatsbürger.
 
 21
 00:01:24,000 --> 00:01:32,000
-In der Regel wird aber der Kandidat oder die Kandidatin der stärksten Fraktion oder Koalition zur oder zum Kanzler in gewählt.
+In der Regel wird aber der Kandidat oder die Kandidatin der stärksten Fraktion oder Koalition zur Kanzlerin oder zum Kanzler gewählt.
 
 22
 00:01:32,000 --> 00:01:37,000
-Die Gewinnerpartei bilden dann die Regierung. Die anderen gehen in die Opposition.
+Die Gewinnerparteien bilden dann die Regierung. Die anderen gehen in die Opposition.

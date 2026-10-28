@@ -2964,6 +2964,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/planet-wissen-der-kalte-krieg-planet-wissen.json"
  },
  {
+  "id": "planet-wissen-der-fruchtbare-lossboden-planet-wissen",
+  "title": {
+   "zh": "肥沃的黄土",
+   "de": "Der fruchtbare Lössboden",
+   "en": "Fertile loess soil"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/planet-wissen/der-fruchtbare-lossboden-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/planet-wissen/der-fruchtbare-lossboden-planet-wissen.mp4"
+  ],
+  "duration": 100.4,
+  "source": "Felicitas Graßl/Claudio Como · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-der-fruchtbare-lossboden-planet-wissen.json"
+ },
+ {
   "id": "planet-wissen-die-berliner-mauer-planet-wissen",
   "title": {
    "zh": "柏林墙",
@@ -2983,6 +3004,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "知识"
   ],
   "subtitlesUrl": "subs/planet-wissen-die-berliner-mauer-planet-wissen.json"
+ },
+ {
+  "id": "planet-wissen-die-erfindungen-von-leonardo-da-vinci-planet-wissen",
+  "title": {
+   "zh": "达·芬奇的发明",
+   "de": "Die Erfindungen von Leonardo da Vinci",
+   "en": "The inventions of Leonardo da Vinci"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/die-erfindungen-von-leonardo-da-vinci-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/die-erfindungen-von-leonardo-da-vinci-planet-wissen.mp4"
+  ],
+  "duration": 100.1,
+  "source": "Lena Paul/Claudio Como · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-die-erfindungen-von-leonardo-da-vinci-planet-wissen.json"
  },
  {
   "id": "planet-wissen-die-franzosische-revolution-und-napoleon-planet-wissen",
@@ -3130,6 +3172,48 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "知识"
   ],
   "subtitlesUrl": "subs/planet-wissen-erdol-planet-wissen.json"
+ },
+ {
+  "id": "planet-wissen-leben-auf-der-burg-planet-wissen",
+  "title": {
+   "zh": "城堡里的生活",
+   "de": "Leben auf der Burg",
+   "en": "Life in a castle"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/leben-auf-der-burg-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/leben-auf-der-burg-planet-wissen.mp4"
+  ],
+  "duration": 120.0,
+  "source": "Anja von Kampen/VisionX · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-leben-auf-der-burg-planet-wissen.json"
+ },
+ {
+  "id": "planet-wissen-parteien-und-kanzlerin-und-kanzler-wer-wahlt-wen-in-deut",
+  "title": {
+   "zh": "政党与总理：在德国谁选谁？",
+   "de": "Parteien und Kanzlerin und Kanzler – wer wählt wen in Deutschland?",
+   "en": "Parties and chancellor: who elects whom in Germany?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/parteien-und-kanzlerin-und-kanzler-wer-wahlt-wen-in-deut.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/parteien-und-kanzlerin-und-kanzler-wer-wahlt-wen-in-deut.mp4"
+  ],
+  "duration": 100.0,
+  "source": "Felicitas Graßl/David Robinson · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-parteien-und-kanzlerin-und-kanzler-wer-wahlt-wen-in-deut.json"
  },
  {
   "id": "planet-wissen-vincent-van-gogh-planet-wissen",
