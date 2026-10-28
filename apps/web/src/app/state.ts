@@ -20,6 +20,8 @@ export interface Prefs {
    * 其他设备用原生视频层；canvas / native = 用户在诊断页里手动指定
    */
   videoPaint: 'auto' | 'canvas' | 'native';
+  /** 语速（播放速度），1 为原速 */
+  playbackRate: number;
 }
 
 export interface AppState extends Prefs {
@@ -39,6 +41,7 @@ const DEFAULT_PREFS: Prefs = {
   hidden: [],
   bilibiliInDeck: false,
   videoPaint: 'auto',
+  playbackRate: 1,
 };
 
 const stored = storage.get<Partial<Prefs>>(PREFS_KEY, {});
@@ -55,8 +58,8 @@ export const app = new Store<AppState>({
 
 // 偏好设置变化时持久化
 app.subscribe((s) => {
-  const { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck, videoPaint } = s;
-  storage.set(PREFS_KEY, { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck, videoPaint });
+  const { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck, videoPaint, playbackRate } = s;
+  storage.set(PREFS_KEY, { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck, videoPaint, playbackRate });
 });
 
 const WELCOME_KEY = 'vido.welcomed';

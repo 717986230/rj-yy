@@ -251,7 +251,7 @@
 }
 
 /* B 站播放器里时：进度、音量、字幕设置由 B 站播放器自己控制 */
-.is-embed :is([data-ref='seek'], [data-ref='cc'], [data-ref='langs'], [data-ref='tune'], [data-ref='mute'], [data-ref='volume']) {
+.is-embed :is([data-ref='seek'], [data-ref='cc'], [data-ref='langs'], [data-ref='tune'], [data-ref='rate'], [data-ref='mute'], [data-ref='volume']) {
   opacity: 0.3;
   pointer-events: none;
 }

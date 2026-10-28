@@ -65,6 +65,7 @@ export class VideoEngine {
   private failures: SourceFailure[] = [];
   private stallTimer = 0;
   private wantPlay = false;
+  private rate = 1;
   /** 当前的静音是否由自动播放拦截导致（而不是用户自己点的） */
   autoMuted = false;
   private readonly detach: Array<() => void> = [];
@@ -96,7 +97,11 @@ export class VideoEngine {
       this.fail(MEDIA_ERRORS[video.error?.code ?? 0] ?? '未知错误');
     });
     bind('loadeddata', () => clearTimeout(this.stallTimer));
-    bind('loadedmetadata', () => this.emitTime());
+    bind('loadedmetadata', () => {
+      // 换片后部分浏览器会把速度重置为 1，这里按当前设置补上
+      if (video.playbackRate !== this.rate) video.playbackRate = this.rate;
+      this.emitTime();
+    });
     bind('seeked', () => this.emitTime());
     bind('timeupdate', () => {
       if (video.paused) this.emitTime();
@@ -185,6 +190,14 @@ export class VideoEngine {
   setVolume(volume: number): void {
     this.video.volume = Math.min(1, Math.max(0, volume));
     if (volume > 0 && this.video.muted) this.video.muted = false;
+  }
+
+  /** 语速：0.5–2 倍，保持音调不变；换片后继续生效 */
+  setRate(rate: number): void {
+    this.rate = Math.min(2, Math.max(0.5, rate));
+    this.video.defaultPlaybackRate = this.rate;
+    this.video.playbackRate = this.rate;
+    this.video.preservesPitch = true;
   }
 
   setMuted(muted: boolean): void {

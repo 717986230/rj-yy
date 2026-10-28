@@ -18,6 +18,10 @@ const MODES: Array<{ id: PlayMode; label: string; icon: 'repeat' | 'shuffle' | '
   { id: 'manual', label: '手动抽卡', icon: 'cards', hint: '手动抽卡：每部播完停下，由你来抽下一张' },
 ];
 
+/** 语速档位：点语速按钮依次切换 */
+const RATES = [0.5, 0.75, 1, 1.25, 1.5];
+const formatRate = (rate: number) => `${rate}×`;
+
 const LANGS: Array<{ id: SecondaryLang; label: string }> = [
   { id: 'de', label: '中·德' },
   { id: 'en', label: '中·英' },
@@ -60,6 +64,7 @@ type Refs = {
   langs: HTMLElement;
   tune: HTMLButtonElement;
   tunePanel: HTMLElement;
+  rate: HTMLButtonElement;
   offset: HTMLElement;
   mute: HTMLButtonElement;
   volume: HTMLInputElement;
@@ -161,9 +166,10 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
             ${LANGS.map((l) => `<button data-lang="${l.id}" class="!h-7 px-2.5 !text-xs" aria-pressed="false">${l.label}</button>`).join('')}
           </div>
           <button data-ref="tune" class="icon-btn" aria-label="字幕时间微调" title="字幕时间微调" aria-expanded="false">${icon('sliders')}</button>
+          <button data-ref="rate" class="icon-btn !w-auto min-w-[2.75rem] px-1.5 text-xs font-bold tabular-nums" aria-label="语速" title="语速：点一下换一档">1×</button>
           <div class="ml-auto flex items-center">
             <button data-ref="mute" class="icon-btn" aria-label="静音">${icon('volume')}</button>
-            <input data-ref="volume" id="volume" type="range" class="range w-20" min="0" max="100" aria-label="音量" />
+            <input data-ref="volume" id="volume" type="range" class="range w-16" min="0" max="100" aria-label="音量" />
           </div>
           <div data-ref="tunePanel" class="absolute bottom-full left-0 z-20 mb-2 w-60 rounded-2xl border border-line/15 bg-raised p-3 shadow-soft" hidden>
             <p class="text-xs text-mute">字幕和画面对不上时，微调字幕时间</p>
@@ -470,6 +476,9 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     r.langs.querySelectorAll<HTMLButtonElement>('[data-lang]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === s.secondLang)));
     r.cc.setAttribute('aria-pressed', String(s.subtitles));
     r.offset.textContent = `${s.subtitleOffset > 0 ? '+' : ''}${s.subtitleOffset.toFixed(1)}s`;
+    engine.setRate(s.playbackRate);
+    r.rate.textContent = formatRate(s.playbackRate);
+    r.rate.setAttribute('aria-pressed', String(s.playbackRate !== 1));
     r.backHint.textContent = s.mode === 'manual' ? '点我抽一张' : '点我开始播放';
     r.draw.innerHTML = `${icon('cards')}${s.mode === 'manual' ? '抽一张卡' : '换一张'}`;
     renderTitleSecond();
@@ -602,6 +611,12 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     if (lang) app.set({ secondLang: lang });
   };
   r.cc.onclick = () => app.set({ subtitles: !app.get().subtitles });
+  r.rate.onclick = () => {
+    const i = RATES.indexOf(app.get().playbackRate);
+    const playbackRate = RATES[(i + 1) % RATES.length]!;
+    app.set({ playbackRate });
+    toast(`语速 ${formatRate(playbackRate)}`);
+  };
   r.tune.onclick = () => {
     r.tunePanel.hidden = !r.tunePanel.hidden;
     r.tune.setAttribute('aria-expanded', String(!r.tunePanel.hidden));
