@@ -1,0 +1,41 @@
+name: WebKit video check
+
+# 在 macOS 上用 Playwright WebKit（iPhone 参数）检查卡片里的视频有没有画面，结果写在日志里的 RESULT 行
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 要检查的站点（留空则检查本次构建）
+        required: false
+  push:
+    branches: ['main', 'fix/**']
+    paths: ['apps/web/**', 'packages/shared/src/**', 'scripts/webkit-video-check.cjs', '.github/workflows/webkit-check.yml']
+
+jobs:
+  check:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm i --no-save playwright@1.49.1 pngjs@7.0.0 && npx playwright install webkit
+      - name: Check
+        run: |
+          mkdir -p shots site
+          if [ -n "${{ inputs.url }}" ]; then URL="${{ inputs.url }}"; else
+            ln -s "$PWD/apps/web/dist" site/rj-yy
+            npx --yes http-server@14.1.1 site -p 8090 -s -c-1 &
+            sleep 3; URL=http://localhost:8090/rj-yy/
+          fi
+          node scripts/webkit-video-check.cjs "$URL" shots
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: webkit-shots
+          path: shots
