@@ -16,6 +16,7 @@ import { busy, errorMessage } from '../components/form';
 import { icon } from '../components/icons';
 import { toast } from '../components/toast';
 import { api } from '../services/api';
+import { CLOUD_SYNCED } from '../services/cloud';
 import { probeSources, runLimited, type ProbeResult } from '../services/probe';
 import { mediaUrl } from '../app/site';
 
@@ -368,8 +369,12 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
     render();
   });
   const offTopbar = bindLibraryThemeSwitch(r.topbar);
+  // 从手册账号同步下来新的视频 / 隐藏后刷新列表
+  const onSynced = () => void load();
+  window.addEventListener(CLOUD_SYNCED, onSynced);
   return () => {
     offLib();
     offTopbar();
+    window.removeEventListener(CLOUD_SYNCED, onSynced);
   };
 }

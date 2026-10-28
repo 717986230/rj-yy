@@ -34,12 +34,10 @@
 │   ├── web/                 # 前端：Vite + Tailwind CSS + TypeScript，部署到 GitHub Pages
 │   │   └── src/
 │   │       ├── app/         # 路由、状态、存储、DOM 工具
-│   │       ├── services/    # api（本地 / HTTP 两种实现）、player（视频引擎）
+│   │       ├── services/    # api（浏览器本地实现）、cloud（同步到手册账号）、player（视频引擎）
 │   │       ├── components/  # 吉祥物、欢迎弹窗、字幕层、表单、图标、弹层
-│   │       └── pages/       # 登录 / 注册 / 找回密码、播放页、片库
-│   ├── worker/              # 线上后端：Cloudflare Workers + D1（接口与 server 相同）
-│   └── server/              # 后端的 Node 版：Express + SQLite + JWT，本地开发或自建服务器用
-├── packages/shared/         # 前后端共用：类型、API 契约、字幕解析、播放队列、示例片库
+│   │       └── pages/       # 播放页、片库
+├── packages/shared/         # 共用：类型、API 契约、字幕解析、播放队列、示例片库
 ├── docs/ARCHITECTURE.md     # 架构说明
 └── .github/workflows/       # CI 与 Pages 自动部署
 ```
@@ -52,39 +50,17 @@
 
 ```bash
 npm install
-npm run dev          # 前端 http://localhost:5173 （本地存储模式，演示账号 demo@vido.app / vido2026）
+npm run dev          # 前端 http://localhost:5173
 npm run check        # 类型检查 + 全部测试
 npm run build        # 构建前端到 apps/web/dist
 ```
 
-### 连接后端（可选）
+### 数据存在哪里
 
-GitHub Pages 只能托管静态文件，所以前端默认使用浏览器本地存储完成账号与片库功能。需要多设备同步账号时，启动后端并让前端指向它：
-
-```bash
-cp apps/server/.env.example apps/server/.env   # 修改 JWT_SECRET、CORS_ORIGIN
-npm run dev:server                             # http://localhost:8787/api
-VITE_API_BASE=http://localhost:8787/api npm run dev
-```
-
-线上部署（Cloudflare，推荐）：在仓库 **Settings → Secrets and variables → Actions → Secrets** 里添加 `CLOUDFLARE_API_TOKEN`（Cloudflare 后台 → My Profile → API Tokens → 用「Edit Cloudflare Workers」模板创建，再加一条 Account · D1 · Edit 权限）和 `CLOUDFLARE_ACCOUNT_ID`。之后每次推送 main，`deploy-pages.yml` 会自动创建 D1 数据库、执行迁移、部署 `apps/worker` 到 `https://vido-api.<你的子域>.workers.dev`，并让 Pages 上的前端连上它；后端连不上时前端自动退回本地模式。本地调试 Worker：`npm run dev:worker`（先在 `apps/worker/.dev.vars` 写一行 `JWT_SECRET=任意字符串`，并执行 `npx wrangler d1 migrations apply vido --local`）。
-
-也可以把 `apps/server` 用附带的 `Dockerfile` 部署到任意支持 Node 的平台（Render、Railway、Fly.io、自有服务器等），然后在仓库 **Settings → Secrets and variables → Actions → Variables** 新建 `VITE_API_BASE`（例如 `https://api.example.com/api`），再次推送即可让 Pages 上的前端改用后端。
-
-## 后端接口
-
-| 方法 | 路径 | 说明 |
-| --- | --- | --- |
-| POST | `/api/auth/register` | 注册，返回 `{ token, user }` |
-| POST | `/api/auth/login` | 登录 |
-| POST | `/api/auth/forgot` | 申请重置密码（开发环境直接返回 `devToken`） |
-| POST | `/api/auth/reset` | 用令牌设置新密码，令牌一次有效、30 分钟过期 |
-| GET | `/api/auth/me` | 当前用户 |
-| GET | `/api/videos` | 片库列表（内置 + 自己添加的） |
-| GET | `/api/videos/:id` | 单条视频，含中 / 德 / 英字幕 |
-| GET | `/api/videos/:id/subtitles/:lang.vtt` | 导出单语 WebVTT（`zh` / `de` / `en`） |
-| POST | `/api/videos` | 添加外链视频与字幕 |
-| DELETE | `/api/videos/:id` | 删除自己添加的视频 |
+Vido 没有自己的后端，也不用登录：隐藏的卡片、自己加的视频都存在浏览器里。
+在 www.uuoo.site/vido/（德语学习手册里）打开，并且在手册里登录过的人，这两样会自动同步到手册账号
+（手册后端 `uuoo-analytics` 的 `GET/PUT /api/vido`，代码在 717986230/deutsch-lernen-site 的 `analytics/`），换设备也在。
+实现见 `apps/web/src/services/cloud.ts`。
 
 ## 视频与字幕来源
 

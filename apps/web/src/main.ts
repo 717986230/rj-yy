@@ -5,6 +5,7 @@ import { showWelcome } from './components/welcome';
 import { libraryPage } from './pages/library';
 import { playerPage } from './pages/player';
 import { api, prepareApi } from './services/api';
+import { startCloudSync } from './services/cloud';
 
 // 不需要登录：打开就能抽卡
 const routes: Route[] = [
@@ -15,6 +16,8 @@ const routes: Route[] = [
 async function boot() {
   await prepareApi();
   app.set({ user: await api.me() });
+  // 在手册里登录过的人：隐藏的卡片、自己加的视频跟着手册账号走（不等它，先让页面出来）
+  void startCloudSync();
 
   startRouter(document.getElementById('app')!, routes, {
     isAuthed: () => true,
