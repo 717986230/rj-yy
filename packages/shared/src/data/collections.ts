@@ -1075,6 +1075,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-entstehungsphase-einer-entzundung.json"
  },
  {
+  "id": "terra-x-erfindung-des-periodensystems",
+  "title": {
+   "zh": "元素周期表的发明",
+   "de": "Erfindung des Periodensystems",
+   "en": "The invention of the periodic table"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/erfindung-des-periodensystems.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/erfindung-des-periodensystems.mp4"
+  ],
+  "duration": 227.6,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-erfindung-des-periodensystems.json"
+ },
+ {
   "id": "terra-x-esel-als-bodenmanager",
   "title": {
    "zh": "驴子是土地管家",
@@ -1493,6 +1514,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-herdenimmunitat.json"
+ },
+ {
+  "id": "terra-x-hexenverfolgung-in-der-geschichte",
+  "title": {
+   "zh": "历史上的猎巫",
+   "de": "Hexenverfolgung in der Geschichte",
+   "en": "Witch hunts in history"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/hexenverfolgung-in-der-geschichte.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/hexenverfolgung-in-der-geschichte.mp4"
+  ],
+  "duration": 195.4,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-hexenverfolgung-in-der-geschichte.json"
  },
  {
   "id": "terra-x-hochfeste-der-religionen",
