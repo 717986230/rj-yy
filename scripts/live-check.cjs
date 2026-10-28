@@ -83,7 +83,7 @@ async function apiChecks() {
 
 async function siteChecks() {
   console.log('\n== 网站 ==');
-  const browser = await chromium.launch({ args: ['--autoplay-policy=no-user-gesture-required'] });
+  const browser = await chromium.launch({ channel: process.env.PW_CHANNEL ?? 'chrome', args: ['--autoplay-policy=no-user-gesture-required'] });
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
