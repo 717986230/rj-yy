@@ -106,7 +106,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
           <div data-ref="card" class="card">
             <button data-ref="back" class="card-face card-back flex flex-col items-center justify-center gap-2 text-center" aria-label="抽一张卡">
               <span class="font-display text-[11px] font-semibold uppercase tracking-[0.35em] text-aqua/80">Vido · Karte</span>
-              ${otter({ cls: 'h-[46%] w-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.45)]' })}
+              ${otter({ scene: 'study', cls: 'h-[46%] w-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.45)]' })}
               <span data-ref="backHint" class="hint mt-1 text-base font-bold text-fg">点我抽一张</span>
               <span data-ref="backCount" class="text-xs text-mute">片库加载中…</span>
             </button>
@@ -118,8 +118,9 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
                 <div data-ref="tap" class="absolute inset-0" aria-hidden="true"></div>
                 <div data-ref="bili" class="absolute inset-0 bg-black" hidden></div>
                 <div data-ref="subs"></div>
-                <div data-ref="loading" class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-3" hidden><span class="spinner"></span><p data-ref="loadingNote" class="max-w-[85%] truncate rounded-full bg-black/50 px-3 py-1 text-[11px] text-mute"></p></div>
+                <div data-ref="loading" class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-3" hidden>${otter({ scene: 'swim', cls: 'otter-swim w-36' })}<p data-ref="loadingNote" class="max-w-[85%] truncate rounded-full bg-black/50 px-3 py-1 text-[11px] text-mute"></p></div>
                 <div data-ref="failed" class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/80 p-6 text-center" hidden>
+                  ${otter({ scene: 'sorry', cls: 'h-16 w-16' })}
                   <p class="text-sm font-bold">这部视频的外链都打不开</p>
                   <ul data-ref="failList" class="grid max-w-full gap-1 text-left text-[11px] leading-snug text-mute"></ul>
                   <p data-ref="failNote" class="text-[11px] text-[#f6e9d4]/80"></p>
@@ -129,6 +130,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
                   </div>
                 </div>
                 <div data-ref="ended" class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/70 p-6 text-center" hidden>
+                  ${otter({ scene: 'happy', cls: 'h-20 w-20' })}
                   <p class="text-sm font-bold">这一部看完啦</p>
                   <div class="flex gap-2">
                     <button data-action="replay" class="btn-ghost h-9 px-3">${icon('refresh', 'h-4 w-4')}重播</button>

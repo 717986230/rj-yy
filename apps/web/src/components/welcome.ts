@@ -13,7 +13,7 @@ export function showWelcome({ onStart, startLabel = '开始抽卡' }: { onStart?
     <div class="relative w-full max-w-[340px] rounded-[28px] border border-line/15 bg-panel px-6 pb-6 pt-24 text-center shadow-soft">
       <div class="absolute -top-20 left-1/2 -translate-x-1/2">
         <div class="absolute inset-x-4 bottom-2 top-10 rounded-full bg-aqua/20 blur-2xl"></div>
-        ${otter({ pose: 'wave', cls: 'relative h-44 w-36' })}
+        ${otter({ scene: 'hello', cls: 'relative h-44 w-36' })}
       </div>
       <button data-ref="close" class="icon-btn absolute right-3 top-3 text-mute" aria-label="关闭">${icon('x')}</button>
       <p class="font-display text-sm font-semibold tracking-wide text-aqua">Hallo! Hello! 你好！</p>
