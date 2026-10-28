@@ -256,6 +256,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-die-anden-als-klimascheide.json"
  },
  {
+  "id": "terra-x-die-bedeutung-von-pfingsten",
+  "title": {
+   "zh": "圣灵降临节的含义",
+   "de": "Die Bedeutung von Pfingsten",
+   "en": "The meaning of Pentecost"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/die-bedeutung-von-pfingsten.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/die-bedeutung-von-pfingsten.mp4"
+  ],
+  "duration": 85.0,
+  "source": "ZDF/Sonntags · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-bedeutung-von-pfingsten.json"
+ },
+ {
   "id": "terra-x-die-entstehung-des-grundgesetzes",
   "title": {
    "zh": "《基本法》的诞生",
@@ -296,6 +317,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-die-erfindung-der-batterie.json"
+ },
+ {
+  "id": "terra-x-die-gaskammern-in-auschwitz-birkenau",
+  "title": {
+   "zh": "奥斯维辛-比克瑙的毒气室",
+   "de": "Die Gaskammern in Auschwitz-Birkenau",
+   "en": "The gas chambers of Auschwitz-Birkenau"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-gaskammern-in-auschwitz-birkenau.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-gaskammern-in-auschwitz-birkenau.mp4"
+  ],
+  "duration": 82.2,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-gaskammern-in-auschwitz-birkenau.json"
  },
  {
   "id": "terra-x-die-germanen-aus-der-sicht-von-tacitus-und-caesar",
@@ -422,6 +464,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-die-lebensraume-der-lowen.json"
+ },
+ {
+  "id": "terra-x-die-russelnasen-der-saiga-antilopen",
+  "title": {
+   "zh": "高鼻羚羊的大鼻子",
+   "de": "Die Rüsselnasen der Saiga-Antilopen",
+   "en": "The trunk-like noses of saiga antelopes"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-russelnasen-der-saiga-antilopen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-russelnasen-der-saiga-antilopen.mp4"
+  ],
+  "duration": 71.7,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-russelnasen-der-saiga-antilopen.json"
  },
  {
   "id": "terra-x-die-sinne-des-wolfs",
@@ -989,6 +1052,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-hunde-im-antiken-rom.json"
+ },
+ {
+  "id": "terra-x-infraschall-wie-elefanten-kommunizieren",
+  "title": {
+   "zh": "次声波：大象如何交流",
+   "de": "Infraschall - Wie Elefanten kommunizieren",
+   "en": "Infrasound: how elephants communicate"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/infraschall-wie-elefanten-kommunizieren.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/infraschall-wie-elefanten-kommunizieren.mp4"
+  ],
+  "duration": 83.3,
+  "source": "ZDF/Tango Film · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-infraschall-wie-elefanten-kommunizieren.json"
  },
  {
   "id": "terra-x-jerusalem-stadt-des-glaubens-cc-by-sa-4-0",
