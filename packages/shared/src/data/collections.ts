@@ -214,6 +214,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-der-humboldtstrom.json"
  },
  {
+  "id": "terra-x-der-nordliche-polarkreis",
+  "title": {
+   "zh": "北极圈",
+   "de": "Der nördliche Polarkreis",
+   "en": "The Arctic Circle"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/der-nordliche-polarkreis.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/der-nordliche-polarkreis.mp4"
+  ],
+  "duration": 71.5,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-der-nordliche-polarkreis.json"
+ },
+ {
   "id": "terra-x-die-anden-als-klimascheide",
   "title": {
    "zh": "安第斯山脉：气候分界线",
@@ -592,6 +613,48 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-einfluss-von-fetten-und-proteinen-auf-den-blutzuckerspie.json"
  },
  {
+  "id": "terra-x-einfluss-von-lebensmitteln-auf-unser-klima",
+  "title": {
+   "zh": "食物如何影响气候",
+   "de": "Einfluss von Lebensmitteln auf unser Klima",
+   "en": "How food affects our climate"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/einfluss-von-lebensmitteln-auf-unser-klima.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/einfluss-von-lebensmitteln-auf-unser-klima.mp4"
+  ],
+  "duration": 83.2,
+  "source": "ZDF/logo · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-einfluss-von-lebensmitteln-auf-unser-klima.json"
+ },
+ {
+  "id": "terra-x-eingeschrankter-lebensraum-der-wildtiere",
+  "title": {
+   "zh": "野生动物的生存空间受限",
+   "de": "Eingeschränkter Lebensraum der Wildtiere",
+   "en": "Wildlife's shrinking habitats"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/eingeschrankter-lebensraum-der-wildtiere.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/eingeschrankter-lebensraum-der-wildtiere.mp4"
+  ],
+  "duration": 69.9,
+  "source": "3sat/nano · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-eingeschrankter-lebensraum-der-wildtiere.json"
+ },
+ {
   "id": "terra-x-einzigartige-lebensbedingungen-auf-der-erde",
   "title": {
    "zh": "地球独一无二的生存条件",
@@ -716,6 +779,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-felsen-als-wasserspeicher-fur-pflanzen.json"
+ },
+ {
+  "id": "terra-x-folgen-der-erderwarmung",
+  "title": {
+   "zh": "全球变暖的后果",
+   "de": "Folgen der Erderwärmung",
+   "en": "Consequences of global warming"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/folgen-der-erderwarmung.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/folgen-der-erderwarmung.mp4"
+  ],
+  "duration": 72.6,
+  "source": "3sat/nano · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-folgen-der-erderwarmung.json"
  },
  {
   "id": "terra-x-frankfurter-paulskirche",
