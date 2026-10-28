@@ -66,6 +66,31 @@ jobs:
           echo "url=$url" >> "$GITHUB_OUTPUT"
           curl -fsS --retry 5 --retry-delay 3 --retry-all-errors "$url/api/health"
 
+      # 把 www.uuoo.site/vido* 交给本 Worker，Vido 就成了德语学习手册的一部分（同域、共用账号）。
+      # 失败不影响 workers.dev 上的后端，只在日志里提示原因（例如令牌没有 uuoo.site 的路由权限）。
+      - name: Attach www.uuoo.site/vido route
+        if: steps.check.outputs.enabled
+        continue-on-error: true
+        run: |
+          set -uo pipefail
+          cf() { curl -sS -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H 'Content-Type: application/json' "$@"; }
+          api=https://api.cloudflare.com/client/v4
+          pattern='www.uuoo.site/vido*'
+          zone=$(cf "$api/zones?name=uuoo.site" | jq -r '.result[0].id // empty')
+          if [ -z "$zone" ]; then
+            echo "::warning::Cloudflare 令牌看不到 uuoo.site 这个域名，没能绑定 $pattern"
+            exit 1
+          fi
+          cf "$api/zones/$zone/dns_records?name=www.uuoo.site" | jq -c '.result[]? | {type, content, proxied}'
+          if cf "$api/zones/$zone/workers/routes" | jq -e --arg p "$pattern" '.result[]? | select(.pattern == $p)' > /dev/null; then
+            echo "路由 $pattern 已存在"
+          else
+            cf -X POST "$api/zones/$zone/workers/routes" -d "{\"pattern\":\"$pattern\",\"script\":\"vido-api\"}" | tee route.json
+            jq -e '.success' route.json > /dev/null || { echo "::warning::绑定 $pattern 失败，见上面的返回"; exit 1; }
+          fi
+          curl -fsS --retry 5 --retry-delay 3 --retry-all-errors https://www.uuoo.site/vido/api/health \
+            || { echo "::warning::www.uuoo.site/vido 还没通：www 的 DNS 记录需要开启 Cloudflare 代理（橙色云朵）"; exit 1; }
+
   deploy:
     needs: api
     # 后端部署失败也照常发布前端（此时前端用本地模式），不让 Cloudflare 的问题卡住网站更新

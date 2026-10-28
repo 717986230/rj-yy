@@ -1,6 +1,7 @@
 import { checkPassword, isEmail } from '@vido/shared';
 import { el, refs } from '../app/dom';
 import type { RouteContext } from '../app/router';
+import { HANDBOOK, handbookPage } from '../app/site';
 import { app } from '../app/state';
 import { bindPasswordToggles, busy, errorMessage, field } from '../components/form';
 import { icon } from '../components/icons';
@@ -21,6 +22,7 @@ const backBar = (title: string) => `
   </div>`;
 
 function modeNote(): string {
+  if (HANDBOOK) return '使用德语学习手册的账号登录，进度与手册共用';
   return api.kind === 'local'
     ? '本地模式：账号仅保存在当前浏览器'
     : '已连接 Vido 服务器';
@@ -41,15 +43,19 @@ export function loginPage(root: HTMLElement, { navigate }: RouteContext) {
       <h1 class="mt-3 text-[26px] font-bold leading-tight">欢迎回来</h1>
       <p class="mt-1 text-sm text-mute">登录后继续抽卡，一张卡就是一整部片</p>
       <form data-ref="form" class="mt-5 grid gap-3" novalidate>
-        ${field({ id: 'login-email', label: '邮箱', type: 'email', iconName: 'mail', placeholder: '邮箱', value: local ? DEMO_ACCOUNT.email : '', autocomplete: 'email' })}
+        ${
+          HANDBOOK
+            ? field({ id: 'login-email', label: '用户名', iconName: 'user', placeholder: '德语学习手册的用户名', autocomplete: 'username' })
+            : field({ id: 'login-email', label: '邮箱', type: 'email', iconName: 'mail', placeholder: '邮箱', value: local ? DEMO_ACCOUNT.email : '', autocomplete: 'email' })
+        }
         ${field({ id: 'login-password', label: '密码', type: 'password', iconName: 'lock', placeholder: '密码', value: local ? DEMO_ACCOUNT.password : '', autocomplete: 'current-password', toggle: true })}
         <div class="flex items-center justify-between px-1 text-[13px]">
           <p data-ref="error" class="field-error"></p>
-          <a href="#/forgot" class="shrink-0 text-mute hover:text-fg">忘记密码？</a>
+          <a href="${HANDBOOK ? handbookPage('/reset') : '#/forgot'}" class="shrink-0 text-mute hover:text-fg">忘记密码？</a>
         </div>
         <button data-ref="submit" class="btn-primary w-full">登录</button>
       </form>
-      <p class="mt-4 text-center text-sm text-mute">还没有账号？<a href="#/register" class="link">立即注册</a></p>
+      <p class="mt-4 text-center text-sm text-mute">还没有账号？<a href="${HANDBOOK ? handbookPage('/register') : '#/register'}" class="link">立即注册</a></p>
       <p class="mt-auto pt-4 text-center text-[11px] text-mute/70">${local ? `演示账号已预填：${DEMO_ACCOUNT.email} / ${DEMO_ACCOUNT.password} · ` : ''}${modeNote()}</p>
     </section>`);
   const r = refs<{ form: HTMLFormElement; error: HTMLElement; submit: HTMLButtonElement }>(view);
@@ -59,7 +65,9 @@ export function loginPage(root: HTMLElement, { navigate }: RouteContext) {
     e.preventDefault();
     const email = (view.querySelector('#login-email') as HTMLInputElement).value;
     const password = (view.querySelector('#login-password') as HTMLInputElement).value;
-    r.error.textContent = !isEmail(email) ? '请输入正确的邮箱' : !password ? '请输入密码' : '';
+    r.error.textContent = HANDBOOK
+      ? !email.trim() ? '请输入用户名' : !password ? '请输入密码' : ''
+      : !isEmail(email) ? '请输入正确的邮箱' : !password ? '请输入密码' : '';
     if (r.error.textContent) return;
     try {
       const session = await busy(r.submit, '登录中…', () => api.login({ email, password }));

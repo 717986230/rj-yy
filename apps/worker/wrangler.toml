@@ -7,7 +7,11 @@ workers_dev = true
 
 [vars]
 # 允许跨域访问的前端地址，逗号分隔
-CORS_ORIGIN = "https://717986230.github.io,http://localhost:5173"
+CORS_ORIGIN = "https://717986230.github.io,https://www.uuoo.site,http://localhost:5173"
+# 德语学习手册的账号后端：手册的登录令牌在 Vido 里同样有效
+UUOO_API = "https://uuoo-analytics.uuoo.workers.dev"
+# www.uuoo.site/vido/ 转发的前端（路由由 deploy-pages.yml 绑定）
+SITE_ORIGIN = "https://717986230.github.io/rj-yy"
 
 [[d1_databases]]
 binding = "DB"

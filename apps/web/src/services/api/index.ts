@@ -1,10 +1,12 @@
 import type { ApiClient } from '@vido/shared';
 import { HttpApi } from './http';
 import { LocalApi } from './local';
+import { HANDBOOK } from '../../app/site';
 
 export { DEMO_ACCOUNT } from './local';
 
-const base = import.meta.env.VITE_API_BASE?.trim();
+// 在德语学习手册里打开时，后端就在同域的 /vido/api
+const base = HANDBOOK ? `${location.origin}/vido/api` : import.meta.env.VITE_API_BASE?.trim();
 
 /**
  * 构建时决定数据来源：配置了 VITE_API_BASE 就连后端（Cloudflare Worker），否则使用浏览器本地存储。

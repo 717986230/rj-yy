@@ -2,6 +2,7 @@ import { sign, verify } from 'hono/jwt';
 import type { MiddlewareHandler } from 'hono';
 import { ApiError } from '@vido/shared';
 import type { AppEnv } from '../env';
+import { handbookUserId } from './handbook';
 
 const TOKEN_TTL_S = 7 * 24 * 3600;
 /**
@@ -55,7 +56,8 @@ export const requireAuth: MiddlewareHandler<AppEnv> = async (c, next) => {
   try {
     sub = (await verify(token, c.env.JWT_SECRET, 'HS256')).sub;
   } catch {
-    throw new ApiError('UNAUTHORIZED', '登录已过期，请重新登录');
+    // 不是 Vido 自己签发的令牌：可能是德语学习手册的登录令牌
+    sub = await handbookUserId(c.env, token);
   }
   if (typeof sub !== 'string' || !sub) throw new ApiError('UNAUTHORIZED', '登录已过期，请重新登录');
   c.set('userId', sub);
