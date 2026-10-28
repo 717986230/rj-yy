@@ -1,0 +1,45 @@
+name: Fetch Terra X explainers
+
+# 从 Wikimedia Commons 拉取 ZDF Terra X 的自由授权德语科普短片（CC BY / CC BY-SA），
+# 转成手机友好的 H.264，取 Commons 上的德语字幕（没有就用 Whisper 识别德语旁白），提交到仓库。
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 片库里 Terra X 短片的目标数量
+        default: '16'
+  push:
+    branches: [main]
+    paths: [.github/workflows/fetch-terra-x.yml, scripts/fetch_terra_x.py]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-terra-x
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install tools
+        run: |
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+          pip install faster-whisper==1.1.1
+      - name: Fetch
+        run: python scripts/fetch_terra_x.py "${{ inputs.count || '16' }}"
+      - name: Commit to the repo
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add apps/web/public/media/terra-x content/terra-x
+          git diff --cached --quiet && { echo "nothing changed"; exit 0; }
+          git commit -m "Add Terra X explainers (CC BY, ZDF) with German subtitles"
+          git pull --rebase origin main
+          git push
