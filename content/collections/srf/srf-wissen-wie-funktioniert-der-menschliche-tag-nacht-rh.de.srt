@@ -1,0 +1,26 @@
+1
+00:00:06,251 --> 00:00:11,695
+Gesteuert wird er von unserer inneren Uhr, dem suprachiasmatischen Nukleus.
+
+2
+00:00:12,449 --> 00:00:16,425
+Sobald durch das Auge blaues Tageslicht auf diese Region trifft,
+
+3
+00:00:16,562 --> 00:00:18,921
+wird das Hormon Cortisol ausgeschüttet.
+
+4
+00:00:19,284 --> 00:00:20,433
+Es macht uns wach.
+
+5
+00:00:21,955 --> 00:00:25,787
+Am Abend führt das orange-rote langwellige Licht der Dämmerung
+
+6
+00:00:25,852 --> 00:00:29,744
+und danach die Dunkelheit zur Ausschüttung des Hormons Melatonin.
+7
+00:00:30,000 --&gt; 00:00:33,268
+Dieses sorgt für Müdigkeit und Schlaf.

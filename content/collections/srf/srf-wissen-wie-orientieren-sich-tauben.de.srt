@@ -1,0 +1,23 @@
+1
+00:00:04,510 --> 00:00:06,764
+Eine Taube schafft es immer zurück.
+
+2
+00:00:06,795 --> 00:00:07,990
+Aber warum?
+
+3
+00:00:08,520 --> 00:00:14,164
+Als erwiesen gilt, dass Tauben mit Hilfe ihres magnetischen Sinnes die Flugrichtung beibehalten.
+
+4
+00:00:14,729 --> 00:00:18,990
+Sie registrieren offenbar problemlos den Verlauf des Erdmagnetfelds.
+
+5
+00:00:19,223 --> 00:00:24,327
+Außerdem helfen ihnen Sonnenstand, Gerüche und visuelle Bezugspunkte nach Hause.
+
+6
+00:00:26,868 --> 00:00:31,017
+Tauben besitzen somit mindestens vier biologische Kompasse.

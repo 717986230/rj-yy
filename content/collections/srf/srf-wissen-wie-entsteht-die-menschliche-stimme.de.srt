@@ -1,0 +1,43 @@
+1
+00:00:05,426 --> 00:00:09,156
+Atmen wir aus, strömt Luft aus den Lungen Richtung Mund.
+
+2
+00:00:09,481 --> 00:00:13,461
+Dieser Luftstrom trifft im Kehlkopf auf die geschlossenen Stimmlippen.
+
+3
+00:00:13,826 --> 00:00:17,476
+Dort baut sich ein Druck auf, solange bis dieser die Spannung
+
+4
+00:00:17,469 --> 00:00:20,969
+der Lippen überwindet und diese auseinander drängt.
+
+5
+00:00:24,383 --> 00:00:28,842
+Diesen Druck unterhalb der Stimmlippen nennt man den subglottischen Druck.
+
+6
+00:00:29,050 --> 00:00:33,518
+Dadurch entsteht ein eigenartiger Grundton, der für uns noch fremd klingt.
+
+7
+00:00:34,735 --> 00:00:39,368
+Erst im Vokaltrakt, im Raum oberhalb des Kehlkopfes bis zum Mund,
+
+8
+00:00:39,479 --> 00:00:42,611
+wird der Grundton zu Vokalen oder Konsonanten geformt.
+
+9
+00:00:43,209 --> 00:00:46,785
+Die Zunge, der Gaumen und die Lippen modulieren den Grundton,
+
+10
+00:00:46,770 --> 00:00:48,685
+der schlussendlich zur Stimme wird.
+
+11
+00:00:49,200 --> 00:00:53,990
+Damit Stimme entsteht, braucht es also alle drei Körperteile.

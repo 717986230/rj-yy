@@ -1,0 +1,51 @@
+1
+00:00:06,014 --> 00:00:11,925
+Beim Einschlafen fahren wir im Leichtschlaf unsere Körperfunktionen unterschiedlich schnell herunter.
+
+2
+00:00:12,397 --> 00:00:16,583
+Sind die Muskeln zum Beispiel noch aktiv, zucken wir beim Einschlafen.
+
+3
+00:00:19,592 --> 00:00:21,106
+Es folgt der Tiefschlaf.
+
+4
+00:00:21,234 --> 00:00:25,567
+In dieser Sequenz sind wir meist regungslos und vollständig entspannt.
+
+5
+00:00:25,762 --> 00:00:29,134
+Der Tiefschlaf gilt als besonders wichtig für die Erholung.
+
+6
+00:00:30,686 --> 00:00:33,128
+Dann beginnt der sogenannte REM-Schlaf.
+
+7
+00:00:33,402 --> 00:00:36,463
+Unser Gehirn ist nun ähnlich aktiv wie im Wachzustand.
+
+8
+00:00:36,838 --> 00:00:41,287
+In dieser Phase träumen wir intensiv und wer in der Rämpfase geweckt wird,
+
+9
+00:00:41,463 --> 00:00:44,576
+kann sich häufig an die Sequenzen des Traumes erinnern.
+
+10
+00:00:45,369 --> 00:00:47,812
+Danach geht der erste Schlafzyklus zu Ende.
+
+11
+00:00:48,074 --> 00:00:51,990
+Er dauert etwa 90 Minuten und wiederholt sich vier bis sechs Mal pro Nacht.
+
+12
+00:00:52,719 --> 00:00:56,735
+Die wichtigen Tiefschlafphasen, die Informationen im Gedächtnis ablegen
+
+13
+00:00:56,783 --> 00:01:01,177
+und Lerninhalte verfestigen, werden dabei immer kürzer.

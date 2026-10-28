@@ -1,0 +1,67 @@
+1
+00:00:04,550 --> 00:00:09,554
+In einer Blockchain werden Daten in Blöcken aneinander gebunden und das chronologisch.
+
+2
+00:00:09,725 --> 00:00:15,170
+Jeder Block erhält eine Art Schloss, das ihn an einen unverrückbaren Platz in der Kette schließt.
+
+3
+00:00:15,180 --> 00:00:17,990
+Dieses Schloss ist der sogenannte "Hash".
+
+4
+00:00:19,770 --> 00:00:23,082
+"Hashes" bestehen aus öffentlichen und privaten Schlüsseln.
+
+5
+00:00:23,286 --> 00:00:27,178
+Sie sind also so etwas wie der verschlüsselte Fingerabdruck eines Blocks,
+
+6
+00:00:27,208 --> 00:00:29,606
+der immer auf den Vorgänger passen muss.
+
+7
+00:00:30,076 --> 00:00:34,517
+Ein einzelner Block kann nicht gelöscht werden, da sonst die Hashes nicht mehr passen.
+
+8
+00:00:34,642 --> 00:00:39,990
+Denn ändert sich ein Datenblock, dann ändert sich nämlich auch der Hash und sie passen nicht mehr zusammen.
+
+9
+00:00:41,422 --> 00:00:44,583
+Jeder neue Datenblock wird immer am Ende hinzugefügt.
+
+10
+00:00:44,780 --> 00:00:48,371
+Es entsteht eine Art lückenloses, fortlaufendes Kassenbuch,
+
+11
+00:00:48,513 --> 00:00:50,642
+das man nicht unterbrechen und nicht löschen kann.
+
+12
+00:00:52,816 --> 00:00:56,630
+Dazu kommt, eine Blockchain ist ein verteiltes System.
+
+13
+00:00:56,773 --> 00:01:01,739
+Das gesamte Kassenbuch wird auf vielen Computern, auf sogenannten Notes oder Knoten
+
+14
+00:01:01,784 --> 00:01:05,777
+innerhalb des Blockchain-Netzes verteilt und als Kopie gespeichert.
+
+15
+00:01:08,012 --> 00:01:13,832
+Kommt ein neuer Block hinzu, muss auch dieser in jeder Kopie im Netzwerk akzeptiert werden.
+
+16
+00:01:14,001 --> 00:01:15,990
+Das macht eine Blockchain sehr sicher.
+
+17
+00:01:16,683 --> 00:01:22,000
+Es ist sehr unwahrscheinlich, dass jemand all diese Kopien hacken, das heißt manipulieren könnte.

@@ -1,0 +1,47 @@
+1
+00:00:03,545 --> 00:00:06,470
+Eine Batterie besteht immer aus Kathode und Anode,
+
+2
+00:00:06,577 --> 00:00:09,902
+Plus und Minuspol, meist aus Aluminium und Kupfer.
+
+3
+00:00:10,664 --> 00:00:16,990
+Eine Lithium-Ionen-Batterie ist auf der Kathodenseite beschichtet mit Oxiden aus Nickel, Kobalt, Mangan.
+
+4
+00:00:17,000 --> 00:00:19,990
+Und auf der Anodenseite ist es Grafit.
+
+5
+00:00:20,324 --> 00:00:26,854
+Dazwischen trennt eine Ionen-durchlässige Schicht, der sogenannte "Separator", die beiden Komponenten.
+
+6
+00:00:27,295 --> 00:00:29,458
+Sie dürfen nicht in Kontakt kommen.
+
+7
+00:00:30,455 --> 00:00:34,990
+Kathode und Anode liegen je in einem leitfähigen Elektrolyten in der Zelle.
+
+8
+00:00:35,215 --> 00:00:40,129
+Beim Aufladen werden aus der Kathode Lithium-Ionen aus der Beschichtung herausgelöst 
+
+9
+00:00:40,289 --> 00:00:42,934
+und wandern durch den "Separator" zur Anode.
+
+10
+00:00:43,207 --> 00:00:45,629
+Dort lagern sie sich im Grafit ein.
+
+11
+00:00:45,675 --> 00:00:50,665
+Beim Endladen wandern sie entsprechend zur Kathode zurück und geben die Energie frei.
+
+12
+00:00:50,745 --> 00:00:54,990
+Die Elektronen fließen dabei über die Kontakte als nutzbarer Strom.

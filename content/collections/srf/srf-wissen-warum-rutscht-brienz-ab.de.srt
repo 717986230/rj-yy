@@ -1,0 +1,43 @@
+1
+00:00:04,712 --> 00:00:09,044
+Brienz steht auf einer 150 Meter dicken, kompakten Rutschmasse.
+
+2
+00:00:09,352 --> 00:00:12,638
+Darunter liegt die bis zu 10 Meter dicke Gleitschicht aus Ton.
+
+3
+00:00:13,273 --> 00:00:16,263
+Unter dieser befindet sich stabiler Fels.
+
+4
+00:00:17,331 --> 00:00:21,564
+Weil dort ein hoher Wasserdruck herrscht, schwimmt die Rutschmasse auf und rutscht.
+
+5
+00:00:22,370 --> 00:00:26,399
+Regen und schmelzender Schnee bringen zusätzlich Wasser in die Gleitschicht.
+
+6
+00:00:26,690 --> 00:00:29,915
+In dieser steigt dadurch der sogenannte Porenwasserdruck.
+
+7
+00:00:32,882 --> 00:00:36,872
+Das Material wird schmierig, was die Rutschung weiter beschleunigt.
+
+8
+00:00:38,321 --> 00:00:43,351
+Um das Dorf Brienz vor allfälligen Schäden zu bewahren, wurde ein erster Sondierstollen 
+
+9
+00:00:43,385 --> 00:00:47,029
+ausserhalb des Dorfes, aber unterhalb der rutschenden Fläche gebaut.
+
+10
+00:00:47,779 --> 00:00:52,769
+Er ist 600 Meter lang mit mehreren Drainagebohrungen in den Untergrund von Brienz.
+
+11
+00:00:54,952 --> 00:01:00,952
+Durch diese Drainagebohrungen soll dem Boden das Wasser entzogen werden, das den Rutsch antreibt.

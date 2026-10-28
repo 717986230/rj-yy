@@ -1,0 +1,43 @@
+1
+00:00:05,513 --> 00:00:08,244
+Wenn man sich zum Beispiel am Rücken verletzt,
+
+2
+00:00:08,299 --> 00:00:11,911
+dann wird ein Signal über das Rückenmark an das Gehirn gesendet.
+
+3
+00:00:13,943 --> 00:00:19,990
+Dieses Schmerzsignal wird in bestimmten Hirnregionen verarbeitet, so dass wir den Schmerz dann auch fühlen.
+
+4
+00:00:21,420 --> 00:00:27,990
+Je länger ein Schmerzreiz besteht, desto leichter leiten die Nerven die Informationen ans Gehirn.
+
+5
+00:00:29,178 --> 00:00:35,990
+Diese Signale drehen immer stärker ins Bewusstsein, lassen irgendwann keinen anderen Gedanken mehr zu.
+
+6
+00:00:36,876 --> 00:00:40,818
+Dauert der Schmerzreiz an, dann kann es zudem zu Veränderungen
+
+7
+00:00:40,829 --> 00:00:43,869
+in den Hirnregionen kommen, die die Schmerzsignale verarbeiten.
+
+8
+00:00:46,177 --> 00:00:51,990
+Manchmal benötigt das Gehirn dann gar keinen Auslöser mehr, um Schmerzen zu signalisieren.
+
+9
+00:00:55,346 --> 00:00:59,789
+Auch weiß man, dass negative Gefühle wie Angst, Tauer oder Stress
+
+10
+00:00:59,842 --> 00:01:03,911
+chronische Schmerzen verschlimmern und manchmal sogar auslösen können.
+
+11
+00:01:05,788 --> 00:01:11,381
+Chronischer Schmerz hat also nicht immer eine körperliche Ursache, trotzdem ist er da.

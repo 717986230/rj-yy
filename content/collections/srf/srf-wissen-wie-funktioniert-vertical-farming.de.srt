@@ -1,0 +1,107 @@
+1
+00:00:04,695 --> 00:00:08,318
+Vertical Farming ist der Anbau von Pflanzen in Gebäuden.
+
+2
+00:00:08,649 --> 00:00:11,990
+Die Pflanzen wachsen auf mehreren Ebenen in der Vertikalen.
+
+3
+00:00:12,411 --> 00:00:13,401
+Der Vorteil?
+
+4
+00:00:13,581 --> 00:00:16,430
+Man kann sehr viel mehr auf kleinerer Fläche anbauen.
+
+5
+00:00:17,201 --> 00:00:18,990
+Es braucht nur wenig Nährboden.
+
+6
+00:00:19,000 --> 00:00:21,990
+Das können kleine Pads oder auch Fliese sein.
+
+7
+00:00:22,000 --> 00:00:23,990
+Und es braucht Wasser.
+
+8
+00:00:24,796 --> 00:00:28,990
+Die Pflanzen können hydroponisch wachsen, also in nährstoffreichem Wasser.
+
+9
+00:00:29,000 --> 00:00:32,505
+Aeroponisch, da werden die Nährstoffe an der Wurzel versprüht.
+
+10
+00:00:32,686 --> 00:00:33,990
+Oder aquaponisch.
+
+11
+00:00:34,000 --> 00:00:36,990
+Hier kommt ein Becken mit Fischen zum Einsatz.
+
+12
+00:00:39,070 --> 00:00:42,990
+Dabei verringert sich der Wasserverbrauch um rund 95 Prozent.
+
+13
+00:00:43,645 --> 00:00:45,990
+Ebenfalls notwendig ist Licht.
+
+14
+00:00:46,000 --> 00:00:49,307
+Gewisse Lichtspektren können sogar das Wachstum fördern.
+
+15
+00:00:49,682 --> 00:00:56,195
+So wachsen, dank den kontrollierten Laborbedingungen, die Pflanzen schneller und ganz ohne Ernteausfall.
+
+16
+00:00:57,394 --> 00:00:58,643
+Ein weiterer Vorteil?
+
+17
+00:00:58,971 --> 00:01:03,194
+Für das Vertical Farming können leerstehende Gebäude umgenutzt werden.
+
+18
+00:01:03,269 --> 00:01:04,989
+Und es braucht weniger Agrarland.
+
+19
+00:01:05,482 --> 00:01:08,342
+Zudem werden so lange Transportwege verkürzt.
+
+20
+00:01:08,530 --> 00:01:11,963
+Das wiederum bedeutet weniger CO2-Belastung.
+
+21
+00:01:12,988 --> 00:01:15,137
+Doch es gibt auch Schattenseiten.
+
+22
+00:01:15,441 --> 00:01:19,570
+Bewässerung und Licht brauchen viel Strom und machen die Produktion teuer.
+
+23
+00:01:19,922 --> 00:01:23,647
+Und Vertical Farming eignet sich nur für kleinere Pflanzen.
+
+24
+00:01:24,076 --> 00:01:29,365
+Salate, Gemüse, Früchte, Kräuter oder Micro Greens, die ohne viel Erdreich wachsen.
+
+25
+00:01:29,912 --> 00:01:34,272
+Seit das Vertical Farming boomt, wachsen die Anlagen und werden immer größer.
+
+26
+00:01:34,688 --> 00:01:40,232
+Das führt zur Automatisierung der Prozesse beim Säen, Lichten, Ernten, Verpacken.
+
+27
+00:01:40,738 --> 00:01:43,981
+Eine hochtechnisierte und teure Pflanzenzucht.

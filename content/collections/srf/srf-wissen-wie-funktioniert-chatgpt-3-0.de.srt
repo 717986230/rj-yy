@@ -1,0 +1,67 @@
+1
+00:00:04,613 --> 00:00:08,990
+ChatGPT 3.0 trägt unfassbar viele Daten in sich.
+
+2
+00:00:09,000 --> 00:00:13,354
+Seine Teilkopie des Internets ist 461 Terabyte groß.
+
+3
+00:00:13,606 --> 00:00:17,260
+Das ist etwa so viel wie 3,35 Milliarden Webseiten.
+
+4
+00:00:17,837 --> 00:00:23,990
+Dazu kommen noch Texte von Wikipedia, digitalisierte Bücher, Online-Foren, soziale Medien und und und.
+
+5
+00:00:24,373 --> 00:00:29,427
+Allerdings wurde ChatGPT 3.0 nur mit Daten bis 2021 trainiert.
+
+6
+00:00:30,801 --> 00:00:33,404
+Doch wie funktioniert dieses Training?
+
+7
+00:00:33,733 --> 00:00:37,213
+Im ersten Schritt wird ChatGPT mit einer Anfrage gefüttert.
+
+8
+00:00:37,378 --> 00:00:41,596
+KI-Trainerinnen, echte Menschen schreiben dazu eine gute Antwort.
+
+9
+00:00:41,806 --> 00:00:44,990
+In der Lernphase passierte das zehntausende Male.
+
+10
+00:00:46,442 --> 00:00:50,751
+Im zweiten Schritt kommt erneut eine Anfrage und die KI erzeugt nun
+
+11
+00:00:50,779 --> 00:00:54,035
+ohne menschliches Zutun mehrere mögliche Antworten.
+
+12
+00:00:54,319 --> 00:00:58,028
+Und das nach dem Prinzip der Wahrscheinlichkeit der möglichen Folgewörter,
+
+13
+00:00:58,163 --> 00:01:02,690
+also bei "die Katze jagt", wäre das wahrscheinlichste Wort die Maus.
+
+14
+00:01:03,313 --> 00:01:06,990
+Und eine Antwort, die ChatGPT auch nehmen würde.    
+
+15
+00:01:07,000 --> 00:01:12,990
+Die menschlichen KI-Trainerinnen sortieren die verschiedenen Antworten von ChatGPT nach Qualität.
+
+16
+00:01:13,000 --> 00:01:18,339
+Die KI hat so gelernt, für jede Anfrage nach dem Zufallsprinzip mehrere Vorschläge
+
+17
+00:01:18,407 --> 00:01:23,505
+für sinnvolle Antworten zu erzeugen und die daraus jeweils Beste auszuwählen.

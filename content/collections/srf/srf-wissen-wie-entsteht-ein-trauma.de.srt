@@ -1,0 +1,78 @@
+1
+00:00:05,220 --> 00:00:07,702
+Die Entstehung eines Traumas hängt damit zusammen,
+
+2
+00:00:07,739 --> 00:00:10,955
+&lt;span style="font-family: Helvetica Neue;"&gt;wie das Gehirn Informationen verarbeitet und speichert.&lt;/span&gt;
+
+3
+00:00:11,418 --> 00:00:14,058
+Dabei spielen unter anderem zwei Hirnregionen, 
+
+4
+00:00:14,308 --> 00:00:17,984
+&lt;span style="font-family: Helvetica Neue;"&gt;die Amygdala und der Hippocampus eine entscheidende Rolle.&lt;/span&gt;
+
+5
+00:00:19,137 --> 00:00:22,925
+Normalerweise werden in der Amygdala Erlebnisse, also Bilder und
+
+6
+00:00:23,175 --> 00:00:27,893
+&lt;span style="font-family: Helvetica Neue;"&gt;körperliche Reaktionen, mit den dazugehörigen Emotionen verknüpft und gespeichert.&lt;/span&gt;
+
+7
+00:00:28,566 --> 00:00:32,990
+Die Amygdala speichert gewissermaßen Gefühle, ohne diese zu bewerten.
+
+8
+00:00:33,364 --> 00:00:37,611
+Diese Bewertung findet dann im Hippocampus statt, wo das Erlebnis zeitlich
+
+9
+00:00:37,661 --> 00:00:42,460
+&lt;span style="font-family: Helvetica Neue;"&gt;und geografisch geordnet und die dazugehörenden Emotionen bewertet werden.&lt;/span&gt;
+
+10
+00:00:43,602 --> 00:00:48,990
+Bei einem traumatischen Ereignis wird unser Gehirn jedoch mit Stresshormonen überflutet.
+
+11
+00:00:49,419 --> 00:00:53,556
+Dadurch wird die Zusammenarbeit zwischen Amygdala und Hippocampus gestört.
+
+12
+00:00:53,898 --> 00:00:58,529
+Die Amygdala speichert zwar die starken Emotionen, der Hippocampus kann das Erlebnis
+
+13
+00:00:58,575 --> 00:01:03,274
+&lt;span style="font-family: Helvetica Neue;"&gt;jedoch nicht mehr chronologisch nach Ort, Zeit und Kontext des Geschehens ordnen.&lt;/span&gt;
+
+14
+00:01:05,006 --> 00:01:08,085
+Die unterschiedlichen Eindrücke werden in Fragmenten
+
+15
+00:01:08,120 --> 00:01:11,339
+&lt;span style="font-family: Helvetica Neue;"&gt;und nicht als zusammengehöriges Ereignis abgespeichert.&lt;/span&gt;
+
+16
+00:01:11,767 --> 00:01:16,658
+So reicht zu einem späteren Zeitpunkt ein äußerer Reiz, zum Beispiel ein Geräusch
+
+17
+00:01:16,737 --> 00:01:21,933
+oder ein Geruch, der an die schlimmen Erlebnisse erinnert, um die Amygdala zu aktivieren.
+18
+00:01:23,081 --&gt; 00:01:27,166
+Die betroffene Person hat dann das Gefühl, als würde das traumatische Ereignis
+
+18
+00:01:27,224 --> 00:01:31,397
+jetzt gerade in der Gegenwart wieder passieren, weil das Gehirn die Erinnerung
+
+19
+00:01:31,455 --> 00:01:33,925
+zeitlich und örtlich nicht zuordnen kann.
