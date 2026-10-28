@@ -109,6 +109,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-bahnbrechende-entdeckungen-der-antike-cc-by-4-0.json"
  },
  {
+  "id": "terra-x-das-kz-auschwitz-birkenau",
+  "title": {
+   "zh": "奥斯维辛-比克瑙集中营",
+   "de": "Das KZ Auschwitz-Birkenau",
+   "en": "Auschwitz-Birkenau concentration camp"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/das-kz-auschwitz-birkenau.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/das-kz-auschwitz-birkenau.mp4"
+  ],
+  "duration": 81.7,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-das-kz-auschwitz-birkenau.json"
+ },
+ {
   "id": "terra-x-das-magnetfeld-der-erde",
   "title": {
    "zh": "地球的磁场",
@@ -317,6 +338,48 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-die-erfindung-der-batterie.json"
+ },
+ {
+  "id": "terra-x-die-flucht-der-juden-vor-den-nationalsozialisten",
+  "title": {
+   "zh": "犹太人逃离纳粹",
+   "de": "Die Flucht der Juden vor den Nationalsozialisten",
+   "en": "Jews fleeing the Nazis"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-flucht-der-juden-vor-den-nationalsozialisten.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-flucht-der-juden-vor-den-nationalsozialisten.mp4"
+  ],
+  "duration": 92.3,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-flucht-der-juden-vor-den-nationalsozialisten.json"
+ },
+ {
+  "id": "terra-x-die-fotosynthese-der-baume",
+  "title": {
+   "zh": "树木的光合作用",
+   "de": "Die Fotosynthese der Bäume",
+   "en": "Photosynthesis in trees"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-fotosynthese-der-baume.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-fotosynthese-der-baume.mp4"
+  ],
+  "duration": 78.9,
+  "source": "ZDF/pur · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-fotosynthese-der-baume.json"
  },
  {
   "id": "terra-x-die-gaskammern-in-auschwitz-birkenau",
@@ -800,6 +863,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-evolution-der-hand.json"
+ },
+ {
+  "id": "terra-x-experiment-zur-relativitatstheorie",
+  "title": {
+   "zh": "相对论的思想实验",
+   "de": "Experiment zur Relativitätstheorie",
+   "en": "An experiment on relativity"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/experiment-zur-relativitatstheorie.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/experiment-zur-relativitatstheorie.mp4"
+  ],
+  "duration": 84.7,
+  "source": "ZDF/scobel · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-experiment-zur-relativitatstheorie.json"
  },
  {
   "id": "terra-x-feinstaubbelastung-und-die-folgen",
