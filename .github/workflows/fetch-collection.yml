@@ -30,7 +30,7 @@ jobs:
       - name: Install tools
         run: |
           sudo apt-get update && sudo apt-get install -y ffmpeg
-          pip install faster-whisper==1.1.1
+          pip install faster-whisper==1.1.1 requests huggingface_hub
       - name: Check out the latest media shard
         run: |
           git config user.name "github-actions[bot]"
