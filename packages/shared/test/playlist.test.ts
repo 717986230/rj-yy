@@ -1,5 +1,6 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { defaultSecondLang, isBilibili, parseGlossLine, Playlist, SEED_VIDEOS } from '../src';
+import { defaultSecondLang, isBilibili, parseGlossLine, Playlist, SEED_VIDEOS, type Cue } from '../src';
 import { GLOSS } from '../src/data/gloss';
 
 const ids = ['a', 'b', 'c', 'd'];
@@ -62,6 +63,16 @@ describe('seed library', () => {
       // B 站卡字幕烧在画面里；其余卡的官方字幕各语言条数可能不同（比如中文多一句开场），
       // 只要求每种语言都有、且不超出片长
       if (isBilibili(v.src)) continue;
+      if (v.subtitlesUrl) {
+        // 大合集的字幕在 apps/web/public/subs 里：要有中文和原声语言两条，逐词词义和原句一一对应
+        const subs = JSON.parse(readFileSync(new URL(`../../../apps/web/public/${v.subtitlesUrl}`, import.meta.url), 'utf8'));
+        const spoken: Cue[] = subs[v.audioLang!];
+        expect(subs.zh.length, v.id).toBe(spoken.length);
+        expect(spoken.length, v.id).toBeGreaterThan(0);
+        for (const cue of spoken) expect(cue.words!.map(([w]) => w).join(' '), v.id).toBe(cue.text);
+        if (v.duration) expect(spoken.at(-1)!.end).toBeLessThanOrEqual(v.duration + 1);
+        continue;
+      }
       for (const track of [v.subtitles.zh, v.subtitles.de, v.subtitles.en]) {
         expect(track.length).toBeGreaterThan(0);
         if (v.duration) expect(track.at(-1)!.end).toBeLessThanOrEqual(v.duration);
