@@ -214,6 +214,90 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-der-humboldtstrom.json"
  },
  {
+  "id": "terra-x-die-anden-als-klimascheide",
+  "title": {
+   "zh": "安第斯山脉：气候分界线",
+   "de": "Die Anden als Klimascheide",
+   "en": "The Andes as a climate divide"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/die-anden-als-klimascheide.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/die-anden-als-klimascheide.mp4"
+  ],
+  "duration": 54.9,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-anden-als-klimascheide.json"
+ },
+ {
+  "id": "terra-x-die-entstehung-des-grundgesetzes",
+  "title": {
+   "zh": "《基本法》的诞生",
+   "de": "Die Entstehung des Grundgesetzes",
+   "en": "How the Basic Law came about"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/die-entstehung-des-grundgesetzes.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/die-entstehung-des-grundgesetzes.mp4"
+  ],
+  "duration": 132.5,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-entstehung-des-grundgesetzes.json"
+ },
+ {
+  "id": "terra-x-die-erfindung-der-batterie",
+  "title": {
+   "zh": "电池的发明",
+   "de": "Die Erfindung der Batterie",
+   "en": "The invention of the battery"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-erfindung-der-batterie.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-erfindung-der-batterie.mp4"
+  ],
+  "duration": 46.7,
+  "source": "ZDF/scobel · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-erfindung-der-batterie.json"
+ },
+ {
+  "id": "terra-x-die-germanen-aus-der-sicht-von-tacitus-und-caesar",
+  "title": {
+   "zh": "塔西佗和恺撒眼中的日耳曼人",
+   "de": "Die Germanen aus der Sicht von Tacitus und Caesar",
+   "en": "The Germanic peoples as seen by Tacitus and Caesar"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-germanen-aus-der-sicht-von-tacitus-und-caesar.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-germanen-aus-der-sicht-von-tacitus-und-caesar.mp4"
+  ],
+  "duration": 54.4,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-germanen-aus-der-sicht-von-tacitus-und-caesar.json"
+ },
+ {
   "id": "terra-x-die-grundung-bagdads-im-8-jahrhundert-cc-by-sa-4-0",
   "title": {
    "zh": "8 世纪巴格达的建立",
@@ -485,6 +569,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-germanische-fuhrungseliten.json"
+ },
+ {
+  "id": "terra-x-geschichte-der-hauptstadt-berlin-cc-by-sa-4-0",
+  "title": {
+   "zh": "首都柏林的历史",
+   "de": "Geschichte der Hauptstadt Berlin",
+   "en": "History of the capital Berlin"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/geschichte-der-hauptstadt-berlin-cc-by-sa-4-0.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/geschichte-der-hauptstadt-berlin-cc-by-sa-4-0.mp4"
+  ],
+  "duration": 70.6,
+  "source": "ZDF/Terra X · CC BY-SA 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-geschichte-der-hauptstadt-berlin-cc-by-sa-4-0.json"
  },
  {
   "id": "terra-x-gesundheitsrisiko-einsamkeit",
