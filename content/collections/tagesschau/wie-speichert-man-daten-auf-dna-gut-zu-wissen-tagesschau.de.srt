@@ -1,0 +1,23 @@
+1
+00:00:00,690 --> 00:00:07,690
+Um die explodierenden Datenmengen dauerhaft zu bewahren, nutzen Forschende symptomtische DNA als Speichermedium.
+
+2
+00:00:07,690 --> 00:00:14,690
+Die DNA-Basen AC, G und T bilden normalerweise den Bauplan des Lebens.
+
+3
+00:00:14,690 --> 00:00:17,690
+Sie lassen sich aber auch als Coat nutzen.
+
+4
+00:00:17,690 --> 00:00:21,690
+Statt den Witz und Beiz werden die Daten in AC, G, T umgewandelt.
+
+5
+00:00:21,690 --> 00:00:25,690
+Der Clou riesige Datenmengen auf kleinstem Raum.
+
+6
+00:00:25,690 --> 00:00:33,690
+Eingeschlossenen kleine Silikatkapseln könnte dieser biochemische Datenträger mehr als 1000 Jahre lang halten.

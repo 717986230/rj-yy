@@ -1,0 +1,83 @@
+1
+00:00:00,300 --> 00:00:03,300
+Warum stoßen Fische im Schwarm nie zusammen?
+
+2
+00:00:03,300 --> 00:00:06,300
+Das haben Forscher der Unikonstanz an Stichlingen erforscht.
+
+3
+00:00:06,300 --> 00:00:09,300
+Ein Stichlingsschwarm muss immer im schattigen Gewässer bleiben.
+
+4
+00:00:09,300 --> 00:00:11,300
+Denn in der Sonne würden ihre Schuppenglitzern,
+
+5
+00:00:11,300 --> 00:00:14,300
+sodass Fressfeinde sie entdecken können.
+
+6
+00:00:14,300 --> 00:00:17,300
+Aber ein Stichling allein findet den Schatten nicht.
+
+7
+00:00:17,300 --> 00:00:19,300
+In der Gruppe sind sie schlauer. Warum?
+
+8
+00:00:19,300 --> 00:00:23,300
+Von Natur aus richten sich Schwarmtiere nach drei Grundregeln.
+
+9
+00:00:23,300 --> 00:00:25,300
+Erstens zusammenbleiben.
+
+10
+00:00:25,300 --> 00:00:28,300
+Zweitens immer in dieselbe Richtung bewegen.
+
+11
+00:00:28,300 --> 00:00:32,300
+Und drittens immer einen konstanten Abstand zum Nachbarn halten.
+
+12
+00:00:32,300 --> 00:00:34,300
+Deshalb stoßen sie nie zusammen.
+
+13
+00:00:34,300 --> 00:00:36,300
+Aber wie findet der Schwarm nun den Schatten?
+
+14
+00:00:36,300 --> 00:00:38,300
+Die Forscher fanden heraus,
+
+15
+00:00:38,300 --> 00:00:40,300
+dass Fische im Schatten immer langsamer schwimmen
+
+16
+00:00:40,300 --> 00:00:42,300
+als ihre Nachbarn in der Sonne.
+
+17
+00:00:42,300 --> 00:00:44,300
+Damit der Abstand trotzdem konstant bleibt,
+
+18
+00:00:44,300 --> 00:00:46,300
+zieht es den Fisch im Hellen
+
+19
+00:00:46,300 --> 00:00:49,300
+wie an einer unsichtbaren Feder ins schützende Dunkel.
+
+20
+00:00:49,300 --> 00:00:51,300
+Es ist der Unterschied in der Geschwindigkeit,
+
+21
+00:00:51,300 --> 00:00:53,300
+der den Schwarm steuert.

@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:04,720
+Wie können Filme auf DNA gespeichert werden?
+
+2
+00:00:04,720 --> 00:00:06,640
+Fotos, Videos, Texte.
+
+3
+00:00:06,640 --> 00:00:13,520
+2020 wurden weltweit mehr als 59 Zettabyte an Daten erstellt und konsumiert, eine Zahl
+
+4
+00:00:13,520 --> 00:00:15,320
+mit 49 Nullen.
+
+5
+00:00:15,320 --> 00:00:21,240
+Um die explodierenden Datenmengen dauerhaft zu bewahren, nutzen Forschende synthetische
+
+6
+00:00:21,240 --> 00:00:23,000
+DNA als Speichermedium.
+
+7
+00:00:23,000 --> 00:00:30,320
+Die DNA-Basen AC, G und T bilden normalerweise den Bauplan des Lebens.
+
+8
+00:00:30,320 --> 00:00:33,000
+Sie lassen sich aber auch als Code nutzen.
+
+9
+00:00:33,000 --> 00:00:37,240
+Statt den Bits und Bytes werden die Daten in AC, G, T umgewandelt.
+
+10
+00:00:37,240 --> 00:00:40,880
+Der Clou riesige Datenmengen auf kleinstem Raum.
+
+11
+00:00:40,880 --> 00:00:47,240
+Eingeschlossenen kleine Silikatkapseln könnte dieser biochemische Datenträger mehr als 1000
+
+12
+00:00:47,240 --> 00:00:48,240
+Jahre lang halten.
+
+13
+00:00:49,240 --> 00:00:54,920
+Tatsächlich haben es Wissenschaftler beschafft, die Folge einer Fernsehserie auf einem künstlichen
+
+14
+00:00:54,920 --> 00:00:56,440
+DNA-Strang zu speichern.

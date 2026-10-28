@@ -1,0 +1,47 @@
+1
+00:00:00,080 --> 00:00:03,080
+Wann wird Kälte gefährlich?
+
+2
+00:00:03,080 --> 00:00:10,080
+Der Körper versucht, seine Kerntemperatur konstant auf 37°C zu halten, um lebenswichtige Organe zu schützen.
+
+3
+00:00:10,080 --> 00:00:16,080
+Schon bei 35°C Körper-Kerntemperatur beginnen die Muskeln zu zittern, um Wärme zu erzeugen.
+
+4
+00:00:16,080 --> 00:00:21,080
+Die Blutgefäße in Armen und Beinen ziehen sich zusammen, damit keine Wärme verloren geht.
+
+5
+00:00:21,080 --> 00:00:27,080
+Danach schmerzen Finger, Ohren, Nase und Zehen, wie von 1.000 Nadelstichen.
+
+6
+00:00:27,080 --> 00:00:31,080
+Bei 32°C Kerntemperatur kann niemand mehr klar denken.
+
+7
+00:00:31,080 --> 00:00:35,080
+Kurz vor dem Tod schießt das Blut zurück in Arme und Beine.
+
+8
+00:00:35,080 --> 00:00:40,080
+Dem Erfrierenden wird es so warm, dass er sich sogar auszieht, die sogenannte Kälteidiotie.
+
+9
+00:00:40,080 --> 00:00:45,080
+Schon bei Temperaturen knapp über null können Menschen erfrieren, gerade wenn es feucht ist.
+
+10
+00:00:45,080 --> 00:00:49,080
+Denn Nässe leitet Wärme viel schneller ab als trockene Luft.
+
+11
+00:00:49,080 --> 00:00:53,080
+Der Zwiebellook schützt im Winter übrigens am besten.
+
+12
+00:00:53,080 --> 00:00:59,080
+Die erste Schicht leitet Schweiß vom Körper weg. Die zweite isoliert und die dritte schützt vor Wind und Regen.

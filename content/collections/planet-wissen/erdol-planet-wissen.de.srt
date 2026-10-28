@@ -1,0 +1,111 @@
+1
+00:00:00,460 --> 00:00:05,460
+Eine Welt ohne Plastik, Autos oder Asphalt ist heute kaum vorstellbar.
+
+2
+00:00:05,460 --> 00:00:08,460
+All das wird aus Erdöl hergestellt.
+
+3
+00:00:08,460 --> 00:00:10,460
+Doch was ist Erdöl?
+
+4
+00:00:10,460 --> 00:00:14,460
+Erdöl entsteht, wenn im Meer winzige Lebewesen namens Plankton absterben
+
+5
+00:00:14,460 --> 00:00:16,460
+und auf den Boden sinken.
+
+6
+00:00:16,460 --> 00:00:19,460
+Dort gibt es kaum Sauerstoff, deshalb kann das Plankton nicht verwesen
+
+7
+00:00:19,460 --> 00:00:21,460
+und wird zu Faulschlamm.
+
+8
+00:00:21,460 --> 00:00:24,460
+Im Laufe von Millionen von Jahren lagern sich Sand
+
+9
+00:00:24,460 --> 00:00:27,460
+und neues organisches Material darüber ab, drücken den Faulschlamm
+
+10
+00:00:27,460 --> 00:00:31,460
+in die Tiefe und verfestigen ihn zu sogenanntem Erdöl-Muttergestein.
+
+11
+00:00:31,460 --> 00:00:35,460
+Je tiefer, desto höher werden Druck und Temperatur darin.
+
+12
+00:00:35,460 --> 00:00:38,460
+So bilden sich Erdöl und Erdgas.
+
+13
+00:00:38,460 --> 00:00:41,460
+Beides steigt durch die Poren im Gestein nach oben,
+
+14
+00:00:41,460 --> 00:00:44,460
+bis es von einer undurchlässigen Gesteinsschicht aufgehalten wird.
+
+15
+00:00:44,460 --> 00:00:48,460
+Man muss daher nach Erdöl häufig durch verschiedene Schichten bohren.
+
+16
+00:00:48,460 --> 00:00:51,460
+Unbehandeltes Erdöl, das sogenannte Rohöl,
+
+17
+00:00:51,460 --> 00:00:54,460
+besteht chemisch gesehen hauptsächlich aus langen Kohlenstoffketten
+
+18
+00:00:54,460 --> 00:00:57,460
+und ist gelblich bis schwarz.
+
+19
+00:00:57,460 --> 00:01:02,460
+Im 19. Jahrhundert wird aus Erdöl vor allem Petroleum für Lampen hergestellt.
+
+20
+00:01:02,460 --> 00:01:05,460
+Es ersetzt das vorher genutzte Teure-Wahlöl.
+
+21
+00:01:05,460 --> 00:01:11,460
+Die Erfindung der elektrischen Glühbirne 1879 bedeutet das Ende der Öllampe.
+
+22
+00:01:11,460 --> 00:01:14,460
+Fast gleichzeitig aber wird das Auto erfunden
+
+23
+00:01:14,460 --> 00:01:17,460
+und das wird mit Erdöl angetrieben.
+
+24
+00:01:17,460 --> 00:01:21,460
+Heute ist Erdöl nicht nur einer der wichtigsten Energielieferanten,
+
+25
+00:01:21,460 --> 00:01:25,460
+sondern auch Rohstoff für Plastik und viele andere Erdölprodukte.
+
+26
+00:01:25,460 --> 00:01:29,460
+Aber die weltweiten Erdölvorräte sind irgendwann verbraucht
+
+27
+00:01:29,460 --> 00:01:34,460
+und das Verbrennen von Erdöl setzt Schadstoffe und klimaschädliches Kohlendioxid frei.
+
+28
+00:01:34,460 --> 00:01:39,460
+Deshalb wird intensiv an Alternativen zu Erdöl geforscht.

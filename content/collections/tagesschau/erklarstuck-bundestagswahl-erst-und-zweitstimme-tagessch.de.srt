@@ -1,0 +1,51 @@
+1
+00:00:00,000 --> 00:00:03,000
+Bei der Bundestagswahl haben Wählende zwei Stimmen.
+
+2
+00:00:03,000 --> 00:00:09,000
+Die Erststimme geht an eine Kandidatin oder einen Kandidaten vor Ort aus dem eigenen Wahlkreis.
+
+3
+00:00:09,000 --> 00:00:15,000
+Wer den Wahlkreis gewinnt und das können auch parteilose sein, zieht per Direktmandat in den Bundestag ein.
+
+4
+00:00:15,000 --> 00:00:19,000
+So wird sichergestellt, dass im Parlament jede Region vertreten ist.
+
+5
+00:00:19,000 --> 00:00:26,000
+299 Wahlkreise gibt es, also werden mit der Erststimme 299 Abgeordnete direkt bestimmt.
+
+6
+00:00:26,000 --> 00:00:32,000
+Die andere Hälfte des Bundestages wird über die Zweitstimme gewählt. Sie geht an eine Partei und ihre Landesliste.
+
+7
+00:00:32,000 --> 00:00:38,000
+Die Zweitstimme ist maßgeblich für die Mehrheitsverhältnisse im Bundestag, sie entscheidet über die Sitzverteilung.
+
+8
+00:00:38,000 --> 00:00:44,000
+Holt eine Partei zum Beispiel 30% der Stimmen, erhält sie auch mindestens 30% der Sitze.
+
+9
+00:00:44,000 --> 00:00:49,000
+Bleibt eine Partei unter der 5%-Marke, kommt sie nicht in den Bundestag.
+
+10
+00:00:49,000 --> 00:00:56,000
+Jeweils 299 Abgeordnete also über die Erst und die Zweitstimme macht 598 insgesamt.
+
+11
+00:00:56,000 --> 00:01:03,000
+Und dann wird gerechnet, passt die Gesamtsitzverteilung zu dem Anteil, den die Parteien über die Zweitstimme bekommen haben?
+
+12
+00:01:03,000 --> 00:01:07,000
+Zuletzt mussten dazu immer wieder Mandate ausgeglichen werden
+
+13
+00:01:07,000 --> 00:01:12,000
+und am Ende saßen viel mehr Abgeordnete im Bundestag als ursprünglich vorgesehen.

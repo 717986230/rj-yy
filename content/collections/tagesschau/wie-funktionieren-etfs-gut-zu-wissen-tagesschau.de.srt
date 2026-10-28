@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:03,000
+Wie funktionieren ETFs?
+
+2
+00:00:03,000 --> 00:00:09,000
+Ein sogenanter Exchange Traded Fund ist ein Fonds, der an der Börse gehandelt wird.
+
+3
+00:00:09,000 --> 00:00:11,000
+Sein wichtigstes Merkmal?
+
+4
+00:00:11,000 --> 00:00:16,000
+Er bildet einen bestehenden Index nach wie den DAX oder den Dow Jones.
+
+5
+00:00:16,000 --> 00:00:21,000
+Das heißt, ETFs steigen und fallen parallel zum jeweiligen Index.
+
+6
+00:00:21,000 --> 00:00:23,000
+Der große Vorteil dabei?
+
+7
+00:00:23,000 --> 00:00:29,000
+Anleger müssen keinen Fondsmanager bezahlen, denn seine Arbeit übernimmt ein Computer, der den Index nachbildet.
+
+8
+00:00:29,000 --> 00:00:32,000
+Deshalb sind ETFs günstiger für die Investoren.
+
+9
+00:00:32,000 --> 00:00:38,000
+Um das Risiko von Ausfällen zu minimieren, empfehlen Experten einen breit aufgestellten ETF zu wählen.
+
+10
+00:00:38,000 --> 00:00:42,000
+Er sollte möglichst viele Unternehmen aus verschiedenen Ländern umfassen.
+
+11
+00:00:42,000 --> 00:00:45,000
+Oder am besten gleich in mehrere ETFs investieren.
+
+12
+00:00:45,000 --> 00:00:50,000
+Denn macht ein Index mal Verlust, kann ein anderer diese möglicherweise ausgleichen.
+
+13
+00:00:50,000 --> 00:00:51,000
+Und dann abwarten.
+
+14
+00:00:51,000 --> 00:00:57,000
+Denn ETFs sind nichts für kurzfristige Spekulationen, sondern eher für ein langfristiges Investment.

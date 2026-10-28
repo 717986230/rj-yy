@@ -1,0 +1,83 @@
+1
+00:00:00,000 --> 00:00:04,800
+Das Kräfteverhältnis der Parteien im Bundestag richtet sich in erster Linie nach dem Ergebnis
+
+2
+00:00:04,800 --> 00:00:05,800
+der Zweitstimmen.
+
+3
+00:00:05,800 --> 00:00:08,720
+Mit der Zweitstimme wählt man eine bestimmte Partei.
+
+4
+00:00:08,720 --> 00:00:09,720
+Ein Beispiel.
+
+5
+00:00:09,720 --> 00:00:14,520
+Die A-Partei hat nach dem Zweitstimmenanteil Anspruch auf gut 10 Prozent der Sitze.
+
+6
+00:00:14,520 --> 00:00:20,000
+Bei regulier 598 Bundestagsabgeordneten bekäme sie also 60 Sitze.
+
+7
+00:00:20,000 --> 00:00:22,560
+Nun gibt es aber noch die Erststimme.
+
+8
+00:00:22,560 --> 00:00:26,600
+Mit ihrer Erststimme entscheiden Wählerinnen und Wähler, welche Person aus dem eigenen
+
+9
+00:00:26,600 --> 00:00:29,000
+Wahlkreis in den Bundestag kommt.
+
+10
+00:00:29,400 --> 00:00:33,760
+Im Beispiel gewinnt die A-Partei nun mit den Erststimmen 70 Wahlkreise.
+
+11
+00:00:33,760 --> 00:00:39,120
+Alle 70 Kandidatinnen und Kandidaten kommen in den Bundestag, obwohl der Partei nach Zweitstimmen
+
+12
+00:00:39,120 --> 00:00:41,960
+zunächst nur 60 Sitze zustünden.
+
+13
+00:00:41,960 --> 00:00:44,760
+Es sind zehn sogenannte Überhangmandate entstanden.
+
+14
+00:00:44,760 --> 00:00:50,440
+Wenn es dabei bliebe, wäre die A-Partei viel zu stark im Bundestag vertreten.
+
+15
+00:00:50,440 --> 00:00:55,840
+Darum erhalten alle anderen Parteien zusätzliche Sitze sogenannte Ausgleichsmandate.
+
+16
+00:00:55,840 --> 00:01:00,360
+Bisher wurde dann so lange aufgefüllt, bis die 70 Mandate der A-Partei wieder genau
+
+17
+00:01:00,360 --> 00:01:04,560
+10 Prozent der Sitze ausmachen, wie es dem Zweitstimmenanteil entspricht.
+
+18
+00:01:04,560 --> 00:01:08,360
+Erst bei insgesamt 700 Abgeordneten wäre dies der Fall.
+
+19
+00:01:08,360 --> 00:01:13,120
+Um zu verhindern, dass der Bundestag auf diese Weise immer größer wird, wurde das Wahlrecht
+
+20
+00:01:13,120 --> 00:01:14,120
+geändert.
+
+21
+00:01:14,120 --> 00:01:16,720
+Es werden nicht mehr alle Überhangmandate ausgeglichen.

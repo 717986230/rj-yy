@@ -1,0 +1,51 @@
+1
+00:00:00,000 --> 00:00:04,000
+Welche Folgen hat Covid-19 für das Gehirn?
+
+2
+00:00:04,000 --> 00:00:09,000
+Hauptsächlich befällt das Coronavirus die Atemwege, doch immer mehr Studien zeigen,
+
+3
+00:00:09,000 --> 00:00:12,000
+dass es auch das Gehirn angreift.
+
+4
+00:00:12,000 --> 00:00:15,000
+Forscher der Berliner Charité konnten nachweisen,
+
+5
+00:00:15,000 --> 00:00:20,000
+dass das Virus über die Nervenzellen in der Riechschleimhaut ins Hirn vordringt.
+
+6
+00:00:20,000 --> 00:00:25,000
+Auch im Nervenwasser von Patienten wurden Coronaviren nachgewiesen.
+
+7
+00:00:25,000 --> 00:00:28,000
+Dort können die Erreger schwere Schäden anrichten.
+
+8
+00:00:28,000 --> 00:00:32,000
+Forscher berichten von Gedächtnisverlust, einem erhöhten Demenzrisiko
+
+9
+00:00:32,000 --> 00:00:35,000
+und auch von möglichen Hirnblutungen oder Schlaganfällen,
+
+10
+00:00:35,000 --> 00:00:39,000
+teilweise noch Monate nach der eigentlichen Erkrankung.
+
+11
+00:00:39,000 --> 00:00:43,000
+Mediziner nennen das Phänomen Neuro-Covid
+
+12
+00:00:43,000 --> 00:00:46,000
+und wollen die neurologischen Folgen genauer untersuchen,
+
+13
+00:00:46,000 --> 00:00:51,000
+um die Langzeitschäden für unser Gehirn besser erkennen und behandeln zu können.
