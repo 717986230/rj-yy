@@ -1,6 +1,6 @@
 1
 00:00:00,370 --> 00:00:06,570
-Der Bundeswahlleiter sorgt für den ordnungsgemäßen Ablauf der Bundestagswahl. Tradiziell bekleidet
+Der Bundeswahlleiter sorgt für den ordnungsgemäßen Ablauf der Bundestagswahl. Traditionell bekleidet
 
 2
 00:00:06,570 --> 00:00:10,570
@@ -20,7 +20,7 @@ ermittelt und verkündet er das amtliche Ergebnis.
 
 6
 00:00:25,250 --> 00:00:30,450
-Die Prüfung der Parteien ist dann Fristen gebunden. Bis zum 97. Tag vor dem Wahltermin
+Die Prüfung der Parteien ist dabei fristgebunden. Bis zum 97. Tag vor dem Wahltermin
 
 7
 00:00:30,450 --> 00:00:35,970
@@ -32,7 +32,7 @@ oder in einem Landtag seit der jüngsten Wahl ununterbrochen mit mindestens fün
 
 9
 00:00:41,330 --> 00:00:47,370
-vertreten sind. Andere, meist kleinere Vereinigung, müssen nachweisen, dass sie in der politischen
+vertreten sind. Andere, meist kleinere Vereinigungen, müssen nachweisen, dass sie in der politischen
 
 10
 00:00:47,370 --> 00:00:51,890
@@ -60,7 +60,7 @@ Gemeinden sowie Kreis- und Landeswahlleitung melden ihm schnellstmöglich die au
 
 16
 00:01:20,770 --> 00:01:25,290
-Stimmen. Ermittelt, wie die Stimmverteilung genau ausfällt und wieviel Sitze die Parteien
+Stimmen. Er ermittelt, wie die Stimmverteilung genau ausfällt und wie viele Sitze die Parteien
 
 17
 00:01:25,290 --> 00:01:30,290
@@ -72,4 +72,4 @@ Endergebnis. Etwa 14 Tage nach der Wahl stellt der Bundeswahlausschuss das amtli
 
 19
 00:01:36,290 --> 00:01:40,330
-Endergebnis fest, dass der Bundeswahlleiter schließlich verkündet.
+Endergebnis fest, das der Bundeswahlleiter schließlich verkündet.

@@ -2166,6 +2166,216 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/nasa-nasa-catches-hurricanes-jose-and-maria.json"
  },
  {
+  "id": "tagesschau-bundestagswahl-erklart-erst-und-zweitstimme-von-tagessch",
+  "title": {
+   "zh": "联邦议院选举：第一票和第二票",
+   "de": "Bundestagswahl erklärt Erst- und Zweitstimme",
+   "en": "Federal election explained: first and second vote"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/bundestagswahl-erklart-erst-und-zweitstimme-von-tagessch.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/bundestagswahl-erklart-erst-und-zweitstimme-von-tagessch.mp4"
+  ],
+  "duration": 84.0,
+  "source": "Tagesschau ARD · CC BY-SA 4.0",
+  "series": "tagesschau · 德语新闻",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "新闻"
+  ],
+  "subtitlesUrl": "subs/tagesschau-bundestagswahl-erklart-erst-und-zweitstimme-von-tagessch.json"
+ },
+ {
+  "id": "tagesschau-bundestagswahl-erklart-uberhang-und-ausgleichsmandate-vo",
+  "title": {
+   "zh": "联邦议院选举：超额议席与补偿议席",
+   "de": "Bundestagswahl erklärt Überhang- und Ausgleichsmandate",
+   "en": "Federal election explained: overhang and compensation seats"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/bundestagswahl-erklart-uberhang-und-ausgleichsmandate-vo.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/bundestagswahl-erklart-uberhang-und-ausgleichsmandate-vo.mp4"
+  ],
+  "duration": 88.7,
+  "source": "Tagesschau ARD · CC BY-SA 4.0",
+  "series": "tagesschau · 德语新闻",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "新闻"
+  ],
+  "subtitlesUrl": "subs/tagesschau-bundestagswahl-erklart-uberhang-und-ausgleichsmandate-vo.json"
+ },
+ {
+  "id": "tagesschau-erklarstuck-bundestagswahl-briefwahl-tagesschau",
+  "title": {
+   "zh": "联邦议院选举：邮寄投票",
+   "de": "Bundestagswahl: Briefwahl",
+   "en": "Federal election: postal voting"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/erklarstuck-bundestagswahl-briefwahl-tagesschau.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/erklarstuck-bundestagswahl-briefwahl-tagesschau.mp4"
+  ],
+  "duration": 72.1,
+  "source": "Tagesschau ARD · CC BY-SA 4.0",
+  "series": "tagesschau · 德语新闻",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "新闻"
+  ],
+  "subtitlesUrl": "subs/tagesschau-erklarstuck-bundestagswahl-briefwahl-tagesschau.json"
+ },
+ {
+  "id": "tagesschau-erklarstuck-bundestagswahl-der-bundeswahlleiter",
+  "title": {
+   "zh": "联邦议院选举：联邦选举主任",
+   "de": "Bundestagswahl: Der Bundeswahlleiter",
+   "en": "Federal election: the Federal Returning Officer"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/erklarstuck-bundestagswahl-der-bundeswahlleiter.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/erklarstuck-bundestagswahl-der-bundeswahlleiter.mp4"
+  ],
+  "duration": 112.0,
+  "source": "tagesschau · CC BY-SA 4.0",
+  "series": "tagesschau · 德语新闻",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "新闻"
+  ],
+  "subtitlesUrl": "subs/tagesschau-erklarstuck-bundestagswahl-der-bundeswahlleiter.json"
+ },
+ {
+  "id": "tagesschau-gut-zu-wissen-wann-wird-kalte-gefahrlich-tagesschau",
+  "title": {
+   "zh": "寒冷什么时候会变得危险？",
+   "de": "Wann wird Kälte gefährlich",
+   "en": "When does cold become dangerous?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/gut-zu-wissen-wann-wird-kalte-gefahrlich-tagesschau.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/gut-zu-wissen-wann-wird-kalte-gefahrlich-tagesschau.mp4"
+  ],
+  "duration": 60.0,
+  "source": "Tagesschau ARD · CC BY-SA 4.0",
+  "series": "tagesschau · 德语新闻",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "新闻"
+  ],
+  "subtitlesUrl": "subs/tagesschau-gut-zu-wissen-wann-wird-kalte-gefahrlich-tagesschau.json"
+ },
+ {
+  "id": "tagesschau-gut-zu-wissen-warum-stossen-fische-im-schwarm-nie-zusamm",
+  "title": {
+   "zh": "鱼群里的鱼为什么从不相撞？",
+   "de": "Warum stoßen Fische im Schwarm nie zusammen?",
+   "en": "Why do fish in a school never collide?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/gut-zu-wissen-warum-stossen-fische-im-schwarm-nie-zusamm.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/gut-zu-wissen-warum-stossen-fische-im-schwarm-nie-zusamm.mp4"
+  ],
+  "duration": 60.0,
+  "source": "Tagesschau ARD · CC BY-SA 4.0",
+  "series": "tagesschau · 德语新闻",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "新闻"
+  ],
+  "subtitlesUrl": "subs/tagesschau-gut-zu-wissen-warum-stossen-fische-im-schwarm-nie-zusamm.json"
+ },
+ {
+  "id": "tagesschau-gut-zu-wissen-welche-folgen-hat-covid-19-fur-das-gehirn",
+  "title": {
+   "zh": "新冠对大脑有什么影响？",
+   "de": "Welche Folgen hat Covid-19 für das Gehirn?",
+   "en": "What effects does Covid-19 have on the brain?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/gut-zu-wissen-welche-folgen-hat-covid-19-fur-das-gehirn.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/gut-zu-wissen-welche-folgen-hat-covid-19-fur-das-gehirn.mp4"
+  ],
+  "duration": 55.5,
+  "source": "Tagesschau ARD · CC BY-SA 4.0",
+  "series": "tagesschau · 德语新闻",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "新闻"
+  ],
+  "subtitlesUrl": "subs/tagesschau-gut-zu-wissen-welche-folgen-hat-covid-19-fur-das-gehirn.json"
+ },
+ {
+  "id": "tagesschau-gut-zu-wissen-weniger-fruhgeburten-durch-corona-tagessch",
+  "title": {
+   "zh": "新冠让早产变少了？",
+   "de": "Weniger Frühgeburten durch Corona?",
+   "en": "Fewer premature births because of Corona?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/gut-zu-wissen-weniger-fruhgeburten-durch-corona-tagessch.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/gut-zu-wissen-weniger-fruhgeburten-durch-corona-tagessch.mp4"
+  ],
+  "duration": 60.0,
+  "source": "Tagesschau ARD · CC BY-SA 4.0",
+  "series": "tagesschau · 德语新闻",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "新闻"
+  ],
+  "subtitlesUrl": "subs/tagesschau-gut-zu-wissen-weniger-fruhgeburten-durch-corona-tagessch.json"
+ },
+ {
+  "id": "tagesschau-gut-zu-wissen-wie-funktionieren-etfs-tagesschau",
+  "title": {
+   "zh": "ETF 是怎么运作的？",
+   "de": "Wie funktionieren ETFs?",
+   "en": "How do ETFs work?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/gut-zu-wissen-wie-funktionieren-etfs-tagesschau.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/gut-zu-wissen-wie-funktionieren-etfs-tagesschau.mp4"
+  ],
+  "duration": 59.1,
+  "source": "Tagesschau ARD · CC BY-SA 4.0",
+  "series": "tagesschau · 德语新闻",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "新闻"
+  ],
+  "subtitlesUrl": "subs/tagesschau-gut-zu-wissen-wie-funktionieren-etfs-tagesschau.json"
+ },
+ {
+  "id": "tagesschau-gut-zu-wissen-wie-gefahrlich-sind-tattoofarben-tagesscha",
+  "title": {
+   "zh": "纹身颜料有多危险？",
+   "de": "Wie gefährlich sind Tattoofarben?",
+   "en": "How dangerous are tattoo inks?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/gut-zu-wissen-wie-gefahrlich-sind-tattoofarben-tagesscha.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/tagesschau/gut-zu-wissen-wie-gefahrlich-sind-tattoofarben-tagesscha.mp4"
+  ],
+  "duration": 57.0,
+  "source": "Tagesschau ARD · CC BY-SA 4.0",
+  "series": "tagesschau · 德语新闻",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "新闻"
+  ],
+  "subtitlesUrl": "subs/tagesschau-gut-zu-wissen-wie-gefahrlich-sind-tattoofarben-tagesscha.json"
+ },
+ {
   "id": "srf-srf-wissen-der-unterschied-zwischen-inter-und-transgesch",
   "title": {
    "zh": "间性与跨性别的区别",

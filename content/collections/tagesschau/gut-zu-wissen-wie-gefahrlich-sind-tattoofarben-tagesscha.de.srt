@@ -1,10 +1,10 @@
 1
 00:00:00,690 --> 00:00:04,690
-Wie gefährlich sind Tatufarben?
+Wie gefährlich sind Tattoofarben?
 
 2
 00:00:04,690 --> 00:00:07,690
-Für Tatuthinter gibt es kaum Regularien.
+Für Tattootinte gibt es kaum Regularien.
 
 3
 00:00:07,690 --> 00:00:10,690
@@ -16,7 +16,7 @@ Tests zeigen, viele Farben enthalten gefährliche Stoffe.
 
 5
 00:00:14,690 --> 00:00:17,690
-Etwa die Schwermetalle Katmium oder Nickel.
+Etwa die Schwermetalle Cadmium oder Nickel.
 
 6
 00:00:17,690 --> 00:00:20,690
@@ -28,7 +28,7 @@ und in höheren Dosen sogar Krebs auslösen.
 
 8
 00:00:23,690 --> 00:00:26,690
-Schwarze Tinter enthält häufig Ruß,
+Schwarze Tinte enthält häufig Ruß,
 
 9
 00:00:26,690 --> 00:00:28,690

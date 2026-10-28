@@ -1,6 +1,6 @@
 1
 00:00:00,020 --> 00:00:06,020
-Wahlberechtigte können ihre Stimme grundsätzlich auch per Brieffall abgeben, ohne Angabe von Gründen.
+Wahlberechtigte können ihre Stimme grundsätzlich auch per Brief abgeben, ohne Angabe von Gründen.
 
 2
 00:00:06,020 --> 00:00:15,020
