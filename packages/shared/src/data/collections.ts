@@ -1998,6 +1998,48 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/srf-srf-wissen-der-unterschied-zwischen-inter-und-transgesch.json"
  },
  {
+  "id": "srf-srf-wissen-die-haufigsten-kopfschmerzarten",
+  "title": {
+   "zh": "最常见的几种头痛",
+   "de": "Die häufigsten Kopfschmerzarten",
+   "en": "The most common types of headache"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-die-haufigsten-kopfschmerzarten.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-die-haufigsten-kopfschmerzarten.mp4"
+  ],
+  "duration": 147.6,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-die-haufigsten-kopfschmerzarten.json"
+ },
+ {
+  "id": "srf-srf-wissen-menschliche-geschlechtsunterschiede",
+  "title": {
+   "zh": "人类的性别差异",
+   "de": "Menschliche Geschlechtsunterschiede",
+   "en": "Human sex differences"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-menschliche-geschlechtsunterschiede.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-menschliche-geschlechtsunterschiede.mp4"
+  ],
+  "duration": 104.5,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-menschliche-geschlechtsunterschiede.json"
+ },
+ {
   "id": "srf-srf-wissen-so-beeinflusst-zucker-die-fettverbrennung",
   "title": {
    "zh": "糖如何影响脂肪燃烧",
@@ -2038,6 +2080,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/srf-srf-wissen-warum-rutscht-brienz-ab.json"
+ },
+ {
+  "id": "srf-srf-wissen-wie-entstanden-die-europaischen-sprachen",
+  "title": {
+   "zh": "欧洲语言是怎么形成的？",
+   "de": "Wie entstanden die europäischen Sprachen?",
+   "en": "How did the European languages come about?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-entstanden-die-europaischen-sprachen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-entstanden-die-europaischen-sprachen.mp4"
+  ],
+  "duration": 80.2,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-entstanden-die-europaischen-sprachen.json"
  },
  {
   "id": "srf-srf-wissen-wie-entstehen-menstruationsschmerzen",
@@ -2103,6 +2166,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/srf-srf-wissen-wie-entsteht-ein-bandscheibenvorfall.json"
  },
  {
+  "id": "srf-srf-wissen-wie-entsteht-ein-trauma",
+  "title": {
+   "zh": "创伤是怎么形成的？",
+   "de": "Wie entsteht ein Trauma?",
+   "en": "How does trauma develop?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-entsteht-ein-trauma.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-entsteht-ein-trauma.mp4"
+  ],
+  "duration": 98.1,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-entsteht-ein-trauma.json"
+ },
+ {
   "id": "srf-srf-wissen-wie-entsteht-eine-demenz",
   "title": {
    "zh": "痴呆是怎么产生的？",
@@ -2124,6 +2208,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/srf-srf-wissen-wie-entsteht-eine-demenz.json"
  },
  {
+  "id": "srf-srf-wissen-wie-funktioniert-chatgpt-3-0",
+  "title": {
+   "zh": "ChatGPT-3.0 是怎么运作的？",
+   "de": "Wie funktioniert ChatGPT-3.0?",
+   "en": "How does ChatGPT-3.0 work?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-chatgpt-3-0.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-chatgpt-3-0.mp4"
+  ],
+  "duration": 89.2,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-funktioniert-chatgpt-3-0.json"
+ },
+ {
   "id": "srf-srf-wissen-wie-funktioniert-der-menschliche-gleichgewich",
   "title": {
    "zh": "人的平衡感是怎么运作的？",
@@ -2143,6 +2248,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/srf-srf-wissen-wie-funktioniert-der-menschliche-gleichgewich.json"
+ },
+ {
+  "id": "srf-srf-wissen-wie-funktioniert-der-menschliche-schlafzyklus",
+  "title": {
+   "zh": "人的睡眠周期是怎么运作的？",
+   "de": "Wie funktioniert der menschliche Schlafzyklus?",
+   "en": "How does the human sleep cycle work?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-der-menschliche-schlafzyklus.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-der-menschliche-schlafzyklus.mp4"
+  ],
+  "duration": 65.0,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-funktioniert-der-menschliche-schlafzyklus.json"
  },
  {
   "id": "srf-srf-wissen-wie-funktioniert-der-menschliche-tag-nacht-rh",
@@ -2208,6 +2334,69 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/srf-srf-wissen-wie-funktioniert-die-wasserversorgung-in-der.json"
  },
  {
+  "id": "srf-srf-wissen-wie-funktioniert-ein-lithiumionen-akku",
+  "title": {
+   "zh": "锂离子电池是怎么工作的？",
+   "de": "Wie funktioniert ein Lithiumionen-Akku?",
+   "en": "How does a lithium-ion battery work?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-ein-lithiumionen-akku.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-ein-lithiumionen-akku.mp4"
+  ],
+  "duration": 59.5,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-funktioniert-ein-lithiumionen-akku.json"
+ },
+ {
+  "id": "srf-srf-wissen-wie-funktioniert-eine-blockchain",
+  "title": {
+   "zh": "区块链是怎么运作的？",
+   "de": "Wie funktioniert eine Blockchain?",
+   "en": "How does a blockchain work?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-eine-blockchain.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-eine-blockchain.mp4"
+  ],
+  "duration": 87.7,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-funktioniert-eine-blockchain.json"
+ },
+ {
+  "id": "srf-srf-wissen-wie-funktioniert-vertical-farming",
+  "title": {
+   "zh": "垂直农业是怎么运作的？",
+   "de": "Wie funktioniert vertical farming?",
+   "en": "How does vertical farming work?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-vertical-farming.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-funktioniert-vertical-farming.mp4"
+  ],
+  "duration": 107.5,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-funktioniert-vertical-farming.json"
+ },
+ {
   "id": "srf-srf-wissen-wie-orientieren-sich-tauben",
   "title": {
    "zh": "鸽子怎么认路？",
@@ -2227,6 +2416,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/srf-srf-wissen-wie-orientieren-sich-tauben.json"
+ },
+ {
+  "id": "srf-srf-wissen-wie-werden-schmerzen-chronisch",
+  "title": {
+   "zh": "疼痛是怎么变成慢性的？",
+   "de": "Wie werden Schmerzen chronisch?",
+   "en": "How does pain become chronic?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-werden-schmerzen-chronisch.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/srf/srf-wissen-wie-werden-schmerzen-chronisch.mp4"
+  ],
+  "duration": 76.5,
+  "source": "Distribution Wissen SRF · CC BY-SA 4.0",
+  "series": "SRF Wissen · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/srf-srf-wissen-wie-werden-schmerzen-chronisch.json"
  },
  {
   "id": "srf-srf-wissen-wie-wirken-lsd-und-psilocybin-im-gehirn",
