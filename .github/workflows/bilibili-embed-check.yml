@@ -1,0 +1,29 @@
+name: Bilibili embed check
+
+# 用 Playwright（iPhone WebKit 和 Chromium）打开每张 B 站卡的官方嵌入播放器并截图，结果写在日志的 RESULT 行
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: 额外要检查的 BV / av 号（空格分隔）
+        required: false
+  push:
+    branches: [main]
+    paths: [.github/workflows/bilibili-embed-check.yml, scripts/bilibili-embed-check.cjs]
+
+jobs:
+  check:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm i --no-save playwright@1.49.1 && npx playwright install webkit chromium
+      - name: Check
+        run: |
+          mkdir -p shots
+          IDS=$(grep -oE "bili\('[^']+', '[^']+'" packages/shared/src/seed.ts | sed -E "s/.*'([^']+)'$/\1/")
+          node scripts/bilibili-embed-check.cjs shots $IDS BV1Po4y1M7HW av285780097 ${{ inputs.ids }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bilibili-shots
+          path: shots
