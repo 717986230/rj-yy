@@ -2901,6 +2901,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/planet-wissen-claude-monet-planet-wissen.json"
  },
  {
+  "id": "planet-wissen-das-mittelalter-planet-wissen",
+  "title": {
+   "zh": "中世纪",
+   "de": "Das Mittelalter",
+   "en": "The Middle Ages"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/planet-wissen/das-mittelalter-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/planet-wissen/das-mittelalter-planet-wissen.mp4"
+  ],
+  "duration": 99.9,
+  "source": "Lukas Prommer/Claudio Como · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-das-mittelalter-planet-wissen.json"
+ },
+ {
   "id": "planet-wissen-der-kalte-krieg-planet-wissen",
   "title": {
    "zh": "冷战",
@@ -2962,6 +2983,48 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "知识"
   ],
   "subtitlesUrl": "subs/planet-wissen-die-maya-planet-wissen.json"
+ },
+ {
+  "id": "planet-wissen-die-steinzeit-planet-wissen",
+  "title": {
+   "zh": "石器时代",
+   "de": "Die Steinzeit",
+   "en": "The Stone Age"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/die-steinzeit-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/die-steinzeit-planet-wissen.mp4"
+  ],
+  "duration": 103.0,
+  "source": "Robert Schotter/Claudio Como · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-die-steinzeit-planet-wissen.json"
+ },
+ {
+  "id": "planet-wissen-die-uno-planet-wissen",
+  "title": {
+   "zh": "联合国",
+   "de": "Die UNO",
+   "en": "The United Nations"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/die-uno-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/die-uno-planet-wissen.mp4"
+  ],
+  "duration": 100.0,
+  "source": "Lukas Prommer/Claudio Como · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-die-uno-planet-wissen.json"
  },
  {
   "id": "planet-wissen-vincent-van-gogh-planet-wissen",

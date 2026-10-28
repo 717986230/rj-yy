@@ -1,6 +1,6 @@
 1
 00:00:00,180 --> 00:00:08,260
-Am 24. Oktober 1945 verabschieden 51 Staaten in San Francisco eine CARTA, einen gemeinsamen
+Am 24. Oktober 1945 verabschieden 51 Staaten in San Francisco eine Charta, einen gemeinsamen
 
 2
 00:00:08,260 --> 00:00:09,700
@@ -12,11 +12,11 @@ Das ist die Geburtsstunde der Vereinten Nationen.
 
 4
 00:00:13,220 --> 00:00:18,620
-Gebräuchlicher ist die englische Bezeichnung United Nations Organization, Kurz UNO, oder
+Gebräuchlicher ist die englische Bezeichnung United Nations Organization, kurz UNO, oder
 
 5
 00:00:18,620 --> 00:00:21,900
-auch nur United Nations, Kurz UN.
+auch nur United Nations, kurz UN.
 
 6
 00:00:21,900 --> 00:00:27,020
@@ -76,7 +76,7 @@ Hier hat jeder Staat, egal wie groß oder klein, eine gleichwertige Stimme.
 
 20
 00:01:19,500 --> 00:01:24,740
-Allerdings gibt es ein Vetorecht für die fünfständigen Mitglieder des UN-Sicherheitsrates.
+Allerdings gibt es ein Vetorecht für die fünf ständigen Mitglieder des UN-Sicherheitsrates.
 
 21
 00:01:24,780 --> 00:01:28,940
