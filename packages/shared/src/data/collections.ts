@@ -529,6 +529,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-die-geschichte-des-impfens.json"
  },
  {
+  "id": "terra-x-die-geschichte-des-kolonialismus",
+  "title": {
+   "zh": "殖民主义的历史",
+   "de": "Die Geschichte des Kolonialismus",
+   "en": "The history of colonialism"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-geschichte-des-kolonialismus.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-geschichte-des-kolonialismus.mp4"
+  ],
+  "duration": 137.7,
+  "source": "ZDF/Pur+ · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-geschichte-des-kolonialismus.json"
+ },
+ {
   "id": "terra-x-die-gotteshauser-der-religionen",
   "title": {
    "zh": "各宗教的礼拜场所",
@@ -989,6 +1010,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-einzigartige-lebensbedingungen-auf-der-erde.json"
+ },
+ {
+  "id": "terra-x-entnazifizierung-nach-dem-krieg",
+  "title": {
+   "zh": "战后的去纳粹化",
+   "de": "Entnazifizierung nach dem Krieg",
+   "en": "Denazification after the war"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/entnazifizierung-nach-dem-krieg.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/entnazifizierung-nach-dem-krieg.mp4"
+  ],
+  "duration": 135.3,
+  "source": "ZDF/TerraX · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-entnazifizierung-nach-dem-krieg.json"
  },
  {
   "id": "terra-x-entstehung-der-alpen-cc-by-4-0-terra-x-plus",
