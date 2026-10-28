@@ -43,7 +43,8 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
         <button data-ref="toggleAdd" class="btn-ghost ml-auto h-9 px-3">${icon('plus', 'h-4 w-4')}添加视频</button>
       </div>
       <div class="flex items-start gap-2">
-        <p class="flex-1 text-xs leading-relaxed text-mute">B 站的 DW 德语课和德语动画用 B 站播放器播放，中德字幕在画面里。可以粘贴 B 站链接添加整部剧的多集。</p>
+        <p class="flex-1 text-xs leading-relaxed text-mute">站内影片随网站托管，任何网络都能播。B 站卡片是实验功能：用 B 站播放器，可能因视频被删或地区限制打不开，默认不进抽卡牌堆，可以在这里点开播放。</p>
+        <button data-ref="biliDeck" class="btn-ghost h-8 shrink-0 px-3 text-xs" aria-pressed="false"></button>
         <button data-ref="probe" class="btn-ghost h-8 shrink-0 px-3 text-xs">${icon('refresh', 'h-3.5 w-3.5')}检测外链</button>
       </div>
 
@@ -86,6 +87,7 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
   const r = refs<{
     toggleAdd: HTMLButtonElement;
     probe: HTMLButtonElement;
+    biliDeck: HTMLButtonElement;
     form: HTMLFormElement;
     biliFields: HTMLElement;
     error: HTMLElement;
@@ -243,6 +245,18 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
       if (!to.value) to.value = String(ref.page);
     }
   });
+
+  const renderBiliDeck = () => {
+    const on = app.get().bilibiliInDeck;
+    r.biliDeck.textContent = on ? 'B 站卡：在牌堆' : 'B 站卡：不进牌堆';
+    r.biliDeck.setAttribute('aria-pressed', String(on));
+  };
+  renderBiliDeck();
+  r.biliDeck.onclick = () => {
+    app.set({ bilibiliInDeck: !app.get().bilibiliInDeck });
+    renderBiliDeck();
+    toast(app.get().bilibiliInDeck ? 'B 站卡片会出现在抽卡里（实验）' : '抽卡只抽站内影片');
+  };
 
   r.toggleAdd.onclick = () => {
     r.form.hidden = !r.form.hidden;

@@ -210,7 +210,9 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   const loadLibrary = async () => {
     try {
       const hidden = new Set(app.get().hidden);
-      summaries = (await api.listVideos()).filter((v) => !hidden.has(v.id));
+      const { bilibiliInDeck } = app.get();
+      // 牌堆只放确定能播的：内置的 B 站卡片默认不进（可在片库里打开），隐藏的卡片不进；自己添加的照常进
+      summaries = (await api.listVideos()).filter((v) => !hidden.has(v.id) && (bilibiliInDeck || v.ownerId !== null || !isBilibili(v.src)));
       playlist.setIds(summaries.map((s) => s.id));
       r.backCount.textContent = `片库 ${summaries.length} 部 · DW 德语课、德语动画`;
     } catch (err) {
@@ -222,7 +224,8 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
 
   const fillFront = (v: Video) => {
     const index = summaries.findIndex((s) => s.id === v.id);
-    r.no.textContent = `No.${String(index + 1).padStart(2, '0')} / ${String(summaries.length).padStart(2, '0')}`;
+    r.no.textContent =
+      index < 0 ? '片库点播' : `No.${String(index + 1).padStart(2, '0')} / ${String(summaries.length).padStart(2, '0')}`;
     r.titleZh.textContent = v.title.zh;
     const where = isBilibili(v.src) ? 'B站' : v.source;
     r.source.innerHTML = `${icon('link', 'h-3 w-3')}${esc(v.episode ? `${where} · 第 ${v.episode} 集` : where)}`;

@@ -13,6 +13,8 @@ export interface Prefs {
   muted: boolean;
   /** 用户隐藏的卡片（打不开或不想看的视频，内置的也可以隐藏） */
   hidden: string[];
+  /** B 站卡片是否进入抽卡牌堆（实验：B 站上的用户上传可能失效或有地区限制，默认不进） */
+  bilibiliInDeck: boolean;
 }
 
 export interface AppState extends Prefs {
@@ -30,6 +32,7 @@ const DEFAULT_PREFS: Prefs = {
   volume: 0.8,
   muted: false,
   hidden: [],
+  bilibiliInDeck: false,
 };
 
 const stored = storage.get<Partial<Prefs>>(PREFS_KEY, {});
@@ -46,8 +49,8 @@ export const app = new Store<AppState>({
 
 // 偏好设置变化时持久化
 app.subscribe((s) => {
-  const { mode, secondLang, subtitles, subtitleOffset, volume, hidden } = s;
-  storage.set(PREFS_KEY, { mode, secondLang, subtitles, subtitleOffset, volume, hidden });
+  const { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck } = s;
+  storage.set(PREFS_KEY, { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck });
 });
 
 const WELCOME_KEY = 'vido.welcomed';

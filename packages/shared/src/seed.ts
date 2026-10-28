@@ -1,4 +1,5 @@
 import { bilibiliPageUrl } from './bilibili';
+import { TEARS_OF_STEEL_SUBTITLES } from './data/tears-of-steel';
 import { alignedTracks, emptyTracks } from './subtitles';
 import type { Video } from './types';
 
@@ -80,6 +81,18 @@ const seeds: Seed[] = [
         { start: 12.3, end: 15.6, text: 'Chinese on top, German or English below.' },
       ],
     },
+  },
+  {
+    // Blender 开放电影（CC BY 3.0 © Blender Foundation | mango.blender.org），12 分钟真人科幻短片，英语对白，
+    // 官方中文与德语字幕。文件约 60MB，超过 jsDelivr 单文件上限，所以只由网站自己提供。
+    id: 'tears-of-steel',
+    title: { zh: '钢铁之泪', de: 'Tears of Steel', en: 'Tears of Steel' },
+    src: `${SITE_MEDIA}/tears-of-steel.mp4`,
+    duration: 734,
+    source: SITE_SOURCE,
+    series: '开放电影 · Blender',
+    tags: ['站内', '电影', '官方中德字幕', 'CC BY'],
+    subtitles: TEARS_OF_STEEL_SUBTITLES,
   },
   {
     id: 'bunny-wakeup',

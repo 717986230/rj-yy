@@ -90,7 +90,9 @@ VITE_API_BASE=http://localhost:8787/api npm run dev
 
 内置片库前两部是「Vido 站内」短片（`apps/web/public/media/`，同时经 jsDelivr 提供备用线路）：Otti 开场片（本项目自制）和《Big Buck Bunny》片段（© Blender Foundation，CC BY 3.0）。两部都配了德语旁白，用 Piper 离线语音合成的 Thorsten 德语声音（CC0）生成，字幕时间轴按旁白逐句对齐。第一次抽卡固定翻开 Otti 开场片。
 
-其余内置卡片是上面说的 B 站视频。B 站上的用户上传可能被删除；打不开的卡片可以在播放页点「打不开？隐藏这张」，或在片库里隐藏 / 恢复。内置片库不再包含字幕与画面不对应的外链样片。
+第二张是 Blender 开放电影《Tears of Steel / 钢铁之泪》（12 分钟，© Blender Foundation | mango.blender.org，CC BY 3.0），英语对白，配官方中文 / 德语 / 英语字幕。影片和字幕由 `.github/workflows/fetch-open-movie.yml` 在 GitHub 服务器上下载并压缩成手机友好的 H.264（约 60MB），只由网站自己提供。
+
+其余内置卡片是上面说的 B 站视频，属于实验功能：默认不进抽卡牌堆（可在片库点播，或用片库顶部的「B 站卡：不进牌堆 / 在牌堆」开关加入）。B 站上的用户上传可能被删除或有地区限制；打不开的卡片可以在播放页点「打不开？隐藏这张」，或在片库里隐藏 / 恢复。内置片库不再包含字幕与画面不对应的外链样片。
 
 你自己添加的外链视频：
 

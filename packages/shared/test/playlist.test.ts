@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { Playlist, SEED_VIDEOS } from '../src';
+import { isBilibili, Playlist, SEED_VIDEOS } from '../src';
 
 const ids = ['a', 'b', 'c', 'd'];
 const seq = (values: number[]) => {
@@ -58,9 +58,13 @@ describe('seed library', () => {
     for (const v of SEED_VIDEOS) {
       expect(v.src).toMatch(/^(https:\/\/|media\/)/);
       for (const m of v.mirrors ?? []) expect(m).toMatch(/^https:\/\//);
-      expect(v.subtitles.zh.length).toBe(v.subtitles.de.length);
-      expect(v.subtitles.zh.length).toBe(v.subtitles.en.length);
-      if (v.duration) expect(v.subtitles.zh.at(-1)!.end).toBeLessThanOrEqual(v.duration);
+      // B 站卡字幕烧在画面里；其余卡的官方字幕各语言条数可能不同（比如中文多一句开场），
+      // 只要求每种语言都有、且不超出片长
+      if (isBilibili(v.src)) continue;
+      for (const track of [v.subtitles.zh, v.subtitles.de, v.subtitles.en]) {
+        expect(track.length).toBeGreaterThan(0);
+        if (v.duration) expect(track.at(-1)!.end).toBeLessThanOrEqual(v.duration);
+      }
     }
     expect(new Set(SEED_VIDEOS.map((v) => v.id)).size).toBe(SEED_VIDEOS.length);
   });
