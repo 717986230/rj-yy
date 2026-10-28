@@ -1,11 +1,19 @@
 name: Discover Commons videos
 
-# 列出 Wikimedia Commons 上自由授权、有人声的视频分类（德语 / 英语），供扩充片库挑选
+# 列出 Wikimedia Commons 上自由授权、有人声的视频分类（德语 / 英语），供扩充片库挑选。
+# 结果提交到 reports 分支的 discover.json
 on:
   workflow_dispatch:
+    inputs:
+      keywords:
+        description: 搜索分类的关键词（用引号括起、空格分隔；留空用脚本里的默认值）
+        required: false
   push:
     branches: [main]
     paths: [.github/workflows/discover-commons.yml, scripts/discover_commons.py]
+
+permissions:
+  contents: write
 
 jobs:
   discover:
@@ -16,8 +24,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python scripts/discover_commons.py
-      - uses: actions/upload-artifact@v4
-        with:
-          name: discover
-          path: discover.json
+      - run: eval "python scripts/discover_commons.py ${{ inputs.keywords }}"
+      - name: Save to the reports branch
+        run: bash scripts/save_report.sh discover.json

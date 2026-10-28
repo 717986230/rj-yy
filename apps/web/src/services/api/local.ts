@@ -186,7 +186,7 @@ export class LocalApi implements ApiClient {
 
   async listVideos(): Promise<VideoSummary[]> {
     const user = this.requireUser();
-    return this.visibleVideos(user.id).map(({ subtitles, ...v }) => ({ ...v, hasSubtitles: hasSubtitles(subtitles) }));
+    return this.visibleVideos(user.id).map(({ subtitles, ...v }) => ({ ...v, hasSubtitles: hasSubtitles(subtitles) || !!v.subtitlesUrl }));
   }
 
   async getVideo(id: string): Promise<Video> {

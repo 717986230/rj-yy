@@ -1,0 +1,63 @@
+name: Fetch Commons collection
+
+# 从 Wikimedia Commons 批量拉取自由授权视频（scripts/fetch_commons.py 里的合集），
+# 视频放进 media-NN 分片分支（jsDelivr 提供），字幕和清单提交到 main
+on:
+  workflow_dispatch:
+    inputs:
+      collection:
+        description: 合集名（见 scripts/fetch_commons.py 的 COLLECTIONS）
+        default: terra-x
+      count:
+        description: 本次新增几部
+        default: '30'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-collection
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install tools
+        run: |
+          sudo apt-get update && sudo apt-get install -y ffmpeg
+          pip install faster-whisper==1.1.1
+      - name: Check out the latest media shard
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          last=$(git ls-remote --heads origin 'media-*' | sed 's#.*refs/heads/##' | sort | tail -1)
+          if [ -n "$last" ]; then
+            git fetch --depth=1 origin "$last:refs/remotes/origin/$last"
+            git worktree add -b "$last" "media-shards/$last" "origin/$last"
+          fi
+      - name: Fetch
+        run: python scripts/fetch_commons.py "${{ inputs.collection }}" "${{ inputs.count }}"
+      - name: Push media shards
+        run: |
+          set -euo pipefail
+          for d in media-shards/media-*; do
+            [ -d "$d" ] || continue
+            b=$(basename "$d")
+            git -C "$d" add -A
+            git -C "$d" diff --cached --quiet && continue
+            git -C "$d" commit -m "Add ${{ inputs.collection }} videos"
+            git -C "$d" push origin "HEAD:refs/heads/$b"
+          done
+      - name: Commit subtitles and manifest
+        run: |
+          set -euo pipefail
+          git add content/collections
+          git diff --cached --quiet && { echo "nothing changed"; exit 0; }
+          git commit -m "Add ${{ inputs.collection }} subtitles and manifest from Commons"
+          git pull --rebase origin main
+          git push origin HEAD:main

@@ -9,17 +9,18 @@ Usage: python scripts/discover_commons.py
 """
 
 import json
+import sys
 import re
 import urllib.parse
 import urllib.request
 
 API = "https://commons.wikimedia.org/w/api.php"
 UA = "VidoFetcher/1.0 (https://github.com/717986230/rj-yy; GitHub Actions)"
-KEYWORDS = [
+KEYWORDS = sys.argv[1:] or [
     "Videos by Terra X", "Terra X", "tagesschau", "SRF Wissen", "SRF", "Planet Wissen", "kolleg24",
-    "Videos in German", "German-language videos", "Deutsche Welle", "funk", "MrWissen2go", "ZDF", "ARD",
-    "Bayerischer Rundfunk", "WDR", "NDR", "Wikimedia Deutschland videos", "VOA Learning English",
-    "Voice of America videos", "Videos by NASA", "NASA Goddard videos", "Videos in English",
+    "Videos in German", "German-language videos", "Videos with German subtitles", "MrWissen2go",
+    "Bayerischer Rundfunk", "WDR", "NDR", "Deutschlandfunk", "Bundesregierung videos", "Bundestag videos",
+    "VOA Learning English", "Videos by NASA", "NASA Goddard videos",
 ]
 FREE = re.compile(r"^(CC BY(-SA)? [0-9.]+|CC0|Public domain|PD)", re.I)
 

@@ -11,6 +11,9 @@ on:
     branches: [main]
     paths: [.github/workflows/bilibili-embed-check.yml, scripts/bilibili-embed-check.cjs]
 
+permissions:
+  contents: write
+
 jobs:
   check:
     runs-on: macos-latest
@@ -21,7 +24,10 @@ jobs:
         run: |
           mkdir -p shots
           IDS=$(grep -oE "bili\('[^']+', '[^']+'" packages/shared/src/seed.ts | sed -E "s/.*'([^']+)'$/\1/")
-          node scripts/bilibili-embed-check.cjs shots $IDS BV1Po4y1M7HW av285780097 ${{ inputs.ids }}
+          node scripts/bilibili-embed-check.cjs shots $IDS BV1Po4y1M7HW av285780097 ${{ inputs.ids }} | tee shots/bilibili.txt
+      - name: Save to the reports branch
+        if: always()
+        run: bash scripts/save_report.sh shots
       - uses: actions/upload-artifact@v4
         if: always()
         with:

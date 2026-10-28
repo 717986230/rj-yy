@@ -1,5 +1,6 @@
 import { bilibiliPageUrl } from './bilibili';
 import { BIG_BUCK_BUNNY_SUBTITLES } from './data/big-buck-bunny';
+import { COLLECTION_VIDEOS } from './data/collections';
 import { GLOSS } from './data/gloss';
 import { TEARS_OF_STEEL_SUBTITLES } from './data/tears-of-steel';
 import { TERRA_X_CLIPS } from './data/terra-x';
@@ -130,6 +131,7 @@ const seeds: Seed[] = [
     subtitles: BIG_BUCK_BUNNY_SUBTITLES,
   },
   ...TERRA_X,
+  ...COLLECTION_VIDEOS.map((v) => ({ ...v, subtitles: emptyTracks() })),
   ...BILIBILI,
 ];
 

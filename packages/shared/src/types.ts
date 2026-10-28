@@ -44,6 +44,8 @@ export interface Video {
   source: string;
   tags: string[];
   subtitles: SubtitleTracks;
+  /** 字幕放在单独的 JSON 文件里（相对站点根目录），打开卡片时再加载；此时 subtitles 为空 */
+  subtitlesUrl?: string;
   /** null 表示内置片库，否则为添加该视频的用户 */
   ownerId: string | null;
   createdAt: string;
