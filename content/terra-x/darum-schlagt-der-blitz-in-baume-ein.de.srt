@@ -1,0 +1,108 @@
+1
+00:00:00,000 --> 00:00:02,000
+Bei starken Aufwinden
+
+2
+00:00:02,000 --> 00:00:03,500
+reiben in einer Gewitterwolke
+
+3
+00:00:03,500 --> 00:00:06,500
+Wassertröpchen und kleine Eiskristalle aneinander.
+
+4
+00:00:06,500 --> 00:00:09,000
+Dabei laden sich die Tröpchen positiv,
+
+5
+00:00:09,000 --> 00:00:11,500
+die feinen Kristalle negativ auf.
+
+6
+00:00:11,500 --> 00:00:13,250
+Die Tröpchen sinken ab.
+
+7
+00:00:13,250 --> 00:00:16,750
+Dadurch trennen sich
+die positiven von den negativen Ladungen.
+
+8
+00:00:16,750 --> 00:00:20,000
+Die enstehende Spannung erreicht einige Millionen Volt.
+
+9
+00:00:20,000 --> 00:00:25,000
+Jetzt halten sich hauptsächlich negative Ladungen
+in den unteren Wolkenschichten auf.
+
+10
+00:00:25,000 --> 00:00:29,000
+Das bewirkt eine zunehmend
+positive Aufladung der Erdoberfläche.
+
+11
+00:00:29,000 --> 00:00:31,500
+Ein elektrisches Feld ensteht.
+
+12
+00:00:31,500 --> 00:00:33,750
+Irgendwann ist die Spannung so stark,
+
+13
+00:00:33,750 --> 00:00:37,800
+daß sich die Ladungen
+von Wolke und Erdoberfläche ausgleichen wollen.
+
+14
+00:00:37,800 --> 00:00:41,400
+Die Anbahnung des Ladungsaustauschs ist kompliziert:
+
+15
+00:00:41,400 --> 00:00:43,500
+Schließlich bildet sich ein Ladungskanal.
+
+16
+00:00:43,500 --> 00:00:46,000
+Durch ihn kann später der Blitzstrom fließen.
+
+17
+00:00:46,000 --> 00:00:48,500
+Nähert sich der Kanal der Erdoberfläche
+
+18
+00:00:48,500 --> 00:00:51,500
+<i>verstärkt</i> sich ihre positive Ladung.
+
+19
+00:00:51,500 --> 00:00:54,400
+An Stellen, die der Ladungsschlauch gut erreicht,
+
+20
+00:00:54,400 --> 00:00:56,400
+ist die Spannung besonders hoch.
+
+21
+00:00:56,400 --> 00:00:59,000
+Zum Beispiel an einem hohem Baum.
+
+22
+00:00:59,000 --> 00:01:03,500
+Trifft der negative Ladungsschlauch
+<i>dort</i> auf eine positive Ladung,
+
+23
+00:01:03,500 --> 00:01:07,000
+steht die Verbindung zwischen Wolke und Erde.
+
+24
+00:01:07,000 --> 00:01:08,000
+Der Blitzstrom
+
+25
+00:01:08,000 --> 00:01:10,000
+kann schlagartig fließen.
+
+26
+00:01:10,000 --> 00:01:19,700
+[leichte Musikuntermalung setzt sich fort]

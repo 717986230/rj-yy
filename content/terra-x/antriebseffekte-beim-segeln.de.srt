@@ -1,0 +1,89 @@
+1
+00:00:02,937 --> 00:00:05,858
+Beim Segeln werden
+zwei Antriebseffekte genutzt:
+
+2
+00:00:06,058 --> 00:00:09,878
+Widerstand und Auftrieb
+und zwar in Kombination.
+
+3
+00:00:10,542 --> 00:00:13,548
+Einmal ist es der Winddruck,
+der direkt auf das Segel wirkt.
+
+4
+00:00:13,775 --> 00:00:16,555
+Drückt der Wind von hinten
+auf das quergestellte Segel,
+
+5
+00:00:16,586 --> 00:00:20,685
+erfolgt der Antrieb durch den Widerstand,
+den das Segel dem Wind entgegensetzt.
+
+6
+00:00:20,857 --> 00:00:23,089
+Hier wirkt das Widerstandsprinzip.
+
+7
+00:00:23,474 --> 00:00:26,751
+Beim zweiten Effekt
+ist es die Luftströmung um das Segel,
+
+8
+00:00:26,771 --> 00:00:28,548
+die das Boot vorantreibt.
+
+9
+00:00:28,577 --> 00:00:33,030
+Der Wind strömt bei dem gewölbten Segel
+auf der bauchigen Seite schneller vorbei
+
+10
+00:00:33,061 --> 00:00:34,932
+als auf der hohlen Innenseite.
+
+11
+00:00:35,285 --> 00:00:40,232
+Dadurch entsteht an dieser hohlen,
+dem Wind abgewandten Seite ein Überdruck.
+
+12
+00:00:40,379 --> 00:00:43,448
+An der bauchigen Seite dagegen
+ein Unterdruck und Sog.
+
+13
+00:00:43,498 --> 00:00:46,791
+Beide wirken als Gesamtkraft
+in die gleiche Richtung
+
+14
+00:00:46,814 --> 00:00:48,779
+als Auftriebskraft.
+
+15
+00:00:50,494 --> 00:00:53,205
+Da diese senkrecht vom Segel weg wirkt,
+
+16
+00:00:53,236 --> 00:00:56,260
+lässt sie das Boot seitlich
+zu sehr abtreiben.
+
+17
+00:00:56,346 --> 00:00:59,550
+Damit das nicht passiert,
+haben Segelboote ein Schwert.
+
+18
+00:00:59,691 --> 00:01:02,804
+Dieses stellt sich
+dem seitlichen Abtreiben entgegen,
+
+19
+00:01:02,866 --> 00:01:06,282
+so dass sich insgesamt
+eine Bewegung nach vorne ergibt.
