@@ -676,6 +676,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-die-temperaturkurve-der-erde-zdf-terra-x-720p-hd-50fps.json"
  },
  {
+  "id": "terra-x-die-weltkarte-von-mercator",
+  "title": {
+   "zh": "墨卡托的世界地图",
+   "de": "Die Weltkarte von Mercator",
+   "en": "Mercator's world map"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-weltkarte-von-mercator.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-weltkarte-von-mercator.mp4"
+  ],
+  "duration": 120.0,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-weltkarte-von-mercator.json"
+ },
+ {
   "id": "terra-x-die-britische-corona-mutante-und-ihre-auswirkungen",
   "title": {
    "zh": "英国新冠变异株及其影响",
@@ -1243,6 +1264,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-haarmode-bei-den-germanen.json"
  },
  {
+  "id": "terra-x-herausforderung-wasserversorgung-aus-karstgrundwasser",
+  "title": {
+   "zh": "喀斯特地下水供水的难题",
+   "de": "Herausforderung Wasserversorgung aus Karstgrundwasser",
+   "en": "Getting water from karst groundwater"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/herausforderung-wasserversorgung-aus-karstgrundwasser.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/herausforderung-wasserversorgung-aus-karstgrundwasser.mp4"
+  ],
+  "duration": 102.8,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-herausforderung-wasserversorgung-aus-karstgrundwasser.json"
+ },
+ {
   "id": "terra-x-hunde-im-antiken-rom",
   "title": {
    "zh": "古罗马的狗",
@@ -1283,6 +1325,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-impfreihenfolge-bei-corona.json"
+ },
+ {
+  "id": "terra-x-impfstoffvarianten",
+  "title": {
+   "zh": "疫苗的种类",
+   "de": "Impfstoffvarianten",
+   "en": "Types of vaccines"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/impfstoffvarianten.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/impfstoffvarianten.mp4"
+  ],
+  "duration": 111.3,
+  "source": "3sat/nano · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-impfstoffvarianten.json"
  },
  {
   "id": "terra-x-infraschall-wie-elefanten-kommunizieren",
