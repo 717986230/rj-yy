@@ -22,7 +22,7 @@ const backBar = (title: string) => `
   </div>`;
 
 function modeNote(): string {
-  if (HANDBOOK) return '使用德语学习手册的账号登录，进度与手册共用';
+  if (HANDBOOK) return '使用德语学习手册的账号登录';
   return api.kind === 'local'
     ? '本地模式：账号仅保存在当前浏览器'
     : '已连接 Vido 服务器';

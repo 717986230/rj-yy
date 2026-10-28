@@ -8,8 +8,6 @@ export interface Env {
   EXPOSE_RESET_TOKEN?: string;
   /** 德语学习手册的账号后端；配置后，手册的登录令牌也能用来访问 Vido */
   UUOO_API?: string;
-  /** www.uuoo.site/vido/ 转发的前端站点（GitHub Pages） */
-  SITE_ORIGIN?: string;
 }
 
 export interface Vars {

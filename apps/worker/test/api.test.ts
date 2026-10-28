@@ -134,7 +134,7 @@ describe('cors', () => {
   });
 });
 
-describe('德语学习手册（www.uuoo.site/vido）', () => {
+describe('德语学习手册的账号（www.uuoo.site/vido/）', () => {
   afterEach(() => vi.unstubAllGlobals());
 
   it('accepts a handbook session token and keeps a per-user library', async () => {
@@ -154,25 +154,5 @@ describe('德语学习手册（www.uuoo.site/vido）', () => {
     expect((await call('GET', '/auth/me', { token: 'other-token' })).status).toBe(401);
     // 影子账号没有密码，不能用 Vido 的邮箱登录
     expect((await call('POST', '/auth/login', { body: { email: 'uuoo:xl', password: 'x' } })).status).toBe(400);
-  });
-
-  it('serves the API under /vido/api and forwards pages to GitHub Pages', async () => {
-    const fetchMock = vi.fn(async (_url: string) => new Response('<html>vido</html>', { headers: { 'Content-Type': 'text/html' } }));
-    vi.stubGlobal('fetch', fetchMock);
-
-    const health = await app.request('/vido/api/health', {}, env);
-    expect(await health.json()).toEqual({ ok: true });
-
-    const root = await app.request('/vido', {}, env);
-    expect(root.status).toBe(301);
-    expect(root.headers.get('location')).toBe('/vido/');
-
-    const media = await app.request('/vido/media/tears-of-steel.mp4', {}, env);
-    expect(media.status).toBe(302);
-    expect(media.headers.get('location')).toBe('https://717986230.github.io/rj-yy/media/tears-of-steel.mp4');
-
-    const page = await app.request('/vido/assets/index.js?v=1', {}, env);
-    expect(await page.text()).toBe('<html>vido</html>');
-    expect(fetchMock.mock.calls[0]?.[0]).toBe('https://717986230.github.io/rj-yy/assets/index.js?v=1');
   });
 });
