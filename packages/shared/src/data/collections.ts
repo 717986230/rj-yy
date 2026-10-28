@@ -25,6 +25,48 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-abklingphase-einer-entzundung.json"
  },
  {
+  "id": "terra-x-altarabische-gottheiten",
+  "title": {
+   "zh": "古阿拉伯的神祇",
+   "de": "Altarabische Gottheiten",
+   "en": "Ancient Arabian deities"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/altarabische-gottheiten.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/altarabische-gottheiten.mp4"
+  ],
+  "duration": 53.1,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-altarabische-gottheiten.json"
+ },
+ {
+  "id": "terra-x-anatomie-des-herzens",
+  "title": {
+   "zh": "心脏的构造",
+   "de": "Anatomie des Herzens",
+   "en": "Anatomy of the heart"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/anatomie-des-herzens.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/anatomie-des-herzens.mp4"
+  ],
+  "duration": 45.6,
+  "source": "3sat/nano · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-anatomie-des-herzens.json"
+ },
+ {
   "id": "terra-x-autarke-ernahrung-in-deutschland",
   "title": {
    "zh": "德国能自给自足吗",
@@ -44,6 +86,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-autarke-ernahrung-in-deutschland.json"
+ },
+ {
+  "id": "terra-x-bahnbrechende-entdeckungen-der-antike-cc-by-4-0",
+  "title": {
+   "zh": "古代的划时代发现",
+   "de": "Bahnbrechende Entdeckungen der Antike",
+   "en": "Groundbreaking discoveries of antiquity"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/bahnbrechende-entdeckungen-der-antike-cc-by-4-0.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/bahnbrechende-entdeckungen-der-antike-cc-by-4-0.mp4"
+  ],
+  "duration": 52.2,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-bahnbrechende-entdeckungen-der-antike-cc-by-4-0.json"
  },
  {
   "id": "terra-x-das-magnetfeld-der-erde",
@@ -151,6 +214,90 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-der-humboldtstrom.json"
  },
  {
+  "id": "terra-x-die-grundung-bagdads-im-8-jahrhundert-cc-by-sa-4-0",
+  "title": {
+   "zh": "8 世纪巴格达的建立",
+   "de": "Die Gründung Bagdads im 8. Jahrhundert",
+   "en": "The founding of Baghdad in the 8th century"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-grundung-bagdads-im-8-jahrhundert-cc-by-sa-4-0.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-grundung-bagdads-im-8-jahrhundert-cc-by-sa-4-0.mp4"
+  ],
+  "duration": 52.1,
+  "source": "ZDF/Terra X · CC BY-SA 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-grundung-bagdads-im-8-jahrhundert-cc-by-sa-4-0.json"
+ },
+ {
+  "id": "terra-x-die-gotterwelt-der-griechen",
+  "title": {
+   "zh": "希腊众神",
+   "de": "Die Götterwelt der Griechen",
+   "en": "The Greek gods"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-gotterwelt-der-griechen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-gotterwelt-der-griechen.mp4"
+  ],
+  "duration": 54.2,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-gotterwelt-der-griechen.json"
+ },
+ {
+  "id": "terra-x-die-herrschaftsstruktur-im-arabischen-reich",
+  "title": {
+   "zh": "阿拉伯帝国的统治结构",
+   "de": "Die Herrschaftsstruktur im arabischen Reich",
+   "en": "Power structure in the Arab empire"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-herrschaftsstruktur-im-arabischen-reich.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-herrschaftsstruktur-im-arabischen-reich.mp4"
+  ],
+  "duration": 54.4,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-herrschaftsstruktur-im-arabischen-reich.json"
+ },
+ {
+  "id": "terra-x-die-himmelsscheibe-von-nebra-cc-by-4-0",
+  "title": {
+   "zh": "内布拉星象盘",
+   "de": "Die Himmelsscheibe von Nebra",
+   "en": "The Nebra sky disc"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-himmelsscheibe-von-nebra-cc-by-4-0.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-himmelsscheibe-von-nebra-cc-by-4-0.mp4"
+  ],
+  "duration": 49.6,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-himmelsscheibe-von-nebra-cc-by-4-0.json"
+ },
+ {
   "id": "terra-x-die-temperaturkurve-der-erde-zdf-terra-x-720p-hd-50fps",
   "title": {
    "zh": "地球的温度曲线",
@@ -212,6 +359,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-einfluss-von-fetten-und-proteinen-auf-den-blutzuckerspie.json"
+ },
+ {
+  "id": "terra-x-einzigartige-lebensbedingungen-auf-der-erde",
+  "title": {
+   "zh": "地球独一无二的生存条件",
+   "de": "Einzigartige Lebensbedingungen auf der Erde",
+   "en": "Earth's unique conditions for life"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/einzigartige-lebensbedingungen-auf-der-erde.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/einzigartige-lebensbedingungen-auf-der-erde.mp4"
+  ],
+  "duration": 56.1,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-einzigartige-lebensbedingungen-auf-der-erde.json"
  },
  {
   "id": "terra-x-esel-als-bodenmanager",
@@ -298,6 +466,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-gefahr-durch-chronische-entzundungskrankheiten.json"
  },
  {
+  "id": "terra-x-germanische-fuhrungseliten",
+  "title": {
+   "zh": "日耳曼的统治精英",
+   "de": "Germanische Führungseliten",
+   "en": "Germanic ruling elites"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/germanische-fuhrungseliten.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/germanische-fuhrungseliten.mp4"
+  ],
+  "duration": 43.1,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-germanische-fuhrungseliten.json"
+ },
+ {
   "id": "terra-x-gesundheitsrisiko-einsamkeit",
   "title": {
    "zh": "孤独危害健康",
@@ -338,6 +527,90 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-gibt-es-einen-fahrstuhl-in-den-weltraum-cc-by-4-0.json"
+ },
+ {
+  "id": "terra-x-gladiatoren-im-antiken-rom",
+  "title": {
+   "zh": "古罗马的角斗士",
+   "de": "Gladiatoren im antiken Rom",
+   "en": "Gladiators in ancient Rome"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/gladiatoren-im-antiken-rom.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/gladiatoren-im-antiken-rom.mp4"
+  ],
+  "duration": 50.0,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-gladiatoren-im-antiken-rom.json"
+ },
+ {
+  "id": "terra-x-haarmode-bei-den-germanen",
+  "title": {
+   "zh": "日耳曼人的发型",
+   "de": "Haarmode bei den Germanen",
+   "en": "Hair fashion among the Germanic peoples"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/haarmode-bei-den-germanen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/haarmode-bei-den-germanen.mp4"
+  ],
+  "duration": 47.7,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-haarmode-bei-den-germanen.json"
+ },
+ {
+  "id": "terra-x-hunde-im-antiken-rom",
+  "title": {
+   "zh": "古罗马的狗",
+   "de": "Hunde im antiken Rom",
+   "en": "Dogs in ancient Rome"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/hunde-im-antiken-rom.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/hunde-im-antiken-rom.mp4"
+  ],
+  "duration": 53.5,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-hunde-im-antiken-rom.json"
+ },
+ {
+  "id": "terra-x-jerusalem-stadt-des-glaubens-cc-by-sa-4-0",
+  "title": {
+   "zh": "耶路撒冷：信仰之城",
+   "de": "Jerusalem - Stadt des Glaubens",
+   "en": "Jerusalem, city of faith"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/jerusalem-stadt-des-glaubens-cc-by-sa-4-0.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/jerusalem-stadt-des-glaubens-cc-by-sa-4-0.mp4"
+  ],
+  "duration": 48.4,
+  "source": "ZDF/Terra X · CC BY-SA 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-jerusalem-stadt-des-glaubens-cc-by-sa-4-0.json"
  },
  {
   "id": "nasa-2017-hurricanes-and-aerosols-simulation",
