@@ -1,0 +1,12 @@
+206 video/mp4 1024 https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/2017-hurricanes-and-aerosols-simulation.mp4
+403 text/plain; charset=utf-8 21 https://cdn.statically.io/gh/717986230/rj-yy/media-01/nasa/2017-hurricanes-and-aerosols-simulation.mp4
+206 video/mp4 1024 https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/a-drier-future-sets-the-stage-for-more-wildfires-q6flcub.mp4
+403 text/plain; charset=utf-8 21 https://cdn.statically.io/gh/717986230/rj-yy/media-01/nasa/a-drier-future-sets-the-stage-for-more-wildfires-q6flcub.mp4
+206 video/mp4 1024 https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/a-tour-of-nasas-solar-eclipse-map-for-2023-and-2024.mp4
+403 text/plain; charset=utf-8 21 https://cdn.statically.io/gh/717986230/rj-yy/media-01/nasa/a-tour-of-nasas-solar-eclipse-map-for-2023-and-2024.mp4
+206 video/mp4 1024 https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/get-ready-for-the-2017-solar-eclipse.mp4
+403 text/plain; charset=utf-8 21 https://cdn.statically.io/gh/717986230/rj-yy/media-01/nasa/get-ready-for-the-2017-solar-eclipse.mp4
+206 video/mp4 1024 https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-01/nasa/how-to-safely-watch-a-solar-eclipse.mp4
+403 text/plain; charset=utf-8 21 https://cdn.statically.io/gh/717986230/rj-yy/media-01/nasa/how-to-safely-watch-a-solar-eclipse.mp4
+206 video/mp4 1024 https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/nasa/nasa-catches-hurricanes-jose-and-maria.mp4
+403 text/plain; charset=utf-8 21 https://cdn.statically.io/gh/717986230/rj-yy/media-02/nasa/nasa-catches-hurricanes-jose-and-maria.mp4
