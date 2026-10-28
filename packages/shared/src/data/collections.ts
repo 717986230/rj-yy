@@ -4,6 +4,342 @@ import type { Video } from '../types';
 
 export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'subtitles'>> = [
  {
+  "id": "terra-x-abklingphase-einer-entzundung",
+  "title": {
+   "zh": "炎症的消退期",
+   "de": "Abklingphase einer Entzündung",
+   "en": "The resolution phase of inflammation"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/abklingphase-einer-entzundung.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/abklingphase-einer-entzundung.mp4"
+  ],
+  "duration": 43.3,
+  "source": "3sat/nano · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-abklingphase-einer-entzundung.json"
+ },
+ {
+  "id": "terra-x-autarke-ernahrung-in-deutschland",
+  "title": {
+   "zh": "德国能自给自足吗",
+   "de": "Autarke Ernährung in Deutschland",
+   "en": "Can Germany feed itself?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/autarke-ernahrung-in-deutschland.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/autarke-ernahrung-in-deutschland.mp4"
+  ],
+  "duration": 53.3,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-autarke-ernahrung-in-deutschland.json"
+ },
+ {
+  "id": "terra-x-das-magnetfeld-der-erde",
+  "title": {
+   "zh": "地球的磁场",
+   "de": "Das Magnetfeld der Erde",
+   "en": "Earth's magnetic field"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/das-magnetfeld-der-erde.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/das-magnetfeld-der-erde.mp4"
+  ],
+  "duration": 65.1,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-das-magnetfeld-der-erde.json"
+ },
+ {
+  "id": "terra-x-das-strassennetz-im-antiken-rom-cc-by-4-0",
+  "title": {
+   "zh": "古罗马的道路网",
+   "de": "Das Straßennetz im antiken Rom",
+   "en": "The road network of ancient Rome"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/das-strassennetz-im-antiken-rom-cc-by-4-0.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/das-strassennetz-im-antiken-rom-cc-by-4-0.mp4"
+  ],
+  "duration": 47.1,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-das-strassennetz-im-antiken-rom-cc-by-4-0.json"
+ },
+ {
+  "id": "terra-x-demokratie-in-athen-cc-by-4-0",
+  "title": {
+   "zh": "雅典的民主",
+   "de": "Demokratie in Athen",
+   "en": "Democracy in Athens"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/demokratie-in-athen-cc-by-4-0.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/demokratie-in-athen-cc-by-4-0.mp4"
+  ],
+  "duration": 40.7,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-demokratie-in-athen-cc-by-4-0.json"
+ },
+ {
+  "id": "terra-x-der-deutsche-wetterdienst",
+  "title": {
+   "zh": "德国气象局",
+   "de": "Der Deutsche Wetterdienst",
+   "en": "The German Weather Service"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/der-deutsche-wetterdienst.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/der-deutsche-wetterdienst.mp4"
+  ],
+  "duration": 43.0,
+  "source": "3sat/nano · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-der-deutsche-wetterdienst.json"
+ },
+ {
+  "id": "terra-x-der-humboldtstrom",
+  "title": {
+   "zh": "洪堡海流",
+   "de": "Der Humboldtstrom",
+   "en": "The Humboldt Current"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/der-humboldtstrom.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/der-humboldtstrom.mp4"
+  ],
+  "duration": 40.9,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-der-humboldtstrom.json"
+ },
+ {
+  "id": "terra-x-die-temperaturkurve-der-erde-zdf-terra-x-720p-hd-50fps",
+  "title": {
+   "zh": "地球的温度曲线",
+   "de": "Die Temperaturkurve der Erde",
+   "en": "Earth's temperature curve"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-temperaturkurve-der-erde-zdf-terra-x-720p-hd-50fps.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-temperaturkurve-der-erde-zdf-terra-x-720p-hd-50fps.mp4"
+  ],
+  "duration": 45.3,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-temperaturkurve-der-erde-zdf-terra-x-720p-hd-50fps.json"
+ },
+ {
+  "id": "terra-x-die-ersten-zahlungsmittel-cc-by-4-0",
+  "title": {
+   "zh": "最早的货币",
+   "de": "Die ersten Zahlungsmittel",
+   "en": "The first means of payment"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-ersten-zahlungsmittel-cc-by-4-0.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/die-ersten-zahlungsmittel-cc-by-4-0.mp4"
+  ],
+  "duration": 44.9,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-die-ersten-zahlungsmittel-cc-by-4-0.json"
+ },
+ {
+  "id": "terra-x-einfluss-von-fetten-und-proteinen-auf-den-blutzuckerspie",
+  "title": {
+   "zh": "脂肪和蛋白质如何影响血糖",
+   "de": "Einfluss von Fetten und Proteinen auf den Blutzuckerspiegel",
+   "en": "How fats and proteins affect blood sugar"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/einfluss-von-fetten-und-proteinen-auf-den-blutzuckerspie.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/einfluss-von-fetten-und-proteinen-auf-den-blutzuckerspie.mp4"
+  ],
+  "duration": 44.1,
+  "source": "ZDF/3sat · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-einfluss-von-fetten-und-proteinen-auf-den-blutzuckerspie.json"
+ },
+ {
+  "id": "terra-x-esel-als-bodenmanager",
+  "title": {
+   "zh": "驴子是土地管家",
+   "de": "Esel als Bodenmanager",
+   "en": "Donkeys as soil managers"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/esel-als-bodenmanager.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/esel-als-bodenmanager.mp4"
+  ],
+  "duration": 46.1,
+  "source": "ZDF/TerraX · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-esel-als-bodenmanager.json"
+ },
+ {
+  "id": "terra-x-evolution-der-hand",
+  "title": {
+   "zh": "手的进化",
+   "de": "Evolution der Hand",
+   "en": "Evolution of the hand"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/evolution-der-hand.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/evolution-der-hand.mp4"
+  ],
+  "duration": 46.9,
+  "source": "ZDF/3sat · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-evolution-der-hand.json"
+ },
+ {
+  "id": "terra-x-frankfurter-paulskirche",
+  "title": {
+   "zh": "法兰克福圣保罗教堂",
+   "de": "Frankfurter Paulskirche",
+   "en": "Frankfurt's St. Paul's Church"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/frankfurter-paulskirche.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/frankfurter-paulskirche.mp4"
+  ],
+  "duration": 43.0,
+  "source": "ZDF/Terra X · CC BY-SA 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-frankfurter-paulskirche.json"
+ },
+ {
+  "id": "terra-x-gefahr-durch-chronische-entzundungskrankheiten",
+  "title": {
+   "zh": "慢性炎症的危害",
+   "de": "Gefahr durch chronische Entzündungskrankheiten",
+   "en": "The danger of chronic inflammation"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/gefahr-durch-chronische-entzundungskrankheiten.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/gefahr-durch-chronische-entzundungskrankheiten.mp4"
+  ],
+  "duration": 42.8,
+  "source": "3sat/nano · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-gefahr-durch-chronische-entzundungskrankheiten.json"
+ },
+ {
+  "id": "terra-x-gesundheitsrisiko-einsamkeit",
+  "title": {
+   "zh": "孤独危害健康",
+   "de": "Gesundheitsrisiko Einsamkeit",
+   "en": "Loneliness as a health risk"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/gesundheitsrisiko-einsamkeit.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/gesundheitsrisiko-einsamkeit.mp4"
+  ],
+  "duration": 50.2,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-gesundheitsrisiko-einsamkeit.json"
+ },
+ {
+  "id": "terra-x-gibt-es-einen-fahrstuhl-in-den-weltraum-cc-by-4-0",
+  "title": {
+   "zh": "有通往太空的电梯吗",
+   "de": "Gibt es einen Fahrstuhl in den Weltraum",
+   "en": "Is there an elevator to space?"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/gibt-es-einen-fahrstuhl-in-den-weltraum-cc-by-4-0.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-04/terra-x/gibt-es-einen-fahrstuhl-in-den-weltraum-cc-by-4-0.mp4"
+  ],
+  "duration": 45.8,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-gibt-es-einen-fahrstuhl-in-den-weltraum-cc-by-4-0.json"
+ },
+ {
   "id": "nasa-2017-hurricanes-and-aerosols-simulation",
   "title": {
    "zh": "2017 年飓风与气溶胶模拟",
