@@ -378,6 +378,28 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/nasa-nasa-missions-take-an-unparalleled-look-into-superstar-e.json"
  },
  {
+  "id": "nasa-nasa-nasa-sees-holiday-lights-from-space-uu0u0lrtnsk",
+  "title": {
+   "zh": "从太空看节日灯光",
+   "de": "NASA Sees Holiday Lights from Space",
+   "en": "NASA Sees Holiday Lights from Space"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/nasa/nasa-nasa-sees-holiday-lights-from-space-uu0u0lrtnsk.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/nasa/nasa-nasa-sees-holiday-lights-from-space-uu0u0lrtnsk.mp4"
+  ],
+  "duration": 268.5,
+  "source": "NASA Goddard · Public domain",
+  "series": "NASA · 英语科普",
+  "audioLang": "en",
+  "tags": [
+   "英语原声",
+   "科普",
+   "公有领域"
+  ],
+  "subtitlesUrl": "subs/nasa-nasa-nasa-sees-holiday-lights-from-space-uu0u0lrtnsk.json"
+ },
+ {
   "id": "nasa-nasa-propylene-on-titan",
   "title": {
    "zh": "土卫六上的丙烯",
