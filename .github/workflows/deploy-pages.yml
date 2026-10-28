@@ -1,6 +1,7 @@
 name: Deploy web to GitHub Pages
 
-# 构建 apps/web 并发布到 gh-pages 分支，GitHub Pages 从该分支提供站点
+# 1. 若仓库配置了 Cloudflare 密钥，先把后端（apps/worker）部署到 Cloudflare Workers + D1
+# 2. 构建 apps/web 并发布到 gh-pages 分支，GitHub Pages 从该分支提供站点；前端自动连上第 1 步的后端
 on:
   push:
     branches: [main]
@@ -14,7 +15,61 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  api:
+    runs-on: ubuntu-latest
+    outputs:
+      url: ${{ steps.deploy.outputs.url }}
+    env:
+      # Settings → Secrets and variables → Actions → Secrets：CLOUDFLARE_API_TOKEN、CLOUDFLARE_ACCOUNT_ID
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - name: Check Cloudflare secrets
+        id: check
+        run: |
+          if [ -n "$CLOUDFLARE_API_TOKEN" ] && [ -n "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::没有配置 CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID，跳过后端部署，前端使用本地模式"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.enabled
+      - uses: actions/setup-node@v4
+        if: steps.check.outputs.enabled
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+        if: steps.check.outputs.enabled
+      - run: npm test -w @vido/worker
+        if: steps.check.outputs.enabled
+      - name: Deploy worker
+        id: deploy
+        if: steps.check.outputs.enabled
+        working-directory: apps/worker
+        run: |
+          set -euo pipefail
+          # D1 数据库不存在就创建，并把真实 ID 写进 wrangler.toml
+          db_id=$(npx wrangler d1 list --json | jq -r '.[] | select(.name == "vido") | .uuid')
+          if [ -z "$db_id" ]; then
+            npx wrangler d1 create vido
+            db_id=$(npx wrangler d1 list --json | jq -r '.[] | select(.name == "vido") | .uuid')
+          fi
+          sed -i "s/^database_id = .*/database_id = \"$db_id\"/" wrangler.toml
+          npx wrangler d1 migrations apply vido --remote
+          npx wrangler deploy | tee deploy.log
+          # 登录令牌的签名密钥：只在第一次部署时随机生成，之后保持不变（否则所有人都会被登出）
+          if ! npx wrangler secret list --format json | jq -e '.[] | select(.name == "JWT_SECRET")' > /dev/null; then
+            openssl rand -base64 48 | npx wrangler secret put JWT_SECRET
+          fi
+          url=$(grep -oE 'https://[a-zA-Z0-9.-]+\.workers\.dev' deploy.log | head -1)
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          curl -fsS --retry 5 --retry-delay 3 --retry-all-errors "$url/api/health"
+
   deploy:
+    needs: api
+    # 后端部署失败也照常发布前端（此时前端用本地模式），不让 Cloudflare 的问题卡住网站更新
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,8 +82,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # 在仓库 Settings → Secrets and variables → Actions → Variables 中设置 VITE_API_BASE 即可切换到后端模式
-          VITE_API_BASE: ${{ vars.VITE_API_BASE }}
+          # 默认连上面部署的 Worker；也可以在 Settings → Secrets and variables → Actions → Variables 里用 VITE_API_BASE 指定别的后端
+          VITE_API_BASE: ${{ vars.VITE_API_BASE || (needs.api.outputs.url && format('{0}/api', needs.api.outputs.url)) || '' }}
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

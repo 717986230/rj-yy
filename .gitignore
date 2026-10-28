@@ -7,3 +7,5 @@ coverage/
 apps/server/data/
 .DS_Store
 __pycache__/
+.wrangler/
+.dev.vars

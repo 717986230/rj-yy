@@ -7,7 +7,8 @@
   "workspaces": [
     "packages/shared",
     "apps/web",
-    "apps/server"
+    "apps/server",
+    "apps/worker"
   ],
   "scripts": {
     "dev": "npm run dev -w @vido/web",
@@ -16,7 +17,8 @@
     "preview": "npm run preview -w @vido/web",
     "test": "npm test --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
-    "check": "npm run typecheck && npm test"
+    "check": "npm run typecheck && npm test",
+    "dev:worker": "npm run dev -w @vido/worker"
   },
   "engines": {
     "node": ">=20"
