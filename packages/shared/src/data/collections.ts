@@ -2941,5 +2941,47 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "知识"
   ],
   "subtitlesUrl": "subs/planet-wissen-die-berliner-mauer-planet-wissen.json"
+ },
+ {
+  "id": "planet-wissen-die-maya-planet-wissen",
+  "title": {
+   "zh": "玛雅人",
+   "de": "Die Maya",
+   "en": "The Maya"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/die-maya-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/die-maya-planet-wissen.mp4"
+  ],
+  "duration": 120.0,
+  "source": "Anja von Kampen/VisionX · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-die-maya-planet-wissen.json"
+ },
+ {
+  "id": "planet-wissen-vincent-van-gogh-planet-wissen",
+  "title": {
+   "zh": "文森特·梵高",
+   "de": "Vincent van Gogh",
+   "en": "Vincent van Gogh"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/vincent-van-gogh-planet-wissen.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-05/planet-wissen/vincent-van-gogh-planet-wissen.mp4"
+  ],
+  "duration": 119.6,
+  "source": "Anja von Kampen/VisionX · CC BY-SA 4.0",
+  "series": "Planet Wissen · 德语知识",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "知识"
+  ],
+  "subtitlesUrl": "subs/planet-wissen-vincent-van-gogh-planet-wissen.json"
  }
 ];
