@@ -1,6 +1,6 @@
 import './styles/main.css';
 import { navigate, startRouter, type Route } from './app/router';
-import { HANDBOOK, handbookPage } from './app/site';
+import { HANDBOOK, HANDBOOK_HOME } from './app/site';
 import { app, welcome } from './app/state';
 import { showWelcome } from './components/welcome';
 import { forgotPage, loginPage, registerPage, resetPage } from './pages/auth';
@@ -9,13 +9,13 @@ import { playerPage } from './pages/player';
 import { api, prepareApi } from './services/api';
 
 // 在德语学习手册里打开时，注册和找回密码都交给手册
-const toHandbook = (path: string) => () => location.assign(handbookPage(path));
+const toHandbook = () => location.assign(HANDBOOK_HOME);
 
 const routes: Route[] = [
   { path: '/login', guestOnly: true, render: loginPage },
-  { path: '/register', guestOnly: true, render: HANDBOOK ? toHandbook('/register') : registerPage },
-  { path: '/forgot', render: HANDBOOK ? toHandbook('/reset') : forgotPage },
-  { path: '/reset', render: HANDBOOK ? toHandbook('/reset') : resetPage },
+  { path: '/register', guestOnly: true, render: HANDBOOK ? toHandbook : registerPage },
+  { path: '/forgot', render: HANDBOOK ? toHandbook : forgotPage },
+  { path: '/reset', render: HANDBOOK ? toHandbook : resetPage },
   { path: '/play', auth: true, render: playerPage },
   { path: '/library', auth: true, render: libraryPage },
 ];

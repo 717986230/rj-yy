@@ -56,7 +56,7 @@ export class HttpApi implements ApiClient {
   }
   /** 德语学习手册的账号：用户名 + 密码，令牌和手册共用 */
   private async handbookLogin({ email: username, password }: Credentials): Promise<Session> {
-    let data: { token?: string; err?: string } = {};
+    let data: { token?: string; err?: string; user?: { username: string; nickname?: string } } = {};
     try {
       const res = await fetch(`${HANDBOOK_API}/api/login`, {
         method: 'POST',
@@ -68,7 +68,7 @@ export class HttpApi implements ApiClient {
       throw new ApiError('NETWORK', '连不上服务器，请检查网络后重试');
     }
     if (!data.token) throw new ApiError('UNAUTHORIZED', data.err ?? '用户名或密码错误');
-    tokenStore.set(data.token);
+    tokenStore.set(data.token, data.user);
     const user = await this.me();
     if (!user) throw new ApiError('UNAUTHORIZED', '登录失败，请稍后再试');
     return { token: data.token, user };

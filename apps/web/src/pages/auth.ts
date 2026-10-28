@@ -1,7 +1,7 @@
 import { checkPassword, isEmail } from '@vido/shared';
 import { el, refs } from '../app/dom';
 import type { RouteContext } from '../app/router';
-import { HANDBOOK, handbookPage } from '../app/site';
+import { HANDBOOK, HANDBOOK_HOME } from '../app/site';
 import { app } from '../app/state';
 import { bindPasswordToggles, busy, errorMessage, field } from '../components/form';
 import { icon } from '../components/icons';
@@ -51,11 +51,11 @@ export function loginPage(root: HTMLElement, { navigate }: RouteContext) {
         ${field({ id: 'login-password', label: '密码', type: 'password', iconName: 'lock', placeholder: '密码', value: local ? DEMO_ACCOUNT.password : '', autocomplete: 'current-password', toggle: true })}
         <div class="flex items-center justify-between px-1 text-[13px]">
           <p data-ref="error" class="field-error"></p>
-          <a href="${HANDBOOK ? handbookPage('/reset') : '#/forgot'}" class="shrink-0 text-mute hover:text-fg">忘记密码？</a>
+          <a href="${HANDBOOK ? HANDBOOK_HOME : '#/forgot'}" class="shrink-0 text-mute hover:text-fg">忘记密码？</a>
         </div>
         <button data-ref="submit" class="btn-primary w-full">登录</button>
       </form>
-      <p class="mt-4 text-center text-sm text-mute">还没有账号？<a href="${HANDBOOK ? handbookPage('/register') : '#/register'}" class="link">立即注册</a></p>
+      <p class="mt-4 text-center text-sm text-mute">还没有账号？<a href="${HANDBOOK ? HANDBOOK_HOME : '#/register'}" class="link">立即注册</a></p>
       <p class="mt-auto pt-4 text-center text-[11px] text-mute/70">${local ? `演示账号已预填：${DEMO_ACCOUNT.email} / ${DEMO_ACCOUNT.password} · ` : ''}${modeNote()}</p>
     </section>`);
   const r = refs<{ form: HTMLFormElement; error: HTMLElement; submit: HTMLButtonElement }>(view);

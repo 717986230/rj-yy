@@ -8,8 +8,8 @@ export const HANDBOOK =
 
 /** 手册的账号后端（登录、登出） */
 export const HANDBOOK_API = 'https://uuoo-analytics.uuoo.workers.dev';
-/** 手册里的页面（哈希路由） */
-export const handbookPage = (path = '') => `/#${path}`;
+/** 手册首页：没登录时它本身就是登录 / 注册 / 用恢复码重置密码的页面 */
+export const HANDBOOK_HOME = '/';
 
 /** 本站自带视频（media/…）在手册里没有副本，指回 GitHub Pages 上的这一份 */
 const PAGES = 'https://717986230.github.io/rj-yy/';
