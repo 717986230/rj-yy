@@ -235,6 +235,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-der-humboldtstrom.json"
  },
  {
+  "id": "terra-x-der-lowe-ein-symboltier",
+  "title": {
+   "zh": "狮子：一种象征动物",
+   "de": "Der Löwe - ein Symboltier",
+   "en": "The lion, a symbolic animal"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/der-lowe-ein-symboltier.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-02/terra-x/der-lowe-ein-symboltier.mp4"
+  ],
+  "duration": 103.1,
+  "source": "ZDF/Tango Film · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-der-lowe-ein-symboltier.json"
+ },
+ {
   "id": "terra-x-der-nordliche-polarkreis",
   "title": {
    "zh": "北极圈",
@@ -823,6 +844,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
   "subtitlesUrl": "subs/terra-x-einzigartige-lebensbedingungen-auf-der-erde.json"
  },
  {
+  "id": "terra-x-entstehung-der-alpen-cc-by-4-0-terra-x-plus",
+  "title": {
+   "zh": "阿尔卑斯山的形成",
+   "de": "Entstehung der Alpen",
+   "en": "How the Alps formed"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/entstehung-der-alpen-cc-by-4-0-terra-x-plus.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/entstehung-der-alpen-cc-by-4-0-terra-x-plus.mp4"
+  ],
+  "duration": 105.5,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-entstehung-der-alpen-cc-by-4-0-terra-x-plus.json"
+ },
+ {
   "id": "terra-x-entstehungsphase-einer-entzundung",
   "title": {
    "zh": "炎症的形成期",
@@ -989,6 +1031,27 @@ export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'sub
    "科普"
   ],
   "subtitlesUrl": "subs/terra-x-frankfurter-paulskirche.json"
+ },
+ {
+  "id": "terra-x-freizeit-im-antiken-rom-cc-by-4-0",
+  "title": {
+   "zh": "古罗马人的休闲",
+   "de": "Freizeit im antiken Rom",
+   "en": "Leisure in ancient Rome"
+  },
+  "src": "https://cdn.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/freizeit-im-antiken-rom-cc-by-4-0.mp4",
+  "mirrors": [
+   "https://fastly.jsdelivr.net/gh/717986230/rj-yy@media-03/terra-x/freizeit-im-antiken-rom-cc-by-4-0.mp4"
+  ],
+  "duration": 96.0,
+  "source": "ZDF/Terra X · CC BY 4.0",
+  "series": "Terra X · 德语科普",
+  "audioLang": "de",
+  "tags": [
+   "德语原声",
+   "科普"
+  ],
+  "subtitlesUrl": "subs/terra-x-freizeit-im-antiken-rom-cc-by-4-0.json"
  },
  {
   "id": "terra-x-gefahr-durch-chronische-entzundungskrankheiten",
