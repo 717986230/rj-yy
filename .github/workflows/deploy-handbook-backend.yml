@@ -51,5 +51,10 @@ jobs:
         run: |
           set -e
           api=https://uuoo-analytics.uuoo.workers.dev
-          code=$(curl -s -o /dev/null -w '%{http_code}' --retry 5 --retry-all-errors "$api/api/vido"); echo "/api/vido 未登录 → $code"; [ "$code" = 401 ]
+          # 新版本在边缘节点生效要几秒到几十秒
+          for i in $(seq 20); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$api/api/vido"); echo "/api/vido 未登录 → $code"
+            [ "$code" = 401 ] && break; sleep 6
+          done
+          [ "$code" = 401 ]
           code=$(curl -s -o /dev/null -w '%{http_code}' "$api/api/leaderboard"); echo "/api/leaderboard → $code"; [ "$code" = 200 ]
