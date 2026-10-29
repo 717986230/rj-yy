@@ -1,5 +1,6 @@
 import { bilibiliPageUrl } from './bilibili';
 import { BIG_BUCK_BUNNY_SUBTITLES } from './data/big-buck-bunny';
+import { BREMER_STADTMUSIKANTEN_SUBTITLES } from './data/bremer-stadtmusikanten';
 import { COLLECTION_VIDEOS } from './data/collections';
 import { GLOSS } from './data/gloss';
 import { TEARS_OF_STEEL_SUBTITLES } from './data/tears-of-steel';
@@ -129,6 +130,18 @@ const seeds: Seed[] = [
     audioLang: 'de',
     tags: ['站内', '动画', '德语旁白', 'CC BY'],
     subtitles: BIG_BUCK_BUNNY_SUBTITLES,
+  },
+  {
+    // 格林童话水彩动画（Gg / novel2drama 生成），约 4 分钟，Piper 德语配音，每个角色一种声音；约 12MB，只由网站自己提供。
+    id: 'bremer-stadtmusikanten',
+    title: { zh: '不来梅的城市乐手', de: 'Die Bremer Stadtmusikanten', en: 'The Town Musicians of Bremen' },
+    src: `${SITE_MEDIA}/bremer-stadtmusikanten-de.mp4`,
+    duration: 233,
+    source: SITE_SOURCE,
+    series: '格林童话 · 德语配音',
+    audioLang: 'de',
+    tags: ['站内', '动画', '德语配音', '格林童话'],
+    subtitles: BREMER_STADTMUSIKANTEN_SUBTITLES,
   },
   ...TERRA_X,
   ...COLLECTION_VIDEOS.map((v) => ({ ...v, subtitles: emptyTracks() })),

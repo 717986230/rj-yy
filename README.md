@@ -67,7 +67,7 @@ Vido 没有自己的后端，也不用登录：隐藏的卡片、自己加的视
 **哔哩哔哩剧集（DW 德语课、德语动画）**：片库优先收录 B 站上标明「中德字幕」的视频，例如 DW 的 *Nicos Weg*、《布鲁伊》《小猪佩奇》德语版、《疯狂动物城》德语版、《小王子》德语广播剧。它们用 B 站官方嵌入播放器播放，Vido 不下载、不转存视频。中德字幕是视频画面自带的，所以这类卡片上 Vido 自己的字幕层、进度条和音量设置不起作用，要用 B 站播放器自己的控件。在片库里粘贴 B 站地址（`https://www.bilibili.com/video/BV…/?p=N`）就能添加，一个多 P 视频可以按集数范围一次加入多集，片库按剧集分组显示。b23.tv 短链接需要先在浏览器打开，再复制完整地址。
 
 
-内置片库都是「Vido 站内」托管的整部视频（`apps/web/public/media/`），每张卡都是一整部，不放截取的片段：Otti 开场片（本项目自制）、《Tears of Steel / 钢铁之泪》和《Big Buck Bunny / 大雄兔》完整版（约 10 分钟，© Blender Foundation，CC BY 3.0，由 `.github/workflows/fetch-big-buck-bunny.yml` 下载转码）。Otti 和大雄兔配了德语旁白，用 Piper 离线语音合成的 Thorsten 德语声音（CC0）生成，字幕时间轴按旁白逐句对齐。第一次抽卡固定翻开 Otti 开场片。
+内置片库都是「Vido 站内」托管的整部视频（`apps/web/public/media/`），每张卡都是一整部，不放截取的片段：Otti 开场片（本项目自制）、《Tears of Steel / 钢铁之泪》和《Big Buck Bunny / 大雄兔》完整版（约 10 分钟，© Blender Foundation，CC BY 3.0，由 `.github/workflows/fetch-big-buck-bunny.yml` 下载转码）。Otti 和大雄兔配了德语旁白，用 Piper 离线语音合成的 Thorsten 德语声音（CC0）生成，字幕时间轴按旁白逐句对齐。另有格林童话《不来梅的城市乐手》（约 4 分钟水彩动画），由 [Gg](https://github.com/717986230/Gg) 的 `examples/grimm` 生成，Piper 德语配音、每个角色一种声音，中德英字幕逐句对齐。第一次抽卡固定翻开 Otti 开场片。
 
 **德语科普短片（ZDF Terra X / 3sat）**：16 部 1–2 分钟的德语原声科普短片，来自 Wikimedia Commons 上 ZDF 以 CC BY 4.0 / CC BY-SA 4.0 开放的 Terra X 系列，卡片上标注署名和许可。`.github/workflows/fetch-terra-x.yml` 在 GitHub 服务器上调用 Commons API 挑选、下载并转码（`scripts/fetch_terra_x.py`），德语字幕取自 Commons，中文和英文翻译在 `content/terra-x/translations.json`，再由 `scripts/build_terra_x.py` 生成 `packages/shared/src/data/terra-x.ts`。想要更多短片：在 Actions 里手动运行该工作流并把数量调大，然后给新增的字幕补上翻译。
 
