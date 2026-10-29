@@ -1,7 +1,7 @@
 import type { Cleanup } from './dom';
 
 /**
- * Hash 路由：#/login、#/play、#/reset/<token>。
+ * Hash 路由：#/play、#/library。
  * GitHub Pages 没有服务端重写，用 hash 保证刷新和分享链接都能打开。
  */
 export interface RouteContext {

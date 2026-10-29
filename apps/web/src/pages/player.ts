@@ -77,7 +77,6 @@ type Refs = {
   library: HTMLAnchorElement;
   help: HTMLButtonElement;
   diag: HTMLButtonElement;
-  logout: HTMLButtonElement;
 };
 
 export function playerPage(root: HTMLElement, { navigate }: RouteContext): Cleanup {
@@ -95,7 +94,6 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
           ${libraryThemeSwitch()}
           <a data-ref="library" href="#/library" class="icon-btn !h-8 !w-8" aria-label="片库" title="片库">${icon('library', 'h-[18px] w-[18px]')}</a>
           <button data-ref="help" class="icon-btn !h-8 !w-8" aria-label="玩法介绍" title="玩法介绍">${icon('help', 'h-[18px] w-[18px]')}</button>
-          <button data-ref="logout" class="icon-btn !h-8 !w-8" aria-label="退出登录" title="退出登录">${icon('logout', 'h-[18px] w-[18px]')}</button>
         </nav>
       </header>
 
@@ -715,11 +713,6 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
         else stopMirror();
       },
     });
-  r.logout.onclick = async () => {
-    await api.logout();
-    app.set({ user: null });
-    navigate('/login');
-  };
 
   cleanups.push(
     on(document, 'keydown', (e) => {
