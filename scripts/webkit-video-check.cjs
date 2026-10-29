@@ -18,9 +18,7 @@ const lum = (buf) => {
   await p.goto(BASE, { waitUntil: 'load' });
   await sleep(800);
   if (await p.locator('[data-ref="later"]').isVisible()) await p.click('[data-ref="later"]');
-  await p.goto(BASE + '#/register'); await sleep(400);
-  await p.fill('#reg-email', 'webkit@example.com'); await p.fill('#reg-password', 'otter2026'); await p.fill('#reg-confirm', 'otter2026');
-  await p.click('button[data-ref=submit]'); await sleep(1500);
+  // 没有登录了（rj-yy#5）：打开就是牌桌，直接翻第一张
   console.log('url', p.url());
   const report = async (name) => {
     const box = await p.locator('video').boundingBox();
