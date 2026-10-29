@@ -1,4 +1,5 @@
 import { externalSource, isBlockedMixedContent, type Video } from '@vido/shared';
+import { mediaUrl } from '../app/site';
 
 export type PlayerStatus = 'idle' | 'loading' | 'playing' | 'paused' | 'ended' | 'error';
 
@@ -140,10 +141,10 @@ export class VideoEngine {
   load(item: Video, { autoplay = true } = {}): void {
     this.stopClock();
     this.current = item;
-    this.sources = [item.src, ...(item.mirrors ?? [])];
+    this.sources = [item.src, ...(item.mirrors ?? [])].map(mediaUrl);
     this.failures = [];
     this.wantPlay = autoplay;
-    this.video.poster = item.poster ?? '';
+    this.video.poster = mediaUrl(item.poster ?? '');
     this.trySource(0);
   }
 

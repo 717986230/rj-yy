@@ -1,32 +1,14 @@
 import type { ApiClient } from '@vido/shared';
-import { HttpApi } from './http';
-import { LocalApi } from './local';
-
-export { DEMO_ACCOUNT } from './local';
-
-const base = import.meta.env.VITE_API_BASE?.trim();
+import { DEMO_ACCOUNT, LocalApi } from './local';
 
 /**
- * 构建时决定数据来源：配置了 VITE_API_BASE 就连后端（Cloudflare Worker），否则使用浏览器本地存储。
- * 后端连不上时（prepareApi 里检测）退回本地模式，保证应用总能打开。
+ * 不需要账号：自己添加的视频、隐藏的卡片都存在当前浏览器里。
+ * 打开时自动进入一个本机账号，用户看不到登录页。
  */
-export let api: ApiClient = base ? new HttpApi(base) : new LocalApi();
-
-const HEALTH_TIMEOUT_MS = 5000;
-
-async function reachable(apiBase: string): Promise<boolean> {
-  try {
-    const res = await fetch(`${apiBase.replace(/\/$/, '')}/health`, { signal: AbortSignal.timeout(HEALTH_TIMEOUT_MS) });
-    return res.ok;
-  } catch {
-    return false;
-  }
-}
+const local = new LocalApi();
+export const api: ApiClient = local;
 
 export async function prepareApi(): Promise<void> {
-  if (base && !(await reachable(base))) {
-    console.warn('[vido] 后端连不上，改用本地模式');
-    api = new LocalApi();
-  }
-  if (api instanceof LocalApi) await api.ensureDemoAccount();
+  await local.ensureDemoAccount();
+  if (!(await local.me())) await local.login(DEMO_ACCOUNT);
 }
