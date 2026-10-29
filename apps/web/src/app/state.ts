@@ -46,7 +46,7 @@ const DEFAULT_PREFS: Prefs = {
   bilibiliInDeck: false,
   videoPaint: 'auto',
   playbackRate: 1,
-  theme: 'dark',
+  theme: 'light',
   glosses: true,
 };
 

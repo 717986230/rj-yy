@@ -6,6 +6,7 @@ import { errorMessage } from '../components/form';
 import { icon } from '../components/icons';
 import { otter } from '../components/otter';
 import { SubtitleOverlay } from '../components/subtitles';
+import { WordCard } from '../components/wordcard';
 import { toast } from '../components/toast';
 import { showDiagnostics } from '../components/diagnostics';
 import { bindLibraryThemeSwitch, libraryThemeSwitch } from '../components/topbar';
@@ -105,10 +106,10 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
         <div data-ref="wrap" class="card-wrap">
           <div data-ref="card" class="card">
             <button data-ref="back" class="card-face card-back flex flex-col items-center justify-center gap-2 text-center" aria-label="抽一张卡">
-              <span class="font-display text-[11px] font-semibold uppercase tracking-[0.35em] text-aqua/80">Vido · Karte</span>
+              <span class="font-display text-[11px] font-semibold uppercase tracking-[0.35em] text-[#e8b65a]">Vido · Karte</span>
               ${otter({ scene: 'study', cls: 'h-[46%] w-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.45)]' })}
-              <span data-ref="backHint" class="hint mt-1 text-base font-bold text-fg">点我抽一张</span>
-              <span data-ref="backCount" class="text-xs text-mute">片库加载中…</span>
+              <span data-ref="backHint" class="hint mt-1 font-serif text-lg font-semibold text-[#f2ebdd]">点我抽一张</span>
+              <span data-ref="backCount" class="text-xs text-[#f2ebdd]/70">片库加载中…</span>
             </button>
 
             <div data-ref="front" class="card-face card-front flex flex-col">
@@ -196,11 +197,23 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   root.append(view);
 
   const engine = new VideoEngine(r.video);
-  const overlay = new SubtitleOverlay(r.subs, (cue) => {
-    // 点喇叭：从这一句开头重听
-    engine.seek(Math.max(0, cue.start - app.get().subtitleOffset));
-    void engine.play();
+  // 查词时先暂停，关掉词卡再接着播（原本就停着的不自动播）
+  let resumeAfterWord = false;
+  const wordCard = new WordCard(r.subs.parentElement!, (open) => {
+    if (open) {
+      resumeAfterWord = !engine.paused;
+      engine.pause();
+    } else if (resumeAfterWord) void engine.play();
   });
+  const overlay = new SubtitleOverlay(
+    r.subs,
+    (cue) => {
+      // 点喇叭：从这一句开头重听
+      engine.seek(Math.max(0, cue.start - app.get().subtitleOffset));
+      void engine.play();
+    },
+    (word) => void wordCard.show(word),
+  );
   const cleanups: Cleanup[] = [];
   const cache = new Map<string, Video>();
   let summaries: VideoSummary[] = [];
@@ -267,6 +280,8 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     r.dur.textContent = v.duration ? formatTime(v.duration) : '';
     renderTitleSecond();
     overlay.clear();
+    resumeAfterWord = false;
+    wordCard.close();
   };
 
   const renderTitleSecond = () => {
@@ -619,7 +634,9 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     if (!swiped) void (app.get().mode === 'manual' ? draw() : next());
   };
   r.tap.onclick = () => {
-    if (!swiped) engine.toggle();
+    if (swiped) return;
+    if (wordCard.open) wordCard.close();
+    else engine.toggle();
   };
   r.sound.onclick = () => {
     r.sound.hidden = true;
