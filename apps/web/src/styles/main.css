@@ -548,18 +548,58 @@ input[type='range'].range::-moz-range-thumb {
   }
 }
 
-.otter-sparkle {
-  animation: twinkle 1.8s ease-in-out infinite;
+/* 加载中：Otti 在水面上轻轻起伏 */
+.otter-swim {
+  animation: otter-bob 1.6s ease-in-out infinite;
 }
-.otter-sparkle:nth-child(2n) {
-  animation-delay: 0.6s;
-}
-.otter-sparkle:nth-child(3n) {
-  animation-delay: 1.1s;
-}
-@keyframes twinkle {
+@keyframes otter-bob {
   50% {
-    opacity: 0.25;
+    transform: translateY(-5px) rotate(-1.5deg);
+  }
+}
+/* 打招呼：手臂绕肩膀挥两下，身体跟着轻轻一蹦，然后停一会儿 */
+.otter-wave {
+  animation: otter-hop 2.6s ease-in-out infinite;
+}
+.otter-arm {
+  transform-origin: 20.8% 46.5%;
+  animation: otter-arm 2.6s ease-in-out infinite;
+}
+@keyframes otter-arm {
+  0%,
+  60%,
+  100% {
+    transform: rotate(0);
+  }
+  12% {
+    transform: rotate(-16deg);
+  }
+  24% {
+    transform: rotate(10deg);
+  }
+  36% {
+    transform: rotate(-14deg);
+  }
+  48% {
+    transform: rotate(6deg);
+  }
+}
+@keyframes otter-hop {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+  18%,
+  42% {
+    transform: translateY(-5px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .otter-swim,
+  .otter-wave,
+  .otter-arm {
+    animation: none;
   }
 }
 

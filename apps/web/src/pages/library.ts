@@ -14,8 +14,10 @@ import { app } from '../app/state';
 import { bindLibraryThemeSwitch, libraryThemeSwitch } from '../components/topbar';
 import { busy, errorMessage } from '../components/form';
 import { icon } from '../components/icons';
+import { otter } from '../components/otter';
 import { toast } from '../components/toast';
 import { api } from '../services/api';
+import { CLOUD_SYNCED } from '../services/cloud';
 import { probeSources, runLimited, type ProbeResult } from '../services/probe';
 import { mediaUrl } from '../app/site';
 
@@ -82,7 +84,7 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
         </form>
 
         <ul data-ref="list" class="grid grid-cols-[minmax(0,1fr)] gap-2.5 pb-2">
-          <li class="py-10 text-center text-sm text-mute">片库加载中…</li>
+          <li class="flex flex-col items-center gap-2 py-8 text-center text-sm text-mute">${otter({ scene: 'swim', cls: 'otter-swim w-40' })}片库加载中…</li>
         </ul>
       </div>
     </section>`);
@@ -177,7 +179,7 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
             return header(key, list.length) + list.map(([v, i]) => row(v, i)).join('');
           })
           .join('')
-      : '<li class="py-10 text-center text-sm text-mute">片库还是空的，添加第一条外链吧</li>';
+      : `<li class="flex flex-col items-center gap-2 py-8 text-center text-sm text-mute">${otter({ scene: 'nap', cls: 'w-44' })}片库还是空的，Otti 先睡一会儿。添加第一条外链吧</li>`;
   };
 
   const load = async () => {
@@ -368,8 +370,12 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
     render();
   });
   const offTopbar = bindLibraryThemeSwitch(r.topbar);
+  // 从手册账号同步下来新的视频 / 隐藏后刷新列表
+  const onSynced = () => void load();
+  window.addEventListener(CLOUD_SYNCED, onSynced);
   return () => {
     offLib();
     offTopbar();
+    window.removeEventListener(CLOUD_SYNCED, onSynced);
   };
 }

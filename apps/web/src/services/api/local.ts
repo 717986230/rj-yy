@@ -20,6 +20,7 @@ import {
   type VideoSummary,
 } from '@vido/shared';
 import { storage } from '../../app/storage';
+import { schedulePush } from '../cloud';
 import { tokenStore } from './token';
 
 /**
@@ -226,6 +227,7 @@ export class LocalApi implements ApiClient {
       createdAt: new Date().toISOString(),
     };
     storage.set(K.videos, [...this.customVideos(), video]);
+    schedulePush();
     return video;
   }
 
@@ -242,5 +244,6 @@ export class LocalApi implements ApiClient {
       K.videos,
       this.customVideos().filter((v) => v.id !== id),
     );
+    schedulePush();
   }
 }

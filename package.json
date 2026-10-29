@@ -6,19 +6,15 @@
   "type": "module",
   "workspaces": [
     "packages/shared",
-    "apps/web",
-    "apps/server",
-    "apps/worker"
+    "apps/web"
   ],
   "scripts": {
     "dev": "npm run dev -w @vido/web",
-    "dev:server": "npm run dev -w @vido/server",
     "build": "npm run build -w @vido/web",
     "preview": "npm run preview -w @vido/web",
     "test": "npm test --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
-    "check": "npm run typecheck && npm test",
-    "dev:worker": "npm run dev -w @vido/worker"
+    "check": "npm run typecheck && npm test"
   },
   "engines": {
     "node": ">=20"
