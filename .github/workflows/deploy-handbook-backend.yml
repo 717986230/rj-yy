@@ -6,9 +6,6 @@ name: 部署手册后端
 # 用法：Actions → 部署手册后端 → Run workflow
 on:
   workflow_dispatch:
-  push:
-    branches: [claude/project-thread-yid8z0]
-    paths: [.github/workflows/deploy-handbook-backend.yml]
 
 concurrency:
   group: handbook-backend
