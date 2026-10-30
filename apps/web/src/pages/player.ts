@@ -86,10 +86,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
       <header class="flex items-center justify-between">
         <button data-ref="diag" class="flex items-center gap-2 text-left" title="播放诊断">
           <span class="grid h-8 w-8 place-items-center rounded-xl bg-aqua text-aqua-ink">${icon('cards', 'h-[18px] w-[18px]')}</span>
-          <span class="grid leading-none">
-            <span class="font-display text-lg font-semibold tracking-wide">Vido</span>
-            <span class="mt-0.5 whitespace-nowrap text-[9px] tabular-nums text-mute">${__APP_VERSION__.split(' · ')[0]}</span>
-          </span>
+          <span class="font-display text-lg font-semibold tracking-wide">Vido</span>
         </button>
         <nav data-ref="topbar" class="flex items-center gap-0.5">
           ${libraryThemeSwitch()}
@@ -171,7 +168,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
           <button data-ref="rate" class="icon-btn !w-auto min-w-[2.75rem] px-1.5 text-xs font-bold tabular-nums" aria-label="语速" title="语速：点一下换一档">1×</button>
           <div class="ml-auto flex items-center">
             <button data-ref="mute" class="icon-btn" aria-label="静音">${icon('volume')}</button>
-            <input data-ref="volume" id="volume" type="range" class="range w-16" min="0" max="100" aria-label="音量" />
+            <input data-ref="volume" id="volume" type="range" class="range touch-hide w-16" min="0" max="100" aria-label="音量" />
           </div>
           <div data-ref="tunePanel" class="absolute bottom-full left-0 z-20 mb-2 w-60 rounded-2xl border border-line/15 bg-raised p-3 shadow-soft" hidden>
             <p class="text-xs text-mute">字幕和画面对不上时，微调字幕时间</p>
