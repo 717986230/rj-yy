@@ -107,7 +107,9 @@
     aspect-ratio: auto;
     border-radius: 0;
     box-shadow: none;
-    overflow: visible;
+    /* 叠在后面的两张斜卡会探出屏幕边 2px，整页就能左右晃；手机上舞台就是整屏，裁掉不丢任何东西 */
+    overflow: hidden;
+    overflow: clip;
   }
 }
 
