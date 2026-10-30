@@ -618,3 +618,8 @@ input[type='range'].range::-moz-range-thumb {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* 手机上音量走实体键，iOS 还会忽略网页设的音量：滑条只占地方，触屏设备上藏起来，静音键保留 */
+@media (pointer: coarse) {
+  .touch-hide { display: none; }
+}

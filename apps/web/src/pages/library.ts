@@ -47,11 +47,15 @@ export function libraryPage(root: HTMLElement, { navigate }: RouteContext): Clea
         <div data-ref="topbar" class="ml-auto">${libraryThemeSwitch()}</div>
         <button data-ref="toggleAdd" class="btn-ghost h-9 px-2.5" aria-label="添加视频" title="添加视频">${icon('plus', 'h-4 w-4')}添加</button>
       </div>
-      <div class="flex items-start gap-2">
-        <p class="flex-1 text-xs leading-relaxed text-mute">站内影片随网站托管，任何网络都能播。B 站卡片是实验功能：用 B 站播放器，可能因视频被删或地区限制打不开，默认不进抽卡牌堆，可以在这里点开播放。</p>
-        <button data-ref="biliDeck" class="btn-ghost h-8 shrink-0 px-3 text-xs" aria-pressed="false"></button>
-        <button data-ref="probe" class="btn-ghost h-8 shrink-0 px-3 text-xs">${icon('refresh', 'h-3.5 w-3.5')}检测外链</button>
-      </div>
+      <!-- B 站卡片和外链检测是少数人才用的设置，平时收起，免得片库一打开先看到一大段说明 -->
+      <details class="rounded-2xl border border-line/10 bg-panel/60 px-3 text-xs text-mute">
+        <summary class="flex min-h-[40px] cursor-pointer items-center font-semibold text-fg">B 站卡片 · 外链检测</summary>
+        <p class="leading-relaxed">站内影片随网站托管，任何网络都能播。B 站卡片用 B 站播放器，可能因视频被删或地区限制打不开，默认不进抽卡牌堆。</p>
+        <div class="flex gap-2 py-2.5">
+          <button data-ref="biliDeck" class="btn-ghost h-8 px-3 text-xs" aria-pressed="false"></button>
+          <button data-ref="probe" class="btn-ghost h-8 px-3 text-xs">${icon('refresh', 'h-3.5 w-3.5')}检测外链</button>
+        </div>
+      </details>
 
       <div class="scroll-area -mx-1 min-h-0 flex-1 px-1">
         <form data-ref="form" class="mb-4 grid gap-2.5 rounded-3xl border border-aqua/20 bg-aqua/[0.06] p-3.5" hidden novalidate>
