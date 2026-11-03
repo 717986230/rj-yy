@@ -13,7 +13,10 @@ jobs:
     steps:
       - run: npm i -g wrangler@4 >/dev/null && wrangler --version
       - name: 删除 Worker vido-api
-        run: wrangler delete --name vido-api --force
+        # wrangler delete 会顺带查 KV（这把密钥没 KV 权限），直接调 API
+        run: |
+          curl -fsS -X DELETE -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/scripts/vido-api?force=true" | jq '{success, errors}'
       - name: 删除 D1 vido
         run: wrangler d1 delete vido --skip-confirmation
       - name: 确认
