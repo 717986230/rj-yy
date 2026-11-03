@@ -20,7 +20,7 @@ export default {
       fontFamily: {
         display: ['Fraunces', '"Songti SC"', '"Noto Serif SC"', 'Georgia', 'serif'],
         serif: ['Fraunces', '"Songti SC"', '"STSong"', '"Noto Serif SC"', 'Georgia', 'serif'],
-        sans: ['"Noto Sans SC"', '"PingFang SC"', '"Microsoft YaHei"', 'system-ui', 'sans-serif'],
+        sans: ['"PingFang SC"', '"Noto Sans SC"', '"Microsoft YaHei"', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         card: '22px',
