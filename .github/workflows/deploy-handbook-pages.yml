@@ -1,0 +1,54 @@
+name: 手册镜像到 Cloudflare Pages
+
+# 把手册（717986230/deutsch-lernen-site 的 main，纯静态）原样发布到 Cloudflare Pages 的免费地址
+# https://uuoo-de.pages.dev ，作为 uuoo.site 到期后的落脚点（以后拿到 eu.org 等免费域名，也绑在这个 Pages 项目上）。
+# 手册仓库没有 Cloudflare 密钥，所以和「部署手册后端」一样借本仓库同一账号的密钥。
+# 每 2 小时自动同步一次；手动：Actions → 手册镜像到 Cloudflare Pages → Run workflow
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 */2 * * *'
+
+concurrency:
+  group: handbook-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      PROJECT: uuoo-de
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: 717986230/deutsch-lernen-site
+          ref: main
+          path: hb
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm i -g wrangler@4 && wrangler --version
+      - name: 准备发布目录（只放网站文件，不放源码仓库的杂物）
+        run: |
+          rsync -a --exclude .git --exclude .github --exclude node_modules --exclude analytics --exclude CNAME hb/ site/
+          echo "文件数 $(find site -type f | wc -l)，大小 $(du -sh site | cut -f1)"
+      - name: 没有 Pages 项目就建一个
+        run: |
+          wrangler pages project list | grep -q " $PROJECT " || wrangler pages project create "$PROJECT" --production-branch main
+      - name: 发布
+        run: wrangler pages deploy site --project-name "$PROJECT" --branch main --commit-dirty=true --commit-hash "$(git -C hb rev-parse HEAD)"
+      - name: 检查
+        run: |
+          set -e
+          url=https://$PROJECT.pages.dev
+          for i in $(seq 20); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$url/"); echo "首页 → $code"
+            [ "$code" = 200 ] && break; sleep 6
+          done
+          [ "$code" = 200 ]
+          for p in vido/ oeif/ sw.js; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$url/$p"); echo "/$p → $code"; [ "$code" = 200 ]
+          done
+          curl -s "$url/" | grep -c '"de":"Guten Morgen' | grep -qx 0 && echo "无明文词库 ✓"
