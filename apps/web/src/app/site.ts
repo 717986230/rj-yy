@@ -1,9 +1,9 @@
 /**
- * Vido 有两个入口：GitHub Pages 和德语学习手册的 www.uuoo.site/vido/（镜像 uuoo-de.pages.dev/vido/ 同理）
+ * Vido 有两个入口：GitHub Pages 和德语学习手册的 www.uuoo.site/vido/（镜像 uuoo-de.uuoo.workers.dev/vido/ 同理）
  * （手册仓库定时把本站的构建同步进它的 vido/ 目录，不含 media/ 里的大视频）。
  */
 export const HANDBOOK =
-  typeof location !== 'undefined' && /(^|\.)uuoo\.site$|^uuoo-de\.pages\.dev$/i.test(location.hostname) && location.pathname.startsWith('/vido');
+  typeof location !== 'undefined' && /(^|\.)uuoo\.site$|^uuoo-de\.uuoo\.workers\.dev$/i.test(location.hostname) && location.pathname.startsWith('/vido');
 
 /** 手册首页（顶栏 📖 按钮回这里） */
 export const HANDBOOK_HOME = '/';
