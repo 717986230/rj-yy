@@ -1,9 +1,10 @@
-name: 手册镜像到 Cloudflare Pages
+name: 手册镜像到 Cloudflare
 
-# 把手册（717986230/deutsch-lernen-site 的 main，纯静态）原样发布到 Cloudflare Pages 的免费地址
-# https://uuoo-de.pages.dev ，作为 uuoo.site 到期后的落脚点（以后拿到 eu.org 等免费域名，也绑在这个 Pages 项目上）。
+# 把手册（717986230/deutsch-lernen-site 的 main，纯静态）原样发布成 Cloudflare 的纯静态 Worker（Workers 静态资源，免费）
+# https://uuoo-de.uuoo.workers.dev ，作为 uuoo.site 到期后的落脚点（以后拿到 eu.org 等免费域名，也绑在这个 Worker 上）。
+# 用 Worker 而不是 Pages：本仓库的 Cloudflare 密钥没有 Pages 权限（实测 Authentication error 10000），但能部署 Worker。
 # 手册仓库没有 Cloudflare 密钥，所以和「部署手册后端」一样借本仓库同一账号的密钥。
-# 每 2 小时自动同步一次；手动：Actions → 手册镜像到 Cloudflare Pages → Run workflow
+# 每 2 小时自动同步一次；手动：Actions → 手册镜像到 Cloudflare → Run workflow
 on:
   workflow_dispatch:
   schedule:
@@ -34,15 +35,21 @@ jobs:
         run: |
           rsync -a --exclude .git --exclude .github --exclude node_modules --exclude analytics --exclude CNAME hb/ site/
           echo "文件数 $(find site -type f | wc -l)，大小 $(du -sh site | cut -f1)"
-      - name: 没有 Pages 项目就建一个
+      - name: 发布（纯静态资源，没有 Worker 代码，不耗请求额度）
         run: |
-          wrangler pages project list | grep -q " $PROJECT " || wrangler pages project create "$PROJECT" --production-branch main
-      - name: 发布
-        run: wrangler pages deploy site --project-name "$PROJECT" --branch main --commit-dirty=true --commit-hash "$(git -C hb rev-parse HEAD)"
+          cat > wrangler.toml <<EOF
+          name = "$PROJECT"
+          compatibility_date = "2026-10-01"
+          workers_dev = true
+          [assets]
+          directory = "./site"
+          not_found_handling = "none"
+          EOF
+          wrangler deploy --message "deutsch-lernen-site@$(git -C hb rev-parse --short HEAD)"
       - name: 检查
         run: |
           set -e
-          url=https://$PROJECT.pages.dev
+          url=https://$PROJECT.uuoo.workers.dev
           for i in $(seq 20); do
             code=$(curl -s -o /dev/null -w '%{http_code}' "$url/"); echo "首页 → $code"
             [ "$code" = 200 ] && break; sleep 6
