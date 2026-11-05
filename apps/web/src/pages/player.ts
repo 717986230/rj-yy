@@ -1,4 +1,4 @@
-import { bilibiliEmbedUrl, hasSubtitles, isBilibili, SEED_VIDEOS, parseBilibili, Playlist, type PlayMode, type SecondaryLang, type Video, type VideoSummary } from '@vido/shared';
+import { bilibiliEmbedUrl, cueAt, hasSubtitles, isBilibili, SEED_VIDEOS, parseBilibili, Playlist, type Cue, type PlayMode, type SecondaryLang, type Video, type VideoSummary } from '@vido/shared';
 import { el, esc, formatTime, on, refs, wait, type Cleanup } from '../app/dom';
 import type { RouteContext } from '../app/router';
 import { app } from '../app/state';
@@ -68,6 +68,7 @@ type Refs = {
   tunePanel: HTMLElement;
   rate: HTMLButtonElement;
   gloss: HTMLButtonElement;
+  pause: HTMLButtonElement;
   offset: HTMLElement;
   mute: HTMLButtonElement;
   volume: HTMLInputElement;
@@ -164,6 +165,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
         <div class="relative flex items-center gap-1">
           <button data-ref="cc" class="icon-btn" aria-pressed="true" aria-label="字幕开关" title="字幕开关">${icon('cc')}</button>
           <button data-ref="gloss" class="icon-btn !w-auto px-2 text-xs font-bold" aria-pressed="true" title="显示 / 隐藏逐词词义和谐音">词义</button>
+          <button data-ref="pause" class="icon-btn !w-auto px-2 text-xs font-bold" aria-pressed="false" title="逐句暂停：每句播完自动停下，跟读后再点播放">逐句</button>
           <button data-ref="tune" class="icon-btn" aria-label="字幕时间微调" title="字幕时间微调" aria-expanded="false">${icon('sliders')}</button>
           <button data-ref="rate" class="icon-btn !w-auto min-w-[2.75rem] px-1.5 text-xs font-bold tabular-nums" aria-label="语速" title="语速：点一下换一档">1×</button>
           <div class="ml-auto flex items-center">
@@ -206,6 +208,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     r.subs,
     (cue) => {
       // 点喇叭：从这一句开头重听
+      apCue = null;
       engine.seek(Math.max(0, cue.start - app.get().subtitleOffset));
       void engine.play();
     },
@@ -511,8 +514,31 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   };
   const frameTimer = window.setInterval(watchFrames, 700);
 
+  // 逐句暂停：记住正在播的那句，播放越过它的结尾就停下（重听按钮会从句首再来一遍）
+  let apCue: Cue | null = null;
+  let apItem: string | null = null;
+  const autoPauseCheck = (t: number) => {
+    const s = app.get();
+    const tracks = engine.item?.subtitles;
+    const id = engine.item?.id ?? null;
+    if (id !== apItem) {
+      apItem = id;
+      apCue = null;
+    }
+    if (!s.autoPause || !tracks || engine.paused || seeking) return;
+    const track = tracks[s.secondLang]?.length ? tracks[s.secondLang] : tracks.zh;
+    if (!track?.length) return;
+    const tt = t + s.subtitleOffset;
+    const c = cueAt(track, tt);
+    if (apCue && tt >= apCue.end && c !== apCue) {
+      apCue = null;
+      engine.pause();
+    } else if (c) apCue = c;
+  };
+
   const onTime = (t: number, d: number) => {
     const s = app.get();
+    autoPauseCheck(t);
     overlay.update(engine.item?.subtitles ?? null, t, { visible: s.subtitles, second: s.secondLang, offset: s.subtitleOffset, glosses: s.glosses });
     r.cur.textContent = formatTime(t);
     r.total.textContent = d ? formatTime(d) : '--:--';
@@ -531,6 +557,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     engine.setRate(s.playbackRate);
     r.rate.textContent = formatRate(s.playbackRate);
     r.gloss.setAttribute('aria-pressed', String(s.glosses));
+    r.pause.setAttribute('aria-pressed', String(s.autoPause));
     r.rate.setAttribute('aria-pressed', String(s.playbackRate !== 1));
     r.backHint.textContent = s.mode === 'manual' ? '点我抽一张' : '点我开始播放';
     r.draw.innerHTML = `${icon('cards')}${s.mode === 'manual' ? '抽一张卡' : '换一张'}`;
@@ -665,6 +692,12 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   };
   r.cc.onclick = () => app.set({ subtitles: !app.get().subtitles });
   r.gloss.onclick = () => app.set({ glosses: !app.get().glosses });
+  r.pause.onclick = () => {
+    const autoPause = !app.get().autoPause;
+    apCue = null;
+    app.set({ autoPause });
+    toast(autoPause ? '逐句暂停：每句播完自动停下，跟读完点播放继续；点字幕前的喇叭重听这一句' : '已关闭逐句暂停');
+  };
   r.rate.onclick = () => {
     const i = RATES.indexOf(app.get().playbackRate);
     const playbackRate = RATES[(i + 1) % RATES.length]!;
@@ -689,6 +722,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     r.cur.textContent = formatTime((pct / 100) * engine.duration);
   });
   r.seek.addEventListener('change', () => {
+    apCue = null;
     engine.seek((Number(r.seek.value) / 1000) * engine.duration);
     seeking = false;
   });

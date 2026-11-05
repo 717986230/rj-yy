@@ -22,6 +22,8 @@ export interface Prefs {
   videoPaint: 'auto' | 'canvas' | 'native';
   /** 字幕里显示逐词词义和谐音 */
   glosses: boolean;
+  /** 逐句暂停：每句字幕播完自动停下，方便跟读（参照 Language Reactor 的 Auto-pause） */
+  autoPause: boolean;
   /** 明暗主题 */
   theme: 'dark' | 'light';
   /** 语速（播放速度），1 为原速 */
@@ -48,6 +50,7 @@ const DEFAULT_PREFS: Prefs = {
   playbackRate: 1,
   theme: 'light',
   glosses: true,
+  autoPause: false,
 };
 
 const stored = storage.get<Partial<Prefs>>(PREFS_KEY, {});
@@ -70,8 +73,8 @@ applyTheme(app.get().theme);
 
 // 偏好设置变化时持久化
 app.subscribe((s) => {
-  const { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck, videoPaint, playbackRate, theme, glosses } = s;
-  storage.set(PREFS_KEY, { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck, videoPaint, playbackRate, theme, glosses });
+  const { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck, videoPaint, playbackRate, theme, glosses, autoPause } = s;
+  storage.set(PREFS_KEY, { mode, secondLang, subtitles, subtitleOffset, volume, hidden, bilibiliInDeck, videoPaint, playbackRate, theme, glosses, autoPause });
   applyTheme(theme);
 });
 
