@@ -209,6 +209,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     (cue) => {
       // 点喇叭：从这一句开头重听
       apCue = null;
+      apDone = null;
       engine.seek(Math.max(0, cue.start - app.get().subtitleOffset));
       void engine.play();
     },
@@ -516,6 +517,9 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
 
   // 逐句暂停：记住正在播的那句，播放越过它的结尾就停下（重听按钮会从句首再来一遍）
   let apCue: Cue | null = null;
+  /** 刚停过的那句：点播放继续时不要在它身上再停一次 */
+  let apDone: Cue | null = null;
+  const AP_LEAD = 0.12;
   let apItem: string | null = null;
   const autoPauseCheck = (t: number) => {
     const s = app.get();
@@ -524,16 +528,22 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
     if (id !== apItem) {
       apItem = id;
       apCue = null;
+      apDone = null;
     }
     if (!s.autoPause || !tracks || engine.paused || seeking) return;
     const track = tracks[s.secondLang]?.length ? tracks[s.secondLang] : tracks.zh;
     if (!track?.length) return;
     const tt = t + s.subtitleOffset;
     const c = cueAt(track, tt);
-    if (apCue && tt >= apCue.end && c !== apCue) {
+    // 在句尾前一点点停，停下时画面上还是这一句（中文 + 德/英）；万一已经越过句尾，倒回句内再停，
+    // 否则字幕会换成下一句或者消失，跟读时就看不到句子了
+    if (apCue && tt >= apCue.end - AP_LEAD) {
+      const done = apCue;
+      apDone = done;
       apCue = null;
       engine.pause();
-    } else if (c) apCue = c;
+      if (tt >= done.end) engine.seek(Math.max(done.start, done.end - AP_LEAD) - s.subtitleOffset);
+    } else if (c && c !== apDone) apCue = c;
   };
 
   const onTime = (t: number, d: number) => {
@@ -723,6 +733,7 @@ export function playerPage(root: HTMLElement, { navigate }: RouteContext): Clean
   });
   r.seek.addEventListener('change', () => {
     apCue = null;
+    apDone = null;
     engine.seek((Number(r.seek.value) / 1000) * engine.duration);
     seeking = false;
   });
