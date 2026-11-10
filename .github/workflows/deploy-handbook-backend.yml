@@ -55,3 +55,7 @@ jobs:
           done
           [ "$code" = 401 ]
           code=$(curl -s -o /dev/null -w '%{http_code}' "$api/api/leaderboard"); echo "/api/leaderboard → $code"; [ "$code" = 200 ]
+          # 会员接口（2026-11-10 起）：未登录应 401；404 说明新代码没部署上
+          code=$(curl -s -o /dev/null -w '%{http_code}' "$api/api/pro/pack?id=arzt"); echo "/api/pro/pack 未登录 → $code"; [ "$code" = 401 ]
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST -d '{}' "$api/api/redeem"); echo "/api/redeem 未登录 → $code"; [ "$code" = 401 ]
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST -d '{}' "$api/api/admin/codes"); echo "/api/admin/codes 无密钥 → $code"; [ "$code" = 403 ]
