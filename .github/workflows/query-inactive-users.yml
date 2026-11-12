@@ -40,9 +40,9 @@ jobs:
             CASE WHEN mem_until IS NULL THEN '' WHEN mem_until > strftime('%s','now')*1000 THEN 'member' ELSE 'expired' END mem
           FROM a ORDER BY active_days_ago DESC;
           SQL
-          wrangler d1 execute uuoo_analytics --remote --json --file=q.sql > out.json
+          wrangler d1 execute uuoo_analytics --remote --json --command="$(cat q.sql)" > out.json
           node -e '
-            const r = JSON.parse(require("fs").readFileSync("out.json","utf8"))[0].results;
+            const r = (t => JSON.parse(t.slice(t.indexOf("["))))(require("fs").readFileSync("out.json","utf8"))[0].results;
             console.log("用户总数", r.length);
             console.log("60 天以上无任何活跃", r.filter(x => x.active_days_ago >= 60).length);
             console.log("60 天以上没有新登录（含无有效会话）", r.filter(x => x.login_days_ago == null || x.login_days_ago >= 60).length);
