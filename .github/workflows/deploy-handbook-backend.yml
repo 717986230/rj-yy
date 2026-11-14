@@ -59,3 +59,6 @@ jobs:
           code=$(curl -s -o /dev/null -w '%{http_code}' "$api/api/pro/pack?id=arzt"); echo "/api/pro/pack 未登录 → $code"; [ "$code" = 401 ]
           code=$(curl -s -o /dev/null -w '%{http_code}' -X POST -d '{}' "$api/api/redeem"); echo "/api/redeem 未登录 → $code"; [ "$code" = 401 ]
           code=$(curl -s -o /dev/null -w '%{http_code}' -X POST -d '{}' "$api/api/admin/codes"); echo "/api/admin/codes 无密钥 → $code"; [ "$code" = 403 ]
+          # 公告弹窗（2026-11-14 起站长在 stats.html 编辑发布）：公开读 200，发布接口无密钥 403
+          code=$(curl -s -o /dev/null -w '%{http_code}' "$api/api/announce"); echo "/api/announce → $code"; [ "$code" = 200 ]
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST -d '{}' "$api/api/admin/announce"); echo "/api/admin/announce 无密钥 → $code"; [ "$code" = 403 ]
