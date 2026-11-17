@@ -62,3 +62,6 @@ jobs:
           # 公告弹窗（2026-11-14 起站长在 stats.html 编辑发布）：公开读 200，发布接口无密钥 403
           code=$(curl -s -o /dev/null -w '%{http_code}' "$api/api/announce"); echo "/api/announce → $code"; [ "$code" = 200 ]
           code=$(curl -s -o /dev/null -w '%{http_code}' -X POST -d '{}' "$api/api/admin/announce"); echo "/api/admin/announce 无密钥 → $code"; [ "$code" = 403 ]
+          # 爱发电（2026-11-17 起）：付款凭据未登录 401；回调对空请求回 {"ec":200}（爱发电要求）
+          code=$(curl -s -o /dev/null -w '%{http_code}' "$api/api/pay/ref"); echo "/api/pay/ref 未登录 → $code"; [ "$code" = 401 ]
+          out=$(curl -s -X POST -d '{}' "$api/api/afdian/webhook"); echo "/api/afdian/webhook 空回调 → $out"; echo "$out" | grep -q '"ec":200'
