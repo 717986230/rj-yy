@@ -23,6 +23,8 @@ import re
 REPO = "717986230/rj-yy"
 SUBS = "apps/web/public/subs"
 OUT = "packages/shared/src/data/collections.ts"
+# 原声例句索引：德语片的每一句（起止时间 + 德 + 中 + 谐音），手册的「🎬 原声例句」按需加载 /vido/clips.json
+CLIPS = "apps/web/public/clips.json"
 # 合集在卡片上的显示：系列名、标签、语言
 META = {
     "terra-x": {"series": "Terra X · 德语科普", "tags": ["德语原声", "科普"], "lang": "de"},
@@ -73,6 +75,7 @@ def credit(artist, license_name):
 def main():
     os.makedirs(SUBS, exist_ok=True)
     cards = []
+    clip_v, clip_c = [], []
     for name, meta in META.items():
         folder = f"content/collections/{name}"
         if not os.path.exists(f"{folder}/manifest.json"):
@@ -102,6 +105,13 @@ def main():
                 foreign.append(cue)
                 zh.append({"start": start, "end": end, "text": zh_text.strip()})
             vid = f"{name}-{m['slug']}"
+            if lang == "de":
+                vi = len(clip_v)
+                clip_v.append([vid, zh_title, m["title"], f"https://cdn.jsdelivr.net/gh/{REPO}@{m['shard']}/{m['path']}",
+                               f"https://fastly.jsdelivr.net/gh/{REPO}@{m['shard']}/{m['path']}",
+                               credit(m["artist"], m["license"]), meta["series"]])
+                for f, z in zip(foreign, zh):
+                    clip_c.append([vi, f["start"], f["end"], f["text"], z["text"], f.get("reading", "")])
             tracks = {"zh": zh, "de": foreign if lang == "de" else [], "en": foreign if lang == "en" else []}
             json.dump(tracks, open(f"{SUBS}/{vid}.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
             cards.append({
@@ -125,7 +135,8 @@ def main():
         "export const COLLECTION_VIDEOS: Array<Omit<Video, 'ownerId' | 'createdAt' | 'subtitles'>> = "
         f"{body};\n"
     )
-    print(f"{len(cards)} cards -> {OUT}")
+    json.dump({"v": clip_v, "c": clip_c}, open(CLIPS, "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+    print(f"{len(cards)} cards -> {OUT}; {len(clip_c)} 德语原声句 / {len(clip_v)} 部 -> {CLIPS}")
 
 
 if __name__ == "__main__":
