@@ -1,0 +1,66 @@
+name: Build clip media
+
+# 手册「🎬 原声例句」的两种播放素材（scripts/build_clip_media.py）：
+# 1) 每句切成几秒的小 mp4，推到 cut-NN 分片分支，由 jsDelivr 提供；
+# 2) 从 Commons 文件页找到对应的 YouTube 官方上传（oEmbed 确认允许嵌入），只记 id。
+# 结果 content/clip-media.json 提交到 main，build_collections.py 再并进 clips.json。
+on:
+  workflow_dispatch:
+    inputs:
+      args:
+        description: 额外参数（--no-cut / --no-youtube）
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-clip-media
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Check out media and cut shards
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for b in $(git ls-remote --heads origin 'media-*' 'cut-*' | sed 's#.*refs/heads/##' | sort); do
+            case "$b" in media-*) dir=media-shards ;; *) dir=cut-shards ;; esac
+            git fetch --depth=1 origin "$b:refs/remotes/origin/$b"
+            git worktree add -b "$b" "$dir/$b" "origin/$b"
+          done
+          du -sh media-shards cut-shards 2>/dev/null || true
+      - name: Build
+        run: python scripts/build_clip_media.py ${{ inputs.args }}
+      - name: Push cut shards
+        if: ${{ !cancelled() }}
+        run: |
+          set -euo pipefail
+          for d in cut-shards/cut-*; do
+            [ -d "$d" ] || continue
+            b=$(basename "$d")
+            git -C "$d" add -A
+            git -C "$d" diff --cached --quiet && continue
+            git -C "$d" commit -m "原声例句切片"
+            git -C "$d" push origin "HEAD:refs/heads/$b"
+            du -sh "$d"
+          done
+      - name: Rebuild clips.json and commit
+        if: ${{ !cancelled() }}
+        run: |
+          set -euo pipefail
+          python scripts/build_collections.py
+          git add content/clip-media.json apps/web/public/clips.json
+          git diff --cached --quiet && { echo "nothing changed"; exit 0; }
+          git commit -m "原声例句：切片与 YouTube 官方视频对照（build-clip-media）"
+          git pull --rebase origin main
+          git push origin HEAD:main
