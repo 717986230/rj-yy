@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       args:
-        description: 额外参数（--no-cut / --no-youtube）
+        description: 额外参数（--no-cut / --no-youtube / --recheck-youtube）
         default: ''
 
 permissions:
