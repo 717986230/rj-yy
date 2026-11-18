@@ -17,7 +17,7 @@ neither Commons nor YouTube. Two delivery modes, the same two WinkLingo uses:
 Writes content/clip-media.json: {video id: {"cut": "cut-NN" | null, "n": cues, "yt": id | null}}
 build_collections.py folds it into apps/web/public/clips.json.
 
-Usage: python scripts/build_clip_media.py [--no-cut] [--no-youtube]
+Usage: python scripts/build_clip_media.py [--no-cut] [--no-youtube] [--recheck-youtube]
 """
 
 import json
@@ -83,9 +83,14 @@ def youtube_id(m):
             ids += YT_ID.findall(text)
             # {{From YouTube|id=XXXXXXXXXXX}} / {{YouTube CC-BY|...}} style templates
             ids += re.findall(r"\{\{\s*From YouTube\s*\|\s*(?:1=|id=)?\s*([A-Za-z0-9_-]{11})", text, re.I)
+    if not ids:
+        hint = "youtube" in body.lower()
+        print(f"  {m['file']}: no YouTube id in wikitext{' (mentions youtube)' if hint else ''}", flush=True)
     for vid in dict.fromkeys(ids):
         code, _ = get("https://www.youtube.com/oembed", {"url": f"https://www.youtube.com/watch?v={vid}", "format": "json"})
-        if code == 200:   # 401 = embedding disabled, 404 = gone/private
+        print(f"  {vid}: oEmbed {code}", flush=True)
+        # 401 = 禁止嵌入，400/404 = 已删除或私享；其他（被限流、连不上）不能证明不行，先收下，前端还会再探测
+        if code not in (400, 401, 403, 404):
             return vid
         time.sleep(0.3)
     return None
@@ -150,7 +155,7 @@ def main():
         cues = per.get(vi, [])
         rec = dict(old.get(vid) or {})
         rec["n"] = len(cues)
-        if do_yt and m and "yt" not in rec:
+        if do_yt and m and ("yt" not in rec or ("--recheck-youtube" in sys.argv and not rec.get("yt"))):
             rec["yt"] = youtube_id(m)
             print(f"{vid}: youtube {rec['yt']}", flush=True)
         if do_cut and m and cues and not rec.get("cut"):
