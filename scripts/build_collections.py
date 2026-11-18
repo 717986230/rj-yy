@@ -23,8 +23,10 @@ import re
 REPO = "717986230/rj-yy"
 SUBS = "apps/web/public/subs"
 OUT = "packages/shared/src/data/collections.ts"
-# 原声例句索引：德语片的每一句（起止时间 + 德 + 中 + 谐音），手册的「🎬 原声例句」按需加载 /vido/clips.json
+# 原声例句索引：德语片的每一句，手册的「🎬 原声例句」按需加载 /vido/clips.json
+# {v:[[id,中文标题,德语标题,src,镜像,署名,系列,YouTube id,切片前缀]], c:[[片序号,起,止,德,中,谐音,片内序号]]}
 CLIPS = "apps/web/public/clips.json"
+CLIP_MEDIA = "content/clip-media.json"
 # 合集在卡片上的显示：系列名、标签、语言
 META = {
     "terra-x": {"series": "Terra X · 德语科普", "tags": ["德语原声", "科普"], "lang": "de"},
@@ -76,6 +78,8 @@ def main():
     os.makedirs(SUBS, exist_ok=True)
     cards = []
     clip_v, clip_c = [], []
+    # build_clip_media.py 的产物：每句的小 mp4 切片在哪个 cut-NN 分支、对应的 YouTube 官方视频 id
+    media = json.load(open(CLIP_MEDIA, encoding="utf-8")) if os.path.exists(CLIP_MEDIA) else {}
     for name, meta in META.items():
         folder = f"content/collections/{name}"
         if not os.path.exists(f"{folder}/manifest.json"):
@@ -110,8 +114,11 @@ def main():
                 clip_v.append([vid, zh_title, m["title"], f"https://cdn.jsdelivr.net/gh/{REPO}@{m['shard']}/{m['path']}",
                                f"https://fastly.jsdelivr.net/gh/{REPO}@{m['shard']}/{m['path']}",
                                credit(m["artist"], m["license"]), meta["series"]])
-                for f, z in zip(foreign, zh):
-                    clip_c.append([vi, f["start"], f["end"], f["text"], z["text"], f.get("reading", "")])
+                md = media.get(vid) or {}
+                cut = md.get("cut") if md.get("n") == len(foreign) else None   # 句数对不上就不用旧切片
+                clip_v[-1] += [md.get("yt") or "", f"https://cdn.jsdelivr.net/gh/{REPO}@{cut}/cut/{vid}/" if cut else ""]
+                for k, (f, z) in enumerate(zip(foreign, zh)):
+                    clip_c.append([vi, f["start"], f["end"], f["text"], z["text"], f.get("reading", ""), k])
             tracks = {"zh": zh, "de": foreign if lang == "de" else [], "en": foreign if lang == "en" else []}
             json.dump(tracks, open(f"{SUBS}/{vid}.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
             cards.append({
