@@ -66,18 +66,64 @@ def manifests():
         p = f"content/collections/{name}/manifest.json"
         if os.path.exists(p):
             for m in json.load(open(p, encoding="utf-8")):
-                out[f"{name}-{m['slug']}"] = m
+                out[f"{name}-{m['slug']}"] = m | {"_col": name}
     return out
+
+
+# 每个合集在 YouTube 上的官方频道名里会出现的词（搜索时附上，并用来核对频道）
+CHANNEL = {"terra-x": ["terra x", "zdf", "3sat", "nano"], "planet-wissen": ["planet wissen", "wdr", "swr"],
+           "srf": ["srf"], "tagesschau": ["tagesschau", "ard"], "nasa": ["nasa"]}
+QUERY = {"terra-x": "Terra X", "planet-wissen": "Planet Wissen", "srf": "SRF", "tagesschau": "tagesschau", "nasa": "NASA"}
+
+
+def embeddable(vid):
+    code, _ = get("https://www.youtube.com/oembed", {"url": f"https://www.youtube.com/watch?v={vid}", "format": "json"})
+    print(f"  {vid}: oEmbed {code}", flush=True)
+    # 401 = 禁止嵌入，400/404 = 已删除或私享；其他（被限流、连不上）不能证明不行，先收下，前端还会再探测
+    return code not in (400, 401, 403, 404)
+
+
+def youtube_search(m):
+    """Commons pages rarely record the source upload, so search YouTube and accept a hit only when
+    its channel is the series' own and its length matches the Commons file within 2 s."""
+    col = m.get("_col", "")
+    want = CHANNEL.get(col, [])
+    q = f"{m['title']} {QUERY.get(col, '')}".strip()
+    try:
+        r = subprocess.run(["yt-dlp", "--flat-playlist", "--dump-json", "--no-warnings", f"ytsearch8:{q}"],
+                           capture_output=True, text=True, timeout=120)
+    except Exception as e:
+        print(f"  search failed: {e}", flush=True)
+        return None
+    if r.returncode and not r.stdout:
+        print(f"  search failed: {r.stderr.strip()[:200]}", flush=True)
+        return None
+    for line in r.stdout.splitlines():
+        try:
+            h = json.loads(line)
+        except ValueError:
+            continue
+        ch = f"{h.get('channel') or ''} {h.get('uploader') or ''}".lower()
+        dur = h.get("duration")
+        ok_ch = any(w in ch for w in want)
+        ok_dur = dur is not None and abs(float(dur) - float(m.get("duration") or 0)) <= 2.0
+        if ok_ch and ok_dur:
+            print(f"  search hit {h.get('id')} [{ch.strip()}] {dur}s ~ {m.get('duration')}s", flush=True)
+            if embeddable(h["id"]):
+                return h["id"]
+    print(f"  search: no match for {q!r}", flush=True)
+    return None
 
 
 def youtube_id(m):
     """The YouTube upload a Commons file was taken from, if it says so and embedding is allowed."""
     code, body = get(API, {"action": "query", "format": "json", "titles": m["file"], "prop": "revisions",
                            "rvprop": "content", "rvslots": "main"})
+    # NASA 的 Commons 文件名以 YouTube id 结尾；德语标题末词也可能恰好 11 个字母，所以只认这一个合集
+    ids = re.findall(r" ([A-Za-z0-9_-]{11})\.(?:webm|ogv|mp4)$", m["file"]) if m.get("_col") == "nasa" else []
     if code != 200:
-        return None
-    ids = []
-    for page in json.loads(body).get("query", {}).get("pages", {}).values():
+        body = ""
+    for page in (json.loads(body) if body else {}).get("query", {}).get("pages", {}).values():
         for rev in page.get("revisions", []):
             text = rev.get("slots", {}).get("main", {}).get("*", "")
             ids += YT_ID.findall(text)
@@ -87,13 +133,10 @@ def youtube_id(m):
         hint = "youtube" in body.lower()
         print(f"  {m['file']}: no YouTube id in wikitext{' (mentions youtube)' if hint else ''}", flush=True)
     for vid in dict.fromkeys(ids):
-        code, _ = get("https://www.youtube.com/oembed", {"url": f"https://www.youtube.com/watch?v={vid}", "format": "json"})
-        print(f"  {vid}: oEmbed {code}", flush=True)
-        # 401 = 禁止嵌入，400/404 = 已删除或私享；其他（被限流、连不上）不能证明不行，先收下，前端还会再探测
-        if code not in (400, 401, 403, 404):
+        if embeddable(vid):
             return vid
         time.sleep(0.3)
-    return None
+    return youtube_search(m)
 
 
 class Shards:
